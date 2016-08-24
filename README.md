@@ -1,5 +1,4 @@
-# projectseha
-Project SEHA
+# Project SEHA
 
 Marcos Amaral Afonso de Moraes - marcos.amoraes@outlook.com
 Thélio Marques de Almeida Freitas - marquesthelio@hotmail.com
