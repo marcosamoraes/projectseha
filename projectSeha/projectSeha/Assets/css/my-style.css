@@ -1,0 +1,31 @@
+/* Aqui colocamos nosso próprio css */
+
+.navbar-items {
+	font-size: 18px;
+}
+
+.nav.navbar-nav.navbar-right {
+	padding-right: 20px;
+	padding-top: 8px;
+}
+
+.logo-nav {
+	float: left;
+	font-size: 25px;
+	padding: 15px;
+	font-weight: 600;
+}
+
+.logo-nav a {
+	color: blue;
+	opacity: 0.6;
+}
+
+.logo-nav a:hover {
+	opacity: 1;
+	text-decoration: none;
+}
+
+.disp-content {
+	background-color: #f8f8f8;
+}
