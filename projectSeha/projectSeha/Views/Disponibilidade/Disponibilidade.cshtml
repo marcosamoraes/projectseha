@@ -3,24 +3,29 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="pt">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="">
     <meta property="og:site_name" content="">
     <meta property="og:description" content="">
+
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="500">
     <meta property="og:image:height" content="346">
+
     <meta name="theme-color" content="#95ce27" />
+
     <link href="" rel="apple-touch-icon" />
     <link href="" rel="apple-touch-icon" sizes="76x76" />
     <link href="" rel="apple-touch-icon" sizes="120x120" />
@@ -29,18 +34,26 @@
     <link href="" rel="icon" sizes="192x192" />
     <link href="" rel="icon" sizes="128x128" />
     <link href="" rel="icon" sizes="16x16" />
+
     <title>SEHA - Disponibilidade</title>
+
     <!-- ************************ CSS Files ************************ -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+
     <!-- Google Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">
+
     <!-- Custom Style -->
     <link rel="stylesheet" type="text/css" href="../assets/css/my-style.css">
+
 </head>
+
 <body>
+
     <!-- Page Content -->
     <!-- Navbar -->
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="logo-nav">
@@ -59,7 +72,9 @@
             </ul>
         </div>
     </nav>
+
     <!-- Principal Content -->
+
     <section id="disponibilidade">
         <div class="container-fluid">
             <row>
@@ -68,10 +83,13 @@
                 <div class="col-md-10 disp-box">
                     <div class="disp-content">
                         <h2>Fill the blocks according to your availability</h2>
+
                         <!-- Slots -->
+
                         <div class="slots">
 
                             <!-- Slots hours -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Hours</p>
@@ -101,7 +119,9 @@
                                     <p>20:50 às 22:30</p>
                                 </div>
                             </div>
+
                             <!-- Slots Monday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Monday</p>
@@ -123,7 +143,9 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                             <!-- Slots Tuesday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Tuesday</p>
@@ -145,7 +167,9 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                             <!-- Slots Wednesday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Wednesday</p>
@@ -167,7 +191,9 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                             <!-- Slots Thursday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Thursday</p>
@@ -189,7 +215,9 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                             <!-- Slots Friday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Friday</p>
@@ -211,7 +239,9 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                             <!-- Slots Saturday -->
+
                             <div class="slots-left">
                                 <div class="slots-content desactive">
                                     <p>Saturday</p>
@@ -233,27 +263,42 @@
                                 <div class="slots-content">
                                 </div>
                             </div>
+
                         </div>
+
                         <!-- /Slots -->
                         <!-- Slots buttons -->
+
                         <div class="slots-tools">
                             <button class="slots-tbutton" id="available">Available</button>
                             <button class="slots-tbutton" id="maybe">Maybe</button>
                             <button class="slots-tbutton" id="eraser">Eraser</button>
                         </div>
+
                         <div class="slots-buttons">
                             <button class="slots-save">Save</button>
                             <button class="slots-clear">Clear</button>
                         </div>
+
                         <!-- /Slots buttons -->
+                        <!-- Slots bar -->
+
                         <div class="bar-info">
-                            <p>Ótimo - 150%</p>
-                            <p style="position:relative; right: 200px">Bom - 100%</p>
+                            <p>Great - 150%</p>
+                            <p id="bar-good">Good - 100%</p>
                         </div>
                         <div class="slots-bar">
                             <div class="bar-fill">
                             </div>
                         </div>
+
+                        <!-- /Slots bar -->
+
+                        <div class="observation">
+                            <p>Observations:</p>
+                            <textarea placeholder="Write your observations..."></textarea>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-1">
@@ -261,12 +306,16 @@
             </row>
         </div>
     </section>
+
     <!-- ************************ JS Files ************************ -->
     <!-- jQuery -->
     <script type="text/javascript" src="../assets/js/jquery.js"></script>
+
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+
     <!-- Custom JS -->
     <script type="text/javascript" src="../assets/js/custom.js"></script>
+
 </body>
 </html>
