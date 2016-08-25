@@ -75,7 +75,7 @@
 .slots-tools {
 	float: left;
 	height: 40px;
-	width: 40%;
+	width: 50%;
 	margin-top: 20px;
 }
 
@@ -87,12 +87,41 @@
     font-weight: 700;
 }
 
+.slots-save {
+	text-align: center;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-weight: 700;	
+    float: right;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.slots-clear {
+	text-align: center;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-weight: 700;	
+    float: right;
+    background-color: #d9534f;
+    color: white;
+    margin-right: 20px;
+}
+
+.slots-buttons {
+	float: right;
+	height: 40px;
+	width: 50%;
+	margin-top: 20px;
+}
+
 .desactive {
 	background-color: transparent!important;
 }
 
 #available {
 	background-color: #7cfc00;
+	opacity: 1;
 }
 
 #maybe {
@@ -101,4 +130,25 @@
 
 #eraser {
 	background-color: #FFF;
+}
+
+.slots-bar {
+	position: relative;
+	float: left;
+	margin-top: 30px;
+	height: 40px;
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	background-color: #f5f2f2;
+}
+
+.bar-fill {
+	position: absolute;
+	float: left;
+	height: 38px;
+	width: 0px;
+	border: 0;
+	background-color: #7cfc00;
 }
