@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var color = 'transparent';
 	var barfill = 0;
 	var ctrl = 0;
+	var ctrl2 = 0;
 
 	//Select colors (Slots)
 	$('#eraser').click(function(){
@@ -56,13 +57,29 @@ $(document).ready(function(){
 			$(this).removeClass('firstpass');
 		}
 
-		if(barfill == 10) {
-			setInterval(alert ('You have filled 10 slots, if possible fill more 5 slots'), 1000);
+		if(barfill == 10 && ctrl2 == 0) {
+			alert ('You have filled 10 slots, if possible fill more 5 slots');
+			ctrl2 = 1;
 		}
 
-		$('#mainNav').click(function(){
-			alert('barfill: ' + barfill);
-		});
+		if(barfill == 15 && ctrl2 == 1) {
+			alert ('You have filled 15 slots, congratz!');
+			ctrl2 = 2;
+		}
+
+		result = barfill * 66.6;
+		if(result < 1000)
+			$('.bar-fill').animate({width: result}, 200);
+	});
+
+	$('.slots-clear').click(function(){
+		$('.slots-content').css('background-color', 'transparent');
+		$('.slots-content').removeClass('counted');
+		$('.slots-content').removeClass('firstpass');
+		$('.slots-content').removeClass('removed');
+		barfill = 0;
+		$('.bar-fill').animate({width: 0}, 500);
+		ctrl2 = 0;
 	});
 
 });
