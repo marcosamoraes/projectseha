@@ -42,6 +42,8 @@
 
 .disp-content h2 {
 	margin-top: 15px;
+    text-align: center;
+ 	padding-bottom: 10px;
 }
 
 #disponibilidade {
@@ -150,6 +152,7 @@
 	width: 0px;
 	border: 0;
 	background-color: #7cfc00;
+    max-width: 997px;
 }
 
 .bar-info {
@@ -161,3 +164,21 @@
 .bar-info p {
 	float: right;
 }
+
+#bar-good {
+ 	position:relative; 
+ 	right: 200px;
+ }
+ 
+ .observation {
+ 	position: relative;
+ 	float: left;
+ 	padding-top: 30px;
+ 	width: 100%;
+ }
+ 
+ .observation textarea {
+ 	width: 100%;
+ 	height: 150px;
+ 	max-width: 100%;
+ }

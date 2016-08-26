@@ -35,12 +35,16 @@ $(document).ready(function () {
     $('.slots-content').click(function () {
         $(this).css('background-color', color);
         if (color != 'transparent') {
+            $(this).css('border', 'solid');
+            $(this).css('border-width', '1px');
+            $(this).css('border-color', 'white');
             $(this).addClass('counted');
             $(this).removeClass('removed');
         } else {
             if ($(this).hasClass('counted')) {
                 $(this).removeClass('counted');
                 $(this).addClass('removed');
+                $(this).css('border', '0');
                 ctrl = 0;
             }
         }
@@ -74,6 +78,7 @@ $(document).ready(function () {
 
     $('.slots-clear').click(function () {
         $('.slots-content').css('background-color', 'transparent');
+        $('.slots-content').css('border', '0');
         $('.slots-content').removeClass('counted');
         $('.slots-content').removeClass('firstpass');
         $('.slots-content').removeClass('removed');
