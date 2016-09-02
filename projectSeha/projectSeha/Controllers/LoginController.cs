@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class LoginController : Controller
+    public class loginController : Controller
     {
         // GET: Login
         public ActionResult Index()
