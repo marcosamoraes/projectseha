@@ -14,7 +14,7 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
-        public ActionResult Avaiability()
+        public ActionResult Availability()
         {
             return View();
         }
