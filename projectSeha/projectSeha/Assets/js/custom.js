@@ -2,10 +2,13 @@
 
 $(document).ready(function () {
 
-    var color = 'transparent';
+    var color = '#7cfc00';
     var barfill = 0;
     var ctrl = 0;
     var ctrl2 = 0;
+    var bar_width = $('.slots-bar').width();
+    $('.bar-fill').css('max-width', bar_width);
+    bar_width = bar_width / 15;
 
     //Select colors (Slots)
     $('#eraser').click(function () {
@@ -33,47 +36,48 @@ $(document).ready(function () {
     });
 
     $('.slots-content').click(function () {
-        $(this).css('background-color', color);
-        if (color != 'transparent') {
-            $(this).css('border', 'solid');
-            $(this).css('border-width', '1px');
-            $(this).css('border-color', 'white');
-            $(this).addClass('counted');
-            $(this).removeClass('removed');
-        } else {
+        if (!$(this).hasClass('desactive')) {
+            $(this).css('background-color', color);
+            if (color != 'transparent') {
+                $(this).css('border', 'solid');
+                $(this).css('border-width', '1px');
+                $(this).css('border-color', 'white');
+                $(this).addClass('counted');
+                $(this).removeClass('removed');
+            } else {
+                if ($(this).hasClass('counted')) {
+                    $(this).removeClass('counted');
+                    $(this).addClass('removed');
+                    $(this).css('border', '0');
+                    ctrl = 0;
+                }
+            }
+
             if ($(this).hasClass('counted')) {
-                $(this).removeClass('counted');
-                $(this).addClass('removed');
-                $(this).css('border', '0');
-                ctrl = 0;
+                if (!$(this).hasClass('firstpass')) {
+                    barfill += 1;
+                    $(this).addClass('firstpass');
+                }
+                $(this).addClass('counted');
+            } else if ($(this).hasClass('removed')) {
+                barfill -= 1;
+                $(this).removeClass('removed');
+                $(this).removeClass('firstpass');
             }
-        }
-
-        if ($(this).hasClass('counted')) {
-            if (!$(this).hasClass('firstpass')) {
-                barfill += 1;
-                $(this).addClass('firstpass');
+            /*
+            if (barfill == 10 && ctrl2 == 0) {
+                alert('You have filled 10 slots, if possible fill more 5 slots');
+                ctrl2 = 1;
             }
-            $(this).addClass('counted');
-        } else if ($(this).hasClass('removed')) {
-            barfill -= 1;
-            $(this).removeClass('removed');
-            $(this).removeClass('firstpass');
-        }
-
-        if (barfill == 10 && ctrl2 == 0) {
-            alert('You have filled 10 slots, if possible fill more 5 slots');
-            ctrl2 = 1;
-        }
-
-        if (barfill == 15 && ctrl2 == 1) {
-            alert('You have filled 15 slots, congratz!');
-            ctrl2 = 2;
-        }
-
-        result = barfill * 66.6;
-        if (result < 1000)
+    
+            if (barfill == 15 && ctrl2 == 1) {
+                alert('You have filled 15 slots, congratz!');
+                ctrl2 = 2;
+            }
+            */
+            result = barfill * bar_width;
             $('.bar-fill').animate({ width: result }, 200);
+        }
     });
 
     $('.slots-clear').click(function () {

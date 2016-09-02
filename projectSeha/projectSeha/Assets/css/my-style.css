@@ -119,6 +119,7 @@
 
 .desactive {
 	background-color: transparent!important;
+    border: 0!important;
 }
 
 #available {
@@ -152,7 +153,6 @@
 	width: 0px;
 	border: 0;
 	background-color: #7cfc00;
-    max-width: 997px;
 }
 
 .bar-info {
