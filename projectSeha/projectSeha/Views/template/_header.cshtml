@@ -1,10 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "SEHA - Login";
-    Layout = "~/Views/template/_blank.cshtml";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -36,7 +30,7 @@
     <link href="" rel="icon" sizes="128x128" />
     <link href="" rel="icon" sizes="16x16" />
 
-    <title>SEHA - Disponibilidade</title>
+    <title>@ViewBag.Title</title>
 
     <!-- ************************ CSS Files ************************ -->
     <!-- Bootstrap CSS -->
@@ -53,25 +47,28 @@
 <body>
 
     <!-- Page Content -->
-    <main id="login-view" class="container">
-        <div class="login-div row">
-            <div class="col-xs-12">
-                <h2 class="title">SEHA</h2>
-                <div class="form-group">
-                    <label for="usr">Name:</label>
-                    <input type="text" class="form-control" id="usr">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
-                </div>
-                <div class="login-button">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- Navbar -->
 
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="logo-nav">
+                <a href="#">SEHA</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll navbar-items" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll navbar-items" href="#">Availability</a>
+                </li>
+                <li>
+                    <a class="page-scroll navbar-items" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    @RenderBody()
 
     <!-- ************************ JS Files ************************ -->
     <!-- jQuery -->

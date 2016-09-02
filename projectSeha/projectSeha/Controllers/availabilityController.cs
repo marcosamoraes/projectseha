@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class avaiabilityController : Controller
+    public class availabilityController : Controller
     {
         // GET: avaiability
         public ActionResult Index()
