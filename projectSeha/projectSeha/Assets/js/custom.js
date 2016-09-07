@@ -91,4 +91,15 @@ $(document).ready(function () {
         ctrl2 = 0;
     });
 
+
+    /*View - Semesters*/
+  
+    $('#selectSemester').click(function () {
+        $('#btnDeleteSemester').removeClass("disabled");   
+    });
+    $('#btnDeleteSemester').click(function () {
+        $('#btnDeleteSemester').addClass("disabled");
+
+    });
+
 });

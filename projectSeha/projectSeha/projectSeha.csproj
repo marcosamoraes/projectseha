@@ -149,6 +149,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\semestersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,6 +165,7 @@
     <Content Include="Views\login\index.cshtml" />
     <Content Include="Views\template\_header.cshtml" />
     <Content Include="Views\template\_blank.cshtml" />
+    <Content Include="Views\semesters\semesters.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

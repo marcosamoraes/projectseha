@@ -213,3 +213,13 @@ html, body, main {
      text-align: center;
      padding-top: 5px;
  }
+
+
+ /*View - Semesters*/
+#buttonsSemester{
+    margin-top: 15px;
+}
+
+#btnDeleteSemester{
+    margin-left:15px;
+}
