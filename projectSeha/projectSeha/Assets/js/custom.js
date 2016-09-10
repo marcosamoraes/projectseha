@@ -99,7 +99,6 @@ $(document).ready(function () {
     });
     $('#btn-delete-semester').click(function () {
         $('#btn-delete-semester').addClass("disabled");
-
     });
 
 });

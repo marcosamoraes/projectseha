@@ -1,16 +1,83 @@
-﻿/* Aqui colocamos nosso próprio css */
+﻿/*Componentes nas cores SEHA*/
+.btn-seha1{
+    color: white;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    transition: all 0.5s;
+}
+.btn-seha1:hover{
+    color: white;
+    background-color: #90A4AE;
+    border-color: #90A4AE;
+}
+
+.btn-seha2{
+    color: white;
+    background-color: #FF7043;
+    border-color: #FF7043;
+    transition: all 0.5s;
+}
+.btn-seha2:hover{
+    color: white;
+    background-color: #FF8A65;
+    border-color: #FF8A65;
+}
+
+.box-seha{
+    background-color: #ECEFF1;
+	padding-bottom:50px;
+    padding-left:50px;
+    padding-right:50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #607D8B;
+    border-radius: 10px;
+}
+.view-title-seha{
+    margin-top:15px;
+    text-align: center;
+    color: #263238;
+    font-size:24px;
+}
+
+
+/* Aqui colocamos nosso próprio css */
 html, body, main {
     height: 100%;
 }
 
+/*Header*/
+.navbar-background{
+    background-color: #607D8B;
+}
+
 .navbar-items {
-	font-size: 18px;
+	font-size: 15px;
 	text-transform: uppercase;
 }
 
 .nav.navbar-nav.navbar-right {
 	padding-right: 20px;
 	padding-top: 8px;
+}
+
+.nav.navbar-nav.navbar-right a {
+    margin-right: 7px;
+    margin-left: 7px;
+    color:white;
+    transition: all 0.3s;
+}
+
+.nav.navbar-nav.navbar-right a:hover {
+    background-color: white;
+    color: #607D8B;  
+    border-radius: 100px;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.nav.navbar-nav.navbar-right a:focus {
+    color: #B0BEC5; 
 }
 
 .logo-nav {
@@ -21,7 +88,7 @@ html, body, main {
 }
 
 .logo-nav a {
-	color: blue;
+	color: white;
 	opacity: 0.6;
 }
 
@@ -30,6 +97,7 @@ html, body, main {
 	text-decoration: none;
 }
 
+/*View Aviability*/
 .disp-box {
 	background-color: #e6e3e3;
 	padding-bottom: 30px;
@@ -186,6 +254,7 @@ html, body, main {
  	max-width: 100%;
  }
 
+ /*View Login*/
  #login-view .login-div {
     background-color: #aaa;
     width: 33%;
@@ -214,7 +283,6 @@ html, body, main {
      padding-top: 5px;
  }
 
-
  /*View - Semesters*/
 #buttons-semester{
     margin-top: 15px;
@@ -226,13 +294,13 @@ html, body, main {
 }
 
 /*Centralização para div's simples*/
-.center-md-10{
+.center-large{
     left:50%;
     position:absolute;
-    width:920px;
-    margin-left:-460px;
+    width:1080px;
+    margin-left:-540px;
 }
-.center-md-6{
+.center-small{
     left:50%;
     position:absolute;
     width:500px;
