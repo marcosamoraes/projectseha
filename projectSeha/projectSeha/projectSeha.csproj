@@ -164,8 +164,8 @@
     </Content>
     <Content Include="Views\availability\availability.cshtml" />
     <Content Include="Views\login\index.cshtml" />
-    <Content Include="Views\template\_header.cshtml" />
-    <Content Include="Views\template\_blank.cshtml" />
+    <Content Include="Views\templateUser\_headerUser.cshtml" />
+    <Content Include="Views\templateUser\_blankUser.cshtml" />
     <Content Include="Views\semesters\semesters.cshtml" />
     <Content Include="Views\about\about.cshtml" />
     <None Include="Web.Debug.config">
