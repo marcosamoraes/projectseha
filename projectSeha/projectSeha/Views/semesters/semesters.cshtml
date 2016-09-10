@@ -1,24 +1,19 @@
 ﻿
 @{
     ViewBag.Title = "SEHA - Semesters";
-    Layout = "~/Views/templateUser/_headerUser.cshtml";
+    Layout = "~/Views/templateAdmin/_headerAdmin.cshtml";
 }
 
 <section id="semesters">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Semesters history</h3>
-                <select id="select-semester" class="form-control" size="7">
-                    <option>2015.2</option>
-                    <option>2015.1</option>
-                </select>
-
-                <div id="buttons-semester">
-                    <button class="btn btn-default" id="btn-new-semester">New Semester</button>
-                    <button class="btn btn-danger disabled" id="btn-delete-semester">Delete</button>
-                </div>
-            </div>
+    <div class="center-md-6">
+        <h3 style="text-align:center">Semesters history</h3> <!--TODO: Aguardando classe css da tela about para reaproveitar código-->
+        <select id="select-semester" class="form-control" size="7">
+            <option>2015.2</option>
+            <option>2015.1</option>
+        </select>
+        <div id="buttons-semester">
+            <button id="btn-new-semester" class="btn btn-default">New Semester</button>
+            <button id="btn-delete-semester" class="btn btn-danger disabled">Delete</button>
         </div>
-    </div>   
+    </div>
 </section>

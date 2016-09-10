@@ -168,6 +168,7 @@
     <Content Include="Views\templateUser\_blankUser.cshtml" />
     <Content Include="Views\semesters\semesters.cshtml" />
     <Content Include="Views\about\about.cshtml" />
+    <Content Include="Views\templateAdmin\_headerAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

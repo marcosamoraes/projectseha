@@ -218,8 +218,24 @@ html, body, main {
  /*View - Semesters*/
 #buttons-semester{
     margin-top: 15px;
+    float:right;
 }
 
 #btn-delete-semester{
     margin-left:15px;
 }
+
+/*Centralização para div's simples*/
+.center-md-10{
+    left:50%;
+    position:absolute;
+    width:920px;
+    margin-left:-460px;
+}
+.center-md-6{
+    left:50%;
+    position:absolute;
+    width:500px;
+    margin-left:-250px;
+}
+
