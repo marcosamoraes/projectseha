@@ -94,11 +94,11 @@ $(document).ready(function () {
 
     /*View - Semesters*/
   
-    $('#selectSemester').click(function () {
-        $('#btnDeleteSemester').removeClass("disabled");   
+    $('#select-semester').click(function () {
+        $('#btn-delete-semester').removeClass("disabled");   
     });
-    $('#btnDeleteSemester').click(function () {
-        $('#btnDeleteSemester').addClass("disabled");
+    $('#btn-delete-semester').click(function () {
+        $('#btn-delete-semester').addClass("disabled");
 
     });
 
