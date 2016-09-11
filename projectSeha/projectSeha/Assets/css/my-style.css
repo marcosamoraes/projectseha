@@ -325,9 +325,41 @@ html, body, main {
 
  /*View - Steps*/
  #buttons-steps{
-
+     margin-top:30px;
+     text-align:center;
  }
-
+ #buttons-steps #btn-step2{
+     margin-left:250px;
+     margin-right:250px;
+ }
+.step {
+    width: 100%;
+    display: none;
+    height: 100%;
+}
+ #steps-content{
+     margin-top:40px;
+     height:100%;
+     width:100%;
+     overflow:hidden;
+ }
+ .step input{
+     display:inline-table;
+     width:300px;
+     height:30px;
+ }
+ .step select{
+     display:inline-table;
+     width:102px;
+     height:31px;
+ }
+ .step table{
+     background-color:#fff;
+ }
+ .step table thead{
+    background-color: #607d8b;
+    color: white;
+ }
 
 /*Centralização para div's simples*/
 .center-large{
@@ -335,6 +367,12 @@ html, body, main {
     position:absolute;
     width:1080px;
     margin-left:-540px;
+}
+.center-medium{
+    left:50%;
+    position:absolute;
+    width:800px;
+    margin-left:-400px;
 }
 .center-small{
     left:50%;
