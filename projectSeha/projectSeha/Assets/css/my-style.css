@@ -10,21 +10,32 @@
     background-color: #90A4AE;
     border-color: #90A4AE;
 }
+.btn-seha1:focus{
+    color: white;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    transition: all 0.5s;
+}
 
 .btn-seha2{
     color: white;
-    background-color: #FF7043;
-    border-color: #FF7043;
+    background-color: #FF8A65;
+    border-color: #FF8A65;
     transition: all 0.5s;
 }
 .btn-seha2:hover{
     color: white;
+    background-color: #FFAB91;
+    border-color: #FFAB91;
+}
+.btn-seha2:focus{
+    color: white;
     background-color: #FF8A65;
     border-color: #FF8A65;
+    transition: all 0.5s;
 }
 
 .box-seha{
-    background-color: #ECEFF1;
 	padding-bottom:50px;
     padding-left:50px;
     padding-right:50px;
@@ -33,17 +44,24 @@
 	border-color: #607D8B;
     border-radius: 10px;
 }
-.view-title-seha{
-    margin-top:15px;
-    text-align: center;
-    color: #263238;
+.font-title-seha{
+    color:#777;
     font-size:24px;
+    text-align:center;
+    margin-bottom:40px;
+}
+.font-info-seha{
+    color:#777;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
 }
 
 
 /* Aqui colocamos nosso próprio css */
 html, body, main {
     height: 100%;
+    background-color: #f7f7f7;
 }
 
 /*Header*/
@@ -285,12 +303,18 @@ html, body, main {
 
  /*View - Semesters*/
 #buttons-semester{
-    margin-top: 15px;
-    float:right;
+    margin-top: 50px;
+    text-align:center;
 }
 
-#btn-delete-semester{
-    margin-left:15px;
+#history-semester{
+    visibility:hidden;
+    margin-top:70px;
+    color: #666;
+}
+
+#btn-new-semester{
+    margin-right:8px;
 }
 
 /*Centralização para div's simples*/

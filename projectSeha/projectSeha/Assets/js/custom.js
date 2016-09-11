@@ -93,12 +93,8 @@ $(document).ready(function () {
 
 
     /*View - Semesters*/
-  
-    $('#select-semester').click(function () {
-        $('#btn-delete-semester').removeClass("disabled");   
-    });
-    $('#btn-delete-semester').click(function () {
-        $('#btn-delete-semester').addClass("disabled");
+    $('#btn-show-semester').click(function () {
+        $('#history-semester').css('visibility', 'visible');
     });
 
 });
