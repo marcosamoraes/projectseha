@@ -56,6 +56,12 @@
     text-align:center;
     margin-bottom:20px;
 }
+.font-info-seha{
+    color:#777;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
+}
 
 
 /* Aqui colocamos nosso próprio css */
@@ -316,6 +322,12 @@ html, body, main {
 #btn-new-semester{
     margin-right:8px;
 }
+
+ /*View - Steps*/
+ #buttons-steps{
+
+ }
+
 
 /*Centralização para div's simples*/
 .center-large{

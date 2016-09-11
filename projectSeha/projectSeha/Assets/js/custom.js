@@ -91,10 +91,11 @@ $(document).ready(function () {
         ctrl2 = 0;
     });
 
-
     /*View - Semesters*/
     $('#btn-show-semester').click(function () {
         $('#history-semester').css('visibility', 'visible');
     });
+
+    /*View - Steps*/
 
 });
