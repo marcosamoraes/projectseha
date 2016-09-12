@@ -97,20 +97,20 @@ $(document).ready(function () {
     });
 
     /*View - Steps*/
-    $('#steps-content div:nth-child(1)').show();
+    $('#step1').show();
     $('#btn-step1').click(function () {
-        $("#steps-content div").hide();
-        $("#steps-content div:nth-child(1)").show();
+        $("#steps-content .step").hide();
+        $("#step1").show();
     });
     $('#btn-step2').click(function () {
-        $("#steps-content div").hide();
-        $("#steps-content div:nth-child(2)").show();
+        $("#steps-content .step").hide();
+        $("#step2").show();
     });
     $('#btn-step3').click(function () {
-        $("#steps-content div").hide();
-        $("#steps-content div:nth-child(3)").show();
+        $("#steps-content .step").hide();
+        $("#step3").show();
     });
-   
+
     $("#txt-step1-prof").keyup(function () {
         $('#select-step-status').val("ALL");
         var colunaprof = '#tb-step1 td:nth-child(1)';
