@@ -380,4 +380,20 @@ html, body, main {
     width:500px;
     margin-left:-250px;
 }
+/*View - About*/
+.font1 {
+    font-size:40px;
+}
+
+.font2{
+    font-size:20px;
+}
+
+.font3{
+    font-size:25px;
+}
+
+#about {
+    text-align: center;
+}
 
