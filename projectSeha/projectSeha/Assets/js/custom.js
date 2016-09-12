@@ -91,4 +91,49 @@ $(document).ready(function () {
         ctrl2 = 0;
     });
 
+    /*View - Semesters*/
+    $('#btn-show-semester').click(function () {
+        $('#history-semester').css('visibility', 'visible');
+    });
+
+    /*View - Steps*/
+    $('#step1').show();
+    $('#btn-step1').click(function () {
+        $("#steps-content .step").hide();
+        $("#step1").show();
+    });
+    $('#btn-step2').click(function () {
+        $("#steps-content .step").hide();
+        $("#step2").show();
+    });
+    $('#btn-step3').click(function () {
+        $("#steps-content .step").hide();
+        $("#step3").show();
+    });
+
+    $("#txt-step1-prof").keyup(function () {
+        $('#select-step-status').val("ALL");
+        var colunaprof = '#tb-step1 td:nth-child(1)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step1 tbody tr").show();
+        $(colunaprof).each(function (){
+            if($(this).text().toUpperCase().indexOf(valor) < 0){
+                $(this).parent().hide();
+            }
+        });
+    });
+    $("#select-step-status").click(function () {
+        $('#txt-step1-prof').val("");
+        var colunastatus = '#tb-step1 td:nth-child(2)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step1 tbody tr").show();
+        if(valor!= "ALL") {
+            $(colunastatus).each(function () {
+                if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                    $(this).parent().hide();
+                }
+            });
+        }   
+    });
+
 });

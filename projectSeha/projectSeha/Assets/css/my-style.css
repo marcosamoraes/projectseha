@@ -1,16 +1,107 @@
-﻿/* Aqui colocamos nosso próprio css */
+﻿/*Componentes nas cores SEHA*/
+.btn-seha1{
+    color: white;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    transition: all 0.5s;
+}
+.btn-seha1:hover{
+    color: white;
+    background-color: #90A4AE;
+    border-color: #90A4AE;
+}
+.btn-seha1:focus{
+    color: white;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    transition: all 0.5s;
+}
+
+.btn-seha2{
+    color: white;
+    background-color: #FF8A65;
+    border-color: #FF8A65;
+    transition: all 0.5s;
+}
+.btn-seha2:hover{
+    color: white;
+    background-color: #FFAB91;
+    border-color: #FFAB91;
+}
+.btn-seha2:focus{
+    color: white;
+    background-color: #FF8A65;
+    border-color: #FF8A65;
+    transition: all 0.5s;
+}
+
+.box-seha{
+	padding-bottom:50px;
+    padding-left:50px;
+    padding-right:50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #607D8B;
+    border-radius: 10px;
+}
+.font-title-seha{
+    color:#777;
+    font-size:24px;
+    text-align:center;
+    margin-bottom:40px;
+}
+.font-info-seha{
+    color:#777;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
+}
+.font-info-seha{
+    color:#777;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+
+/* Aqui colocamos nosso próprio css */
 html, body, main {
     height: 100%;
+    background-color: #f7f7f7;
+}
+
+/*Header*/
+.navbar-background{
+    background-color: #607D8B;
 }
 
 .navbar-items {
-	font-size: 18px;
+	font-size: 15px;
 	text-transform: uppercase;
 }
 
 .nav.navbar-nav.navbar-right {
 	padding-right: 20px;
 	padding-top: 8px;
+}
+
+.nav.navbar-nav.navbar-right a {
+    margin-right: 7px;
+    margin-left: 7px;
+    color:white;
+    transition: all 0.3s;
+}
+
+.nav.navbar-nav.navbar-right a:hover {
+    background-color: white;
+    color: #607D8B;  
+    border-radius: 100px;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.nav.navbar-nav.navbar-right a:focus {
+    color: #B0BEC5; 
 }
 
 .logo-nav {
@@ -21,7 +112,7 @@ html, body, main {
 }
 
 .logo-nav a {
-	color: blue;
+	color: white;
 	opacity: 0.6;
 }
 
@@ -30,6 +121,7 @@ html, body, main {
 	text-decoration: none;
 }
 
+/*View Aviability*/
 .disp-box {
 	background-color: #e6e3e3;
 	padding-bottom: 30px;
@@ -49,7 +141,7 @@ html, body, main {
  	padding-bottom: 10px;
 }
 
-#disponibilidade {
+#allPages {
 	margin-top: 100px;
 }
 
@@ -186,6 +278,7 @@ html, body, main {
  	max-width: 100%;
  }
 
+ /*View Login*/
  #login-view .login-div {
     background-color: #aaa;
     width: 33%;
@@ -213,3 +306,78 @@ html, body, main {
      text-align: center;
      padding-top: 5px;
  }
+
+ /*View - Semesters*/
+#buttons-semester{
+    margin-top: 50px;
+    text-align:center;
+}
+
+#history-semester{
+    visibility:hidden;
+    margin-top:70px;
+    color: #666;
+}
+
+#btn-new-semester{
+    margin-right:8px;
+}
+
+ /*View - Steps*/
+ #buttons-steps{
+     margin-top:30px;
+     text-align:center;
+ }
+ #buttons-steps #btn-step2{
+     margin-left:250px;
+     margin-right:250px;
+ }
+.step {
+    width: 100%;
+    display: none;
+    height: 100%;
+}
+ #steps-content{
+     margin-top:40px;
+     height:100%;
+     width:100%;
+     overflow:hidden;
+ }
+ .step input{
+     display:inline-table;
+     width:300px;
+     height:30px;
+ }
+ .step select{
+     display:inline-table;
+     width:102px;
+     height:31px;
+ }
+ .step table{
+     background-color:#fff;
+ }
+ .step table thead{
+    background-color: #607d8b;
+    color: white;
+ }
+
+/*Centralização para div's simples*/
+.center-large{
+    left:50%;
+    position:absolute;
+    width:1080px;
+    margin-left:-540px;
+}
+.center-medium{
+    left:50%;
+    position:absolute;
+    width:800px;
+    margin-left:-400px;
+}
+.center-small{
+    left:50%;
+    position:absolute;
+    width:500px;
+    margin-left:-250px;
+}
+
