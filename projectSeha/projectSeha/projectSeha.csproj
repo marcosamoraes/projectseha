@@ -76,8 +76,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -148,6 +148,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\aboutController.cs" />
+    <Compile Include="Controllers\assignmentController.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
@@ -171,6 +172,8 @@
     <Content Include="Views\about\about.cshtml" />
     <Content Include="Views\templateAdmin\_headerAdmin.cshtml" />
     <Content Include="Views\steps\steps.cshtml" />
+    <Content Include="Views\assignment\assignment.cshtml" />
+    <Content Include="Controllers\assignmentJSON.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
