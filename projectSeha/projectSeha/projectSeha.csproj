@@ -147,9 +147,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\aboutController.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
+    <Compile Include="Controllers\stepsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -163,9 +165,12 @@
     </Content>
     <Content Include="Views\availability\availability.cshtml" />
     <Content Include="Views\login\index.cshtml" />
-    <Content Include="Views\template\_header.cshtml" />
-    <Content Include="Views\template\_blank.cshtml" />
+    <Content Include="Views\templateUser\_headerUser.cshtml" />
+    <Content Include="Views\templateUser\_blankUser.cshtml" />
     <Content Include="Views\semesters\semesters.cshtml" />
+    <Content Include="Views\about\about.cshtml" />
+    <Content Include="Views\templateAdmin\_headerAdmin.cshtml" />
+    <Content Include="Views\steps\steps.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

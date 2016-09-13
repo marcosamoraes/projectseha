@@ -1,16 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "SEHA - Login";
-    Layout = "~/Views/templateUser/_blankUser.cshtml";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="keywords" content="">
+    <meta name="keywords" content="teste">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,52 +29,55 @@
     <link href="" rel="icon" sizes="128x128" />
     <link href="" rel="icon" sizes="16x16" />
 
-    <title>SEHA - Disponibilidade</title>
+    <title>@ViewBag.Title</title>
 
     <!-- ************************ CSS Files ************************ -->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
     <!-- Google Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">
 
     <!-- Custom Style -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/my-style.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/my-style.css">
 
 </head>
 
 <body>
 
     <!-- Page Content -->
-    <main id="login-view" class="container">
-        <div class="login-div row">
-            <div class="col-xs-12">
-                <h2 class="title">SEHA</h2>
-                <div class="form-group">
-                    <label for="usr">Name:</label>
-                    <input type="text" class="form-control" id="usr">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
-                </div>
-                <div class="login-button">
-                    <button class="btn btn-primary">Login</button>
-                </div>
+    <!-- Navbar -->
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid navbar-background">
+            <div class="logo-nav">
+                <a href="#">SEHA</a>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll navbar-items" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll navbar-items" href="#">Availability</a>
+                </li>
+                <li>
+                    <a class="page-scroll navbar-items" href="#">About</a>
+                </li>
+            </ul>
         </div>
-    </main>
-
-
+    </nav>
+    <section id="allPages">
+        @RenderBody()
+    </section>
     <!-- ************************ JS Files ************************ -->
     <!-- jQuery -->
-    <script type="text/javascript" src="../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script>
 
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script type="text/javascript" src="../assets/js/custom.js"></script>
+    <script type="text/javascript" src="../../assets/js/custom.js"></script>
 
 </body>
 </html>

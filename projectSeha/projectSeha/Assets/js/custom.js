@@ -91,15 +91,81 @@ $(document).ready(function () {
         ctrl2 = 0;
     });
 
-
     /*View - Semesters*/
-  
-    $('#selectSemester').click(function () {
-        $('#btnDeleteSemester').removeClass("disabled");   
-    });
-    $('#btnDeleteSemester').click(function () {
-        $('#btnDeleteSemester').addClass("disabled");
-
+    $('#btn-show-semester').click(function () {
+        $('#history-semester').css('visibility', 'visible');
     });
 
+    /*View - Steps*/
+    $('#step1').show();
+    $('#btn-step1').click(function () {
+        $("#steps-content .step").hide();
+        $("#step1").show();
+    });
+    $('#btn-step2').click(function () {
+        $("#steps-content .step").hide();
+        $("#step2").show();
+    });
+    $('#btn-step3').click(function () {
+        $("#steps-content .step").hide();
+        $("#step3").show();
+    });
+
+    $("#txt-step1-prof").keyup(function () {
+        $('#select-step1-status').val("");
+        var colunaprof = '#tb-step1 td:nth-child(1)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step1 tbody tr").show();
+        $(colunaprof).each(function (){
+            if($(this).text().toUpperCase().indexOf(valor) < 0){
+                $(this).parent().hide();
+            }
+        });
+    });
+    $("#select-step1-status").click(function () {
+        $('#txt-step1-prof').val("");
+        var colunastatus = '#tb-step1 td:nth-child(2)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step1 tbody tr").show();
+        if(valor!= "ALL") {
+            $(colunastatus).each(function () {
+                if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                    $(this).parent().hide();
+                }
+            });
+        }   
+    });
+    /*Reaproveitar código do filtro da step1*/
+    $("#txt-step2-prof").keyup(function () { 
+        $('#select-step2-status').val("");
+        var colunaprof = '#tb-step2 td:nth-child(1)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step2 tbody tr").show();
+        $(colunaprof).each(function () {
+            if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                $(this).parent().hide();
+            }
+        });
+    });
+    /*Reaproveitar código do filtro da step1*/
+    $("#select-step2-status").click(function () {
+        $('#txt-step2-prof').val("");
+        var colunastatus = '#tb-step2 td:nth-child(2)';
+        var valor = $(this).val().toUpperCase();
+        $("#tb-step2 tbody tr").show();
+        if (valor != "ALL") {
+            $(colunastatus).each(function () {
+                if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                    $(this).parent().hide();
+                }
+            });
+        }
+    });
+    
+    $("#tb-step2 tr td").click(function () {
+        $("#p-disp-step2").html(""+$(this).text());
+    });
+
+
+    
 });

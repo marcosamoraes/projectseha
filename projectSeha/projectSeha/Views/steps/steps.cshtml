@@ -1,20 +1,110 @@
-﻿
-@{
-    ViewBag.Title = "SEHA - Availability";
-    Layout = "~/Views/templateUser/_headerUser.cshtml";
+﻿@{
+    ViewBag.Title = "SEHA - Steps";
+    Layout = "~/Views/templateAdmin/_headerAdmin.cshtml";
 }
 
-    <!-- Principal Content -->
+<section id="steps">
+    <div class="center-medium">
+        <p class="font-info-seha">Semester in progress</p>
+        <div id="buttons-steps">
+            <button id="btn-step1" class="btn btn-default btn-seha2">Step One</button>
+            <button id="btn-step2" class="btn btn-default btn-seha1">Step Two</button>
+            <button id="btn-step3" class="btn btn-default btn-seha1">Step Three</button>
+        </div>
+        <div id="steps-content">
 
-    <section id="availability">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-10 disp-box"> <!--Sugestão: Usar classe "box-seha"-->
+            <!--Step 1-->
+
+            <div id="step1" class="step">
+                <text>Professor</text>
+                <input id="txt-step1-prof" class="form-group form-control" />
+                <select id="select-step1-status" class="form-control">
+                    <option>All</option>
+                    <option>Waiting</option>
+                    <option>Ready</option>
+                </select>
+                <table id="tb-step1" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th id="teste">Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João A. A. Viana</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Fulana</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Jorge Carlos</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--Step 2-->
+
+            <div id="step2" class="step">
+                <text>Professor</text>
+                <input id="txt-step2-prof" class="form-group form-control" />
+                <select id="select-step2-status" class="form-control">
+                    <option>All</option>
+                    <option>Waiting</option>
+                    <option>Ready</option>
+                </select>
+                <table id="tb-step2" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th id="teste">Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maria Fulana</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Jorge Carlos</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>João A. A. Viana</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Fulana</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Jorge Carlos</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                    </tbody>
+                </table>
+                  
+
+
+           
+
+
+                <div class="center-large box-seha">
+                    <!--Sugestão: Usar classe "box-seha"-->
                     <div class="disp-content">
-                        <h2>Fill the blocks according to your availability</h2> <!--Sugestão: Usar classe "font-title-seha"-->
-
+                        <p id="p-disp-step2" class="font-title-seha">Professor: Jorge Carlos</p> 
                         <!-- Slots -->
 
                         <div class="slots">
@@ -232,8 +322,20 @@
 
                     </div>
                 </div>
-                <div class="col-md-1">
-                </div>
+
+
+
+
+
+
+
+            </div>
+
+            <!--Step 3-->
+
+            <div id="step3" class="step">
+                tela 3
             </div>
         </div>
-    </section>
+    </div>
+</section>
