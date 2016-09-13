@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "assignment";
+    Layout = "~/Views/templateAdmin/_headerAdmin.cshtml";
+
+    //String teste = "<h1>teste</h1>";
+}
+
+
+<div id="tabela"></div>
+<input type="button" onclick="teste()" />
+
+<script type="text/javascript">
+    function teste() {
+        var content = "<h1>testes</h1>"
+        document.getElementById("tabela").innerHTML = content;
+    }
+
+</script>
