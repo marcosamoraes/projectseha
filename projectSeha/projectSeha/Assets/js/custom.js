@@ -165,7 +165,5 @@ $(document).ready(function () {
     $("#tb-step2 tr td").click(function () {
         $("#p-disp-step2").html(""+$(this).text());
     });
-
-
-    
+   
 });
