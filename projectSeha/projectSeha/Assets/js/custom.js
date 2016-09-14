@@ -161,7 +161,16 @@ $(document).ready(function () {
             });
         }
     });
+
+    /*Pula pra step 2 com nome de professor filtrado*/
+    $("#tb-step1 tr td:nth-child(1)").click(function () { 
+        $('#btn-step2').click();
+        $("#p-disp-step2").html("" + $(this).text());
+        $('#txt-step2-prof').val("" + $(this).text());
+        $("#txt-step2-prof").keyup();
+    });
     
+    /*Carrega tela de disponibilidade de professor selecionado*/
     $("#tb-step2 tr td:nth-child(1)").click(function () {
         $("#p-disp-step2").html("" + $(this).text());
         $('#txt-step2-prof').val("" + $(this).text());
