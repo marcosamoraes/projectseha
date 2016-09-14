@@ -344,7 +344,7 @@ html, body, main {
  }
  .step input{
      display:inline-table;
-     width:300px;
+     width:504px;
      height:30px;
  }
  .step select{
@@ -352,6 +352,7 @@ html, body, main {
      width:102px;
      height:31px;
  }
+
  .step table{
      background-color:#fff;
  }
@@ -364,8 +365,25 @@ html, body, main {
     color: white;
  }
  .scroll-table{
-    max-height:200px;
+    width:800px;
+ }
+ .scroll-table tbody td,
+ .scroll-table thead th{
+    width:580px;
+ }
+ .scroll-table thead th:last-child {
+    width: 229px;
+ }
+ .scroll-table tbody td:last-child {
+    width: 212px; 
+ }
+ .scroll-table tbody{
+    max-height:220px;  
     overflow-y:scroll;
+ }
+ .scroll-table tbody,
+ .scroll-table thead tr {
+      display: block;
  }
 
 /*Centralização para div's simples*/

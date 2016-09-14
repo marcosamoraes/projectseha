@@ -162,8 +162,10 @@ $(document).ready(function () {
         }
     });
     
-    $("#tb-step2 tr td").click(function () {
-        $("#p-disp-step2").html(""+$(this).text());
+    $("#tb-step2 tr td:nth-child(1)").click(function () {
+        $("#p-disp-step2").html("" + $(this).text());
+        $('#txt-step2-prof').val("" + $(this).text());
+        $("#txt-step2-prof").keyup();
     });
    
 });
