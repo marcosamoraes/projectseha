@@ -326,18 +326,19 @@ html, body, main {
  #buttons-steps{
      margin-top:30px;
      text-align:center;
+     position:relative;
  }
- #buttons-steps #btn-step2{
-     margin-left:250px;
-     margin-right:250px;
+ #buttons-steps #btn-step1{
+      float:left;
  }
-.step {
-    width: 100%;
+ #buttons-steps #btn-step3{
+     float:right;
+ }
+ .step {
     display: none;
-    height: 100%;
 }
  #steps-content{
-     margin-top:40px;
+     margin-top:50px;
      height:100%;
      width:100%;
  }
@@ -348,11 +349,10 @@ html, body, main {
  }
  .step select{
      display:inline-table;
-     width:102px;
+     width:200px;
      height:31px;
  }
-
- .step table{
+  .step table{
      background-color:#fff;
  }
  .step table tbody tr:hover{
@@ -384,8 +384,17 @@ html, body, main {
  .scroll-table thead tr {
       display: block;
  }
+  .clear-filter{
+      color: #9a9a9a;
+ }
+ .clear-filter:hover{
+      color: #b7b7b7;
+ }
+ .disp-step{
+     display:none;
+ }
 
-/*Centralização para div's simples*/
+/*Centralização para div's simples (não responsível)*/
 .center-large{
     left:50%;
     position:absolute;

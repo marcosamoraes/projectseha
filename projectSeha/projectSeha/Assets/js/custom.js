@@ -175,6 +175,12 @@ $(document).ready(function () {
         $("#p-disp-step2").html("" + $(this).text());
         $('#txt-step2-prof').val("" + $(this).text());
         $("#txt-step2-prof").keyup();
+        $(".disp-step").show();
+    });
+    $(".clear-filter").click(function () {
+        $(".step table tbody tr").show();
+        $(".step input").val("");
+        $(".step select").val("");
     });
    
 });

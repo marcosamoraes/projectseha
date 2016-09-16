@@ -7,10 +7,11 @@
     <div class="center-medium">
         <p class="font-seha font-seha-info">Semester in progress</p>
         <div id="buttons-steps">
-            <button id="btn-step1" class="btn btn-default btn-seha2">Step One</button>
-            <button id="btn-step2" class="btn btn-default btn-seha1">Step Two</button>
-            <button id="btn-step3" class="btn btn-default btn-seha1">Step Three</button>
+            <button id="btn-step1" class="btn btn-seha2">Step One</button>
+            <button id="btn-step2" class="btn btn-seha1">Step Two</button>
+            <button id="btn-step3" class="btn btn-seha1">Step Three</button>
         </div>
+
         <div id="steps-content">
 
             <!--Step 1-->
@@ -22,39 +23,41 @@
                     <option>Waiting</option>
                     <option>Ready</option>
                 </select>
+                <div class="clear-filter" style="position:relative; float:right;">
+                    <span class="clear-filter fa fa-2x fa-times"></span>
+                </div>
+                <table id="tb-step1" class="table table-bordered scroll-table">
+                    <thead>
+                        <tr>
+                            <th id="teste">Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João A. A. Viana</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Fulana</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Jorge Carlos</td>
+                            <td>Ready</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <table id="tb-step1" class="table table-bordered scroll-table">
-                        <thead>
-                            <tr>
-                                <th id="teste">Name</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>João A. A. Viana</td>
-                                <td>Waiting</td>
-                            </tr>
-                            <tr>
-                                <td>Maria Fulana</td>
-                                <td>Ready</td>
-                            </tr>
-                            <tr>
-                                <td>Jorge Carlos</td>
-                                <td>Ready</td>
-                            </tr>
-                            <tr>
-                                <td>Antonio João</td>
-                                <td>Waiting</td>
-                            </tr>
-                        </tbody>
-                    </table>
-              
 
 
             </div>
 
-            <!--Step 2-->                       
+            <!--Step 2-->
 
             <div id="step2" class="step">
                 <text>Professor</text>
@@ -63,7 +66,9 @@
                     <option>Waiting</option>
                     <option>Ready</option>
                 </select>
-                <span class="glyphicon glyphicon-remove"></span>
+                <div class="clear-filter" style="position:relative; float:right;">
+                    <span class="clear-filter fa fa-2x fa-times"></span>
+                </div>
                 <div class="scroll-table">
                     <table id="tb-step2" class="table table-bordered scroll-table">
                         <thead>
@@ -100,234 +105,233 @@
                         </tbody>
                     </table>
                 </div>
-                  
+
+                
 
 
-           
+                <div class="disp-step">
+                    <div class="center-large box-seha">
+                        <!--Sugestão: Usar classe "box-seha"-->
+                        <div class="disp-content">
+                            <p id="p-disp-step2" class="font-seha font-seha-info">Professor: Jorge Carlos</p>
+                            <!-- Slots -->
 
+                            <div class="slots">
 
-                <div class="center-large box-seha">
-                    <!--Sugestão: Usar classe "box-seha"-->
-                    <div class="disp-content">
-                        <p id="p-disp-step2" class="font-seha font-seha-info">Professor: Jorge Carlos</p> 
-                        <!-- Slots -->
+                                <!-- Slots hours -->
 
-                        <div class="slots">
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Hours</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>7:40 às 9:20</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>9:30 às 11:10</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>11:20 às 13:00</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>13:10 às 14:50</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>15:00 às 16:40</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>16:50 às 18:30</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>19:00 às 20:40</p>
+                                    </div>
+                                    <div class="slots-content desactive">
+                                        <p>20:50 às 22:30</p>
+                                    </div>
+                                </div>
 
-                            <!-- Slots hours -->
+                                <!-- Slots Monday -->
 
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Hours</p>
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Monday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>7:40 às 9:20</p>
+
+                                <!-- Slots Tuesday -->
+
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Tuesday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>9:30 às 11:10</p>
+
+                                <!-- Slots Wednesday -->
+
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Wednesday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>11:20 às 13:00</p>
+
+                                <!-- Slots Thursday -->
+
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Thursday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>13:10 às 14:50</p>
+
+                                <!-- Slots Friday -->
+
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Friday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>15:00 às 16:40</p>
+
+                                <!-- Slots Saturday -->
+
+                                <div class="slots-left">
+                                    <div class="slots-content desactive">
+                                        <p>Saturday</p>
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
+                                    <div class="slots-content">
+                                    </div>
                                 </div>
-                                <div class="slots-content desactive">
-                                    <p>16:50 às 18:30</p>
-                                </div>
-                                <div class="slots-content desactive">
-                                    <p>19:00 às 20:40</p>
-                                </div>
-                                <div class="slots-content desactive">
-                                    <p>20:50 às 22:30</p>
+
+                            </div>
+
+                            <!-- /Slots -->
+                            <!-- Slots buttons -->
+
+                            <div class="slots-tools">
+                                <button class="slots-tbutton" id="available">Available</button>
+                                <button class="slots-tbutton" id="maybe">Maybe</button>
+                                <button class="slots-tbutton" id="eraser">Eraser</button>
+                            </div>
+
+                            <div class="slots-buttons">
+                                <button class="slots-save">Save</button>
+                                <button class="slots-clear">Clear</button>
+                            </div>
+
+                            <!-- /Slots buttons -->
+                            <!-- Slots bar -->
+
+                            <div class="bar-info">
+                                <p>Great - 150%</p>
+                                <p id="bar-good">Good - 100%</p>
+                            </div>
+                            <div class="slots-bar">
+                                <div class="bar-fill">
                                 </div>
                             </div>
 
-                            <!-- Slots Monday -->
+                            <!-- /Slots bar -->
 
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Monday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                            </div>
-
-                            <!-- Slots Tuesday -->
-
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Tuesday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                            </div>
-
-                            <!-- Slots Wednesday -->
-
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Wednesday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                            </div>
-
-                            <!-- Slots Thursday -->
-
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Thursday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                            </div>
-
-                            <!-- Slots Friday -->
-
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Friday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                            </div>
-
-                            <!-- Slots Saturday -->
-
-                            <div class="slots-left">
-                                <div class="slots-content desactive">
-                                    <p>Saturday</p>
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
-                                <div class="slots-content">
-                                </div>
+                            <div class="observation">
+                                <p>Observations:</p>
+                                <textarea placeholder="Write your observations..."></textarea>
                             </div>
 
                         </div>
-
-                        <!-- /Slots -->
-                        <!-- Slots buttons -->
-
-                        <div class="slots-tools">
-                            <button class="slots-tbutton" id="available">Available</button>
-                            <button class="slots-tbutton" id="maybe">Maybe</button>
-                            <button class="slots-tbutton" id="eraser">Eraser</button>
-                        </div>
-
-                        <div class="slots-buttons">
-                            <button class="slots-save">Save</button>
-                            <button class="slots-clear">Clear</button>
-                        </div>
-
-                        <!-- /Slots buttons -->
-                        <!-- Slots bar -->
-
-                        <div class="bar-info">
-                            <p>Great - 150%</p>
-                            <p id="bar-good">Good - 100%</p>
-                        </div>
-                        <div class="slots-bar">
-                            <div class="bar-fill">
-                            </div>
-                        </div>
-
-                        <!-- /Slots bar -->
-
-                        <div class="observation">
-                            <p>Observations:</p>
-                            <textarea placeholder="Write your observations..."></textarea>
-                        </div>
-
                     </div>
                 </div>
-
 
 
 
