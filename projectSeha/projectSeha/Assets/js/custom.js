@@ -143,6 +143,7 @@ $(document).ready(function () {
     /*Reaproveitar código do filtro da step1*/
     $("#txt-step2-prof").keyup(function () {
         $(".disp-step").hide();
+        $(".finish-step").show();
         $('#select-step2-status').val("");
         var colunaprof = '#tb-step2 td:nth-child(1)';
         var valor = $(this).val().toUpperCase();
@@ -156,6 +157,7 @@ $(document).ready(function () {
     /*Reaproveitar código do filtro da step1*/
     $("#select-step2-status").click(function () {
         $(".disp-step").hide();
+        $(".finish-step").show();
         $('#txt-step2-prof').val("");
         var colunastatus = '#tb-step2 td:nth-child(2)';
         var valor = $(this).val().toUpperCase();
@@ -183,13 +185,15 @@ $(document).ready(function () {
         $('#txt-step2-prof').val("" + $(this).text());
         $("#txt-step2-prof").keyup();
         $(".disp-step").slideDown();
+        $(".finish-step").hide();
     });
     $(".clear-filter").click(function () {
         $(".disp-step").hide();
+        $(".finish-step").show();
         $(".step table tbody tr").show();
         $(".step input").val("");
-        $(".step select").val("");
-       
+        $("#step1 select").val("");
+        $("#step2 select").val("");
     });
    
 });

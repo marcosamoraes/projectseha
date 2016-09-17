@@ -363,8 +363,9 @@ p.font-seha{
      width:200px;
      height:31px;
  }
-  .step table{
+ .step table{
      background-color:#fff;
+     margin-bottom:30px;
  }
  .step table tbody tr:hover{
      cursor: default;
@@ -395,20 +396,84 @@ p.font-seha{
  .scroll-table thead tr {
       display: block;
  }
-  .clear-filter{
+ .clear-filter{
       color: #9a9a9a;
+      position:relative;
+      float:right;
  }
  .clear-filter:hover{
       color: #b7b7b7;
  }
  .disp-step {
      display:none;
-     margin-top:50px;
  }
  .disp-step .font-seha-info {
      padding-top:30px;
      margin-bottom:30px;
  }
+ .finish-step{
+     text-align:center;
+ }
+
+ /*Step 3*/
+ #step3 .slots{
+     height:330px;
+ }
+ #step3 .box-seha{
+     padding-bottom:100px;
+ }
+ #step3 .box-seha p{
+     padding-top:20px;
+     margin-bottom:10px;
+ }
+ #step3 button{
+     float:right;
+ }
+
+ #step3 div:nth-child(1){
+   margin-bottom:20px;
+ }
+ #step3 select{
+     width:140px;
+     margin-right:15px;
+ }
+    
+ #select-step3-course{
+     width:300px !important;
+ }
+
+ /*TABELA STEP 3*/
+ #tb-step3{
+     margin-top:30px;
+     color: #777;
+     border:2px solid;
+ }
+
+ #step3 table thead{
+     text-align:center;
+     color: #777;
+     border:0px;
+     background-color:transparent;  
+ }
+ #step3 table thead th{
+     border:0px;
+     text-align:center;
+ }
+  #step3 table tbody td:nth-child(1){
+     padding-top:20px;
+     border:0px;
+ }
+ #step3 table tbody tr{
+     height: 57px;
+     text-align:center;
+ }
+ #step3 table tbody tr:hover{
+     background-color:transparent; 
+ }
+  #step3 table tbody tr p{
+      margin:0px;
+ }
+ /*FIM TABELA STEP 3*/
 
 /*Centralização para div's simples (não responsível)*/
 .center-large{

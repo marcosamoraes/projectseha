@@ -66,7 +66,7 @@
                     <option>Waiting</option>
                     <option>Ready</option>
                 </select>
-                <div class="clear-filter" style="position:relative; float:right;">
+                <div class="clear-filter">
                     <span class="clear-filter fa fa-2x fa-times"></span>
                 </div>
                 <div class="scroll-table">
@@ -105,6 +105,11 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="finish-step">
+                    <button id="btn-finish" class="btn btn-seha1">Finish Editions</button>
+                </div>
+
                 <div class="disp-step disp-content center-large box-seha">
                     <p id="p-disp-step2" class="font-seha font-seha-info">Professor</p>
 
@@ -326,9 +331,272 @@
 
             <!--Step 3-->
 
-            <div id="step3" class="step">
-                tela 3
+            <div id="step3" class="step center-large">
+
+                <div>
+                    <select id="select-step3-course" class="form-control">
+                        <option>Análise e Desenvolvimento de Sistemas</option>
+                        <option>Agronegócio</option>
+                        <option>Informática para Negócios</option>
+                    </select>
+                    <select id="select-step3-semester" class="form-control">
+                        <option>1st Semester</option>
+                        <option>2st Semester</option>
+                        <option>3st Semester</option>
+                        <option>4st Semester</option>
+                        <option>5st Semester</option>
+                        <option>6st Semester</option>
+                    </select>
+                    <select id="select-step3-period" class="form-control">
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                    </select>
+                </div>
+                
+
+                <!--
+                <div class="box-seha">
+                    <p id="step3-result" class="font-seha font-seha-info">Análise e Desenvolvimento - 1º Semestre - Manhã</p>
+
+                    <div class="slots font-seha">
+
+                       
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Hours</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>13:10 to 14:00</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>14:00 to 14:50</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>15:00 to 15:50</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>15:50 to 16:40</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>16:50 to 17:40</p>
+                            </div>
+                            <div class="slots-content desactive">
+                                <p>17:40 to 18:30</p>
+                            </div>
+                        </div>
+
+                      
+
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Monday</p>
+                            </div>
+                            <div class="slots-content">
+                                <p style="text-align:center">20:50 to 22:30</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                       
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Tuesday</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                      
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Wednesday</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                  
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Thursday</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                       
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Friday</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                       
+                        <div class="slots-left">
+                            <div class="slots-content desactive">
+                                <p>Saturday</p>
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                            <div class="slots-content">
+                            </div>
+                        </div>
+
+                    </div>
+
+               
+
             </div>
+            -->
+
+
+                <table id="tb-step3" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Hours</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><p>13:10 to 14:50</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                        </tr>
+                        <tr>
+                            <td>15:00 to 15:50</td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15:50 to 16:40</td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16:50 to 17:40</td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17:40 to 18:30</td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td><p>LP</p><p>Valeria</p></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <button id="btn-step3-export" class="btn btn-seha1">Export to PDF</button>
+                </div>
         </div>
     </div>
 </section>
