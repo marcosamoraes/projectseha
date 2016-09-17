@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-    var color = '#7cfc00';
+    var color = '#4DB6AC';
     var barfill = 0;
     var ctrl = 0;
     var ctrl2 = 0;
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     $('#available').click(function () {
-        color = '#7cfc00';
+        color = '#4DB6AC';
 
         $(this).css('opacity', '1');
         $('#eraser').css('opacity', '0.5');
@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 
     $('#maybe').click(function () {
-        color = '#ffbf00';
+        color = '#FFCC80';
 
         $(this).css('opacity', '1');
         $('#eraser').css('opacity', '0.5');
@@ -39,16 +39,12 @@ $(document).ready(function () {
         if (!$(this).hasClass('desactive')) {
             $(this).css('background-color', color);
             if (color != 'transparent') {
-                $(this).css('border', 'solid');
-                $(this).css('border-width', '1px');
-                $(this).css('border-color', 'white');
                 $(this).addClass('counted');
                 $(this).removeClass('removed');
             } else {
                 if ($(this).hasClass('counted')) {
                     $(this).removeClass('counted');
                     $(this).addClass('removed');
-                    $(this).css('border', '0');
                     ctrl = 0;
                 }
             }
@@ -82,7 +78,6 @@ $(document).ready(function () {
 
     $('.slots-clear').click(function () {
         $('.slots-content').css('background-color', 'transparent');
-        $('.slots-content').css('border', '0');
         $('.slots-content').removeClass('counted');
         $('.slots-content').removeClass('firstpass');
         $('.slots-content').removeClass('removed');

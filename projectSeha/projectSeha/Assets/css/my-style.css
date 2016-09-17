@@ -14,7 +14,6 @@
     color: white;
     background-color: #607D8B;
     border-color: #607D8B;
-    transition: all 0.5s;
 }
 
 .btn-seha2{
@@ -32,7 +31,6 @@
     color: white;
     background-color: #FF8A65;
     border-color: #FF8A65;
-    transition: all 0.5s;
 }
 
 .box-seha{
@@ -67,6 +65,9 @@
 html, body, main {
     height: 100%;
     background-color: #f7f7f7;
+}
+#allPages {
+	margin-top: 100px;
 }
 
 /*Header*/
@@ -121,27 +122,13 @@ html, body, main {
 }
 
 /*View Aviability*/
-.disp-box {
-	background-color: #e6e3e3;
-	padding-bottom: 30px;
-	border-style: solid;
-	border-width: 15px;
-	border-color: #2b78e4;
+p.font-seha{
+    margin-bottom:50px;
 }
 
 .disp-content {
 	margin-left: 20px;
 	margin-right: 20px;
-}
-
-.disp-content h2 {
-	margin-top: 15px;
-    text-align: center;
- 	padding-bottom: 10px;
-}
-
-#allPages {
-	margin-top: 100px;
 }
 
 .slots {
@@ -155,16 +142,15 @@ html, body, main {
 }
 
 .slots-content {
-	-webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
-	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
+	border: 1px solid;
+    border-color:#949494;
 	height: 40px;
 	width: 100%;
 	text-align: center;
 }
 
 .slots-content p {
-	font-size: 18px;
+	font-size: 15px;
 	padding-top: 8px;
 }
 
@@ -173,35 +159,52 @@ html, body, main {
 	height: 40px;
 	width: 50%;
 	margin-top: 20px;
+    padding-left: 15px;
 }
 
 .slots-tbutton {
 	opacity: 0.5;
 	text-align: center;
-    border-radius: 8px;
     padding: 5px 15px;
     font-weight: 700;
+    transition: all 0.5s;
 }
 
 .slots-save {
 	text-align: center;
-    border-radius: 8px;
-    padding: 5px 20px;
-    font-weight: 700;	
+    padding: 5px 20px;	
     float: right;
-    background-color: #5cb85c;
+    background-color: #7cbf7f;
     color: white;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.slots-save:hover {
+    color: white;
+    background-color: #92de95;
+}
+.slots-save:focus {
+    color: white;
+    background-color: #7cbf7f;
 }
 
 .slots-clear {
 	text-align: center;
-    border-radius: 8px;
-    padding: 5px 20px;
-    font-weight: 700;	
+    padding: 5px 20px;	
     float: right;
-    background-color: #d9534f;
+    background-color: #e66161;
     color: white;
     margin-right: 20px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.slots-clear:hover {
+    color: white;
+    background-color: #ff9090;
+}
+.slots-clear:focus {
+    color: white;
+    background-color: #e66161;
 }
 
 .slots-buttons {
@@ -217,16 +220,30 @@ html, body, main {
 }
 
 #available {
-	background-color: #7cfc00;
+	background-color: #00897B;
+    color:white;
 	opacity: 1;
+}
+#available:hover {
+	background-color: #26A69A;
 }
 
 #maybe {
-	background-color: #ffbf00;
+	background-color: #FF8F00;
+    color:white;
+}
+#maybe:hover {
+	background-color: #FFAB40;   
 }
 
 #eraser {
 	background-color: #FFF;
+    border: 2px solid;
+    border-color:#989898;
+    color:#989898;
+}
+#eraser:hover {
+	background-color: #e8e8e8;
 }
 
 .slots-bar {
@@ -246,7 +263,7 @@ html, body, main {
 	height: 38px;
 	width: 0px;
 	border: 0;
-	background-color: #7cfc00;
+	background-color: #4DB6AC;
 }
 
 .bar-info {
