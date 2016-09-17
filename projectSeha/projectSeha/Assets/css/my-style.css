@@ -2,35 +2,29 @@
 .btn-seha1{
     color: white;
     background-color: #607D8B;
-    border-color: #607D8B;
     transition: all 0.5s;
 }
 .btn-seha1:hover{
     color: white;
     background-color: #90A4AE;
-    border-color: #90A4AE;
 }
 .btn-seha1:focus{
     color: white;
     background-color: #607D8B;
-    border-color: #607D8B;
 }
 
 .btn-seha2{
     color: white;
     background-color: #FF8A65;
-    border-color: #FF8A65;
     transition: all 0.5s;
 }
 .btn-seha2:hover{
     color: white;
     background-color: #FFAB91;
-    border-color: #FFAB91;
 }
 .btn-seha2:focus{
     color: white;
     background-color: #FF8A65;
-    border-color: #FF8A65;
 }
 
 .box-seha{
@@ -407,8 +401,13 @@ p.font-seha{
  .clear-filter:hover{
       color: #b7b7b7;
  }
- .disp-step{
+ .disp-step {
      display:none;
+     margin-top:50px;
+ }
+ .disp-step .font-seha-info {
+     padding-top:30px;
+     margin-bottom:30px;
  }
 
 /*Centralização para div's simples (não responsível)*/

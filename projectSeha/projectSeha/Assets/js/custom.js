@@ -96,14 +96,24 @@ $(document).ready(function () {
     $('#btn-step1').click(function () {
         $("#steps-content .step").hide();
         $("#step1").show();
+        $(this).css('background-color', '#FF8A65');
+        $('#btn-step2').css('background-color', '#607D8B');
+        $('#btn-step3').css('background-color', '#607D8B');
+
     });
     $('#btn-step2').click(function () {
         $("#steps-content .step").hide();
         $("#step2").show();
+        $(this).css('background-color', '#FF8A65');
+        $('#btn-step1').css('background-color', '#607D8B');
+        $('#btn-step3').css('background-color', '#607D8B');
     });
     $('#btn-step3').click(function () {
         $("#steps-content .step").hide();
         $("#step3").show();
+        $(this).css('background-color', '#FF8A65');
+        $('#btn-step1').css('background-color', '#607D8B');
+        $('#btn-step2').css('background-color', '#607D8B');
     });
 
     $("#txt-step1-prof").keyup(function () {
@@ -131,7 +141,8 @@ $(document).ready(function () {
         }   
     });
     /*Reaproveitar código do filtro da step1*/
-    $("#txt-step2-prof").keyup(function () { 
+    $("#txt-step2-prof").keyup(function () {
+        $(".disp-step").hide();
         $('#select-step2-status').val("");
         var colunaprof = '#tb-step2 td:nth-child(1)';
         var valor = $(this).val().toUpperCase();
@@ -144,6 +155,7 @@ $(document).ready(function () {
     });
     /*Reaproveitar código do filtro da step1*/
     $("#select-step2-status").click(function () {
+        $(".disp-step").hide();
         $('#txt-step2-prof').val("");
         var colunastatus = '#tb-step2 td:nth-child(2)';
         var valor = $(this).val().toUpperCase();
@@ -170,12 +182,14 @@ $(document).ready(function () {
         $("#p-disp-step2").html("" + $(this).text());
         $('#txt-step2-prof').val("" + $(this).text());
         $("#txt-step2-prof").keyup();
-        $(".disp-step").show();
+        $(".disp-step").slideDown();
     });
     $(".clear-filter").click(function () {
+        $(".disp-step").hide();
         $(".step table tbody tr").show();
         $(".step input").val("");
         $(".step select").val("");
+       
     });
    
 });
