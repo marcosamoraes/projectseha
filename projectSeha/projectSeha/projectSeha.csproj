@@ -169,11 +169,11 @@
     </Content>
     <Content Include="Views\availability\availability.cshtml" />
     <Content Include="Views\login\index.cshtml" />
-    <Content Include="Views\templateUser\_headerUser.cshtml" />
-    <Content Include="Views\templateUser\_blankUser.cshtml" />
+    <Content Include="Views\templates\templateUser\_headerUser.cshtml" />
+    <Content Include="Views\templates\templateLogin\_login.cshtml" />
     <Content Include="Views\semesters\semesters.cshtml" />
     <Content Include="Views\about\about.cshtml" />
-    <Content Include="Views\templateAdmin\_headerAdmin.cshtml" />
+    <Content Include="Views\templates\templateAdmin\_headerAdmin.cshtml" />
     <Content Include="Views\steps\steps.cshtml" />
     <Content Include="Views\assignment\assignment.cshtml" />
     <Content Include="Controllers\assignmentJSON.json" />
