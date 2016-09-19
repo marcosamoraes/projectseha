@@ -206,4 +206,11 @@ $(document).ready(function () {
         }
         ctrl_f4b++;
     });
+
+    /*View Assignment*/
+
+    $("#tbAssignment tr td").click(function () {
+        $(this).css('background-color', 'green');
+    })
+
 });

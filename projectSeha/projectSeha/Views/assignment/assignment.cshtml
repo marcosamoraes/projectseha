@@ -5,7 +5,7 @@
 
 }
 <section id="assignment">
-    <div class="container">
+    <div class="container" style="color:#777">
         <div class="form-group">
             <div style="display:block; margin-top: 7px;">
                 <input  placeholder="Professor" type="text" class="form-control" id="txtProfessor" style="width:300px;" />
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <table class="table table-bordered" style="margin-top:100px;">
+        <table id="tbAssignment" class="table table-bordered" style="cursor:default; background-color:white; margin-top:100px;">
             @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
             {
                 <tbody>
@@ -51,5 +51,7 @@
                 </tbody>
             }
         </table>
+        <button id="btnSave" style="position:relative; float:right"class="btn btn-success">Save</button>
+        <button id="btnCancel" style="position:relative; margin-right:15px; float:right" class="btn btn-danger">Cancel</button>
     </div>
 </section>
