@@ -1,19 +1,19 @@
 ﻿
 @{
-    ViewBag.Title = "assignment";
+    ViewBag.Title = "Assignment";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
-
-    //String teste = "<h1>teste</h1>";
+   
 }
 
-
-<div id="tabela"></div>
-<input type="button" onclick="teste()" />
-
-<script type="text/javascript">
-    function teste() {
-        var content = "<h1>testes</h1>"
-        document.getElementById("tabela").innerHTML = content;
+<table>
+    @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
+    {
+        <thead>@semestre.semestreId</thead>
+        <tr>
+            @foreach (var disciplina in semestre.disciplinas)
+            {
+                <td>@disciplina.siglaDescricao</td>
+            }
+        </tr>
     }
-
-</script>
+</table>
