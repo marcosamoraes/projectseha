@@ -25,6 +25,7 @@ namespace ProjectSeha.Controllers.assignment
             while(i <= 6) { 
                 semestre semestre = new semestre();
                 semestre.semestreId = i;
+                semestre.semestreNome = getNomeSemestre(i);
                 semestre.disciplinas = getDisciplinas(i);
                 listaSemestres.Add(semestre);
                 i++;
@@ -32,6 +33,26 @@ namespace ProjectSeha.Controllers.assignment
             return listaSemestres;
         }
 
+        private String getNomeSemestre(int semestre)
+        {
+            String semestreNome = "";
+            switch (semestre)
+            {
+                case 1: semestreNome = "Primeiro período";
+                    break;
+                case 2: semestreNome = "Segundo período";
+                    break;
+                case 3: semestreNome = "Terceiro período";
+                    break;
+                case 4: semestreNome = "Quarta período";
+                    break;
+                case 5: semestreNome = "Quinto período";
+                    break;
+                case 6: semestreNome = "Sexto período"; 
+                    break;
+            }
+            return semestreNome;
+        }
         private List<disciplina> getDisciplinas(int semestre)
         {
             List<disciplina> listaDisciplinas = new List<disciplina>();
@@ -335,6 +356,7 @@ namespace ProjectSeha.Controllers.assignment
     public class semestre
     {
         public int semestreId;
+        public String semestreNome;
         public List<disciplina> disciplinas;
     }
     public class disciplina

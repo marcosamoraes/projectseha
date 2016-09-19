@@ -5,15 +5,22 @@
    
 }
 
-<table>
+<table class="table table-bordered">
     @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
     {
-        <thead>@semestre.semestreId</thead>
-        <tr>
-            @foreach (var disciplina in semestre.disciplinas)
-            {
-                <td>@disciplina.siglaDescricao</td>
-            }
-        </tr>
+
+        <tbody>
+            <tr>
+                <td>@semestre.semestreNome</td>
+                @foreach (var disciplina in semestre.disciplinas)
+                {
+                    <td>
+                        <input type="checkbox" />
+                        @disciplina.siglaDescricao
+                    </td>
+                }
+            </tr>
+        </tbody>
     }
 </table>
+
