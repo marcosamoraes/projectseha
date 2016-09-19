@@ -2,25 +2,54 @@
 @{
     ViewBag.Title = "Assignment";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
-   
+
 }
+<section id="assignment">
+    <div class="container">
+        <div class="form-group">
+            <div style="display:block; margin-top: 7px;">
+                <input  placeholder="Professor" type="text" class="form-control" id="txtProfessor" style="width:300px;" />
+            </div>
+            <div style="display:block; margin-top: 7px;">
+                <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
+                <label id="lblQuantidadeHoraAtribuida"><span>16</span></label>
+            </div>
+            <div style="display:block; margin-top: 7px;">
+                <div class="col-md-4" style="padding:0;">
+                    <select id="slcCurso" class="form-control" style="width:100%; position:relative; float:left" ">
+                        <option>Courses: </option>
+                        <option>Análise e Desenvolvimento de Sistemas</option>
+                        <option>Informática para Negócios</option>
+                        <option>Agronegócios</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select id="slcTurno" class="form-control" style="width:100%; position:relative; float:left" ">
+                        <option>Period: </option>
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
-<table class="table table-bordered">
-    @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
-    {
-
-        <tbody>
-            <tr>
-                <td>@semestre.semestreNome</td>
-                @foreach (var disciplina in semestre.disciplinas)
+        <table class="table table-bordered" style="margin-top:100px;">
+            @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
+            {
+                <tbody>
+                    <tr>
+                        <td>@semestre.semestreNome</td>
+                        @foreach (var disciplina in semestre.disciplinas)
                 {
-                    <td>
-                        <input type="checkbox" />
-                        @disciplina.siglaDescricao
-                    </td>
-                }
-            </tr>
-        </tbody>
-    }
-</table>
-
+                            <td>
+                                <input type="checkbox" />
+                                @disciplina.siglaDescricao
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</section>

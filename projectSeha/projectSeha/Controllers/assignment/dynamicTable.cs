@@ -38,17 +38,17 @@ namespace ProjectSeha.Controllers.assignment
             String semestreNome = "";
             switch (semestre)
             {
-                case 1: semestreNome = "Primeiro período";
+                case 1: semestreNome = "First";
                     break;
-                case 2: semestreNome = "Segundo período";
+                case 2: semestreNome = "Second";
                     break;
-                case 3: semestreNome = "Terceiro período";
+                case 3: semestreNome = "Thirth";
                     break;
-                case 4: semestreNome = "Quarta período";
+                case 4: semestreNome = "Fourth";
                     break;
-                case 5: semestreNome = "Quinto período";
+                case 5: semestreNome = "Fifth";
                     break;
-                case 6: semestreNome = "Sexto período"; 
+                case 6: semestreNome = "Sixth"; 
                     break;
             }
             return semestreNome;
