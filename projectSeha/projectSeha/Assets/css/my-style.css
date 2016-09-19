@@ -54,6 +54,12 @@
     font-size:36px;
 }
 
+.dropdown-menu {
+    background-color: #607D8B;
+}
+.dnone {
+    display: none;
+}
 
 /* Aqui colocamos nosso próprio css */
 html, body, main {

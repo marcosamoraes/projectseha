@@ -139,6 +139,7 @@
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\images\whale.svg" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\custom.js" />
     <Content Include="Assets\js\jquery.js" />
@@ -155,6 +156,7 @@
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
     <Compile Include="Controllers\stepsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +188,7 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Views\profile\Profile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

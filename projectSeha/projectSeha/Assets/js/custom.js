@@ -6,6 +6,7 @@ $(document).ready(function () {
     var barfill = 0;
     var ctrl = 0;
     var ctrl2 = 0;
+    var ctrl_f4b = 0;
     var bar_width = $('.slots-bar').width();
     $('.bar-fill').css('max-width', bar_width);
     bar_width = bar_width / 15;
@@ -196,4 +197,13 @@ $(document).ready(function () {
         $("#step2 select").val("");
     });
    
+    $("#f4b").click(function () {
+        if (ctrl_f4b == 5) {
+            $("#f4b").slideUp();
+            $("#f6b").slideDown();
+            $("#int5").slideDown();
+            $("#int6").slideDown();
+        }
+        ctrl_f4b++;
+    });
 });
