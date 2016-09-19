@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace ProjectSeha.Controllers
 {
-    public class assignmentController : Controller
+    public class profileController : Controller
     {
-        // GET: assignment
+        // GET: profile
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Assignment()
+
+        public ActionResult Profile()
         {
             return View();
         }
-
     }
 }

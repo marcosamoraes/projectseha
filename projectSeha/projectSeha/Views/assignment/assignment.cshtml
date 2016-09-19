@@ -1,19 +1,57 @@
 ﻿
 @{
-    ViewBag.Title = "assignment";
+    ViewBag.Title = "Assignment";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 
-    //String teste = "<h1>teste</h1>";
 }
+<section id="assignment">
+    <div class="container" style="color:#777">
+        <div class="form-group">
+            <div style="display:block; margin-top: 7px;">
+                <input  placeholder="Professor" type="text" class="form-control" id="txtProfessor" style="width:300px;" />
+            </div>
+            <div style="display:block; margin-top: 7px;">
+                <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
+                <label id="lblQuantidadeHoraAtribuida"><span>16</span></label>
+            </div>
+            <div style="display:block; margin-top: 7px;">
+                <div class="col-md-4" style="padding:0;">
+                    <select id="slcCurso" class="form-control" style="width:100%; position:relative; float:left" ">
+                        <option>Courses: </option>
+                        <option>Análise e Desenvolvimento de Sistemas</option>
+                        <option>Informática para Negócios</option>
+                        <option>Agronegócios</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select id="slcTurno" class="form-control" style="width:100%; position:relative; float:left" ">
+                        <option>Period: </option>
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
-
-<div id="tabela"></div>
-<input type="button" onclick="teste()" />
-
-<script type="text/javascript">
-    function teste() {
-        var content = "<h1>testes</h1>"
-        document.getElementById("tabela").innerHTML = content;
-    }
-
-</script>
+        <table id="tbAssignment" class="table table-bordered" style="cursor:default; background-color:white; margin-top:100px;">
+            @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
+            {
+                <tbody>
+                    <tr>
+                        <td>@semestre.semestreNome</td>
+                        @foreach (var disciplina in semestre.disciplinas)
+                {
+                            <td>
+                                <input type="checkbox" />
+                                @disciplina.siglaDescricao
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+            }
+        </table>
+        <button id="btnSave" style="position:relative; float:right"class="btn btn-success">Save</button>
+        <button id="btnCancel" style="position:relative; margin-right:15px; float:right" class="btn btn-danger">Cancel</button>
+    </div>
+</section>

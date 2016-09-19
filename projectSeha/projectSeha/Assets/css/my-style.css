@@ -63,7 +63,6 @@
 
 /* Aqui colocamos nosso próprio css */
 html, body, main {
-    height: 100%;
     background-color: #f7f7f7;
 }
 #allPages {
