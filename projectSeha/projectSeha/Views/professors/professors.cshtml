@@ -1,12 +1,31 @@
 ﻿
 @{
-    ViewBag.Title = "professors";
+    ViewBag.Title = "SEHA - Professors";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h2>professors</h2>
 
-<div class="font1">
-    <p>Olá</p>
+<div class="row">
+    <div class="div-professors col-lg-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1">Name of professor</span>
+            <input type="text" class="form-control form-group" aria-describedby="sizing-addon1"/>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1">Professional name</span>
+            <input type="text" class="form-control form-group" aria-describedby="sizing-addon1"/>
+            <span class="input-group-addon" id="sizing-addon1">The professor exists?</span>
+            <span class="input-group-addon">
+                <input type="checkbox" aria-label="...">
+                <span id="sizing-addon1">No</span>
+            </span>
+        </div>
+        
 </div>
+
+
+
+
+
 
