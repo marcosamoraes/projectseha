@@ -159,7 +159,6 @@
     <Compile Include="Controllers\courses\coursesController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\professorsController.cs" />
-    <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
     <Compile Include="Controllers\stepsController.cs" />
     <Compile Include="Global.asax.cs">
