@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class profileController : Controller
+    public class passwordController : Controller
     {
-        // GET: profile
+        // GET: password
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Profile()
         {
             return View();
         }
