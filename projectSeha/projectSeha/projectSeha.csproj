@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\bootstrap.vertical-tabs.min.css" />
     <Content Include="Assets\css\my-style.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
@@ -155,9 +156,10 @@
     <Compile Include="Controllers\assignment\assignmentController.cs" />
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
+    <Compile Include="Controllers\courses\coursesController.cs" />
     <Compile Include="Controllers\loginController.cs" />
-    <Compile Include="Controllers\passwordController.cs" />
     <Compile Include="Controllers\professorsController.cs" />
+    <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
     <Compile Include="Controllers\stepsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,8 +191,9 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Views\profile\Profile.cshtml" />
     <Content Include="Views\professors\professors.cshtml" />
-    <Content Include="Views\password\Index.cshtml" />
+    <Content Include="Views\courses\courses.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
