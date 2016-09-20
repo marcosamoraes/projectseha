@@ -6,14 +6,18 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class aboutController : Controller
+    public class adminController : Controller
     {
-        // GET: about
-        public ActionResult Index()
+        // GET: admin
+        public ActionResult Semesters()
         {
             return View();
         }
-        public ActionResult About()
+        public ActionResult Steps()
+        {
+            return View();
+        }
+        public ActionResult Password()
         {
             return View();
         }

@@ -9,10 +9,6 @@ namespace ProjectSeha.Controllers.courses
     public class coursesController : Controller
     {
         // GET: courses
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult Courses()
         {
             return View();

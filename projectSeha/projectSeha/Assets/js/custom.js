@@ -209,8 +209,8 @@ $(document).ready(function () {
 
     /*View Assignment*/
 
-    $("#tbAssignment tr td").click(function () {
+    /*$("#tbAssignment tr td").click(function () {
         $(this).css('background-color', 'green');
-    })
+    })*/
 
 });

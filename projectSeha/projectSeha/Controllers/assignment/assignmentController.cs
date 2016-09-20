@@ -11,10 +11,6 @@ namespace ProjectSeha.Controllers
     public class assignmentController : Controller
     {
         // GET: assignment
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult Assignment()
         {
             dynamicTable dynamicTable = new dynamicTable();
@@ -22,6 +18,5 @@ namespace ProjectSeha.Controllers
 
             return View();
         }
-
     }
 }
