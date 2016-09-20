@@ -54,6 +54,10 @@
     font-size:36px;
 }
 
+.margin-15{
+     margin-bottom: 15px;
+}
+
 .dropdown-menu {
     background-color: #607D8B;
 }
@@ -525,3 +529,32 @@ p.font-seha{
     text-align: center;
 }
 
+/*View Assignment*/
+#assignment{
+    color:#777;
+}
+#assignment select{
+    width:100%;
+    position:relative;
+    float:left;
+}
+#assignment table{
+    cursor:default;
+    background-color:white;
+    margin-top:100px;
+}
+#assignment button{
+    position:relative;
+    float:right;
+}
+#btn-cancel-assignment{
+    margin-right:15px;
+}
+#assignment .col-md-4{
+    padding:0;
+}
+#txt-professor-assignment{
+    width:300px;
+}
+
+/*View Courses*/
