@@ -191,7 +191,6 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
-    <Content Include="Views\profile\Profile.cshtml" />
     <Content Include="Views\professors\professors.cshtml" />
     <Content Include="Views\courses\courses.cshtml" />
     <None Include="Web.Debug.config">
