@@ -156,6 +156,7 @@
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
     <Compile Include="Controllers\availabilityController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\professorsController.cs" />
     <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\semestersController.cs" />
     <Compile Include="Controllers\stepsController.cs" />
@@ -189,6 +190,7 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
     <Content Include="Views\profile\Profile.cshtml" />
+    <Content Include="Views\professors\professors.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
