@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class loginController : Controller
+    public class professorsController : Controller
     {
-        // GET: Login
-        public ActionResult Index()
+        // GET: professors
+        public ActionResult Professors()
         {
             return View();
         }

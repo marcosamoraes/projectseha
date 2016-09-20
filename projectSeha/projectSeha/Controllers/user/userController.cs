@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
-    public class stepsController : Controller
+    public class userController : Controller
     {
-        // GET: steps
-        public ActionResult Index()
+        // GET: user
+        public ActionResult Availability()
         {
             return View();
         }
-        public ActionResult Steps()
+
+        public ActionResult Password()
         {
             return View();
         }

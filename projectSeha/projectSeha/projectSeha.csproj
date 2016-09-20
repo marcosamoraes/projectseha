@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\bootstrap.vertical-tabs.min.css" />
     <Content Include="Assets\css\my-style.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
@@ -151,15 +152,13 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\aboutController.cs" />
+    <Compile Include="Controllers\admin\adminController.cs" />
     <Compile Include="Controllers\assignment\assignmentController.cs" />
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
-    <Compile Include="Controllers\availabilityController.cs" />
-    <Compile Include="Controllers\loginController.cs" />
-    <Compile Include="Controllers\professorsController.cs" />
-    <Compile Include="Controllers\profileController.cs" />
-    <Compile Include="Controllers\semestersController.cs" />
-    <Compile Include="Controllers\stepsController.cs" />
+    <Compile Include="Controllers\courses\coursesController.cs" />
+    <Compile Include="Controllers\default\defaultController.cs" />
+    <Compile Include="Controllers\professors\professorsController.cs" />
+    <Compile Include="Controllers\user\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,14 +170,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\availability\availability.cshtml" />
-    <Content Include="Views\login\index.cshtml" />
+    <Content Include="Views\user\availability.cshtml" />
+    <Content Include="Views\default\index.cshtml" />
     <Content Include="Views\templates\templateUser\_headerUser.cshtml" />
     <Content Include="Views\templates\templateLogin\_login.cshtml" />
-    <Content Include="Views\semesters\semesters.cshtml" />
-    <Content Include="Views\about\about.cshtml" />
+    <Content Include="Views\admin\semesters.cshtml" />
+    <Content Include="Views\default\about.cshtml" />
     <Content Include="Views\templates\templateAdmin\_headerAdmin.cshtml" />
-    <Content Include="Views\steps\steps.cshtml" />
+    <Content Include="Views\admin\steps.cshtml" />
     <Content Include="Views\assignment\assignment.cshtml" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
@@ -189,8 +188,10 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
-    <Content Include="Views\profile\Profile.cshtml" />
     <Content Include="Views\professors\professors.cshtml" />
+    <Content Include="Views\courses\courses.cshtml" />
+    <Content Include="Views\user\password.cshtml" />
+    <Content Include="Views\admin\password.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
