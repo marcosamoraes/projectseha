@@ -1,12 +1,94 @@
 ﻿
 @{
-    ViewBag.Title = "professors";
+    ViewBag.Title = "SEHA - Professors";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h2>professors</h2>
 
-<div class="font1">
-    <p>Olá</p>
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="div-professors col-lg-8">
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1">Name of professor</span>
+            <input type="text" class="form-control form-group" aria-describedby="sizing-addon1" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1">Professional name</span>
+            <input type="text" class="form-control form-group" aria-describedby="sizing-addon1" />
+            <span class="input-group-addon" id="sizing-addon1">The professor exists?</span>
+            <span class="input-group-addon">
+                <input type="checkbox" aria-label="...">
+                <span id="sizing-addon1">No</span>
+            </span>
+        </div>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <!-- Table -->
+            <table class="table prof-table">
+                <tr class="col-table">
+                    <th>Professor name</th>
+                    <th>Professional name</th>
+                </tr>
+
+                <tr class="col-table">
+                    <td>José A. A. Viana</td>
+                    <td>Viana</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Sérgio Ricardo Borges Júnior </td>
+                    <td>Sérgio</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Djalma Domingos da Silva</td>
+                    <td>Djalma</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Antônio Afonso Cortezi</td>
+                    <td>Cortezi</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Carlos Magnus Carlson Filho</td>
+                    <td>Carlos</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Edes Garcia da Costa Filho</td>
+                    <td>Edes</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Evanivaldo Castro Silva Júnior</td>
+                    <td>Júnior</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Lucimar Sasso Vieira</td>
+                    <td>Lucimar</td>
+                </tr>
+
+                <tr class="col-table">
+                    <td>Marildo Domingos da Silva </td>
+                    <td>Marildo</td>
+                </tr>
+            </table>
+            <div class="btn-group- btn-seha1:hover align-btn" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">New</button>
+                <button type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default">Remove</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
 

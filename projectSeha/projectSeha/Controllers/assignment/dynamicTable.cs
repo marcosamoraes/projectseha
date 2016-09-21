@@ -345,7 +345,7 @@ namespace ProjectSeha.Controllers.assignment
 
     }
 
-    public class curso
+    sealed class curso
     {
         public int cursoId;
         public String cursoDescricao;
@@ -353,13 +353,13 @@ namespace ProjectSeha.Controllers.assignment
 
     }
 
-    public class semestre
+    sealed class semestre
     {
         public int semestreId;
         public String semestreNome;
         public List<disciplina> disciplinas;
     }
-    public class disciplina
+    sealed class disciplina
     {
         public int disciplinaId;
         public String siglaDescricao;

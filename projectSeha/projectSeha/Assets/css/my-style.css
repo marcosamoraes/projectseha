@@ -705,3 +705,17 @@ p.font-seha{
     transition: all .4s ease 0s;
 }
 }
+/*Professors style*/
+.prof-table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.col-table{
+    border:solid #607D8B;
+    text-align: left;
+    padding: 8px;
+}
+.align-btn{
+    text-align:right;
+}
