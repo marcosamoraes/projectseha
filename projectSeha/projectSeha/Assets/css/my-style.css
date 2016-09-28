@@ -336,6 +336,11 @@ p.font-seha{
  }
 
  /*View - Semesters*/
+#semesters .observation{
+    margin-top: 200px;
+    text-align:center;
+}
+
 #buttons-semester{
     margin-top: 50px;
     text-align:center;
@@ -407,7 +412,6 @@ p.font-seha{
     width: 212px; 
  }
  .scroll-table tbody{
-    max-height:220px;  
     overflow-y:scroll;
  }
  .scroll-table tbody,
