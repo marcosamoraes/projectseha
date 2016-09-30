@@ -155,11 +155,10 @@
     <Compile Include="Controllers\admin\adminController.cs" />
     <Compile Include="Controllers\assignment\assignmentController.cs" />
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
-    <Compile Include="Controllers\courses\courseObject.cs" />
-    <Compile Include="Controllers\courses\coursesController.cs" />
     <Compile Include="Controllers\default\defaultController.cs" />
     <Compile Include="Controllers\professors\professorsController.cs" />
     <Compile Include="Controllers\user\userController.cs" />
+    <Compile Include="Entity\Pessoa.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
