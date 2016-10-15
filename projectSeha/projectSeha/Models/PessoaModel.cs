@@ -11,7 +11,7 @@ namespace ProjectSeha.Models
     {
         public Pessoa Login(string email, string senha)
         {
-            Usuario e = null;
+            Pessoa e = null;
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -23,8 +23,8 @@ namespace ProjectSeha.Models
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                e = new Usuario();
-                e.IdUsuario = (int)reader["IdUsuario"];
+                e = new Pessoa();
+                e.PessoaId = (int)reader["IdUsuario"];
                 e.Nome = (string)reader["Nome"];
                 e.Email = (string)reader["Email"];
             }
