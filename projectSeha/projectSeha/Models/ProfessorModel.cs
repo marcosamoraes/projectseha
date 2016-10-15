@@ -23,15 +23,15 @@ namespace ProjectSeha.Models
             {
                 Professor e = new Professor();
                
-                e.CodPessoa = (int)reader["IdPessoa"];
+                e.PessoaId = (int)reader["PessoaId"];
                 e.Nome = (string)reader["Nome"];
                 e.Email = (string)reader["Email"];
                 e.Senha = (string)reader["Senha"];
                 e.Permissao_admin = (bool)reader["Permissao_admin"];
                 e.NomeGuerra = (string)reader["NomeGuerra"];
                 e.HorasAula = (int)reader["HorasAula"];
-                e.ExisteProfessor = (bool)reader["ExisteProfessor"];
-                e.InativaProfessor = (bool)reader["InativaProfessor"];
+                e.ProfessorExiste = (bool)reader["ProfessorExiste"];
+                e.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
                 e.Observacoes = (string)reader["Observacoes"];
 
                 lista.Add(e);
@@ -39,28 +39,33 @@ namespace ProjectSeha.Models
             return lista;
         }
 
-        public void Create(Usuario e)
+        public void Create(Professor e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"INSERT INTO Usuario VALUES (@nome, @email, @senha)";
+            cmd.CommandText = @"EXEC ArmazenaProfessor @nome, @email, @senha, @nomeGuerra, @professorExiste";
 
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@email", e.Email);
             cmd.Parameters.AddWithValue("@senha", e.Senha);
+            cmd.Parameters.AddWithValue("@nomeGuerra", e.NomeGuerra);
+            cmd.Parameters.AddWithValue("@professorExiste", e.ProfessorExiste);
 
             cmd.ExecuteNonQuery();
         }
 
-        public void Update(Usuario e)
+        public void Update(Professor e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"UPDATE Usuario SET Nome = @nome, Email = @email WHERE IdUsuario = @idUsuario";
+            cmd.CommandText = @"EXEC AlteraProfessor @id, @nome, @email, @nomeGuerra, @professorExiste, @professorAtivo";
 
+            cmd.Parameters.AddWithValue("@id", e.PessoaId);
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@email", e.Email);
-            cmd.Parameters.AddWithValue("@idUsuario", e.IdUsuario);
+            cmd.Parameters.AddWithValue("@nomeGuerra", e.NomeGuerra);
+            cmd.Parameters.AddWithValue("@professorExiste", e.ProfessorExiste);
+            cmd.Parameters.AddWithValue("@professorAtivo", e.ProfessorAtivo);
 
             cmd.ExecuteNonQuery();
         }
@@ -70,7 +75,7 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"DELETE FROM Usuario WHERE IdUsuario = @id";
+            cmd.CommandText = @"ApagaProfessor @id";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
