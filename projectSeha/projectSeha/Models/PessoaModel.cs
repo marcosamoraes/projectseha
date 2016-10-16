@@ -15,8 +15,7 @@ namespace ProjectSeha.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"SELECT * FROM Usuario WHERE Email = @email and Senha = @senha";
-
+            cmd.CommandText = @"EXEC ValidaLogin @email, @senha";
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
 
@@ -24,11 +23,27 @@ namespace ProjectSeha.Models
             if (reader.Read())
             {
                 e = new Pessoa();
-                e.PessoaId = (int)reader["IdUsuario"];
+                e.PessoaId = (int)reader["PessoaId"];
                 e.Nome = (string)reader["Nome"];
-                e.Email = (string)reader["Email"];
             }
             return e; //se n entrar no if vai retornar usuario null
         }
+
+        //TODO:Verificar se é possível carregar os dados da "Pessoa e" que está logada no sistema no momento
+        public void UpdateSenha(Pessoa e, string senhaAntiga, string senhaNova, string senhaNova2)
+        {
+            if (e.Senha == senhaAntiga && senhaNova == senhaNova2)
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+
+                cmd.CommandText = @"EXEC AlteraSenha @id, @senhaNova";
+                cmd.Parameters.AddWithValue("@id", e.PessoaId);
+                cmd.Parameters.AddWithValue("@senhaNova", senhaNova);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }
