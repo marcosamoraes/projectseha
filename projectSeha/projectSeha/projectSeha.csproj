@@ -158,16 +158,22 @@
     <Compile Include="Controllers\default\defaultController.cs" />
     <Compile Include="Controllers\professors\professorsController.cs" />
     <Compile Include="Controllers\user\userController.cs" />
+    <Compile Include="Entity\Atribuicao.cs" />
     <Compile Include="Entity\Curso.cs" />
     <Compile Include="Entity\Disciplina.cs" />
+    <Compile Include="Entity\Disponibilidade.cs" />
     <Compile Include="Entity\Lembrete.cs" />
     <Compile Include="Entity\Pessoa.cs" />
     <Compile Include="Entity\Professor.cs" />
+    <Compile Include="Entity\Resultado.cs" />
     <Compile Include="Entity\Slot.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LembreteModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\PessoaModel.cs" />
+    <Compile Include="Models\ProfessorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
