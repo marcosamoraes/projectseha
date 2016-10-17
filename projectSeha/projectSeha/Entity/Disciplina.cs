@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjectSeha.Entity
 {
-    public class Disciplina : Curso
+    public class Disciplina 
     {
         public int DisciplinaId { get; set; }
         public int CodCurso { get; set; }
