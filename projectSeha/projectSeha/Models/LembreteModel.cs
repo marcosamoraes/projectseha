@@ -36,8 +36,9 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC ArmazenaLembrete @conteudo";
+            cmd.CommandText = @"EXEC ArmazenaLembrete @data, @conteudo";
 
+            cmd.Parameters.AddWithValue("@data", e.Data);
             cmd.Parameters.AddWithValue("@conteudo", e.Conteudo);
 
             cmd.ExecuteNonQuery();
@@ -53,8 +54,7 @@ namespace ProjectSeha.Models
 
             cmd.ExecuteNonQuery();
         }
-
-
+        
         public void Delete(int id)
         {
             SqlCommand cmd = new SqlCommand();

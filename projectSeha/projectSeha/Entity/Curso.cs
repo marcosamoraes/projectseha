@@ -9,6 +9,6 @@ namespace ProjectSeha.Entity
     {
         public int CursoId { get; set; }
         public string Titulo { get; set; }
-        public int Turno { get; set; }
+        public string Turno { get; set; }
     }
 }

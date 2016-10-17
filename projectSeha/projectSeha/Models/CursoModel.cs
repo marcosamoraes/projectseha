@@ -25,7 +25,7 @@ namespace ProjectSeha.Models
 
                 e.CursoId = (int)reader["CursoId"];
                 e.Titulo = (string)reader["Titulo"];
-                e.Turno = (int)reader["Turno"];
+                e.Turno = (string)reader["Turno"];
 
                 lista.Add(e);
             }

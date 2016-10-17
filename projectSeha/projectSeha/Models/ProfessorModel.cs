@@ -69,8 +69,7 @@ namespace ProjectSeha.Models
 
             cmd.ExecuteNonQuery();
         }
-
-
+        
         public void Delete(int id)
         {
             SqlCommand cmd = new SqlCommand();
