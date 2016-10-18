@@ -7,7 +7,7 @@ using ProjectSeha.Entity;
 
 namespace ProjectSeha.Models
 {
-    public class DisciplinaModel : ModelBase
+    public class DisciplinaModel : ModelBase 
     {
         public List<Disciplina> Read()
         {
