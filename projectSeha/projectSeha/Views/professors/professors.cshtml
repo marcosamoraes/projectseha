@@ -7,24 +7,42 @@
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="input-group">
-            <span class="input-group-addon">Name of professor</span>
-            <input type="text" class="form-control form-group"/>
-        </div>
 
-        <div class="input-group">
-            <span class="input-group-addon">Professional name</span>
-            <input type="text" class="form-control form-group"/>
-            <span class="input-group-addon">The professor exists?</span>
-            <span class="input-group-addon">
-                <input type="checkbox">
-                <span id="sizing-addon1">No</span>
-            </span>
-        </div>
+        <form action="/professors/create" method="post">
+            <div class="input-group">
+                <span class="input-group-addon">Name of professor</span>
+                <input type="text" name="Nome" class="form-control form-group" />
+            </div>
 
+            <div class="input-group">
+                <span class="input-group-addon">Email</span>
+                <input type="text" name="Email" class="form-control form-group" />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Password</span>
+                <input type="text" name="Senha" class="form-control form-group" />
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">Nickname</span>
+                <input type="text" class="form-control form-group" />
+                <span class="input-group-addon">Existing Professor
+                    <input type="checkbox"/>
+                </span>
+                <span class="input-group-addon">Active Professor
+                    <input type="checkbox"/>
+                </span>
+            </div>
+
+            <div style="padding-top:10px; padding-bottom:10px;"> <!--arrumar css-->
+                <button class="btn btn-seha2" type="submit">Save</button>
+            </div>
+        </form>
+
+        
         <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading"></div>
+            
             <!-- Table -->
             <table class="table prof-table">
                 <tr class="col-table">
