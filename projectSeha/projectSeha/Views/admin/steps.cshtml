@@ -3,8 +3,8 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<section id="steps">
-    <div class="center-medium"> <!--Substituir posteriormente por col-lg-8 col-lg-offset-2-->
+<div class="container row">
+    <div class="col-lg-8 col-lg-offset-2"> <!--Substituir posteriormente por 2-->
         <div id="buttons-steps">
             <button id="btn-step1" class="btn btn-seha2">Step One</button>
             <button id="btn-step2" class="btn btn-seha1">Step Two</button>
@@ -15,7 +15,7 @@
 
             <!--Step 1-->
 
-            <div id="step1" class="step">
+            <div id="step1" class="table-seha step">
                 <text>Professor</text>
                 <input id="txt-step1-prof" class="form-group form-control" />
                 <select id="select-step1-status" class="form-control" data-live-search="true">
@@ -26,10 +26,10 @@
                 <div class="clear-filter" style="position:relative; float:right;">
                     <span class="clear-filter fa fa-2x fa-times"></span>
                 </div>
-                <table id="tb-step1" class="table table-bordered scroll-table">
+                <table id="tb-step1" class="table">
                     <thead>
                         <tr>
-                            <th id="teste">Name</th>
+                            <th>Name</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -50,13 +50,57 @@
                             <td>Antonio João</td>
                             <td>Waiting</td>
                         </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio João</td>
+                            <td>Waiting</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
             <!--Step 2-->
 
-            <div id="step2" class="step">
+            <div id="step2" class="table-seha step">
                 <text>Professor</text>
                 <input id="txt-step2-prof" class="form-group form-control" />
                 <select id="select-step2-status" class="form-control">
@@ -67,7 +111,7 @@
                     <span class="clear-filter fa fa-2x fa-times"></span>
                 </div>
                 <div class="scroll-table">
-                    <table id="tb-step2" class="table table-bordered scroll-table">
+                    <table id="tb-step2" class="table">
                         <thead>
                             <tr>
                                 <th id="teste">Name</th>
@@ -417,4 +461,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

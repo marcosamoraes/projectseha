@@ -9,7 +9,7 @@ namespace ProjectSeha.Controllers
     public class professorsController : Controller
     {
         // GET: professors
-        public ActionResult Professors()
+        public ActionResult Index()
         {
             return View();
         }

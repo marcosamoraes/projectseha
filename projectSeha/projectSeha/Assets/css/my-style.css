@@ -65,6 +65,44 @@
     display: none;
 }
 
+
+/*Table-seha*/
+
+.table-seha table{
+    margin-bottom:20px;
+    background-color:#fff;
+
+    border-spacing: 0;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 300px;
+}
+.table-seha table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+    background-color: #607d8b;
+    color: white;
+}
+.table-seha table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+.table-seha table tbody tr {
+    width: 100%;
+}
+.table-seha table tbody tr:hover{
+    cursor: default;
+    background-color:#dcdcdc;
+ }
+.table-seha table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+
+
 /* Aqui colocamos nosso próprio css */
 html, body, main {
     background-color: #f7f7f7;
@@ -357,77 +395,54 @@ p.font-seha{
 }
 
  /*View - Steps*/
- #buttons-steps{
-     margin-top:30px;
-     text-align:center;
-     position:relative;
- }
- #buttons-steps #btn-step1{
-      float:left;
- }
- #buttons-steps #btn-step3{
-     float:right;
- }
- .step {
+
+#steps-content{
+    margin-top:50px;
+}
+.step {
     display: none;
 }
- #steps-content{
-     margin-top:50px;
-     height:100%;
-     width:100%;
+.step input{
+    display:inline-table;
+    width:60%;
+    height:30px;
+}
+.step select{
+    display:inline-table;
+    width:30%;
+    height:31px;
+}
+ #buttons-steps{
+    margin-top:30px;
+    text-align:center;
+    position:relative;
  }
- .step input{
-     display:inline-table;
-     width:504px;
-     height:30px;
+ #buttons-steps #btn-step1{
+    float:left;
  }
- .step select{
-     display:inline-table;
-     width:200px;
-     height:31px;
+ #buttons-steps #btn-step3{
+    float:right;
  }
- .step table{
-     background-color:#fff;
-     margin-bottom:20px;
- }
- .step table tbody tr:hover{
-     cursor: default;
-     background-color:#dcdcdc;
- }
- .step table thead{
-    background-color: #607d8b;
-    color: white;
- }
- .scroll-table{
-    width:800px;
- }
- .scroll-table tbody td,
- .scroll-table thead th{
-    width:580px;
- }
- .scroll-table thead th:last-child {
-    width: 229px;
- }
- .scroll-table tbody td:last-child {
-    width: 212px; 
- }
- .scroll-table tbody{
-    overflow-y:scroll;
- }
- .scroll-table tbody,
- .scroll-table thead tr {
-      display: block;
- }
+
+
+ /*Definir o tamanho das colunas de acordo com cada View*/
+.step table thead th:nth-child(1), .step table tbody td:nth-child(1){
+    width:50% !important;
+}
+.step table thead th:nth-child(2), .step table tbody td:nth-child(2){
+    width:10% !important;
+}
+
  .clear-filter{
-      color: #9a9a9a;
-      position:relative;
-      float:right;
+    color: #9a9a9a;
+    position:relative;
+    float:right;
  }
  .clear-filter:hover{
-      color: #b7b7b7;
+    color: #b7b7b7;
  }
  .disp-step {
-     display:none;
+    display:none;
  }
  .disp-step .font-seha-info {
      padding-top:30px;
@@ -516,6 +531,7 @@ p.font-seha{
     width:500px;
     margin-left:-250px;
 }
+
 /*View - About*/
 .font1 {
     font-size:40px;
@@ -710,17 +726,12 @@ p.font-seha{
     }
 }
 
-/*Professors style*/
-.prof-table{
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+/*Professors*/
+
+/*Definir o tamanho das colunas de acordo com cada View*/
+.prof table thead th:nth-child(1), .prof table tbody td:nth-child(1){
+    width:10% !important;
 }
-.col-table{
-    border:solid #607D8B;
-    text-align: left;
-    padding: 8px;
-}
-.align-btn{
-    text-align:right;
+.prof table thead th:nth-child(2), .prof table tbody td:nth-child(2){
+    width:55% !important;
 }
