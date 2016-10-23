@@ -71,12 +71,12 @@
 .table-seha table{
     margin-bottom:20px;
     background-color:#fff;
-
     border-spacing: 0;
     display: flex;
     flex-flow: column;
     width: 100%;
-    height: 300px;
+    height:100%;
+    max-height: 300px;
 }
 .table-seha table thead {
     flex: 0 0 auto;
@@ -97,6 +97,34 @@
     background-color:#dcdcdc;
  }
 .table-seha table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+
+/*Table Assignments e Result(step3)*/
+.table-grid table{
+    margin-bottom:20px;
+    background-color:#fff;
+    border-spacing: 0;
+    flex-flow: column;
+    width: 100%;
+    height:100%;
+    max-height: 300px;
+}
+.table-grid table thead {
+    flex: 0 0 auto;
+    width: 100%;
+    color: #607d8b;
+}
+.table-grid table tbody {
+    flex: 1 1 auto;
+    display: block;
+}
+.table-grid table tbody tr {
+    width: 100%;
+}
+.table-grid table thead, table tbody tr {
     display: table;
     table-layout: fixed;
 }
@@ -395,7 +423,6 @@ p.font-seha{
 }
 
  /*View - Steps*/
-
 #steps-content{
     margin-top:50px;
 }
@@ -404,12 +431,12 @@ p.font-seha{
 }
 .step input{
     display:inline-table;
-    width:60%;
+    width:81%;
     height:30px;
 }
 .step select{
     display:inline-table;
-    width:30%;
+    width:15%;
     height:31px;
 }
  #buttons-steps{
@@ -423,16 +450,6 @@ p.font-seha{
  #buttons-steps #btn-step3{
     float:right;
  }
-
-
- /*Definir o tamanho das colunas de acordo com cada View*/
-.step table thead th:nth-child(1), .step table tbody td:nth-child(1){
-    width:50% !important;
-}
-.step table thead th:nth-child(2), .step table tbody td:nth-child(2){
-    width:10% !important;
-}
-
  .clear-filter{
     color: #9a9a9a;
     position:relative;
@@ -452,65 +469,50 @@ p.font-seha{
      text-align:center;
  }
 
- /*Step 3*/
- #step3 .slots{
-     height:330px;
- }
- #step3 .box-seha{
-     padding-bottom:100px;
- }
- #step3 .box-seha p{
-     padding-top:20px;
-     margin-bottom:10px;
- }
- #step3 button{
-     float:right;
- }
+  /*Definir o tamanho das colunas de acordo com cada View*/
+.step table thead th:nth-child(1), .step table tbody td:nth-child(1){
+    width:50% !important;
+}
+.step table thead th:nth-child(2), .step table tbody td:nth-child(2){
+    width:10% !important;
+}
 
+ /*Step 3*/
+
+ #step3{
+    display: none;
+ }  
+ #step3 button{
+    float:right;
+    margin-bottom:20px;
+ }
  #step3 div:nth-child(1){
-   margin-bottom:20px;
+    margin-bottom:20px;
  }
  #step3 select{
-     width:140px;
-     margin-right:15px;
+    display:inline-table;
+    width:14%;
+    margin-right:15px;
  }
-    
- #select-step3-course{
-     width:300px !important;
- }
+#select-step3-course {
+    width: 29% !important;
+}
+#step3 table{
+    text-align:center;
+    border: solid 2px;
+    border-color:#607d8b;
+}
+#step3 table thead th{
+    border-bottom: solid 2px;
+    border-bottom-color:#607d8b;
+}
+#step3 table th{
+    text-align:center;
+}
 
- /*TABELA STEP 3*/
- #tb-step3{
-     margin-top:30px;
-     color: #777;
-     border: 2px solid;
- }
+/*Definir o tamanho das colunas de acordo com cada View*/
 
- #step3 table thead{
-     text-align:center;
-     color: #777;
-     border:0px;
-     background-color:transparent;  
- }
- #step3 table thead th{
-     border:0px;
-     text-align:center;
- }
-  #step3 table tbody td:nth-child(1){
-     padding-top:20px;
-     border:0px;
- }
- #step3 table tbody tr{
-     height: 57px;
-     text-align:center;
- }
- #step3 table tbody tr:hover{
-     background-color:transparent; 
- }
-  #step3 table tbody tr p{
-      margin:0px;
- }
- /*FIM TABELA STEP 3*/
+
 
 /*Centralização para div's simples (não responsível)*/
 .center-large{
