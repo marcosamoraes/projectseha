@@ -96,6 +96,7 @@ $(document).ready(function () {
     $('#step1').show();
     $('#btn-step1').click(function () {
         $("#steps-content .step").hide();
+        $("#step3").hide(); //solução não tão boa para esconder a step3
         $("#step1").show();
         $(this).css('background-color', '#FF8A65');
         $('#btn-step2').css('background-color', '#607D8B');
@@ -104,6 +105,7 @@ $(document).ready(function () {
     });
     $('#btn-step2').click(function () {
         $("#steps-content .step").hide();
+        $("#step3").hide(); //solução não tão boa para esconder a step3
         $("#step2").show();
         $(this).css('background-color', '#FF8A65');
         $('#btn-step1').css('background-color', '#607D8B');
@@ -213,4 +215,17 @@ $(document).ready(function () {
         $(this).css('background-color', 'green');
     })*/
 
+});
+
+
+$(document).on('click', '.teste-otacilio', function (e) {
+    $(this).css('background-color', '#607D8B');
+    $(this).css('transition', '1s background-color');
+    $(this).addClass('remover-teste-otacilio');
+});
+
+$(document).on('click', '.remover-teste-otacilio', function (e) {
+    $(this).css('background-color', '#fff');
+    $(this).css('transition', '1s background-color');
+    $(this).removeClass('remover-teste-otacilio');
 });
