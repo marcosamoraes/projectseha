@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectSeha.Entity;
+using ProjectSeha.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +13,11 @@ namespace ProjectSeha.Controllers
         // GET: professors
         public ActionResult Index()
         {
-            return View();
+            ProfessorModel model = new ProfessorModel();
+            List<Professor> lista = model.Read();
+            return View(lista);
         }
+
         public ActionResult Create()
         {
             return View();

@@ -93,7 +93,7 @@
     width: 100%;
 }
 .table-seha table tbody tr:hover{
-    cursor: default;
+    cursor: pointer;
     background-color:#dcdcdc;
  }
 .table-seha table thead, table tbody tr {
@@ -576,6 +576,7 @@ p.font-seha{
 .assignment button{
     position:relative;
     float:right;
+    margin-bottom:20px;
 }
 #btn-cancel-assignment{
     margin-right:15px;
@@ -751,4 +752,7 @@ p.font-seha{
 }
 .prof table thead th:nth-child(2), .prof table tbody td:nth-child(2){
     width:55% !important;
+}
+.prof table thead th:nth-child(5), .prof table tbody td:nth-child(5){
+    text-align:center;
 }

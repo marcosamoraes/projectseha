@@ -199,6 +199,15 @@ $(document).ready(function () {
         $("#step2 select").val("");
     });
    
+   
+    /*View Assignment*/
+
+    /*$("#tbAssignment tr td").click(function () {
+        $(this).css('background-color', 'green');
+    })*/
+
+
+    /*Estar Egg*/
     $("#f4b").click(function () {
         if (ctrl_f4b == 5) {
             $("#f4b").slideUp();
@@ -209,23 +218,4 @@ $(document).ready(function () {
         ctrl_f4b++;
     });
 
-    /*View Assignment*/
-
-    /*$("#tbAssignment tr td").click(function () {
-        $(this).css('background-color', 'green');
-    })*/
-
-});
-
-
-$(document).on('click', '.teste-otacilio', function (e) {
-    $(this).css('background-color', '#607D8B');
-    $(this).css('transition', '1s background-color');
-    $(this).addClass('remover-teste-otacilio');
-});
-
-$(document).on('click', '.remover-teste-otacilio', function (e) {
-    $(this).css('background-color', '#fff');
-    $(this).css('transition', '1s background-color');
-    $(this).removeClass('remover-teste-otacilio');
 });
