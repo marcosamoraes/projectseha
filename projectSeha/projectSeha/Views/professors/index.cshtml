@@ -4,9 +4,9 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h3 class="font-seha" style="text-align:left">Professors</h3>
+<h3 class="font-seha left">Professors</h3>
 
-<div class="container" style="padding-top:30px;">
+<div id="professor" class="container">
     <div class="table-seha prof">
         <input class="form-group form-control" placeholder="Search Professor" />
 
@@ -23,14 +23,14 @@
             <tbody>
                 @foreach (var p in Model)
                 {
-                    <tr onclick="location.href = '/admin/steps';">
+                    <tr onclick="location.href = '/professors/update';">
                         <td>@p.PessoaId</td>
                         <td>@p.Nome</td>
                         <td>@p.ProfessorExiste</td>
                         <td>@p.ProfessorAtivo</td>
                         <td>
                             <div>
-                                <a href="/professor/delete/@p.PessoaId">
+                                <a href="/professors/delete/@p.PessoaId">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </div>

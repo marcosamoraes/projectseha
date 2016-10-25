@@ -4,37 +4,36 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h3 class="font-seha" style="text-align:left" >Register Professor</h3>
+<h3 class="font-seha left">Register Professor</h3>
 
-<div class="container" style="padding-top:30px;">
-    <form class="font-seha" style="text-align:left" action="/professors/create" method="post">
+<div id="professor" class="container">
+    <form class="font-seha" action="/professors/create" method="post">
         <div class="form-group">
             <label>Name</label>
-            <input type="text" name="Nome" style="width:70%; height:30px;" class="form-control" />
+            <input type="text" name="Nome" class="form-control" />
         </div>
 
         <div class="form-group">
             <label>Nickname</label>
-            <input type="text" name="NomeGuerra" style="width:70%; height:30px;" class="form-control" />
+            <input type="text" name="NomeGuerra" class="form-control" />
         </div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="text" name="Email" style="width:70%; height:30px;" class="form-control" />
+            <input type="text" name="Email" class="form-control" />
         </div>
 
-        <div class="form-group">
+        <div id="professor-input-password" class="form-group">
             <label>Password</label>
-            <input type="password" name="Senha" style="width:40%; height:30px;" class="form-control" />
+            <input type="password" name="Senha" class="form-control" />
         </div>
 
         <div class="checkbox">
-            <label style="padding-right:20px;"><input type="checkbox" checked />Existing Professor</label>
-            <label style="padding-right:20px;"><input type="checkbox" checked />Active Professor</label>
+            <label><input type="checkbox" name="ProfessorExiste" checked />Existing Professor</label>
         </div>
 
-        <div style="text-align:right; width:70%; padding-top:10px;">
-            <a style="margin-right:20px;" class="btn btn-seha1" href="/professors/index">
+        <div id="professor-buttons">
+            <a class="btn btn-seha1" href="/professors/index">
                 Cancel
             </a>
             <button class="btn btn-seha2" type="submit">

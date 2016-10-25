@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace ProjectSeha.Models
 {
@@ -43,7 +44,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC ArmazenaProfessor @nome, @email, @senha, @nomeGuerra, @professorExiste";
+            cmd.CommandText = @"ArmazenaProfessor";
+            cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@email", e.Email);
@@ -74,7 +76,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"ApagaProfessor @id";
+            cmd.CommandText = @"ApagaProfessor";
+            cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

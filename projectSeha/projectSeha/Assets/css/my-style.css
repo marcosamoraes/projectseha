@@ -39,7 +39,7 @@
 
 .font-seha {
     color:#777;
-    text-align:center;
+    text-align:left;
 }
 
 .font-seha-info{
@@ -407,6 +407,10 @@ p.font-seha{
     text-align:center;
 }
 
+#semesters .font-seha{
+    text-align:center;
+}
+
 #buttons-semester{
     margin-top: 50px;
     text-align:center;
@@ -745,6 +749,34 @@ p.font-seha{
 }
 
 /*Professors*/
+
+#professor{
+    padding-top:30px;
+}
+
+#professor form{
+    text-align:left;
+}
+
+#professor form .form-group input{
+    width:70%;
+    height:30px;
+}
+
+#professor-input-password{
+    width:40%;
+}
+
+#professor-buttons{
+    text-align:right; 
+    width:70%;
+    padding-top:10px;
+}
+
+#professor-buttons a{
+    margin-right:20px;
+}
+
 
 /*Definir o tamanho das colunas de acordo com cada View*/
 .prof table thead th:nth-child(1), .prof table tbody td:nth-child(1){
