@@ -4,18 +4,21 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 
 }
-<section id="assignment">
-    <div class="container">
+
+<h3 class="font-seha" style="text-align:left">Assignments</h3>
+
+    <div class="container" style="padding-top:30px;">
+    <div class="table-grid assignment">
         <div class="form-group">
-            <div class="margin-15">
-                <input placeholder="Professor" type="text" class="form-control" id="txt-professor-assignment"/>
+            <div>
+                <input placeholder="Professor" type="text" class="form-control" id="txt-professor-assignment" />
             </div>
-            <div class="margin-15">
+            <div>
                 <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
                 <label id="lblQuantidadeHoraAtribuida"><span>16</span></label>
             </div>
             <div class="col-md-4">
-                <select id="slcCurso" class="form-control">
+                <select id="select-assignment-curso" class="form-control">
                     <option>Courses: </option>
                     <option>Análise e Desenvolvimento de Sistemas</option>
                     <option>Informática para Negócios</option>
@@ -23,7 +26,7 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <select id="slcTurno" class="form-control">
+                <select id="select-assignment-turno" class="form-control">
                     <option>Period: </option>
                     <option>Morning</option>
                     <option>Afternoon</option>
@@ -33,7 +36,7 @@
 
         </div>
 
-        <table id="tbAssignment" class="table table-bordered">
+        <table id="tb-assignment" class="table table-bordered">
             @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
             {
                 <tbody>
@@ -53,4 +56,5 @@
         <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
         <button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>
     </div>
-</section>
+</div>
+
