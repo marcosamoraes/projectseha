@@ -204,7 +204,6 @@ $(document).ready(function () {
         location.href = '/professors/update/' + $(this).find('td:nth-child(1)').html();
     });
 
-   
     /*View Assignment*/
 
     /*$("#tbAssignment tr td").click(function () {
@@ -223,4 +222,8 @@ $(document).ready(function () {
         ctrl_f4b++;
     });
 
+});
+
+$(window).load(function () {
+    $('#nameProfessor').focus();
 });
