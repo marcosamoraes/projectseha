@@ -199,6 +199,11 @@ $(document).ready(function () {
         $("#step2 select").val("");
     });
    
+    /*View Professors*/
+    $("#professor tr").click(function(){
+        location.href = '/professors/update/' + $(this).find('td:nth-child(1)').html();
+    });
+
    
     /*View Assignment*/
 
