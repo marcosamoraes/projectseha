@@ -359,7 +359,7 @@ p.font-seha{
  
  .observation textarea {
  	width: 100%;
- 	height: 150px;
+ 	height: 100px;
  	max-width: 100%;
  }
 
@@ -403,7 +403,7 @@ p.font-seha{
 
  /*View - Semesters*/
 #semesters .observation{
-    margin-top: 200px;
+    margin-top: 350px;
     text-align:center;
 }
 
@@ -660,7 +660,6 @@ p.font-seha{
     -webkit-transition: background .5s;
     -moz-transition: background .5s;
     -o-transition: background .5s;
-    -ms-transition: background .5s;
     transition: background .5s;
 }
 .sidebar_name {

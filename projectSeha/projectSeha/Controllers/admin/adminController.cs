@@ -21,5 +21,10 @@ namespace ProjectSeha.Controllers
         {
             return View();
         }
+        
+        public ActionResult Lembrete()
+        {
+            return View();
+        }
     }
 }
