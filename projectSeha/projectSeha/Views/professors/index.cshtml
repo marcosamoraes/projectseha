@@ -23,7 +23,7 @@
             <tbody>
                 @foreach (var p in Model)
                 {
-                    <tr onclick="location.href = '/professors/update/'+$(this).find('td:nth-child(1)').html();">
+                    <tr> <!--onclick="location.href = '/professors/update/'+$(this).find('td:nth-child(1)').html();"-->
                         <td>@p.PessoaId</td>
                         <td>@p.Nome</td>
                         <td>@p.ProfessorExiste</td>
