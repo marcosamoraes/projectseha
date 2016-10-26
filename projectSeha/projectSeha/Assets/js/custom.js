@@ -211,7 +211,7 @@ $(document).ready(function () {
     })*/
 
 
-    /*Estar Egg*/
+    /*Easter Egg*/
     $("#f4b").click(function () {
         if (ctrl_f4b == 5) {
             $("#f4b").slideUp();
@@ -224,6 +224,7 @@ $(document).ready(function () {
 
 });
 
+//Esse código executa após carregar todos os elementos do DOOM
 $(window).load(function () {
-    $('#nameProfessor').focus();
+    $('body').find('input:eq(0)').focus(); //set focus no primeiro input da página (todas as páginas)
 });
