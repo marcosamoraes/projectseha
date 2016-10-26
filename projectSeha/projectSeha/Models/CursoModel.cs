@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using ProjectSeha.Entity;
+using System.Data;
 
 namespace ProjectSeha.Models
 {
@@ -23,9 +24,9 @@ namespace ProjectSeha.Models
             {
                 Curso e = new Curso();
 
-                e.CursoId = (int)reader["CursoId"];
-                e.Titulo = (string)reader["Titulo"];
-                e.Turno = (string)reader["Turno"];
+                e.CursoId = (int) reader["CursoId"];
+                e.Titulo = (string) reader["Titulo"];
+                e.Turno = (string) reader["Turno"];
 
                 lista.Add(e);
             }
@@ -36,6 +37,7 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = @"EXEC ArmazenaCurso @titulo, @turno";
 
             cmd.Parameters.AddWithValue("@titulo", e.Titulo);
@@ -48,6 +50,7 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = @"EXEC AlteraCurso @id, @titulo, @turno";
 
             cmd.Parameters.AddWithValue("@id", e.CursoId);
@@ -62,6 +65,7 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = @"ApagaCurso @id";
 
             cmd.Parameters.AddWithValue("@id", id);
