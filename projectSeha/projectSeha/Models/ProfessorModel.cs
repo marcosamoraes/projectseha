@@ -40,6 +40,36 @@ namespace ProjectSeha.Models
             return lista;
         }
 
+        public Professor Read(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM ViewProfessores WHERE PessoaId = @id"; //fazer procedure com parametro Id de leitura
+
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Professor p = new Professor();
+
+                p.PessoaId = (int)reader["PessoaId"];
+                p.Nome = (string)reader["Nome"];
+                p.Email = (string)reader["Email"];
+                p.Senha = (string)reader["Senha"];
+                p.Permissao_admin = (bool)reader["Permissao_admin"];
+                p.NomeGuerra = (string)reader["NomeGuerra"];
+                p.HorasAula = (int)reader["HorasAula"];
+                p.ProfessorExiste = (bool)reader["ProfessorExiste"];
+                p.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
+                p.Observacoes = (string)reader["Observacoes"];
+
+                return p;
+            }
+            return null;
+        }
+
+
         public void Create(Professor e)
         {
             SqlCommand cmd = new SqlCommand();
@@ -60,7 +90,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC AlteraProfessor @id, @nome, @email, @nomeGuerra, @professorExiste, @professorAtivo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"AlteraProfessor";
 
             cmd.Parameters.AddWithValue("@id", e.PessoaId);
             cmd.Parameters.AddWithValue("@nome", e.Nome);

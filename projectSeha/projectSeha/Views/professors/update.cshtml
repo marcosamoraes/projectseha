@@ -1,0 +1,50 @@
+﻿@model ProjectSeha.Entity.Professor
+
+@{
+    ViewBag.Title = "SEHA - Update Professor";
+    Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
+}
+
+<h3 class="font-seha left">Update Professor</h3>
+
+<div id="professor" class="container">
+    <form class="font-seha" action="/professors/update/@Model.PessoaId" method="post">
+        <div class="form-group">
+            <label>Id</label>
+            <input type="number" disabled name="PessoaId" class="form-control" value="@Model.PessoaId" />
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="Nome" class="form-control" value="@Model.Nome" />
+        </div>
+
+        <div class="form-group">
+            <label>Nickname</label>
+            <input type="text" name="NomeGuerra" class="form-control" value="@Model.NomeGuerra" />
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="Email" class="form-control" value="@Model.Email" />
+        </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="ProfessorExiste" value="@Model.ProfessorExiste"/>Existing Professor</label>
+        </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="ProfessorAtivo" value="@Model.ProfessorAtivo"/>Activate Professor</label>
+        </div>
+
+        <div id="professor-buttons">
+            <a class="btn btn-seha1" href="/professors/index">
+                Cancel
+            </a>
+            <button class="btn btn-seha2" type="submit">
+                Update
+            </button>
+        </div>
+    </form>
+</div>
+

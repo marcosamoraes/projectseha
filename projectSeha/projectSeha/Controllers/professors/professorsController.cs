@@ -49,5 +49,31 @@ namespace ProjectSeha.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            ProfessorModel model = new ProfessorModel();
+            Professor p = model.Read(id);
+
+            return View(p);
+        }
+
+        [HttpPost]
+        public ActionResult Update(int id, FormCollection form)
+        {
+            Professor p = new Professor();
+            p.PessoaId = id;
+            p.Nome = form["Nome"];
+            p.NomeGuerra = form["NomeGuerra"];
+            p.Email = form["Email"];
+            p.ProfessorExiste = (form["ProfessorExiste"] == "on");
+            p.ProfessorAtivo = (form["ProfessorAtivo"] == "on");
+
+            ProfessorModel model = new ProfessorModel();
+            model.Update(p);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -777,7 +777,6 @@ p.font-seha{
     margin-right:20px;
 }
 
-
 /*Definir o tamanho das colunas de acordo com cada View*/
 .prof table thead th:nth-child(1), .prof table tbody td:nth-child(1){
     width:10% !important;
