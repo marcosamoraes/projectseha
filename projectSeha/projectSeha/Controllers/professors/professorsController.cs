@@ -13,9 +13,11 @@ namespace ProjectSeha.Controllers
         // GET: professors
         public ActionResult Index()
         {
-            ProfessorModel model = new ProfessorModel();
-            List<Professor> lista = model.Read();
-            return View(lista);
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                List<Professor> lista = model.Read();
+                return View(lista);
+            }
         }
 
         [HttpGet]
@@ -35,27 +37,31 @@ namespace ProjectSeha.Controllers
             p.Senha = form["Senha"];
             p.ProfessorExiste = (form["ProfessorExiste"] == "on");
 
-            ProfessorModel model = new ProfessorModel();
-            model.Create(p);
-
-            return RedirectToAction("Index");
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                model.Create(p);
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            ProfessorModel model = new ProfessorModel();
-            model.Delete(id);
-            return RedirectToAction("Index");
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                model.Delete(id);
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpGet]
         public ActionResult Update(int id)
         {
-            ProfessorModel model = new ProfessorModel();
-            Professor p = model.Read(id);
-
-            return View(p);
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                Professor p = model.Read(id);
+                return View(p);
+            }
         }
 
         [HttpPost]
@@ -69,10 +75,11 @@ namespace ProjectSeha.Controllers
             p.ProfessorExiste = (form["ProfessorExiste"] == "on");
             p.ProfessorAtivo = (form["ProfessorAtivo"] == "on");
 
-            ProfessorModel model = new ProfessorModel();
-            model.Update(p);
-
-            return RedirectToAction("Index");
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                model.Update(p);
+                return RedirectToAction("Index");
+            }
         }
 
     }
