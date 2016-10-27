@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ProjectSeha.Entity.Lembrete>
 @{
     ViewBag.Title = "SEHA - Semesters";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
@@ -30,8 +30,8 @@
                 @foreach (var l in Model)
                 {
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>@l.Data</td>
+                        <td>@l.Conteudo</td>
                         <td>
                             <div>
                                 <a href="">

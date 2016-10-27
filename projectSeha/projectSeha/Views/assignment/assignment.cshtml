@@ -1,17 +1,24 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Assignment";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 
 }
 
-<h3 class="font-seha" style="text-align:left">Assignments</h3>
+<h3 class="font-seha left">Assignments</h3>
 
-    <div class="container" style="padding-top:30px;">
+<div id="assignment" class="container">
     <div class="table-grid assignment">
         <div class="form-group">
             <div>
-                <input placeholder="Professor" type="text" class="form-control" id="txt-professor-assignment" />
+                <select id="select-assignment-professor" class="form-control">
+                    <option disabled selected hidden>Professors..</option>
+                    @foreach (var item in ViewBag.ListProfessor)
+                    {
+                        <option value="@item.PessoaId">@item.Nome</option>
+                    }
+                </select>
+                @Html.DropDownList("ListProfessor", null, htmlAttributes: new { @id = "select-assignment-professor", @class = "form-control" })
+                @ViewBag.ListProfessor;
             </div>
             <div>
                 <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
@@ -19,7 +26,7 @@
             </div>
             <div class="col-md-4">
                 <select id="select-assignment-curso" class="form-control">
-                    <option>Courses: </option>
+                    <option disabled selected hidden>Courses..</option>
                     <option>Análise e Desenvolvimento de Sistemas</option>
                     <option>Informática para Negócios</option>
                     <option>Agronegócios</option>
@@ -27,7 +34,7 @@
             </div>
             <div class="col-md-2">
                 <select id="select-assignment-turno" class="form-control">
-                    <option>Period: </option>
+                    <option disabled selected hidden>Period..</option>
                     <option>Morning</option>
                     <option>Afternoon</option>
                     <option>Evening</option>

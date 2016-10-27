@@ -558,15 +558,19 @@ p.font-seha{
 /*View Assignment*/
 .assignment{
     color:#777;
+    padding-top:30px;
 }
-
+#select-assignment-professor{
+    margin-bottom:20px;
+    width:48.7%;
+    float:none;
+}
 .assignment input{
     margin-bottom: 15px;
 }
 .assignment label{
     margin-bottom: 15px;
 }
-
 .assignment select{
     width:100%;
     position:relative;
@@ -587,9 +591,6 @@ p.font-seha{
 }
 .assignment .col-md-4{
     padding:0;
-}
-#txt-professor-assignment{
-    width:33.3%;
 }
 
 /*Definir o tamanho das colunas de acordo com cada View*/

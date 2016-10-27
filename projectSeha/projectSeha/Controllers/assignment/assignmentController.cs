@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectSeha.Entity;
+using ProjectSeha.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +18,14 @@ namespace ProjectSeha.Controllers
             dynamicTable dynamicTable = new dynamicTable();
             ViewBag.DadosTabelaDinamica = dynamicTable.getCurso();
 
-            return View();
+            List<Professor> lista;
+
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                 lista = model.Read();
+            }
+            ViewBag.ListProfessor = new SelectList(lista, "PessoaId", "Nome");
+            return View();            
         }
     }
 }
