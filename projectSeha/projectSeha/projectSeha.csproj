@@ -155,7 +155,7 @@
     <Compile Include="Controllers\admin\adminController.cs" />
     <Compile Include="Controllers\assignment\assignmentController.cs" />
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
-    <Compile Include="Controllers\coursesController.cs" />
+    <Compile Include="Controllers\course\coursesController.cs" />
     <Compile Include="Controllers\default\defaultController.cs" />
     <Compile Include="Controllers\professors\professorsController.cs" />
     <Compile Include="Controllers\user\userController.cs" />
@@ -171,7 +171,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CursoModel.cs" />
     <Compile Include="Models\DisciplinaModel.cs" />
     <Compile Include="Models\LembreteModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
