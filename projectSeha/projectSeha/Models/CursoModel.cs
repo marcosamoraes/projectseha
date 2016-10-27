@@ -38,7 +38,7 @@ namespace ProjectSeha.Models
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = @"EXEC ArmazenaCurso @titulo, @turno";
+            cmd.CommandText = @"ArmazenaCurso";
 
             cmd.Parameters.AddWithValue("@titulo", e.Titulo);
             cmd.Parameters.AddWithValue("@turno", e.Turno);
@@ -51,7 +51,7 @@ namespace ProjectSeha.Models
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = @"EXEC AlteraCurso @id, @titulo, @turno";
+            cmd.CommandText = @"AlteraCurso";
 
             cmd.Parameters.AddWithValue("@id", e.CursoId);
             cmd.Parameters.AddWithValue("@titulo", e.Titulo);
@@ -66,7 +66,7 @@ namespace ProjectSeha.Models
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = @"ApagaCurso @id";
+            cmd.CommandText = @"ApagaCurso";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

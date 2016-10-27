@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace ProjectSeha.Models
 {
@@ -15,7 +16,9 @@ namespace ProjectSeha.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC ValidaLogin @email, @senha";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"ValidaLogin";
+
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
 
@@ -36,8 +39,9 @@ namespace ProjectSeha.Models
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = @"AlteraSenha";
 
-                cmd.CommandText = @"EXEC AlteraSenha @id, @senhaNova";
                 cmd.Parameters.AddWithValue("@id", e.PessoaId);
                 cmd.Parameters.AddWithValue("@senhaNova", senhaNova);
 

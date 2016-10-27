@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using ProjectSeha.Entity;
+using System.Data;
 
 namespace ProjectSeha.Models
 {
@@ -38,7 +39,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC ArmazenaDisciplina @codCurso, @nome, @qtdAulas, @semestre, @sigla";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"ArmazenaDisciplina";
 
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@qtdAulas", e.QtdAulas);
@@ -52,7 +54,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC AlteraDisciplina @id, @codCurso, @nome, @qtdAulas, @semestre, @sigla";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"AlteraDisciplina";
 
             cmd.Parameters.AddWithValue("@id", e.DisciplinaId);
             cmd.Parameters.AddWithValue("@codCurso", e.CodCurso);
@@ -69,7 +72,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"ApagaDisciplina @id";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"ApagaDisciplina";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

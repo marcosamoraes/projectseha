@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace ProjectSeha.Models
 {
@@ -36,7 +37,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC ArmazenaLembrete @data, @conteudo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"ArmazenaLembrete";
 
             cmd.Parameters.AddWithValue("@data", e.Data);
             cmd.Parameters.AddWithValue("@conteudo", e.Conteudo);
@@ -48,7 +50,8 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"EXEC AlteraLembrete @conteudo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"AlteraLembrete";
 
             cmd.Parameters.AddWithValue("@conteudo", e.Conteudo);
 
@@ -59,7 +62,9 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"ApagaLembrete @id";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.CommandText = @"ApagaLembrete";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
