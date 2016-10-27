@@ -18,13 +18,21 @@ namespace ProjectSeha.Controllers
             dynamicTable dynamicTable = new dynamicTable();
             ViewBag.DadosTabelaDinamica = dynamicTable.getCurso();
 
-            List<Professor> lista;
+            List<Professor> listaProf;
+            List<Curso> listaCurso;
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                 lista = model.Read();
+                listaProf = model.Read();
             }
-            ViewBag.ListProfessor = new SelectList(lista, "PessoaId", "Nome");
+            using (CursoModel model = new CursoModel())
+            {
+                listaCurso = model.Read();
+            }
+
+            ViewBag.ListCurso = listaCurso;
+            ViewBag.ListProfessor = listaProf;
+
             return View();            
         }
     }
