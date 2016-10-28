@@ -35,5 +35,10 @@ namespace ProjectSeha.Controllers
 
             return View();            
         }
+
+        public PartialViewResult AssignmentCurso()
+        {
+            return PartialView();
+        }
     }
 }

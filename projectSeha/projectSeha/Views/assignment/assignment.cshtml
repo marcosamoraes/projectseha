@@ -44,7 +44,7 @@
 
         </div>
 
-        <table id="tb-assignment" class="table table-bordered">
+        <!--<table id="tb-assignment" class="table table-bordered">
             @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
             {
                 <thead>
@@ -63,8 +63,18 @@
                         }
                     </tr>
                 </tbody>
+
             }
         </table>
+        -->
+        
+        
+        <div id="AssignmentCurso">
+            @{
+                Html.RenderPartial("AssignmentCurso");
+            }
+        </div>
+
         <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
         <button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>
     </div>

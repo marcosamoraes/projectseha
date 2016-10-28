@@ -1,0 +1,24 @@
+﻿<table id="tb-assignment" class="table table-bordered">
+    @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
+            {
+        <thead>
+            <tr>
+                <th>@semestre.semestreNome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var disciplina in semestre.disciplinas)
+                {
+                    <td>
+                        <input type="checkbox" />
+                        @disciplina.siglaDescricao
+                    </td>
+                }
+            </tr>
+        </tbody>
+
+    }
+</table>
+
+
