@@ -20,7 +20,7 @@
 
             <div>
                 <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
-                <label id="lblQuantidadeHoraAtribuida"><span>16</span></label>
+                <label id="lblQuantidadeHoraAtribuida"><span>@ViewBag.AssignedHours</span></label>
             </div>
 
             <div class="col-md-4">
@@ -33,6 +33,7 @@
                 </select>
             </div>
 
+            <!-- //Select de período (Não utilizar no inter)
             <div class="col-md-2">
                 <select id="select-assignment-turno" class="form-control">
                     <option disabled selected hidden>Period..</option>
@@ -41,6 +42,7 @@
                     <option>Evening</option>
                 </select>
             </div>
+            -->
 
         </div>
 
@@ -67,16 +69,11 @@
             }
         </table>
         -->
-        
-        
-        <div id="AssignmentCurso">
-            @{
-                Html.RenderPartial("AssignmentCurso");
-            }
-        </div>
 
-        <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
-        <button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>
+        <div id="_AssignmentCurso">
+          
+        </div>
+        
     </div>
 </div>
 

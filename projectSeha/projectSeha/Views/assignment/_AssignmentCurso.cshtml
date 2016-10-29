@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ProjectSeha.Entity.Disciplina> 
+
+<table id="tb-assignment" class="table table-bordered">
+    @foreach (var d in Model)
+    {
+        <tr>
+           <td> <input type="checkbox"/> @d.Sigla </td>
+        </tr>
+    }
+</table>
+
+<button id="btn-save-assignment" class="btn btn-seha2">Save</button>
+<button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>

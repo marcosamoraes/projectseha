@@ -205,6 +205,20 @@ $(document).ready(function () {
     });
 
     /*View Assignment*/
+    $("#select-assignment-curso").change(function () {
+        var CursoId = $("option:selected", this).val();
+        $.ajax({
+            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId,
+            method: 'get', //GET, POST, DELETE, PUT
+            dataType: 'html', //Tipo de retorno: json, html
+            success: function (data) {
+                $('#_AssignmentCurso').html(data);
+            },
+            error: function () {
+
+            }
+        });
+    });
 
     /*$("#tbAssignment tr td").click(function () {
         $(this).css('background-color', 'green');

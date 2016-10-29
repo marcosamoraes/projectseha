@@ -36,9 +36,14 @@ namespace ProjectSeha.Controllers
             return View();            
         }
 
-        public PartialViewResult AssignmentCurso()
+        public ActionResult _AssignmentCurso(int CursoId)
         {
-            return PartialView();
+            List<Disciplina> lista;
+            using (DisciplinaModel model = new DisciplinaModel())
+            {
+                lista = model.Read(CursoId);
+            }
+            return PartialView(lista);
         }
     }
 }
