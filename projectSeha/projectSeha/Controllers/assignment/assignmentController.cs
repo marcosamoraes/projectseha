@@ -15,15 +15,22 @@ namespace ProjectSeha.Controllers
         // GET: assignment
         public ActionResult Assignment()
         {
-            dynamicTable dynamicTable = new dynamicTable();
-            ViewBag.DadosTabelaDinamica = dynamicTable.getCurso();
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                List<Professor> listaProf = model.Read();
+                ViewBag.ListProfessor = listaProf;
+                return View();
+            }
+        }
 
-            List<Professor> listaProf;
+        public ActionResult _AssignmentProfessor(int ProfessorId)
+        {
+            Professor p;
             List<Curso> listaCurso;
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                listaProf = model.Read();
+                p = model.Read(ProfessorId);
             }
             using (CursoModel model = new CursoModel())
             {
@@ -31,9 +38,7 @@ namespace ProjectSeha.Controllers
             }
 
             ViewBag.ListCurso = listaCurso;
-            ViewBag.ListProfessor = listaProf;
-
-            return View();            
+            return PartialView(p);
         }
 
         public ActionResult _AssignmentCurso(int CursoId)

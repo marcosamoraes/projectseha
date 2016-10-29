@@ -205,12 +205,28 @@ $(document).ready(function () {
     });
 
     /*View Assignment*/
-    $("#select-assignment-curso").change(function () {
+    $("#select-assignment-professor").change(function () {
+        var ProfessorId = $("option:selected", this).val();
+        $.ajax({
+            url: '/assignment/_AssignmentProfessor/?ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_AssignmentProfessor').html(data);
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+    $("#select-assignment-curso").change(function () { //código funcionando no Console do browser
         var CursoId = $("option:selected", this).val();
+        alert(CursoId);
         $.ajax({
             url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId,
-            method: 'get', //GET, POST, DELETE, PUT
-            dataType: 'html', //Tipo de retorno: json, html
+            method: 'get',
+            dataType: 'html',
             success: function (data) {
                 $('#_AssignmentCurso').html(data);
             },

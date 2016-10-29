@@ -155,7 +155,7 @@
     <Compile Include="Controllers\admin\adminController.cs" />
     <Compile Include="Controllers\assignment\assignmentController.cs" />
     <Compile Include="Controllers\assignment\dynamicTable.cs" />
-    <Compile Include="Controllers\coursesController.cs" />
+    <Compile Include="Controllers\courses\coursesController.cs" />
     <Compile Include="Controllers\default\defaultController.cs" />
     <Compile Include="Controllers\professors\professorsController.cs" />
     <Compile Include="Controllers\user\userController.cs" />
@@ -211,6 +211,7 @@
     <Content Include="Views\professors\update.cshtml" />
     <Content Include="Views\courses\Index.cshtml" />
     <Content Include="Views\assignment\_AssignmentCurso.cshtml" />
+    <Content Include="Views\assignment\_AssignmentProfessor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

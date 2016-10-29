@@ -594,10 +594,6 @@ p.font-seha{
 }
 
 /*Definir o tamanho das colunas de acordo com cada View*/
-.assignment table tbody td:nth-child(1){
-    width:10% !important;
-}
-
 
 
 /*View Courses*/

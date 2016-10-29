@@ -39,8 +39,8 @@ namespace ProjectSeha.Models
             cmd.CommandText = @"ArmazenaAtribuicao";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@nome", e.CodProfessor);
-            cmd.Parameters.AddWithValue("@email", e.CodDisciplina);
+            cmd.Parameters.AddWithValue("@codProfessor", e.CodProfessor);
+            cmd.Parameters.AddWithValue("@codDisciplina", e.CodDisciplina);
 
             cmd.ExecuteNonQuery();
         }

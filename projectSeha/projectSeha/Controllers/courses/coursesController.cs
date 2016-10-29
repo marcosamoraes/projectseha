@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjectSeha.Entity;
+using ProjectSeha.Models;
 
-namespace ProjectSeha.Controllers.courses
+namespace ProjectSeha.Controllers
 {
     public class coursesController : Controller
     {
         // GET: courses
-        public ActionResult Courses()
+        public ActionResult Index()
         {
-            return View();
+
+            using(CursoModel model = new CursoModel())
+            {
+                List<Curso> lista = model.Read();
+                return View(lista);
+            }
         }
     }
 }
