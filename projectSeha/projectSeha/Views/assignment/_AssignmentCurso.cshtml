@@ -11,17 +11,24 @@
             <th>6st Semester</th>
         </tr>
     </thead>
-    @foreach (var d in Model)
-    {
-        <tr>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-           <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    if(d.Semestre == i)
+                    {
+                        <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
 </table>
 
 <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
