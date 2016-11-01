@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectSeha.Entity;
+using ProjectSeha.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,17 +13,18 @@ namespace ProjectSeha.Controllers
         // GET: admin
         public ActionResult Semesters()
         {
-            return View();
+            using (LembreteModel model = new LembreteModel())
+            {
+                List<Lembrete> listaLemb = model.Read();
+                ViewBag.ListLembrete = listaLemb;
+                return View();
+            }
         }
         public ActionResult Steps()
         {
             return View();
         }
         public ActionResult Password()
-        {
-            return View();
-        }
-        public ActionResult Lembrete()
         {
             return View();
         }
