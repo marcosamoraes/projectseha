@@ -20,13 +20,13 @@ namespace ProjectSeha.Controllers
 
                 Lembrete l1 = new Lembrete();
                 l1.LembreteId = 1;
-                l1.Data = "10/10/10";
+                l1.Data = DateTime.Today;
                 l1.Conteudo = "Ablablabla";
                 listaLemb.Add(l1);
 
                 Lembrete l2 = new Lembrete();
                 l2.LembreteId = 2;
-                l2.Data = "11/11/11";
+                l2.Data = DateTime.Today;
                 l2.Conteudo = "Clauclaulcau";
                 listaLemb.Add(l2);
 
