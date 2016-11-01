@@ -13,8 +13,8 @@ namespace ProjectSeha.Controllers
         // GET: admin
         public ActionResult Semesters()
         {
-            using (LembreteModel model = new LembreteModel())
-            {
+           // using (LembreteModel model = new LembreteModel())
+           // {
                 //List<Lembrete> listaLemb = model.Read();
                 List<Lembrete> listaLemb = new List<Lembrete>();
 
@@ -32,7 +32,7 @@ namespace ProjectSeha.Controllers
 
                 ViewBag.ListLembrete = listaLemb;
                 return View();
-            }
+           // }
         }
 
         public ActionResult Steps()
