@@ -25,9 +25,9 @@ namespace ProjectSeha.Controllers
                 listaLemb.Add(l1);
 
                 Lembrete l2 = new Lembrete();
-                l1.LembreteId = 2;
-                l1.Data = "11/11/11";
-                l1.Conteudo = "Clauclaulcau";
+                l2.LembreteId = 2;
+                l2.Data = "11/11/11";
+                l2.Conteudo = "Clauclaulcau";
                 listaLemb.Add(l2);
 
                 ViewBag.ListLembrete = listaLemb;
