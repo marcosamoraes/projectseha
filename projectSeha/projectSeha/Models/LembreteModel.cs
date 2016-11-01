@@ -16,7 +16,7 @@ namespace ProjectSeha.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = "SELECT * FROM ViewLembrete";
+            cmd.CommandText = "SELECT * FROM ViewLembretes";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
