@@ -12,7 +12,7 @@ namespace ProjectSeha.Controllers
 {
     public class assignmentController : Controller
     {
-        List<Atribuicao> listaAtribuicao;
+        List<Atribuicao> listaAtribuicao = new List<Atribuicao>();
        
         // Carrega a lista de professores
         public ActionResult Assignment()
@@ -59,7 +59,7 @@ namespace ProjectSeha.Controllers
                 listaDisciplina = model.Read(CursoId);
             }
 
-            ViewBag.ListaAtribuicao = listaAtribuicao;
+            ViewBag.ListAtribuicao = listaAtribuicao;
             return PartialView(listaDisciplina);
         }
 

@@ -222,9 +222,10 @@ $(document).ready(function () {
 
     $("#select-assignment-curso").change(function () { //código funcionando no Console do browser
         var CursoId = $("option:selected", this).val();
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
         alert(CursoId);
         $.ajax({
-            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId,
+            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
             method: 'get',
             dataType: 'html',
             success: function (data) {
