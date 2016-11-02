@@ -14,17 +14,24 @@
     <tbody>
         @foreach (var d in Model)
         {
+            bool flag = false;
             <tr>
                 @for (var i = 1; i <= 6; i++)
                 {
                     if(d.Semestre == i)
                     {
                         <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
+                        break;
+                        flag = true;
                     }
                     else
                     {
                         <td></td>
                     }
+                }
+                @if (flag)
+                {
+                    continue;
                 }
             </tr>
         }
