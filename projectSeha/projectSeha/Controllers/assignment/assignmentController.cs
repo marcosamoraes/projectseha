@@ -12,7 +12,9 @@ namespace ProjectSeha.Controllers
 {
     public class assignmentController : Controller
     {
-        // GET: assignment
+        List<Atribuicao> listaAtribuicao;
+       
+        // Carrega a lista de professores
         public ActionResult Assignment()
         {
             using (ProfessorModel model = new ProfessorModel())
@@ -23,11 +25,12 @@ namespace ProjectSeha.Controllers
             }
         }
 
+        //Carrega a lista de cursos em uma Partial View e alguns dados do professor selecionado
         public ActionResult _AssignmentProfessor(int ProfessorId)
         {
             Professor p;
             List<Curso> listaCurso;
-
+            
             using (ProfessorModel model = new ProfessorModel())
             {
                 p = model.Read(ProfessorId);
@@ -41,14 +44,32 @@ namespace ProjectSeha.Controllers
             return PartialView(p);
         }
 
-        public ActionResult _AssignmentCurso(int CursoId)
+        public ActionResult _AssignmentCurso(int CursoId, int ProfessorId) //possivelmente fazer viewmodel
         {
-            List<Disciplina> lista;
+            //Carregar a atribuicao do professor também
+            listaAtribuicao.Clear();
+            List<Disciplina> listaDisciplina;
+
+            using(AssignmentModel model = new AssignmentModel())
+            {
+                listaAtribuicao = model.Read(ProfessorId);
+            }
             using (DisciplinaModel model = new DisciplinaModel())
             {
-                lista = model.Read(CursoId);
+                listaDisciplina = model.Read(CursoId);
             }
-            return PartialView(lista);
+
+            ViewBag.ListaAtribuicao = listaAtribuicao;
+            return PartialView(listaDisciplina);
         }
+
+
+
+
+
+
+
+        //Métodos para adicionar e remover itens da listaAtribuição temporária
+        
     }
 }
