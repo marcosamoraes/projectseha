@@ -96,7 +96,7 @@
     cursor: pointer;
     background-color:#dcdcdc;
  }
-.table-seha table thead, table tbody tr {
+.table-seha table thead, .table-seha table tbody tr {
     display: table;
     table-layout: fixed;
 }
