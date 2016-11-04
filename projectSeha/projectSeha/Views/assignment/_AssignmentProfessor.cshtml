@@ -1,0 +1,35 @@
+﻿@model ProjectSeha.Entity.Professor
+
+<div>
+    <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
+    <label id="lblQuantidadeHoraAtribuida"><span>@Model.HorasAula</span></label>
+</div>
+
+<div class="col-md-4">
+    <select id="select-assignment-curso" class="form-control">
+        <option disabled selected hidden>Courses..</option>
+        @foreach (var item in ViewBag.ListCurso)//Passar por ViewModel
+        {
+            <option value="@item.CursoId">@item.Titulo</option>
+        }
+    </select>
+</div>
+
+<div id="_AssignmentCurso">
+
+</div>
+
+<!-- Select de período (Não utilizar no inter)
+            <div class="col-md-2">
+                <select id="select-assignment-turno" class="form-control">
+                    <option disabled selected hidden>Period..</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+                </select>
+            </div>
+-->
+
+
+
+

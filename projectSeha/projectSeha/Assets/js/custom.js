@@ -7,6 +7,7 @@ $(document).ready(function () {
     var ctrl = 0;
     var ctrl2 = 0;
     var ctrl_f4b = 0;
+    var modal_lemb = 0;
     var bar_width = $('.slots-bar').width();
     $('.bar-fill').css('max-width', bar_width);
     bar_width = bar_width / 15;
@@ -205,6 +206,44 @@ $(document).ready(function () {
     });
 
     /*View Assignment*/
+    $("#select-assignment-professor").change(function () {
+        var ProfessorId = $("option:selected", this).val();
+        $.ajax({
+            url: '/assignment/_AssignmentProfessor/?ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_AssignmentProfessor').html(data);
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+    $(document).click(function () {
+        $("#select-assignment-curso").change(function () { //código funcionando no Console do browser
+            var CursoId = $("option:selected", this).val();
+            var ProfessorId = $("#select-assignment-professor option:selected").val();
+            alert(CursoId);
+            $.ajax({
+                url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
+                method: 'get',
+                dataType: 'html',
+                success: function (data) {
+                    $('#_AssignmentCurso').html(data);
+                },
+                error: function () {
+
+                }
+            });
+        });
+    });
+
+    $("#tb-assignment tr td").click(function () {
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
+        var DisciplinaId = $("input", this).val();
+    });
 
     /*$("#tbAssignment tr td").click(function () {
         $(this).css('background-color', 'green');
@@ -222,9 +261,21 @@ $(document).ready(function () {
         ctrl_f4b++;
     });
 
+    /*Modal Lembrete*/
+    $('.table-semesters td').click(function () {
+        $('.modal-lembrete').fadeIn();
+        $('body').css('overflow', 'hidden');
+        var contentLembrete = $(this).html();
+    });
+
+    $('.modal-lembrete').click(function () {
+        $('.modal-lembrete').fadeOut();
+        $('body').css('overflow', 'auto');
+    });
+
 });
 
-//Esse código executa após carregar todos os elementos do DOOM
+//Esse código executa após carregar todos os elementos do DOM
 $(window).load(function () {
     $('body').find('input:eq(0)').focus(); //set focus no primeiro input da página (todas as páginas)
 });

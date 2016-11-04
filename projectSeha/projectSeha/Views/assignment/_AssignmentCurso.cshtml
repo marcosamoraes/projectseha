@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProjectSeha.Entity.Disciplina> 
+
+<table id="tb-assignment" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>1st Semester</th>
+            <th>2st Semester</th>
+            <th>3st Semester</th>
+            <th>4st Semester</th>
+            <th>5st Semester</th>
+            <th>6st Semester</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            bool flag = false;
+            <tr>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    if(d.Semestre == i)
+                    {
+                        <td><input type="checkbox" value="@d.DisciplinaId" /> @d.Sigla </td>
+                        break;
+                        flag = true;
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                }
+                @if (flag)
+                {
+                    continue;
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button id="btn-save-assignment" class="btn btn-seha2">Save</button>
+<button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>

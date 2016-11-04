@@ -12,20 +12,64 @@ namespace ProjectSeha.Controllers
 {
     public class assignmentController : Controller
     {
-        // GET: assignment
+        List<Atribuicao> listaAtribuicao = new List<Atribuicao>();
+       
+        // Carrega a lista de professores
         public ActionResult Assignment()
         {
-            dynamicTable dynamicTable = new dynamicTable();
-            ViewBag.DadosTabelaDinamica = dynamicTable.getCurso();
-
-            List<Professor> lista;
-
             using (ProfessorModel model = new ProfessorModel())
             {
-                 lista = model.Read();
+                List<Professor> listaProf = model.Read();
+                ViewBag.ListProfessor = listaProf;
+                return View();
             }
-            ViewBag.ListProfessor = new SelectList(lista, "PessoaId", "Nome");
-            return View();            
         }
+
+        //Carrega a lista de cursos em uma Partial View e alguns dados do professor selecionado
+        public ActionResult _AssignmentProfessor(int ProfessorId)
+        {
+            Professor p;
+            List<Curso> listaCurso;
+            
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                p = model.Read(ProfessorId);
+            }
+            using (CursoModel model = new CursoModel())
+            {
+                listaCurso = model.Read();
+            }
+
+            ViewBag.ListCurso = listaCurso;
+            return PartialView(p);
+        }
+
+        public ActionResult _AssignmentCurso(int CursoId, int ProfessorId) //possivelmente fazer viewmodel
+        {
+            //Carregar a atribuicao do professor também
+            listaAtribuicao.Clear();
+            List<Disciplina> listaDisciplina;
+
+            using(AssignmentModel model = new AssignmentModel())
+            {
+                listaAtribuicao = model.Read(ProfessorId);
+            }
+            using (DisciplinaModel model = new DisciplinaModel())
+            {
+                listaDisciplina = model.Read(CursoId);
+            }
+
+            ViewBag.ListAtribuicao = listaAtribuicao;
+            return PartialView(listaDisciplina);
+        }
+
+
+
+
+
+
+
+        //Métodos para adicionar e remover itens da listaAtribuição temporária
+        
     }
 }

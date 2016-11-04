@@ -9,59 +9,21 @@
 <div id="assignment" class="container">
     <div class="table-grid assignment">
         <div class="form-group">
-            <div>
-                <select id="select-assignment-professor" class="form-control">
-                    <option disabled selected hidden>Professors..</option>
-                    @foreach (var item in ViewBag.ListProfessor)
-                    {
-                        <option value="@item.PessoaId">@item.Nome</option>
-                    }
-                </select>
-                @Html.DropDownList("ListProfessor", null, htmlAttributes: new { @id = "select-assignment-professor", @class = "form-control" })
-                @ViewBag.ListProfessor;
-            </div>
-            <div>
-                <label for="lblQuantidadeHoraAtribuida">Assigned hours: </label>
-                <label id="lblQuantidadeHoraAtribuida"><span>16</span></label>
-            </div>
-            <div class="col-md-4">
-                <select id="select-assignment-curso" class="form-control">
-                    <option disabled selected hidden>Courses..</option>
-                    <option>Análise e Desenvolvimento de Sistemas</option>
-                    <option>Informática para Negócios</option>
-                    <option>Agronegócios</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select id="select-assignment-turno" class="form-control">
-                    <option disabled selected hidden>Period..</option>
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Evening</option>
-                </select>
+
+            <select id="select-assignment-professor" class="form-control">
+                <option disabled selected hidden>Professors..</option>
+                @foreach (var item in ViewBag.ListProfessor)//Passar por ViewModel
+                {
+                    <option value="@item.PessoaId">@item.Nome</option>
+                }
+            </select>
+
+            <div id="_AssignmentProfessor">
+
             </div>
 
         </div>
 
-        <table id="tb-assignment" class="table table-bordered">
-            @foreach (var semestre in ViewBag.DadosTabelaDinamica.semestres)
-            {
-                <tbody>
-                    <tr>
-                        <td>@semestre.semestreNome</td>
-                        @foreach (var disciplina in semestre.disciplinas)
-                        {
-                            <td>
-                                <input type="checkbox" />
-                                @disciplina.siglaDescricao
-                            </td>
-                        }
-                    </tr>
-                </tbody>
-            }
-        </table>
-        <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
-        <button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>
     </div>
 </div>
 

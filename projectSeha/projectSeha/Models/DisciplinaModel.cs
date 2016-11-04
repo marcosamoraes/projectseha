@@ -5,25 +5,45 @@ using System.Web;
 using System.Data.SqlClient;
 using ProjectSeha.Entity;
 using System.Data;
+using System.Collections;
 
 namespace ProjectSeha.Models
 {
     public class DisciplinaModel : ModelBase 
     {
-        public List<Disciplina> Read()
+
+        public List<Disciplina> ordenarDisciplina(List<Disciplina> lista)
+        {
+            List<Disciplina> listaOrdenada = new List<Disciplina>();
+
+            do
+            {
+                for (var i = 1; i <= 6; i++)
+                {
+                    listaOrdenada.Add(lista.Find(d => d.Semestre == i));
+                    lista.Remove(lista.Find(d => d.Semestre == i));
+                }
+            } while (lista.Count > 0);
+            listaOrdenada.RemoveAll(x => x == null);
+            return listaOrdenada;
+        }
+
+        public List<Disciplina> Read(int CursoId)
         {
             List<Disciplina> lista = new List<Disciplina>();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = "SELECT * FROM ViewDisciplinas";
+            cmd.CommandText = "SELECT * FROM ViewDisciplinas WHERE CodCurso = @CursoId";
 
+            cmd.Parameters.AddWithValue("@CursoId", CursoId);
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 Disciplina e = new Disciplina();
 
+                e.DisciplinaId = (int)reader["DisciplinaId"];
                 e.CodCurso = (int)reader["CodCurso"];
                 e.Nome = (string)reader["Nome"];
                 e.QtdAulas = (int)reader["QtdAulas"];
@@ -32,6 +52,8 @@ namespace ProjectSeha.Models
 
                 lista.Add(e);
             }
+
+            lista = ordenarDisciplina(lista);
             return lista;
         }
 
@@ -66,7 +88,6 @@ namespace ProjectSeha.Models
 
             cmd.ExecuteNonQuery();
         }
-
 
         public void Delete(int id)
         {
