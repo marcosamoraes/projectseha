@@ -222,9 +222,10 @@ $(document).ready(function () {
 
     $("#select-assignment-curso").change(function () { //código funcionando no Console do browser
         var CursoId = $("option:selected", this).val();
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
         alert(CursoId);
         $.ajax({
-            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId,
+            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
             method: 'get',
             dataType: 'html',
             success: function (data) {
@@ -234,6 +235,11 @@ $(document).ready(function () {
 
             }
         });
+    });
+
+    $("#tb-assignment tr td").click(function () {
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
+        var DisciplinaId = $("input", this).val();
     });
 
     /*$("#tbAssignment tr td").click(function () {
