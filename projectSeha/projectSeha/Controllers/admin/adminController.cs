@@ -21,7 +21,7 @@ namespace ProjectSeha.Controllers
                 Lembrete l1 = new Lembrete();
                 l1.LembreteId = 1;
                 l1.Data = DateTime.Today;
-                l1.Conteudo = "Ablablabla";
+                l1.Conteudo = "Ablablablablablablablablablablablablablablablablablablablablablablablabla";
                 listaLemb.Add(l1);
 
                 Lembrete l2 = new Lembrete();

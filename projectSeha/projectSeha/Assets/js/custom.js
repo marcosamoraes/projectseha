@@ -7,6 +7,7 @@ $(document).ready(function () {
     var ctrl = 0;
     var ctrl2 = 0;
     var ctrl_f4b = 0;
+    var modal_lemb = 0;
     var bar_width = $('.slots-bar').width();
     $('.bar-fill').css('max-width', bar_width);
     bar_width = bar_width / 15;
@@ -258,9 +259,20 @@ $(document).ready(function () {
         ctrl_f4b++;
     });
 
+    /*Modal Lembrete*/
+    $('.table-semesters td').click(function () {
+            $('.modal-lembrete').fadeIn();
+            $('body').css('overflow', 'hidden');
+    });
+
+    $('.modal-lembrete').click(function () {
+        $('.modal-lembrete').fadeOut();
+        $('body').css('overflow', 'auto');
+    });
+
 });
 
-//Esse código executa após carregar todos os elementos do DOOM
+//Esse código executa após carregar todos os elementos do DOM
 $(window).load(function () {
     $('body').find('input:eq(0)').focus(); //set focus no primeiro input da página (todas as páginas)
 });
