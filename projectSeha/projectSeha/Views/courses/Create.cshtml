@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjectSeha.Entity.Curso>
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
+}
+<h2>Courses</h2>
+<div class="container">
+    <form action="" method="post">
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <label for="txtTituloCurso">Title</label>
+                <input id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " />
+            </div>
+        </div>
+        <div class="row" style="margin-left:18px;">
+            <label>Turn</label>
+            <div class="form-group" style="width:200px;">
+                <select name="Turno" class="form-control">
+                    <option value="">Select a turn</option>
+                    <option value="MANHA">Morning</option>
+                    <option value="TARDE">Afternoon</option>
+                    <option value="NOITE">Evening</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-3">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-right scroll-tabs">
+                <!-- 'tabs-right' for right tabs -->
+                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                <li><a href="#teste" data-toggle="tab">teste</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">Home Tab.</div>
+                <div class="tab-pane" id="profile">Profile Tab.</div>
+                <div class="tab-pane" id="messages">Messages Tab.</div>
+                <div class="tab-pane" id="settings">Settings Tab.</div>
+                <div class="tab-pane" id="teste">teste Tab.</div>
+            </div>
+        </div>
+
+        <div id="professor-buttons">
+            <a class="btn btn-seha1" href="/courses/index">
+                Cancel
+            </a>
+            <button class="btn btn-seha2" type="submit">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+

@@ -209,9 +209,10 @@
     <Content Include="Views\admin\password.cshtml" />
     <Content Include="Views\professors\create.cshtml" />
     <Content Include="Views\professors\update.cshtml" />
-    <Content Include="Views\courses\Index.cshtml" />
+    <Content Include="Views\courses\index.cshtml" />
     <Content Include="Views\assignment\_AssignmentCurso.cshtml" />
     <Content Include="Views\assignment\_AssignmentProfessor.cshtml" />
+    <Content Include="Views\courses\create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

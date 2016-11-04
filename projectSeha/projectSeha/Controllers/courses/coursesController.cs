@@ -13,12 +13,17 @@ namespace ProjectSeha.Controllers
         // GET: courses
         public ActionResult Index()
         {
-
             using(CursoModel model = new CursoModel())
             {
                 List<Curso> lista = model.Read();
                 return View(lista);
             }
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
