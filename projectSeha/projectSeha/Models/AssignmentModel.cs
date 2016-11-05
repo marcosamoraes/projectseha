@@ -45,15 +45,14 @@ namespace ProjectSeha.Models
             cmd.ExecuteNonQuery();
         }
 
-        public void Delete(int ProfessorId, int DisciplinaId)
+        public void Delete(int ProfessorId)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = @"ApagaProfessor";
+            cmd.CommandText = @"ApagaAtribuicao";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@ProfessorId", ProfessorId);
-            cmd.Parameters.AddWithValue("@DisciplinaId", DisciplinaId);
             cmd.ExecuteNonQuery();
         }
     }

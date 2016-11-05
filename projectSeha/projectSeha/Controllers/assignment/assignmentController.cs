@@ -65,14 +65,20 @@ namespace ProjectSeha.Controllers
 
         public JsonResult Create(int ProfessorId, string disciplinas) //possivelmente fazer viewmodel
         {
+            using (AssignmentModel model = new AssignmentModel())
+            {
+                model.Delete(ProfessorId);
+            }
+
             string[] valores = disciplinas.Split(',');
+
             for (int i = 0; i < valores.Length; i++)
             {
                 Atribuicao a = new Atribuicao();
                 a.CodProfessor = ProfessorId;
                 a.CodDisciplina = Convert.ToInt32(valores[i]);
 
-                using (AssignmentModel model = new AssignmentModel()
+                using (AssignmentModel model = new AssignmentModel())
                 {
                     model.Create(a);
                 }
