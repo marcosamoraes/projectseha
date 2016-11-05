@@ -206,7 +206,7 @@ $(document).ready(function () {
     });
 
     /*View Assignment*/
-    $("#select-assignment-professor").change(function () {
+    $(document).on('change', '#select-assignment-professor', function(){
         var ProfessorId = $("option:selected", this).val();
         $.ajax({
             url: '/assignment/_AssignmentProfessor/?ProfessorId=' + ProfessorId,
@@ -221,31 +221,27 @@ $(document).ready(function () {
         });
     });
 
-    $(document).click(function () {
-        $("#select-assignment-curso").change(function () { //código funcionando no Console do browser
-            var CursoId = $("option:selected", this).val();
-            var ProfessorId = $("#select-assignment-professor option:selected").val();
-            alert(CursoId);
-            $.ajax({
-                url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
-                method: 'get',
-                dataType: 'html',
-                success: function (data) {
-                    $('#_AssignmentCurso').html(data);
-                },
-                error: function () {
+    $(document).on('change', '#select-assignment-curso', function(){
+        var CursoId = $("option:selected", this).val();
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
+        alert(CursoId);
+        $.ajax({
+            url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_AssignmentCurso').html(data);
+            },
+            error: function () {
 
-                }
-            });
-        });
-
-        $("#tb-assignment tr td").click(function () {
-            var ProfessorId = $("#select-assignment-professor option:selected").val();
-            var DisciplinaId = $("input", this).val();
+            }
         });
     });
 
-    
+    $(document).on('click', '#tb-assignment tr td', function(){
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
+        var DisciplinaId = $("input", this).val();
+    });
 
     /*$("#tbAssignment tr td").click(function () {
         $(this).css('background-color', 'green');
