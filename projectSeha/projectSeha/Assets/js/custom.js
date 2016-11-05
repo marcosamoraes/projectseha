@@ -242,7 +242,6 @@ $(document).ready(function () {
         $("#tb-assignment tr td").click(function () {
             var ProfessorId = $("#select-assignment-professor option:selected").val();
             var DisciplinaId = $("input", this).val();
-           
         });
     });
 
