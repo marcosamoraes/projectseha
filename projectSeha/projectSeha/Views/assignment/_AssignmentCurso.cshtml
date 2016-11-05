@@ -14,65 +14,78 @@
     </thead>
     <tbody>
 
+        @{
+            //Método gambiarra
+            List<Disciplina> disciplinas = new List<Disciplina>();
+        }
+
         @for(var lin = 1; lin <= 8; lin++)
         {
-            //var disciplinas = (List<Disciplina>)Model;
             int cont = 1;
             <tr>
                 @foreach (var d in Model)
                 {
-                    bool achou = false;
-
-                    Atribuicao a;
-                    var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
-                    a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
-
-                    Atribuicao dis;
-                    var disableds = (List<Atribuicao>)ViewBag.ListDisabled;
-                    dis = disableds.Find(item => item.CodDisciplina == d.DisciplinaId);
-
-                    for(var sem = cont; sem <= 6; sem++)
+                    if (d == disciplinas.Find(item => item.DisciplinaId == d.DisciplinaId))
                     {
-                        if (d.Semestre == sem)
+
+                    }
+                    else
+                    {
+                        bool achou = false;
+
+                        Atribuicao a;
+                        var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
+                        a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
+
+                        Atribuicao dis;
+                        var disableds = (List<Atribuicao>)ViewBag.ListDisabled;
+                        dis = disableds.Find(item => item.CodDisciplina == d.DisciplinaId);
+
+                        for (var sem = cont; sem <= 6; sem++)
                         {
-                            if (a != null)
+                            if (d.Semestre == sem)
                             {
+                                if (a != null)
+                                {
                                 <td>
                                     <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
-                            }
-                            else if (dis != null)
-                            {
+                                }
+                                else if (dis != null)
+                                {
                                 <td>
                                     <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
-                            }
-                            else
-                            {
+                                }
+                                else
+                                {
                                 <td>
                                     <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
+                                }
+
+                                achou = true;
+
+                                cont = sem + 1;
+                                break;
+
                             }
-
-                            achou = true;
-                            cont = sem + 1;
-                            break;
-
-                        }
-                        else
-                        {
-                            if (sem <= 6)
+                            else
                             {
-                                <td></td>
+                                if (sem <= 7)
+                                {
+                                    <td></td>
+                                }
                             }
                         }
-                    }
-                    if (achou)
-                    {
-                        continue;
+                        if (achou)
+                        {
+                            disciplinas.Add(d);
+                            continue;
+                        }
                     }
                 }
             </tr>
