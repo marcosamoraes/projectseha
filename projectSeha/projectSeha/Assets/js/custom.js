@@ -261,8 +261,14 @@ $(document).ready(function () {
 
     /*Modal Lembrete*/
     $('.table-semesters td').click(function () {
+        $('.modal-lembrete').fadeIn();
+        $('body').css('overflow', 'hidden');
         var contentLembrete = $(this).html();
-        alert(contentLembrete);
+    });
+
+    $('.modal-lembrete').click(function () {
+        $('.modal-lembrete').fadeOut();
+        $('body').css('overflow', 'auto');
     });
 
 });
