@@ -262,13 +262,16 @@ $(document).ready(function () {
     });
 
     /*Modal Lembrete*/
-    $('.table-semesters td').click(function () {
+    $('.table-semesters tr').click(function () {
         $('.modal-lembrete').fadeIn();
         $('body').css('overflow', 'hidden');
-        var contentLembrete = $(this).html();
+        var dateLembrete = $(this).find('td').html();
+        var contentLembrete = $(this).find('td:nth-child(2)').html();
+        $('.dateLemb').html(dateLembrete);
+        $('.contentLemb').html(contentLembrete);
     });
 
-    $('.modal-lembrete').click(function () {
+    $('#fecharLemb').click(function () {
         $('.modal-lembrete').fadeOut();
         $('body').css('overflow', 'auto');
     });
