@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ProjectSeha.Entity.Disciplina> 
+﻿@model IEnumerable<ProjectSeha.Entity.Disciplina>
 @using ProjectSeha.Entity;
 
 <table id="tb-assignment" class="table table-bordered">
@@ -13,59 +13,72 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var d in Model)
+
+        @for(var lin = 1; lin <= 8; lin++)
         {
-            Atribuicao a;
-            var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
-            a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
-
-            Atribuicao dis;
-            var disableds = (List<Atribuicao>)ViewBag.ListDisabled;
-            dis = disableds.Find(item => item.CodDisciplina == d.DisciplinaId);
-
-            bool flag = false;
+            //var disciplinas = (List<Disciplina>)Model;
+            int cont = 1;
             <tr>
-                @for (var i = 1; i <= 6; i++)
+                @foreach (var d in Model)
                 {
-                    if (d.Semestre == i)
+                    bool achou = false;
+
+                    Atribuicao a;
+                    var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
+                    a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
+
+                    Atribuicao dis;
+                    var disableds = (List<Atribuicao>)ViewBag.ListDisabled;
+                    dis = disableds.Find(item => item.CodDisciplina == d.DisciplinaId);
+
+                    for(var sem = cont; sem <= 6; sem++)
                     {
-                        
-                        if (a != null)
+                        if (d.Semestre == sem)
                         {
-                            <td>
-                                <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
-                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
-                            </td>
-                        }
-                        else if(dis!=null)
-                        {
-                            <td>
-                                <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
-                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
-                            </td>
+                            if (a != null)
+                            {
+                                <td>
+                                    <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                                </td>
+                            }
+                            else if (dis != null)
+                            {
+                                <td>
+                                    <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                                </td>
+                            }
+
+                            achou = true;
+                            cont = sem + 1;
+                            break;
+
                         }
                         else
                         {
-                            <td>
-                                <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
-                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
-                            </td>
+                            if (sem <= 6)
+                            {
+                                <td></td>
+                            }
                         }
-
-                        //break;
-                        //flag = true;
                     }
-                    else
+                    if (achou)
                     {
-                        <td></td>
+                        continue;
                     }
-                }
-                @if (flag)
-                {
-                    continue;
                 }
             </tr>
         }
+
+
     </tbody>
 </table>
 
