@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<ProjectSeha.Entity.Disciplina> 
-
+@using ProjectSeha.Entity;
 <table id="tb-assignment" class="table table-bordered">
     <thead>
         <tr>
@@ -14,13 +14,32 @@
     <tbody>
         @foreach (var d in Model)
         {
+            Atribuicao a;
+            var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
+            a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
+
             bool flag = false;
             <tr>
                 @for (var i = 1; i <= 6; i++)
                 {
-                    if(d.Semestre == i)
+                    if (d.Semestre == i)
                     {
-                        <td> <input id="cbDiscipina" name="cbDiscipina" type="checkbox" value="@d.DisciplinaId" /> <label for="cdDisciplina">@d.Sigla</label> </td>
+                        
+                        if (a != null)
+                        {
+                            <td>
+                                <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                            </td>
+                        }
+
                         //break;
                         //flag = true;
                     }

@@ -220,6 +220,7 @@
 
             }
         });
+        disciplinas = [];
     });
 
     $(document).on('change', '#select-assignment-curso', function(){
@@ -236,11 +237,12 @@
 
             }
         });
+        disciplinas = [];
     });
     
-    $(document).on('click', '#tb-assignment tr td', function(){
+    /*$(document).on('click', '#tb-assignment tr td input', function () {
         var ProfessorId = $("#select-assignment-professor option:selected").val();
-        var DisciplinaId = $("input", this).val();
+        var DisciplinaId = $(this).val();
         if (disciplinas.indexOf(DisciplinaId) < 0) {
             disciplinas.push(DisciplinaId);
         }
@@ -248,14 +250,21 @@
             var index = disciplinas.indexOf(DisciplinaId);
             disciplinas.splice(index, 1);
         }
-
-    });
+    });*/
 
     $(document).on('click', '#btn-save-assignment', function () {
-        console.log(disciplinas);
+        var checkbox = $('#tb-assignment tr td input:checkbox[name^=cbDisciplina]:checked');
+        if (checkbox.length > 0) {
+            checkbox.each(function () {
+                disciplinas.push($(this).val());
+            });
+        }
+
         var ProfessorId = $("#select-assignment-professor option:selected").val();
+        var CursoId = $("#select-assignment-curso option:selected").val();
+
         $.ajax({
-            url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&disciplinas=' + disciplinas,
+            url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&CursoId=' + CursoId + '&disciplinas=' + disciplinas,
             method: 'get',
             success: function (data) {
                 window.location = '/';
@@ -264,6 +273,7 @@
 
             }
         });
+        disciplinas = [];
     });
 
     /*$("#tbAssignment tr td").click(function () {

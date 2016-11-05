@@ -12,8 +12,6 @@ namespace ProjectSeha.Controllers
 {
     public class assignmentController : Controller
     {
-        List<Atribuicao> listaAtribuicao = new List<Atribuicao>();
-       
         // Carrega a lista de professores
         public ActionResult Assignment()
         {
@@ -30,7 +28,7 @@ namespace ProjectSeha.Controllers
         {
             Professor p;
             List<Curso> listaCurso;
-            
+
             using (ProfessorModel model = new ProfessorModel())
             {
                 p = model.Read(ProfessorId);
@@ -44,13 +42,13 @@ namespace ProjectSeha.Controllers
             return PartialView(p);
         }
 
-        public ActionResult _AssignmentCurso(int CursoId, int ProfessorId) //possivelmente fazer viewmodel
+        public ActionResult _AssignmentCurso(int CursoId, int ProfessorId) //passível de alteração (CursoId presente na atribuição)
         {
             //Carregar a atribuicao do professor também
-            listaAtribuicao.Clear();
+            List<Atribuicao> listaAtribuicao;
             List<Disciplina> listaDisciplina;
 
-            using(AssignmentModel model = new AssignmentModel())
+            using (AssignmentModel model = new AssignmentModel())
             {
                 listaAtribuicao = model.Read(ProfessorId);
             }
@@ -63,36 +61,33 @@ namespace ProjectSeha.Controllers
             return PartialView(listaDisciplina);
         }
 
-        public JsonResult Create(int ProfessorId, string disciplinas) //possivelmente fazer viewmodel
+        public ActionResult Create(int ProfessorId, int CursoId, string disciplinas) //possivelmente fazer viewmodel
         {
             using (AssignmentModel model = new AssignmentModel())
             {
-                model.Delete(ProfessorId);
+                model.Delete(ProfessorId, CursoId);
             }
 
             string[] valores = disciplinas.Split(',');
-
-            for (int i = 0; i < valores.Length; i++)
+            if (valores[0] != "")
             {
-                Atribuicao a = new Atribuicao();
-                a.CodProfessor = ProfessorId;
-                a.CodDisciplina = Convert.ToInt32(valores[i]);
-
-                using (AssignmentModel model = new AssignmentModel())
+                for (int i = 0; i < valores.Length; i++)
                 {
-                    model.Create(a);
+                    Atribuicao a = new Atribuicao();
+                    a.CodProfessor = ProfessorId;
+                    a.CodDisciplina = Convert.ToInt32(valores[i]);
+                    a.CodCurso = CursoId;
+
+                    using (AssignmentModel model = new AssignmentModel())
+                    {
+                        model.Create(a);
+                    }
                 }
+                return Json("Cadastrado com sucesso!");
             }
-            return Json("Cadastrado com sucesso!");
+            else
+                return Json("Nenhum item foi cadastrado");
         }
 
-
-
-
-
-
-
-            //Métodos para adicionar e remover itens da listaAtribuição temporária
-
-        }
+    }
 }

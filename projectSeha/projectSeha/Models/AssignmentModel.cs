@@ -26,7 +26,8 @@ namespace ProjectSeha.Models
                 Atribuicao e = new Atribuicao();
                 e.CodProfessor = (int)reader["CodProfessor"];
                 e.CodDisciplina = (int)reader["CodDisciplina"];
-                
+                e.CodCurso = (int)reader["CodCurso"];
+
                 lista.Add(e);
             }
             return lista;
@@ -41,11 +42,12 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@codProfessor", e.CodProfessor);
             cmd.Parameters.AddWithValue("@codDisciplina", e.CodDisciplina);
+            cmd.Parameters.AddWithValue("@codCurso", e.CodCurso);
 
             cmd.ExecuteNonQuery();
         }
 
-        public void Delete(int ProfessorId)
+        public void Delete(int ProfessorId, int CursoId)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -53,6 +55,7 @@ namespace ProjectSeha.Models
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@ProfessorId", ProfessorId);
+            cmd.Parameters.AddWithValue("@CursoId", CursoId);
             cmd.ExecuteNonQuery();
         }
     }
