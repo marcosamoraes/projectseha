@@ -63,13 +63,30 @@ namespace ProjectSeha.Controllers
             return PartialView(listaDisciplina);
         }
 
+        public JsonResult Create(int ProfessorId, string disciplinas) //possivelmente fazer viewmodel
+        {
+            string[] valores = disciplinas.Split(',');
+            for (int i = 0; i < valores.Length; i++)
+            {
+                Atribuicao a = new Atribuicao();
+                a.CodProfessor = ProfessorId;
+                a.CodDisciplina = Convert.ToInt32(valores[i]);
+
+                using (AssignmentModel model = new AssignmentModel()
+                {
+                    model.Create(a);
+                }
+            }
+            return Json("Cadastrado com sucesso!");
+        }
 
 
 
 
 
 
-        //Métodos para adicionar e remover itens da listaAtribuição temporária
-        
-    }
+
+            //Métodos para adicionar e remover itens da listaAtribuição temporária
+
+        }
 }

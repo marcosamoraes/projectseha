@@ -1,6 +1,4 @@
-﻿// Aqui colocamos nosso próprio js
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
     var color = '#4DB6AC';
     var barfill = 0;
@@ -206,6 +204,9 @@ $(document).ready(function () {
     });
 
     /*View Assignment*/
+
+    var disciplinas = [];
+
     $(document).on('change', '#select-assignment-professor', function(){
         var ProfessorId = $("option:selected", this).val();
         $.ajax({
@@ -224,7 +225,6 @@ $(document).ready(function () {
     $(document).on('change', '#select-assignment-curso', function(){
         var CursoId = $("option:selected", this).val();
         var ProfessorId = $("#select-assignment-professor option:selected").val();
-        alert(CursoId);
         $.ajax({
             url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
             method: 'get',
@@ -237,10 +237,33 @@ $(document).ready(function () {
             }
         });
     });
-
+    
     $(document).on('click', '#tb-assignment tr td', function(){
         var ProfessorId = $("#select-assignment-professor option:selected").val();
         var DisciplinaId = $("input", this).val();
+        if (disciplinas.indexOf(DisciplinaId) < 0) {
+            disciplinas.push(DisciplinaId);
+        }
+        else {
+            var index = disciplinas.indexOf(DisciplinaId);
+            disciplinas.splice(index, 1);
+        }
+
+    });
+
+    $(document).on('click', '#btn-save-assignment', function () {
+        console.log(disciplinas);
+        var ProfessorId = $("#select-assignment-professor option:selected").val();
+        $.ajax({
+            url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&disciplinas=' + disciplinas,
+            method: 'get',
+            success: function (data) {
+                window.location = '/';
+            },
+            error: function () {
+
+            }
+        });
     });
 
     /*$("#tbAssignment tr td").click(function () {
