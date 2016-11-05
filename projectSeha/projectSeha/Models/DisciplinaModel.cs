@@ -15,7 +15,6 @@ namespace ProjectSeha.Models
         public List<Disciplina> ordenarDisciplina(List<Disciplina> lista)
         {
             List<Disciplina> listaOrdenada = new List<Disciplina>();
-
             do
             {
                 for (var i = 1; i <= 6; i++)

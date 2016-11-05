@@ -33,6 +33,29 @@ namespace ProjectSeha.Models
             return lista;
         }
 
+        public List<Atribuicao> ReadDisabled(int id)
+        {
+            List<Atribuicao> lista = new List<Atribuicao>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM ViewAtribuicoes Where CodProfessor <> @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Atribuicao e = new Atribuicao();
+                e.CodProfessor = (int)reader["CodProfessor"];
+                e.CodDisciplina = (int)reader["CodDisciplina"];
+                e.CodCurso = (int)reader["CodCurso"];
+
+                lista.Add(e);
+            }
+            return lista;
+        }
+
         public void Create(Atribuicao e)
         {
             SqlCommand cmd = new SqlCommand();

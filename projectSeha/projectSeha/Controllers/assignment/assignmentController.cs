@@ -46,18 +46,24 @@ namespace ProjectSeha.Controllers
         {
             //Carregar a atribuicao do professor também
             List<Atribuicao> listaAtribuicao;
+            List<Atribuicao> listaDisabled;
             List<Disciplina> listaDisciplina;
 
             using (AssignmentModel model = new AssignmentModel())
             {
                 listaAtribuicao = model.Read(ProfessorId);
             }
+            using (AssignmentModel model = new AssignmentModel())
+            {
+                listaDisabled = model.ReadDisabled(ProfessorId);
+            }
             using (DisciplinaModel model = new DisciplinaModel())
             {
                 listaDisciplina = model.Read(CursoId);
             }
-
+        
             ViewBag.ListAtribuicao = listaAtribuicao;
+            ViewBag.ListDisabled = listaDisabled;
             return PartialView(listaDisciplina);
         }
 

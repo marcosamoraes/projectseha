@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ProjectSeha.Entity.Disciplina> 
 @using ProjectSeha.Entity;
+
 <table id="tb-assignment" class="table table-bordered">
     <thead>
         <tr>
@@ -18,6 +19,10 @@
             var atribuicoes = (List<Atribuicao>)ViewBag.ListAtribuicao;
             a = atribuicoes.Find(item => item.CodDisciplina == d.DisciplinaId);
 
+            Atribuicao dis;
+            var disableds = (List<Atribuicao>)ViewBag.ListDisabled;
+            dis = disableds.Find(item => item.CodDisciplina == d.DisciplinaId);
+
             bool flag = false;
             <tr>
                 @for (var i = 1; i <= 6; i++)
@@ -29,6 +34,13 @@
                         {
                             <td>
                                 <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
+                            </td>
+                        }
+                        else if(dis!=null)
+                        {
+                            <td>
+                                <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
                                 <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                             </td>
                         }
