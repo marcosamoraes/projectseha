@@ -28,6 +28,7 @@ namespace ProjectSeha.Models
                 e = new Pessoa();
                 e.PessoaId = (int)reader["PessoaId"];
                 e.Nome = (string)reader["Nome"];
+                e.Permissao_admin = (bool)reader["Permissao_admin"];
             }
             return e; //se n entrar no if vai retornar usuario null
         }

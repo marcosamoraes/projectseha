@@ -10,6 +10,7 @@ using ProjectSeha.Controllers.assignment;
 
 namespace ProjectSeha.Controllers
 {
+    [AutorizaAdmin]
     public class assignmentController : Controller
     {
         // Carrega a lista de professores

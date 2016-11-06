@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
+    [AutorizaProfessor]
     public class userController : Controller
     {
         // GET: user

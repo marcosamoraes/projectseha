@@ -8,6 +8,7 @@ using ProjectSeha.Models;
 
 namespace ProjectSeha.Controllers
 {
+    [AutorizaAdmin]
     public class coursesController : Controller
     {
         // GET: courses

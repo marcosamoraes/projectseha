@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ProjectSeha.Controllers
 {
+    [AutorizaAdmin]
     public class adminController : Controller
     {
         // GET: admin

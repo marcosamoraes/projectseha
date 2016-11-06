@@ -57,17 +57,26 @@
         <div class="login-div row">
             <div class="col-xs-12">
                 <h2 class="title">SEHA</h2>
-                <div class="form-group">
-                    <label for="usr">Name:</label>
-                    <input type="text" class="form-control" id="usr">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
-                </div>
-                <div class="login-button">
-                    <button class="btn btn-seha1">Login</button>
-                </div>
+
+                <form action="/default/index" method="post">
+
+                    <div class="form-group">
+                        <label for="usuario">Email:</label>
+                        <input type="text" name="usuario" required class="form-control" id="usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" required class="form-control" id="password">
+                    </div>
+
+                    <div class="login-button">
+                        <button type="submit" class="btn btn-seha1">Login</button>
+                    </div>
+
+                </form>
+
+
             </div>
         </div>
     </main>
