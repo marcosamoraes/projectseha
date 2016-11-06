@@ -44,7 +44,7 @@ namespace ProjectSeha.Models
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = "SELECT * FROM ViewProfessores WHERE PessoaId = @id"; //fazer procedure com parametro Id de leitura
+            cmd.CommandText = "SELECT * FROM ViewProfessores WHERE PessoaId = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -79,7 +79,6 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@email", e.Email);
-            cmd.Parameters.AddWithValue("@senha", e.Senha);
             cmd.Parameters.AddWithValue("@nomeGuerra", e.NomeGuerra);
             cmd.Parameters.AddWithValue("@professorExiste", e.ProfessorExiste);
 

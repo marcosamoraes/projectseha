@@ -34,7 +34,6 @@ namespace ProjectSeha.Controllers
             p.Nome = form["Nome"];
             p.NomeGuerra = form["NomeGuerra"];
             p.Email = form["Email"];
-            p.Senha = form["Senha"];
             p.ProfessorExiste = (form["ProfessorExiste"] == "on");
 
             using (ProfessorModel model = new ProfessorModel())
