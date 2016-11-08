@@ -207,8 +207,7 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
     <Content Include="Views\professors\index.cshtml" />
-    <Content Include="Views\user\password.cshtml" />
-    <Content Include="Views\admin\password.cshtml" />
+    <Content Include="Views\default\password.cshtml" />
     <Content Include="Views\professors\create.cshtml" />
     <Content Include="Views\professors\update.cshtml" />
     <Content Include="Views\courses\index.cshtml" />

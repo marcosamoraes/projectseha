@@ -14,34 +14,16 @@ namespace ProjectSeha.Controllers
         // GET: admin
         public ActionResult Semesters()
         {
-           // using (LembreteModel model = new LembreteModel())
-           // {
-                //List<Lembrete> listaLemb = model.Read();
-                List<Lembrete> listaLemb = new List<Lembrete>();
-
-                Lembrete l1 = new Lembrete();
-                l1.LembreteId = 1;
-                l1.Data = DateTime.Today;
-                l1.Conteudo = "Ablablablablablablablablablablablablablablablablablablablablablablablabla";
-                listaLemb.Add(l1);
-
-                Lembrete l2 = new Lembrete();
-                l2.LembreteId = 2;
-                l2.Data = DateTime.Today;
-                l2.Conteudo = "Clauclaulcau";
-                listaLemb.Add(l2);
-
+           using (LembreteModel model = new LembreteModel())
+           {
+                List<Lembrete> listaLemb = model.Read();
+                
                 ViewBag.ListLembrete = listaLemb;
                 return View();
-           // }
+           }
         }
 
         public ActionResult Steps()
-        {
-            return View();
-        }
-
-        public ActionResult Password()
         {
             return View();
         }

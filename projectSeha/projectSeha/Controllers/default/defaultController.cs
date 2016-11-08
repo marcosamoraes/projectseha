@@ -15,7 +15,12 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
-        public ActionResult About()//Login
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Password()
         {
             return View();
         }
