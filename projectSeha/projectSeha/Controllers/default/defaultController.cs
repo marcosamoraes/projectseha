@@ -25,6 +25,19 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
+        public ActionResult UpdatePassword(FormCollection form)
+        {
+            
+            using(PessoaModel model = new PessoaModel())
+            {
+                int PessoaId = Convert.ToInt32(form["id"]);
+                string senhaNova = form["senhaNova"];
+
+                model.UpdatePassword(PessoaId, senhaNova);
+            }
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Index(FormCollection form)//Login
         {
@@ -48,7 +61,6 @@ namespace ProjectSeha.Controllers
                         return RedirectToAction("availability", "user");
                     }
                 }
-                
             }
             ViewBag.Mensagem = "Usuário não reconhecido";
             return View();

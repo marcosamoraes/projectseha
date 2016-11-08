@@ -34,21 +34,17 @@ namespace ProjectSeha.Models
         }
 
         //TODO:Verificar se é possível carregar os dados da "Pessoa e" que está logada no sistema no momento
-        public void UpdateSenha(Pessoa e, string senhaAntiga, string senhaNova, string senhaNova2)
+        public void UpdatePassword(int PessoaId, string senhaNova)
         {
-            if (e.Senha == senhaAntiga && senhaNova == senhaNova2)
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = @"AlteraSenha";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"AlteraSenha";
 
-                cmd.Parameters.AddWithValue("@id", e.PessoaId);
-                cmd.Parameters.AddWithValue("@senhaNova", senhaNova);
+            cmd.Parameters.AddWithValue("@id", PessoaId);
+            cmd.Parameters.AddWithValue("@senhaNova", senhaNova);
 
-                cmd.ExecuteNonQuery();
-            }
+            cmd.ExecuteNonQuery();
         }
-
     }
 }
