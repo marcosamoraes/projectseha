@@ -25,15 +25,24 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
-        public ActionResult UpdatePassword(FormCollection form)
+        public ActionResult UpdatePassword(FormCollection form, int PessoaId)
         {
-            
-            using(PessoaModel model = new PessoaModel())
-            {
-                int PessoaId = Convert.ToInt32(form["id"]);
-                string senhaNova = form["senhaNova"];
+            string senhaAntiga = form["senhaAntiga"];
+            string senhaNova = form["senhaNova"];
+            string confirmaSenha = form["confirmaSenha"];
 
-                model.UpdatePassword(PessoaId, senhaNova);
+            using (PessoaModel model = new PessoaModel())
+            {
+                Pessoa p = model.Read(PessoaId);
+                if(p.Senha == senhaAntiga && senhaNova == confirmaSenha)
+                {
+                    model.UpdatePassword(PessoaId, senhaNova);
+                    //msg senha alterada com sucesso
+                }
+                else
+                {
+                    //msg falha ao alterar a senha
+                }
             }
             return View();
         }

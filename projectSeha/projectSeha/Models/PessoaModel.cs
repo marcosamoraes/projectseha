@@ -10,6 +10,28 @@ namespace ProjectSeha.Models
 {
     public class PessoaModel : ModelBase
     {
+        public Pessoa Read(int PessoaId)
+        {
+            Pessoa e = null;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = @"SELECT * FROM tblPessoa Where PessoaId = @PessoaId";
+
+            cmd.Parameters.AddWithValue("@PessoaId", PessoaId);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                e = new Pessoa();
+                e.PessoaId = (int)reader["PessoaId"];
+                e.Nome = (string)reader["Nome"];
+                e.Permissao_admin = (bool)reader["Permissao_admin"];
+            }
+            return e;
+        }
+
         public Pessoa Login(string email, string senha)
         {
             Pessoa e = null;
