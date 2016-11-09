@@ -14,10 +14,5 @@ namespace ProjectSeha.Controllers
         {
             return View();
         }
-
-        public ActionResult Password()
-        {
-            return View();
-        }
     }
 }
