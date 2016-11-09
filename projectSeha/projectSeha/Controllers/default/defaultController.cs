@@ -28,6 +28,7 @@ namespace ProjectSeha.Controllers
         [HttpPost]
         public ActionResult UpdatePassword(FormCollection form)
         {
+            int PessoaId = Convert.ToInt32(form["PessoaId"]);
             string senhaAntiga = form["senhaAntiga"];
             string senhaNova = form["senhaNova"];
             string confirmaSenha = form["confirmaSenha"];
@@ -35,14 +36,14 @@ namespace ProjectSeha.Controllers
 
             using (PessoaModel model = new PessoaModel())
             {
-                p = model.Read(2);
+                p = model.Read(PessoaId);
             }
 
             using(PessoaModel model = new PessoaModel())
             {
                 if (p.Senha == senhaAntiga && senhaNova == confirmaSenha)
                 {
-                    model.UpdatePassword(2, senhaNova);
+                    model.UpdatePassword(PessoaId, senhaNova);
                     //msg senha alterada com sucesso
                 }
                 else
