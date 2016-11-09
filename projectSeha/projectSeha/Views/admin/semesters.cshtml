@@ -8,15 +8,8 @@
         <p class="font-seha font-seha-info">There is no semesters in progress.</p>
         <div id="buttons-semester">
             <a id="btn-new-semester" class="btn btn-default btn-seha2" href="/admin/steps">New Semester</a>
-            <!--<button id="btn-show-semester" class="btn btn-default btn-seha1">Show History</button>-->
         </div>
-        <!--<div id="history-semester">
-            <p>Choose one:</p>
-            <select id="select-semester" class="form-control" size="7">
-                <option>2015.2</option>
-                <option>2015.1</option>
-            </select>
-        </div>--> 
+    
         <div>
             <table class="table table-semesters">
                 <thead>
@@ -44,11 +37,15 @@
                 </tbody>
             </table>
         </div>
-        <div class="observation">
-            <textarea placeholder="Write your reminders to the professors..."></textarea>
-            <button type="submit" id="btn-send-semester" class="btn btn-seha1">Send</button>
-        </div>
+
+        <form action="/" method="post">
+            <div class="observation">
+                <textarea placeholder="Write your reminders to the professors..."></textarea>
+                <button type="submit" id="btn-send-semester" class="btn btn-seha1">Send</button>
+            </div>
+        </form>
     </div>
+
     <div class="modal-lembrete">
         <div class="col-md-4 col-md-offset-4" style="height: 400px; margin-top: 200px; background-color: #607D8B; color: white">
             <strong><p class="dateLemb" style="margin-top: 10px; margin-left: 5px;"></p></strong>
@@ -60,4 +57,5 @@
             </div>   
         </div>
     </div>
+
 </div>
