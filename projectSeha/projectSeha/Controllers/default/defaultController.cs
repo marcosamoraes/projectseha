@@ -26,7 +26,7 @@ namespace ProjectSeha.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdatePassword(FormCollection form)
+        public ActionResult Password(FormCollection form)
         {
             int PessoaId = Convert.ToInt32(form["PessoaId"]);
             string senhaAntiga = form["senhaAntiga"];
@@ -44,19 +44,21 @@ namespace ProjectSeha.Controllers
                 if (p.Senha == senhaAntiga && senhaNova == confirmaSenha)
                 {
                     model.UpdatePassword(PessoaId, senhaNova);
-                    //msg senha alterada com sucesso
+                    ViewBag.Mensagem = "Alterado com sucesso!";
                 }
                 else
                 {
-                    //msg falha ao alterar a senha
+                    ViewBag.Mensagem = "Informe as senhas corretamente";
                 }
             }
-            return RedirectToAction("availability", "user");
+            return View();
         }
 
         [HttpPost]
         public ActionResult Index(FormCollection form)//Login
         {
+            Session.RemoveAll();
+
             string email = form["usuario"];
             string senha = form["password"];
 
@@ -77,19 +79,18 @@ namespace ProjectSeha.Controllers
                         return RedirectToAction("availability", "user");
                     }
                 }
+                else
+                {
+                    ViewBag.Mensagem = "Usuário não reconhecido";
+                }
             }
-            ViewBag.Mensagem = "Usuário não reconhecido";
             return View();
         }
 
         public ActionResult Logout()
         {
-            Session.RemoveAll();
-            //Session.Remove("professor");//professor ou admin
-            //Session.Remove("admin");
-            //Session.Abandon();
-
-            return RedirectToAction("Index");
+           Session.RemoveAll();
+           return RedirectToAction("Index");
         }
     }
 }
