@@ -26,5 +26,20 @@ namespace ProjectSeha.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(FormCollection form)
+        {
+            Curso cursoDados = new Curso();
+
+            cursoDados.Titulo = form["Titulo"];
+            cursoDados.Turno = form["Turno"];
+
+            using (CursoModel cursoModel = new CursoModel())
+            {
+                cursoModel.Create(cursoDados);
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
