@@ -25,18 +25,24 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
-        public ActionResult UpdatePassword(FormCollection form, int PessoaId)
+        [HttpPost]
+        public ActionResult UpdatePassword(FormCollection form)
         {
             string senhaAntiga = form["senhaAntiga"];
             string senhaNova = form["senhaNova"];
             string confirmaSenha = form["confirmaSenha"];
+            Pessoa p;
 
             using (PessoaModel model = new PessoaModel())
             {
-                Pessoa p = model.Read(PessoaId);
-                if(p.Senha == senhaAntiga && senhaNova == confirmaSenha)
+                p = model.Read(2);
+            }
+
+            using(PessoaModel model = new PessoaModel())
+            {
+                if (p.Senha == senhaAntiga && senhaNova == confirmaSenha)
                 {
-                    model.UpdatePassword(PessoaId, senhaNova);
+                    model.UpdatePassword(2, senhaNova);
                     //msg senha alterada com sucesso
                 }
                 else
@@ -44,7 +50,7 @@ namespace ProjectSeha.Controllers
                     //msg falha ao alterar a senha
                 }
             }
-            return View();
+            return RedirectToAction("availability", "user");
         }
 
         [HttpPost]

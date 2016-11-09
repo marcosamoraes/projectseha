@@ -16,7 +16,6 @@ namespace ProjectSeha.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = @"SELECT * FROM tblPessoa Where PessoaId = @PessoaId";
 
             cmd.Parameters.AddWithValue("@PessoaId", PessoaId);
@@ -26,8 +25,7 @@ namespace ProjectSeha.Models
             {
                 e = new Pessoa();
                 e.PessoaId = (int)reader["PessoaId"];
-                e.Nome = (string)reader["Nome"];
-                e.Permissao_admin = (bool)reader["Permissao_admin"];
+                e.Senha = (string)reader["Senha"];
             }
             return e;
         }
