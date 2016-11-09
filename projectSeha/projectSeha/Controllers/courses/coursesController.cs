@@ -41,5 +41,15 @@ namespace ProjectSeha.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            using (CursoModel cursoModel = new CursoModel())
+            {
+                cursoModel.Delete(id);
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
