@@ -1,4 +1,10 @@
 ﻿/*Componentes nas cores SEHA*/
+.mensagem-seha{
+    text-align:center;
+    top:0;
+    width:100%;
+}
+
 .btn-seha1{
     color: white;
     background-color: #607D8B;
