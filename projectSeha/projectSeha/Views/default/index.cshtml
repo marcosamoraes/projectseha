@@ -51,9 +51,15 @@
 </head>
 
 <body>
-
+    
     <!-- Page Content -->
     <main id="login-view" class="container">
+
+        @if (ViewBag.Erro != null)
+        {
+            <div class="alert alert-danger mensagem-seha">@ViewBag.Erro</div>
+        }
+
         <div class="login-div row">
             <div class="col-xs-12">
                 <h2 class="title">SEHA</h2>
@@ -77,13 +83,9 @@
                 </form>
             </div>
         </div>
-        @if (ViewBag.Erro != null)
-        {
-            <div class="alert alert-danger">@ViewBag.Erro</div>
-        }
+      
     </main>
-
-
+ 
     <!-- ************************ JS Files ************************ -->
     <!-- jQuery -->
     <script type="text/javascript" src="../assets/js/jquery.js"></script>
