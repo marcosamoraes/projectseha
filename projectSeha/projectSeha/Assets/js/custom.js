@@ -203,6 +203,11 @@
         location.href = '/professors/update/' + $(this).find('td:nth-child(1)').html();
     });
 
+    /*View Courses*/
+    $(document).on('click', '#course tr', function(){
+        location.href = '/courses/update/' + $(this).find('td:nth-child(1)').html();
+    });
+
     /*View Assignment*/
 
     var disciplinas = [];

@@ -33,6 +33,28 @@ namespace ProjectSeha.Models
             return lista;
         }
 
+        public Curso Read(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM ViewCursos WHERE CursoId = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Curso curso = new Curso();
+
+                curso.CursoId = (int)reader["CursoId"];
+                curso.Titulo = (string)reader["Titulo"];
+                curso.Turno = (string)reader["Turno"];
+
+                return curso;
+            }
+            return null;
+        }
+
         public void Create(Curso e)
         {
             SqlCommand cmd = new SqlCommand();

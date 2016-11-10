@@ -3,9 +3,10 @@
     ViewBag.Title = "SEHA - Register Courses";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
-<h2>Courses</h2>
-<div class="container">
-    <form action="" method="post">
+<h3 class="font-seha left">Courses</h3>
+
+<div id="courses" class="container">
+    <form action="/courses/create" method="post">
         <div class="row">
             <div class="col-xs-6 form-group">
                 <label for="txtTituloCurso">Title</label>
@@ -25,10 +26,7 @@
         </div>
         <div class="row">
             <div class="col-xs-3">
-                <!-- required for floating -->
-                <!-- Nav tabs -->
                 <ul class="nav nav-tabs tabs-right scroll-tabs">
-                    <!-- 'tabs-right' for right tabs -->
                     <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
                     <li><a href="#profile" data-toggle="tab">Profile</a></li>
                     <li><a href="#messages" data-toggle="tab">Messages</a></li>
@@ -37,7 +35,6 @@
                 </ul>
             </div>
             <div class="col-xs-9">
-                <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">Home Tab.</div>
                     <div class="tab-pane" id="profile">Profile Tab.</div>
