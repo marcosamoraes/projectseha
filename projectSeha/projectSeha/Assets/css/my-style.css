@@ -615,6 +615,11 @@ p.font-seha{
     float:right;
     margin-bottom:20px;
 }
+.assignment a{
+    position:relative;
+    float:right;
+    margin-bottom:20px;
+}
 #btn-cancel-assignment{
     margin-right:15px;
 }

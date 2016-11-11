@@ -1,6 +1,12 @@
 ﻿@model IEnumerable<ProjectSeha.Entity.Disciplina>
 @using ProjectSeha.Entity;
 
+
+@if (ViewBag.Sucesso != null)
+{
+    <div class="alert alert-success mensagem-seha" role="alert">@ViewBag.Sucesso</div>
+}
+
 <table id="tb-assignment" class="table table-bordered">
     <thead>
         <tr>
@@ -96,4 +102,4 @@
 </table>
 
 <button id="btn-save-assignment" class="btn btn-seha2">Save</button>
-<button id="btn-cancel-assignment" class="btn btn-seha1">Cancel</button>
+<a href="/assignment/assignment" id="btn-cancel-assignment" class="btn btn-seha1">Cancel</a>
