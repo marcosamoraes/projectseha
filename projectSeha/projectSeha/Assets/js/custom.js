@@ -259,8 +259,8 @@
                 disciplinas.push($(this).val());
             });
 
-            $("#btn-save-assignment").after(
-               '<div class="alert alert-success alert-dismissable">' +
+            $("#tb-assignment").after(
+               '<div style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
                '<button type="button" class="close" ' +
                    'data-dismiss="alert" aria-hidden="true">' +
                '&times;' +
