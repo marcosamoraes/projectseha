@@ -62,13 +62,13 @@ namespace ProjectSeha.Controllers
             {
                 listaDisciplina = model.Read(CursoId);
             }
-        
+            
             ViewBag.ListAtribuicao = listaAtribuicao;
             ViewBag.ListDisabled = listaDisabled;
             return PartialView(listaDisciplina);
         }
 
-        public ActionResult Create(int ProfessorId, int CursoId, string disciplinas) //possivelmente fazer viewmodel
+        public ActionResult Create(int ProfessorId, int CursoId, string disciplinas)
         {
             using (AssignmentModel model = new AssignmentModel())
             {
@@ -90,11 +90,14 @@ namespace ProjectSeha.Controllers
                         model.Create(a);
                     }
                 }
-                return Json("Cadastrado com sucesso!");
+                ViewBag.Sucesso = "Salvo com sucesso";
+                return Json("Salvo com sucesso");
             }
             else
+            {
+                ViewBag.Sucesso = "Não houve nenhuma alteração";
                 return Json("Nenhum item foi cadastrado");
+            }
         }
-
     }
 }

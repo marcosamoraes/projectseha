@@ -263,6 +263,15 @@
             checkbox.each(function () {
                 disciplinas.push($(this).val());
             });
+
+            $("#tb-assignment").after(
+               '<div style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
+               '<button type="button" class="close" ' +
+                   'data-dismiss="alert" aria-hidden="true">' +
+               '&times;' +
+               '</button>' +
+               'Salvo com sucesso' +
+               '</div>');
         }
 
         var ProfessorId = $("#select-assignment-professor option:selected").val();
@@ -272,7 +281,8 @@
             url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&CursoId=' + CursoId + '&disciplinas=' + disciplinas,
             method: 'get',
             success: function (data) {
-                window.location = '/';
+                alert("oi");
+               
             },
             error: function () {
 
