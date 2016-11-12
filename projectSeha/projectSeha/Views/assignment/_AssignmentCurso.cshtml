@@ -54,21 +54,21 @@
                                 if (a != null)
                                 {
                                 <td>
-                                    <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <input checked id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId @d.QtdAulas" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
                                 }
                                 else if (dis != null)
                                 {
                                 <td>
-                                    <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <input disabled id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId @d.QtdAulas" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
                                 }
                                 else
                                 {
                                 <td>
-                                    <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId" />
+                                    <input id="cbDisciplina @d.DisciplinaId" name="cbDisciplina[]" type="checkbox" value="@d.DisciplinaId @d.QtdAulas" />
                                     <label for="cbDisciplina @d.DisciplinaId">@d.Sigla</label>
                                 </td>
                                 }

@@ -206,9 +206,12 @@
     /*View Assignment*/
 
     var disciplinas = [];
+    var QtdAulas;
 
     $(document).on('change', '#select-assignment-professor', function(){
+
         var ProfessorId = $("option:selected", this).val();
+
         $.ajax({
             url: '/assignment/_AssignmentProfessor/?ProfessorId=' + ProfessorId,
             method: 'get',
@@ -221,6 +224,12 @@
             }
         });
         disciplinas = [];
+    });
+
+    //quando carrega a partial view de professores, dar um alert com a qtdaulas
+    $(document).on('load', '#select-assignment-curso', function () {
+        QtdAulas = $('#QtdAulas').val();
+        alert(QtdAulas);
     });
 
     $(document).on('change', '#select-assignment-curso', function(){
@@ -240,18 +249,21 @@
         disciplinas = [];
     });
     
-    /*$(document).on('click', '#tb-assignment tr td input', function () {
-        var ProfessorId = $("#select-assignment-professor option:selected").val();
-        var DisciplinaId = $(this).val();
-        if (disciplinas.indexOf(DisciplinaId) < 0) {
-            disciplinas.push(DisciplinaId);
+    //pega hora aula ao clicar no input checkbox
+    $(document).on('click', '#tb-assignment tr td input', function () {
+        if($(this).is(':checked')){
+            //add hrs aula
+            var hraula = $(this).val();
+            hraula = hraula.split(" ");
+            alert(hraula[1]);
         }
         else {
-            var index = disciplinas.indexOf(DisciplinaId);
-            disciplinas.splice(index, 1);
+            //remove hrs aula
+            alert($(this).val());
         }
-    });*/
+    });
 
+    //salva atribuição
     $(document).on('click', '#btn-save-assignment', function () {
         var checkbox = $('#tb-assignment tr td input:checkbox[name^=cbDisciplina]:checked');
         if (checkbox.length > 0) {
@@ -276,7 +288,6 @@
             url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&CursoId=' + CursoId + '&disciplinas=' + disciplinas,
             method: 'get',
             success: function (data) {
-                alert("oi");
                
             },
             error: function () {
