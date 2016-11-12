@@ -76,5 +76,31 @@ namespace ProjectSeha.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        public ActionResult _CreateDisciplina()
+        {
+            return PartialView();
+        }
+
+        public ActionResult _TabDisciplinas()
+        {
+            return PartialView();
+        }
+
+        public List<Disciplina> listaDisciplinas = new List<Disciplina>();
+
+        [HttpPost]
+        public int AddDisciplinaLista(FormCollection form)
+        {
+            Disciplina newDisciplina = new Disciplina();
+            newDisciplina.Nome = form["TituloDisciplina"];
+            newDisciplina.Sigla = form["SiglaDisciplina"];
+            newDisciplina.Semestre = Convert.ToInt32(form["Periodo"]);
+            newDisciplina.QtdAulas = Convert.ToInt32(form["QtdAulasMinistradas"]);
+
+            listaDisciplinas.Add(newDisciplina);
+            ViewBag.listaDisciplinas = listaDisciplinas;
+            return 1;
+        }
     }
 }
