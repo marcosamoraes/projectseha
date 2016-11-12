@@ -51,5 +51,30 @@ namespace ProjectSeha.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            using (CursoModel model = new CursoModel())
+            {
+                Curso curso = model.Read(id);
+                return View(curso);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Update(int id, FormCollection form)
+        {
+            Curso curso = new Curso();
+            curso.CursoId = id;
+            curso.Titulo = form["Titulo"];
+            curso.Turno = form["Turno"];
+
+            using (CursoModel model = new CursoModel())
+            {
+                model.Update(curso);
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
