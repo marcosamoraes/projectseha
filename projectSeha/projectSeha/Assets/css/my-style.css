@@ -386,20 +386,20 @@ p.font-seha{
 #bar-good {
  	position:relative; 
  	right: 200px;
- }
+}
  
- .observation {
+.observation {
  	position: relative;
  	float: left;
  	padding-top: 30px;
  	width: 100%;
- }
+}
  
- .observation textarea {
+.observation textarea {
  	width: 100%;
  	height: 100px;
  	max-width: 100%;
- }
+}
 
  /*View Login*/
  #login-view .login-div {
