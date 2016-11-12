@@ -246,7 +246,6 @@
         disciplinas = [];
     });
 
-    
     $(document).on('change', '#select-assignment-curso', function () {
         QtdAulas = $('#QtdAulas').val(); //quando seleciona o curso atribui a qtd aulas;
         $('#lbl-aulas').html(QtdAulas);
@@ -280,12 +279,32 @@
             QtdAulas -= parseInt($(this).val().split(" ")[1]);
             $('#lbl-aulas').html(QtdAulas);
         }
+
+        //checa se ultrapassou limite
+        if (parseInt($("#lbl-aulas").html()) > 28) {
+            //cria alert mensagem de sucesso
+            if ($('#msg-limite').val() == null) {
+                $("#assignment-hours").after(
+                  '<div id="msg-limite" style="float:left; width:100%; text-align:center" class="alert alert-danger alert-dismissable">' +
+                      '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
+                           '&times;' +
+                      '</button>' +
+                      'Assignment hours limit exceeded' +
+                  '</div>');
+            }
+            //desabilitar btnsave
+            $("#btn-save-assignment").attr('disabled', 'disabled');
+        }
+        else
+        {
+            $("#btn-save-assignment").removeAttr('disabled');
+        }
     });
 
     //salva atribuição
     $(document).on('click', '#btn-save-assignment', function () {
 
-        //atualiza o value do input #QtdAulas
+        //atualiza o value do input #QtdAulas e lbl-aulas
         $("#QtdAulas").attr('value', QtdAulas);
 
         //varre checkbox selected

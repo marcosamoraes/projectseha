@@ -637,15 +637,23 @@ p.font-seha{
    margin-top:65px;
    cursor:default;
 }
-#tb-assignment input, label{
+#tb-assignment input, #tb-assignment label{
     cursor:pointer;
     margin-top:10px;
     margin-bottom:10px !important;
 }
-#tb-assignment thead th, tr td{
+#tb-assignment thead th,#tb-assignment tr td{
     text-align:center;
 }
-
+#td-assignment-disabled{
+    color:#ccc;
+}
+#td-assignment-disabled label, #td-assignment-disabled input{
+    cursor:default;
+}
+#select-assignment-curso{
+    margin-bottom:20px;
+}
 
 /*Definir o tamanho das colunas de acordo com cada View*/
 
