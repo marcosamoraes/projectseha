@@ -233,6 +233,7 @@
 
     //quando carrega a partial view de professores, dar um alert com a qtdaulas
     $(document).on('load', '#select-assignment-curso', function () {
+        alert("testealertd");
         QtdAulas = $('#QtdAulas').val();
         alert(QtdAulas);
     });
