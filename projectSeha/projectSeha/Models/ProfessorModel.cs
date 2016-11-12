@@ -113,5 +113,16 @@ namespace ProjectSeha.Models
             cmd.ExecuteNonQuery();
         }
 
+        public void UpdateHorasAula(int ProfessorId, int QtdAulas)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = @"UPDATE tblProfessor SET HorasAula = @HorasAula WHERE CodPessoa = @id";
+
+            cmd.Parameters.AddWithValue("@id", ProfessorId);
+            cmd.Parameters.AddWithValue("@HorasAula", QtdAulas);
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }

@@ -249,8 +249,11 @@
     
     $(document).on('change', '#select-assignment-curso', function () {
         QtdAulas = $('#QtdAulas').val(); //quando seleciona o curso atribui a qtd aulas;
+        $('#lbl-aulas').html(QtdAulas);
+
         var CursoId = $("option:selected", this).val();
         var ProfessorId = $("#select-assignment-professor option:selected").val();
+
         $.ajax({
             url: '/assignment/_AssignmentCurso/?CursoId=' + CursoId + '&ProfessorId=' + ProfessorId,
             method: 'get',
@@ -270,19 +273,20 @@
         if($(this).is(':checked')){
             //add hrs aula
             QtdAulas = parseInt(QtdAulas) + parseInt($(this).val().split(" ")[1]);
-            console.log(QtdAulas);
             $('#lbl-aulas').html(QtdAulas);
         }
         else {
             //remove hrs aula
             QtdAulas -= parseInt($(this).val().split(" ")[1]);
-            console.log(QtdAulas);
             $('#lbl-aulas').html(QtdAulas);
         }
     });
 
     //salva atribuição
     $(document).on('click', '#btn-save-assignment', function () {
+
+        $("#QtdAulas").attr('value', QtdAulas); //atualiza o value do input #QtdAulas
+
         var checkbox = $('#tb-assignment tr td input:checkbox[name^=cbDisciplina]:checked');
         if (checkbox.length > 0) {
             checkbox.each(function () {
@@ -301,11 +305,12 @@
         var ProfessorId = $("#select-assignment-professor option:selected").val();
         var CursoId = $("#select-assignment-curso option:selected").val();
 
-        $.ajax({
-            url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&CursoId=' + CursoId + '&disciplinas=' + disciplinas,
+        $.ajax({ //talvez n precisamos usar o ajax aqui
+            url: '/assignment/Create/?ProfessorId=' + ProfessorId + '&CursoId=' + CursoId + '&QtdAulas=' + QtdAulas
+                +'&disciplinas=' + disciplinas,
             method: 'get',
             success: function (data) {
-               
+
             },
             error: function () {
 

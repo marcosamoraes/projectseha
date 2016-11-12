@@ -68,11 +68,16 @@ namespace ProjectSeha.Controllers
             return PartialView(listaDisciplina);
         }
 
-        public ActionResult Create(int ProfessorId, int CursoId, string disciplinas)
+        public ActionResult Create(int ProfessorId, int CursoId, int QtdAulas, string disciplinas)
         {
             using (AssignmentModel model = new AssignmentModel())
             {
                 model.Delete(ProfessorId, CursoId);
+            }
+
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                model.UpdateHorasAula(ProfessorId, QtdAulas);
             }
 
             string[] valores = disciplinas.Split(',');
@@ -91,13 +96,8 @@ namespace ProjectSeha.Controllers
                     }
                 }
                 ViewBag.Sucesso = "Salvo com sucesso";
-                return Json("Salvo com sucesso");
             }
-            else
-            {
-                ViewBag.Sucesso = "Não houve nenhuma alteração";
-                return Json("Nenhum item foi cadastrado");
-            }
+            return Json("Salvo com sucesso");
         }
     }
 }
