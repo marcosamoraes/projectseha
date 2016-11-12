@@ -285,23 +285,28 @@
     //salva atribuição
     $(document).on('click', '#btn-save-assignment', function () {
 
-        $("#QtdAulas").attr('value', QtdAulas); //atualiza o value do input #QtdAulas
+        //atualiza o value do input #QtdAulas
+        $("#QtdAulas").attr('value', QtdAulas);
 
+        //varre checkbox selected
         var checkbox = $('#tb-assignment tr td input:checkbox[name^=cbDisciplina]:checked');
         if (checkbox.length > 0) {
             checkbox.each(function () {
                 disciplinas.push($(this).val().split(" ")[0]);
             });
-
-            $("#tb-assignment").after(
-               '<div style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
-                   '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
-                        '&times;' +
-                   '</button>' +
-                   'Salvo com sucesso' +
-               '</div>');
         }
 
+        //cria alert mensagem de sucesso
+        if ($('#msg-sucesso').val() == null) {
+            $("#tb-assignment").after(
+              '<div id="msg-sucesso" style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
+                  '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
+                       '&times;' +
+                  '</button>' +
+                  'Assignment saved successfully' +
+              '</div>');
+        }
+       
         var ProfessorId = $("#select-assignment-professor option:selected").val();
         var CursoId = $("#select-assignment-curso option:selected").val();
 
@@ -318,10 +323,6 @@
         });
         disciplinas = [];
     });
-
-    /*$("#tbAssignment tr td").click(function () {
-        $(this).css('background-color', 'green');
-    })*/
 
 
     /*Easter Egg*/

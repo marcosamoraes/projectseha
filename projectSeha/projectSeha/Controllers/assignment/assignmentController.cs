@@ -95,7 +95,6 @@ namespace ProjectSeha.Controllers
                         model.Create(a);
                     }
                 }
-                ViewBag.Sucesso = "Salvo com sucesso";
             }
             return Json("Salvo com sucesso");
         }

@@ -44,11 +44,11 @@ namespace ProjectSeha.Controllers
                 if (p.Senha == senhaAntiga && senhaNova == confirmaSenha)
                 {
                     model.UpdatePassword(PessoaId, senhaNova);
-                    ViewBag.Sucesso = "Alterado com sucesso!";
+                    ViewBag.Sucesso = "Saved successfully";
                 }
                 else
                 {
-                    ViewBag.Erro = "Informe as senhas corretamente";
+                    ViewBag.Erro = "Enter passwords correctly";
                 }
             }
             return View();
@@ -81,7 +81,7 @@ namespace ProjectSeha.Controllers
                 }
                 else
                 {
-                    ViewBag.Erro = "Usuário não reconhecido";
+                    ViewBag.Erro = "User not recognized";
                 }
             }
             return View();
