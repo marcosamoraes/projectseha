@@ -225,9 +225,8 @@
     });
 
     /*View Assignment*/
-
     var disciplinas = [];
-    var QtdAulas;
+    var QtdAulas=0;
 
     $(document).on('change', '#select-assignment-professor', function(){
 
@@ -247,14 +246,9 @@
         disciplinas = [];
     });
 
-    //quando carrega a partial view de professores, dar um alert com a qtdaulas
-    $(document).on('load', '#select-assignment-curso', function () {
-        alert("testealertd");
-        QtdAulas = $('#QtdAulas').val();
-        alert(QtdAulas);
-    });
-
-    $(document).on('change', '#select-assignment-curso', function(){
+    
+    $(document).on('change', '#select-assignment-curso', function () {
+        QtdAulas = $('#QtdAulas').val(); //quando seleciona o curso atribui a qtd aulas;
         var CursoId = $("option:selected", this).val();
         var ProfessorId = $("#select-assignment-professor option:selected").val();
         $.ajax({
@@ -275,13 +269,15 @@
     $(document).on('click', '#tb-assignment tr td input', function () {
         if($(this).is(':checked')){
             //add hrs aula
-            var hraula = $(this).val();
-            hraula = hraula.split(" ");
-            alert(hraula[1]);
+            QtdAulas = parseInt(QtdAulas) + parseInt($(this).val().split(" ")[1]);
+            console.log(QtdAulas);
+            $('#lbl-aulas').html(QtdAulas);
         }
         else {
             //remove hrs aula
-            alert($(this).val());
+            QtdAulas -= parseInt($(this).val().split(" ")[1]);
+            console.log(QtdAulas);
+            $('#lbl-aulas').html(QtdAulas);
         }
     });
 
@@ -290,16 +286,15 @@
         var checkbox = $('#tb-assignment tr td input:checkbox[name^=cbDisciplina]:checked');
         if (checkbox.length > 0) {
             checkbox.each(function () {
-                disciplinas.push($(this).val());
+                disciplinas.push($(this).val().split(" ")[0]);
             });
 
             $("#tb-assignment").after(
                '<div style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
-               '<button type="button" class="close" ' +
-                   'data-dismiss="alert" aria-hidden="true">' +
-               '&times;' +
-               '</button>' +
-               'Salvo com sucesso' +
+                   '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
+                        '&times;' +
+                   '</button>' +
+                   'Salvo com sucesso' +
                '</div>');
         }
 
