@@ -23,16 +23,18 @@ namespace ProjectSeha.Controllers
            }
         }
 
+        [HttpPost]
         public ActionResult CreateLemb(FormCollection form)
         {
             Lembrete l = new Lembrete();
 
             l.Conteudo = form["Lembrete"];
+            l.Data = DateTime.Today;
 
             using (LembreteModel model = new LembreteModel())
             {
                 model.Create(l);
-                return RedirectToAction("Index");
+                return RedirectToAction("semesters", "admin");
             }
         }
 
@@ -42,7 +44,7 @@ namespace ProjectSeha.Controllers
             using (LembreteModel model = new LembreteModel())
             {
                 model.Delete(id);
-                return RedirectToAction("Index");
+                return RedirectToAction("semesters", "admin");
             }
         }
 

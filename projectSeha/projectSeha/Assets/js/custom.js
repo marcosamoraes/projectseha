@@ -364,7 +364,7 @@
     });
 
     /*Modal Lembrete*/
-    $('.table-semesters tr').click(function () {
+    $('#semesters .table-seha table tr').click(function () {
         $('.modal-lembrete').fadeIn();
         $('body').css('overflow', 'hidden');
         var dateLembrete = $(this).find('td').html();
@@ -378,9 +378,4 @@
         $('body').css('overflow', 'auto');
     });
 
-});
-
-//Esse código executa após carregar todos os elementos do DOM
-$(window).load(function () {
-    $('body').find('input:eq(0)').focus(); //set focus no primeiro input da página (todas as páginas)
 });

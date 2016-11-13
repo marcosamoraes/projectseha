@@ -111,30 +111,6 @@ table thead {
     table-layout: fixed;
 }
 
-
-
-/* Tabela Lembrete */
-.table-semesters {
-    margin-top: 50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 500px;
-    max-width: 500px;
-}
-
-.modal-lembrete {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.7);
-    z-index: 1050;
-    display: none;
-}
-
-
 /*Table Assignments e Result(step3)*/
 .table-grid table{
     margin-bottom:20px;
@@ -277,6 +253,36 @@ html, body, main {
     max-width: 70px; 
     max-height: 37px;
 }
+
+/* Tabela Lembrete */
+#semesters .table-seha{
+    margin-top:25px;
+}
+#semesters table{
+    max-height:180px !important;
+}
+.modal-lembrete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index: 1050;
+    display: none;
+}
+
+  /*Definir o tamanho das colunas de acordo com cada View*/
+.semesters table thead th:nth-child(1), .semesters table tbody td:nth-child(1){
+    width:33% !important;
+}
+.semesters table thead th:nth-child(2), .semesters table tbody td:nth-child(2){
+    width:52% !important;
+}
+.semesters table thead th:nth-child(3), .semesters table tbody td:nth-child(3){
+    text-align:center;
+}
+
 
 /*View Aviability*/
 

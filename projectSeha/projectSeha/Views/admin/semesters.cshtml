@@ -10,8 +10,8 @@
             <a id="btn-new-semester" class="btn btn-default btn-seha2" href="/admin/steps">New Semester</a>
         </div>
     
-        <div>
-            <table class="table table-semesters">
+        <div class="table-seha semesters">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -40,7 +40,7 @@
 
         <form action="/admin/createLemb" method="post">
             <div class="observation">
-                <textarea name="Lembrete" placeholder="Write your reminders to the professors..."></textarea>
+                <textarea autofocus name="Lembrete" placeholder="Type your reminders to the professors..."></textarea>
                 <button type="submit" id="btn-send-semester" class="btn btn-seha1">Send</button>
             </div>
         </form>
