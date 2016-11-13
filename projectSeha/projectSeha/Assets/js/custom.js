@@ -85,7 +85,8 @@
         $('.slots-content').css('background-color', 'transparent');
         $('.slots-content').removeClass('disponivel');
         $('.slots-content').removeClass('talvez');
-
+        contTalvez = 0;
+        contDisp = 0;
         //prache!
         atualBarra = 0;
         $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar

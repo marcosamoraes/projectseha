@@ -243,13 +243,12 @@ p.font-seha{
 }
 
 .disp-content {
-	margin-left: 20px;
 	margin-right: 20px;
 }
 
 .slots {
 	width: 100%;
-	height: 300px;
+	height: 360px;
 }
 
 .slots-left {
@@ -412,6 +411,18 @@ p.font-seha{
  	width: 100%;
 }
  
+.table-observation{
+    margin-top:130px;
+    border-top:1px solid;
+    border-color:#bbb;
+    padding-top:10px;
+}
+
+.table-observation .scroll{
+    overflow-y:scroll;
+    height:100px;
+}   
+
 .observation textarea {
  	width: 100%;
  	height: 100px;

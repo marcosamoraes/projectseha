@@ -2,14 +2,15 @@
 @{
     ViewBag.Title = "SEHA - Availability";
     Layout = "~/Views/templates/templateUser/_headerUser.cshtml";
+    var i=1;
 }
 
 <!-- Principal Content -->
 
 
-<div class="avaiability container">
+<div class="avaiability">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-9">
             <div class="disp-content">
                 <p class="font-seha font-seha-title">Fill the blocks according to your availability</p>
 
@@ -55,22 +56,12 @@
                         <div class="slots-content-desactive">
                             <p>Monday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 1; i <= 8; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i"/>
+                            </div>
+                        }
                     </div>
 
                     <!-- Slots Tuesday -->
@@ -79,22 +70,12 @@
                         <div class="slots-content-desactive">
                             <p>Tuesday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 9; i <= 16; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i" />
+                            </div>
+                        }
                     </div>
 
                     <!-- Slots Wednesday -->
@@ -103,22 +84,12 @@
                         <div class="slots-content-desactive">
                             <p>Wednesday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 17; i <= 25; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i" />
+                            </div>
+                        }
                     </div>
 
                     <!-- Slots Thursday -->
@@ -127,22 +98,12 @@
                         <div class="slots-content-desactive">
                             <p>Thursday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 27; i <= 35; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i" />
+                            </div>
+                        }
                     </div>
 
                     <!-- Slots Friday -->
@@ -151,22 +112,12 @@
                         <div class="slots-content-desactive">
                             <p>Friday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 35; i <= 43; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i" />
+                            </div>
+                        }
                     </div>
 
                     <!-- Slots Saturday -->
@@ -175,22 +126,12 @@
                         <div class="slots-content-desactive">
                             <p>Saturday</p>
                         </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
-                        <div class="slots-content">
-                        </div>
+                        @for (i = 44; i <= 52; i++)
+                        {
+                            <div class="slots-content">
+                                <input hidden disabled value="@i" />
+                            </div>
+                        }
                     </div>
 
                 </div>
@@ -208,33 +149,53 @@
                     <button class="btn slots-clear">Clear</button>
                 </div>
 
-                <!-- /Slots buttons -->
-                <!-- Slots bar
-
-                <div class="bar-info">
-                    <p>Great - 150%</p>
-                    <p id="bar-good">Good - 100%</p>
-                </div>
-                <div class="slots-bar">
-                    <div class="bar-fill">
-                    </div>
-                </div>
-
-                <!--teste de progress bar-->
-
                 <div class="progress-bar" role="progressbar" aria-valuenow="0"
                      aria-valuemin="0" aria-valuemax="100">
                      <label>0%</label>
-
                 </div>
 
-                <!-- /Slots bar -->
-
+                <div class="table-observation font-seha">
+                    <p class="font-seha-info">Observations</p>
+                    <div class="scroll">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="observation">
-                    <textarea placeholder="Write your observations..."></textarea>
+                    <textarea placeholder="Type your observations..."></textarea>
                 </div>
 
             </div>
         </div>
+        <div class="col-md-3">Área destinada aos lembretes</div>
     </div>
 </div>
