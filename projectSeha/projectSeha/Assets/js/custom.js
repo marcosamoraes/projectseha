@@ -4,21 +4,22 @@
     var ctrl_f4b = 0;
     var modal_lemb = 0;
 
-
     /*View Availability*/
-    var horas = 24;
+
+    /*Carregamento inicial ----------------------------------------------------------------------------*/
+    var horas = parseInt($('#horas').html());
     var totalBarra = horas + (horas / 2);
-    if (totalBarra % 2 != 0) { totalBarra++; }
 
     var maxDisp = horas / 2; //max quadros disponiveis
     var contDisp = 0;
-    var maxTalvez = parseInt(maxDisp / 2); //mas quadros talvez
+
+    var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
+    if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ }
     var contTalvez = 0;
 
     var atualBarra = 0;
     var widthBarra = 0;
     var color = '#4DB6AC';
-
     $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
 
     //prache!
@@ -26,6 +27,8 @@
     widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
     $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width
     $(".progress-bar label").html(parseInt(widthBarra) + '%'); //atualiza a label
+
+    /*-----------------------------------------------------------------------------------------------*/
 
     /*Botões de controle (cores)*/
     $('#available').click(function () {
@@ -93,7 +96,48 @@
         widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
         $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width
         $(".progress-bar label").html(parseInt(widthBarra) + '%')//atualiza a label
+
+        slotTalvez = [];
+        slotDisponivel = [];
     });
+
+    var slotDisponivel = [];
+    var slotTalvez = [];
+
+    $('.slots-save').click(function () {
+        slotDisponivel = []; //limpo
+        slotTalvez = []; //limpo
+
+        var disponivel = $('.slots-content.disponivel input');
+        var talvez = $('.slots-content.talvez input');
+
+        if (disponivel.length > 0) {
+            disponivel.each(function () {
+                slotDisponivel.push($(this).val());
+            });
+        }
+        if (talvez.length > 0) {
+            talvez.each(function () {
+                slotTalvez.push($(this).val());
+            });
+        }
+        console.log("Disponíveis: "+slotDisponivel);
+        console.log("Talvez: "+slotTalvez);
+
+        var ProfessorId = $("#PessoaId").val();
+
+        $.ajax({ //talvez n precisamos usar o ajax aqui
+            url: '/user/Create/?ProfessorId=' + ProfessorId + '&slotDisponivel=' + slotDisponivel + '&slotTalvez=' + slotTalvez,
+            method: 'get',
+            success: function (data) {
+
+            },
+            error: function () {
+
+            }
+        });
+    });
+  
 
     /*View - Semesters*/
     $('#btn-show-semester').click(function () {

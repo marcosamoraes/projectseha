@@ -9,5 +9,6 @@ namespace ProjectSeha.Entity
     {
         public int CodProfessor { get; set; }
         public int CodSlot { get; set; }
+        public bool Status_slot { get; set; }
     }
 }

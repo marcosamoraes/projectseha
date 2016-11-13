@@ -9,6 +9,6 @@ namespace ProjectSeha.Entity
     {
         public int SlotId { get; set; }
         public DateTime HoraInicio { get; set; }
-        public bool Status_slot { get; set; }
+        
     }
 }

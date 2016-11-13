@@ -489,6 +489,14 @@ p.font-seha{
  	height: 100px;
  	max-width: 100%;
 }
+#availability-hours label{
+    font-size:14px;
+    margin-bottom:30px;
+}
+#avaiability-title{
+    margin-bottom:10px !important;
+    
+}
 
  /*View Login*/
  #login-view .login-div {
