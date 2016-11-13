@@ -225,8 +225,17 @@ html, body, main {
 
 /*View Aviability*/
 
-.progress{
+.progress-bar{
+    margin-top: 15px;
+    height: 30px;
     overflow:visible;
+    width:0%;
+    background-color:#4db6ac;
+}
+
+.progress-bar label{
+    padding-top:5px;
+    font-size:15px;
 }
 
 p.font-seha{
@@ -266,7 +275,6 @@ p.font-seha{
 	height: 40px;
 	width: 50%;
 	margin-top: 20px;
-    padding-left: 15px;
 }
 
 .slots-tbutton {
@@ -321,9 +329,18 @@ p.font-seha{
 	margin-top: 20px;
 }
 
-.desactive {
+.slots-content-desactive {
+    border-color:#949494;
+	height: 40px;
+	width: 100%;
+	text-align: center;
 	background-color: transparent!important;
     border: 0!important;
+}
+
+.slots-content-desactive p{
+    font-size: 15px;
+	padding-top: 8px;
 }
 
 #available {
