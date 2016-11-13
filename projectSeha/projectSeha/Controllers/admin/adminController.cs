@@ -23,6 +23,29 @@ namespace ProjectSeha.Controllers
            }
         }
 
+        public ActionResult CreateLemb(FormCollection form)
+        {
+            Lembrete l = new Lembrete();
+
+            l.Conteudo = form["Lembrete"];
+
+            using (LembreteModel model = new LembreteModel())
+            {
+                model.Create(l);
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult DeleteLemb(int id)
+        {
+            using (LembreteModel model = new LembreteModel())
+            {
+                model.Delete(id);
+                return RedirectToAction("Index");
+            }
+        }
+
         public ActionResult Steps()
         {
             return View();

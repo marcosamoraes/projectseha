@@ -223,6 +223,61 @@ html, body, main {
 	text-decoration: none;
 }
 
+/*Lembrete*/
+.overlay-lemb {
+    height: 400px; 
+    margin-top: 200px; 
+    background-color: #607D8B; 
+    color: white;
+}
+
+.dateLemb {
+    margin-top: 10px; 
+    margin-left: 5px;
+}
+
+.div-contentLemb {
+    position: absolute; 
+    width: 450px; 
+    height: 320px; 
+    left: 50%; 
+    right: 50%; 
+    margin-left: -225px; 
+    margin-top: 0; 
+    background-color: white; 
+    color: black; 
+    padding: 20px;
+}
+
+.contentLemb {
+    word-wrap: break-word;
+}
+
+.div-fecharLemb {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
+    margin-left: -35px;
+}
+
+.td-data {
+    max-width: 175px; 
+    max-height: 37px;
+}
+
+.td-content {
+    max-width: 255px; 
+    max-height: 37px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.td-excluir {
+    max-width: 70px; 
+    max-height: 37px;
+}
+
 /*View Aviability*/
 
 .progress-bar{
