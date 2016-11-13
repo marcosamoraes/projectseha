@@ -23,11 +23,11 @@
                     @foreach (var l in ViewBag.ListLembrete)
                     {
                         <tr>
-                            <td style="max-width: 175px; max-height: 37px;">@l.Data</td>
-                            <td style="max-width: 255px; max-height: 37px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@l.Conteudo</td>
-                            <td style="max-width: 70px; max-height: 37px;">
+                            <td class="td-data">@l.Data</td>
+                            <td class="td-content">@l.Conteudo</td>
+                            <td class="td-excluir">
                                 <div>
-                                    <a href="">
+                                    <a href="/admin/deleteLemb/@l.LembreteId">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </a>
                                 </div>
@@ -38,21 +38,21 @@
             </table>
         </div>
 
-        <form action="/" method="post">
+        <form action="/admin/createLemb" method="post">
             <div class="observation">
-                <textarea placeholder="Write your reminders to the professors..."></textarea>
+                <textarea name="Lembrete" placeholder="Write your reminders to the professors..."></textarea>
                 <button type="submit" id="btn-send-semester" class="btn btn-seha1">Send</button>
             </div>
         </form>
     </div>
 
     <div class="modal-lembrete">
-        <div class="col-md-4 col-md-offset-4" style="height: 400px; margin-top: 200px; background-color: #607D8B; color: white">
-            <strong><p class="dateLemb" style="margin-top: 10px; margin-left: 5px;"></p></strong>
-            <div style="position: absolute; width: 450px; height: 320px; left: 50%; right: 50%; margin-left: -225px; margin-top: 0; background-color: white; color: black; padding: 20px">
-                <p class="contentLemb" style="word-wrap: break-word"></p>
+        <div class="col-md-4 col-md-offset-4 overlay-lemb">
+            <strong><p class="dateLemb"></p></strong>
+            <div class="div-contentLemb">
+                <p class="contentLemb"></p>
             </div>           
-            <div style="position: absolute; bottom: 20px; left: 50%; margin-left: -35px">
+            <div class="div-fecharLemb">
                 <button id="fecharLemb" class="btn btn-seha2">Fechar</button>
             </div>   
         </div>
