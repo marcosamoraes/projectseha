@@ -286,6 +286,13 @@ html, body, main {
 
 /*View Aviability*/
 
+.disponivel{
+    background-color:#4DB6AC;
+}
+.talvez{
+    background-color:#FFCC80;
+}
+
 .progress-bar{
     margin-top: 15px;
     height: 30px;
