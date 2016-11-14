@@ -190,42 +190,41 @@
 
                         <!-- Slots gerados usando os dados do bd-->
 
-                        for(int x = 1; x == 6; x++) {
-                        //cria colunas com o nome do dia
-                        <div class="slots-left">
-                            <div class="slots-content desactive">
-                                switch(x) {
-                                case(1):
-                                <p>Monday</p>
-                                }
-                                case(2):
-                                <p>Tuesday</p>
-                                }
-                                case(3):
-                                <p>Wednesday</p>
-                                }
-                                case(4):
-                                <p>Thursday</p>
-                                }
-                                case(5):
-                                <p>Friday</p>
-                                }
-                                default:
-                                <p>Saturday</p>
+                        @for(int x = 1; x == 6; x++) {
+                            //cria colunas com o nome do dia
+                            <div class="slots-left">
+                                <div class="slots-content desactive">
+                                    @if(x == 1) {
+                                        <p>Monday</p>
+                                    }
+                                    @if(x == 2) {
+                                        <p>Tuesday</p>
+                                    }
+                                    @if(x == 3) {
+                                        <p>Wednesday</p>
+                                    }
+                                    @if(x == 4) {
+                                        <p>Thursday</p>
+                                    }
+                                    @if(x == 5) {
+                                        <p>Friday</p>
+                                    }
+                                    @if(x == 6) {
+                                        <p>Saturday</p>
+                                    }
+                                </div>
+                                @for(int y = 1; y == 8; y++) {
+                                    //cria linhas
+                                    //@a.tipo é o tipo do bloco
+                                    if(@a.tipo == 0) {
+                                        <div class="slots-content amarelo"></div>
+                                    } else if(@a.tipo == 1) {
+                                        <div class="slots-content verde"></div>
+                                    } else {
+                                        <div class="slots-content"></div>
+                                    }
                                 }
                             </div>
-                            for(int y = 1; y == 8; y++) {
-                                //cria linhas
-                                //@a.tipo é o tipo do bloco
-                                if(@a.tipo == 0) {
-                                    <div class="slots-content amarelo"></div>
-                                } else if(@a.tipo == 1) {
-                                    <div class="slots-content verde"></div>
-                                } else {
-                                    <div class="slots-content"></div>
-                                }
-                            }
-                        </div>
                         }
 
                         <!-- Slots Monday -->
