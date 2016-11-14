@@ -6,18 +6,27 @@
 
     /*View Availability*/
 
+    var selecao = 1; //define cor verde(1) ou laranja(2)
+
     /*Carregamento inicial ----------------------------------------------------------------------------*/
+   
     var horas = parseInt($('#horas').html());
     var totalBarra = horas + (horas / 2);
-
     var maxDisp = horas / 2; //max quadros disponiveis
-    var contDisp = 0;
-
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
-    if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ }
-    var contTalvez = 0;
+    if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
+    
+    if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
+        contTalvez = maxTalvez;
+        atualBarra = totalBarra;
+        contDisp = maxDisp;
+    }
+    else {
+        var contTalvez = 0;//contTalvez = maxTalvez;
+        var atualBarra = 0;//atualBarra = totalBarra;
+        var contDisp = 0; //contDisp = maxDisp;
+    }
 
-    var atualBarra = 0;
     var widthBarra = 0;
     var color = '#4DB6AC';
     $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
@@ -33,43 +42,41 @@
     /*Botões de controle (cores)*/
     $('#available').click(function () {
         color = '#4DB6AC';
-
+        selecao = 1;
         $(this).css('opacity', '1');
-        $('#eraser').css('opacity', '0.5');
         $('#maybe').css('opacity', '0.5');
     });
     $('#maybe').click(function () {
         color = '#FFCC80';
-
+        selecao = 2;
         $(this).css('opacity', '1');
-        $('#eraser').css('opacity', '0.5');
         $('#available').css('opacity', '0.5');
     });
 
     $('.slots-content').click(function () {
 
         if ($(this).hasClass('disponivel')){ //se já existir preenchimento
-            $(this).css('background-color', 'transparent'); //apaga preenchimento realizado
+            //$(this).css('background-color', 'transparent'); //apaga preenchimento realizado
             $(this).removeClass('disponivel');
             atualBarra -= 2;
             contDisp--;
         }
         else {
             if ($(this).hasClass('talvez')) {
-                $(this).css('background-color', 'transparent'); //apaga preenchimento realizado
+                //$(this).css('background-color', 'transparent'); //apaga preenchimento realizado
                 $(this).removeClass('talvez');
                 atualBarra -= 2;
                 contTalvez--;
             }
             else {
-                if (color == '#4DB6AC' && contDisp < maxDisp) { //se for available
-                    $(this).css('background-color', color); //pega a cor atual e preenche
+                if (selecao == 1 && contDisp < maxDisp) { //se for available
+                   // $(this).css('background-color', color); //pega a cor atual e preenche
                     $(this).addClass('disponivel');
                     atualBarra += 2;
                     contDisp++;
                 }
-                else if (color == '#FFCC80' && contTalvez < maxTalvez && atualBarra < totalBarra) {
-                    $(this).css('background-color', color); //pega a cor atual e preenche
+                else if (selecao == 2 && contTalvez < maxTalvez) {
+                    //$(this).css('background-color', color); //pega a cor atual e preenche
                     $(this).addClass('talvez');
                     atualBarra += 2;
                     contTalvez++;
@@ -85,13 +92,13 @@
     });
 
     $('.slots-clear').click(function () {
-        $('.slots-content').css('background-color', 'transparent');
         $('.slots-content').removeClass('disponivel');
         $('.slots-content').removeClass('talvez');
         contTalvez = 0;
         contDisp = 0;
-        //prache!
         atualBarra = 0;
+
+        //prache!
         $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
         widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
         $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width

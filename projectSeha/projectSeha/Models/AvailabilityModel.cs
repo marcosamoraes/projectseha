@@ -16,7 +16,7 @@ namespace ProjectSeha.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = "SELECT * FROM ViewDisponibilidade Where CodProfessor = @id";
+            cmd.CommandText = "SELECT * FROM ViewDisponibilidades Where CodProfessor = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();

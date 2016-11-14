@@ -24,7 +24,14 @@ namespace ProjectSeha.Controllers
             }
             using (AvailabilityModel model = new AvailabilityModel())
             {
-                lista = model.Read(p.PessoaId);
+                try
+                {
+                    lista = model.Read(p.PessoaId);
+                }
+                catch
+                {
+                    lista = null;
+                }
             }
             ViewBag.ListDisponibilidade = lista;
             return View(p);
