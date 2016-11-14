@@ -188,9 +188,48 @@
                             </div>
                         </div>
 
+                        <!-- Slots gerados usando os dados do bd-->
+
+                        @for(int x = 1; x == 6; x++) {
+                            //cria colunas com o nome do dia
+                            <div class="slots-left">
+                                <div class="slots-content desactive">
+                                    @if(x == 1) {
+                                        <p>Monday</p>
+                                    }
+                                    @if(x == 2) {
+                                        <p>Tuesday</p>
+                                    }
+                                    @if(x == 3) {
+                                        <p>Wednesday</p>
+                                    }
+                                    @if(x == 4) {
+                                        <p>Thursday</p>
+                                    }
+                                    @if(x == 5) {
+                                        <p>Friday</p>
+                                    }
+                                    @if(x == 6) {
+                                        <p>Saturday</p>
+                                    }
+                                </div>
+                                @for(int y = 1; y == 8; y++) {
+                                    //cria linhas
+                                    //@a.tipo é o tipo do bloco
+                                    if(@a.tipo == 0) {
+                                        <div class="slots-content amarelo"></div>
+                                    } else if(@a.tipo == 1) {
+                                        <div class="slots-content verde"></div>
+                                    } else {
+                                        <div class="slots-content"></div>
+                                    }
+                                }
+                            </div>
+                        }
+
                         <!-- Slots Monday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Monday</p>
                             </div>
@@ -210,11 +249,11 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Slots Tuesday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Tuesday</p>
                             </div>
@@ -234,11 +273,11 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Slots Wednesday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Wednesday</p>
                             </div>
@@ -258,11 +297,11 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Slots Thursday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Thursday</p>
                             </div>
@@ -282,11 +321,11 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Slots Friday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Friday</p>
                             </div>
@@ -306,11 +345,11 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Slots Saturday -->
 
-                        <div class="slots-left">
+                        <!--div class="slots-left">
                             <div class="slots-content desactive">
                                 <p>Saturday</p>
                             </div>
@@ -330,7 +369,7 @@
                             </div>
                             <div class="slots-content">
                             </div>
-                        </div>
+                        </div-->
 
                     </div>
 
