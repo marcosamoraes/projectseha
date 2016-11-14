@@ -33,6 +33,12 @@ namespace ProjectSeha.Controllers
                     lista = null;
                 }
             }
+            using (LembreteModel model = new LembreteModel())
+            {
+                List<Lembrete> listaLemb = model.Read();
+                ViewBag.ListLembrete = listaLemb;
+            }
+
             ViewBag.ListDisponibilidade = lista;
             return View(p);
         }

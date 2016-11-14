@@ -15,7 +15,7 @@
     var maxDisp = horas / 2; //max quadros disponiveis
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
     if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
-    
+
     if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
         contTalvez = maxTalvez;
         atualBarra = totalBarra;
@@ -30,7 +30,14 @@
     var widthBarra = 0;
     var color = '#4DB6AC';
     $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
+    $(".slots-save").attr('disabled', 'disabled');
 
+
+    //checa disabled do bt save
+    if (atualBarra == totalBarra) {
+        $(".slots-save").removeAttr('disabled', 'disabled');
+    }
+    
     //prache!
     $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
     widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
@@ -84,6 +91,15 @@
             }
         }
         
+        //função para desabilitar save
+        if (atualBarra == totalBarra) {
+            $(".slots-save").removeAttr('disabled');
+        }
+        else {
+            $(".slots-save").attr('disabled', 'disabled');
+        }
+
+
         //prache!
         $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
         widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
@@ -97,6 +113,8 @@
         contTalvez = 0;
         contDisp = 0;
         atualBarra = 0;
+        
+        $(".slots-save").attr('disabled', 'disabled');
 
         //prache!
         $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
@@ -415,7 +433,7 @@
     });
 
     /*Modal Lembrete*/
-    $('#semesters .table-seha table tr').click(function () {
+    $('#lista-lembretes.table-seha table tr').click(function () {
         $('.modal-lembrete').fadeIn();
         $('body').css('overflow', 'hidden');
         var dateLembrete = $(this).find('td').html();

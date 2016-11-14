@@ -16,7 +16,7 @@
 
     <input id="PessoaId" disabled hidden value="@Model.PessoaId" />
     <div class="row">
-        <div class="col-md-9">
+        <div id="avaiability" class="col-md-9">
             <div class="disp-content">
 
                 <p id="avaiability-title" class="font-seha font-seha-title">Fill the blocks according to your availability</p>
@@ -276,7 +276,7 @@
                 </div>
 
                 <div class="slots-buttons">
-                    <button id="#btn-availability-save" class="btn slots-save">Save</button>
+                    <button disabled id="#btn-availability-save" class="btn slots-save">Save</button>
                     <button id="#btn-availability-clear" class="btn slots-clear">Clear</button>
                 </div>
 
@@ -330,8 +330,39 @@
         </div>
 
 
-        <div class="col-md-3">Área destinada aos lembretes</div>
-
+        <!--Lembretes-->
+        <div class="col-md-3">
+            <div id="lista-lembretes" class="table-seha avaiability">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var l in ViewBag.ListLembrete)
+                        {
+                            <tr>
+                                <td class="td-data">@l.Data</td>
+                                <td class="td-content">@l.Conteudo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-lembrete">
+                <div class="col-md-4 col-md-offset-4 overlay-lemb">
+                    <strong><p class="dateLemb"></p></strong>
+                    <div class="div-contentLemb">
+                        <p class="contentLemb"></p>
+                    </div>
+                    <div class="div-fecharLemb">
+                        <button id="fecharLemb" class="btn btn-seha2">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
