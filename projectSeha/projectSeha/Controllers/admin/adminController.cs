@@ -82,6 +82,10 @@ namespace ProjectSeha.Controllers
             return PartialView(p);
         }
 
+        public ActionResult results()
+        {
+            return View();
+        }
 
     }
 }

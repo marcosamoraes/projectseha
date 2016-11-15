@@ -1,226 +1,240 @@
 ﻿/*Componentes nas cores SEHA*/
-.btn-seha1{
+.btn-seha1 {
     color: white;
     background-color: #607D8B;
     transition: all 0.5s;
 }
-.btn-seha1:hover{
-    color: white;
-    background-color: #90A4AE;
-}
-.btn-seha1:focus{
-    color: white;
-    background-color: #607D8B;
-}
 
-.btn-seha2{
+    .btn-seha1:hover {
+        color: white;
+        background-color: #90A4AE;
+    }
+
+    .btn-seha1:focus {
+        color: white;
+        background-color: #607D8B;
+    }
+
+.btn-seha2 {
     color: white;
     background-color: #FF8A65;
     transition: all 0.5s;
 }
-.btn-seha2:hover{
+
+.btn-seha2:hover {
     color: white;
     background-color: #FFAB91;
 }
-.btn-seha2:focus{
+.btn-seha2:focus {
     color: white;
     background-color: #FF8A65;
 }
 
-.box-seha{
-	padding-bottom:50px;
-    padding-left:50px;
-    padding-right:50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: #607D8B;
+.box-seha {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #607D8B;
     border-radius: 10px;
 }
 
 .font-seha {
-    color:#777;
-    text-align:left;
+    color: #777;
+    text-align: left;
 }
 
-.font-seha-info{
-    font-size:18px;
+.font-seha-info {
+    font-size: 18px;
 }
 
-.font-seha-title{
-    font-size:24px;
+.font-seha-title {
+    font-size: 24px;
 }
 
-.font-seha-big{
-    font-size:36px;
+.font-seha-big {
+    font-size: 36px;
 }
 
-.margin-15{
-     margin-bottom: 15px;
+.margin-15 {
+    margin-bottom: 15px;
 }
 
 .dropdown-menu {
     background-color: #607D8B;
 }
+
 .dnone {
     display: none;
 }
 
 /*Mensagem-seha*/
-.close{
-    margin-bottom:0px !important;
+.close {
+    margin-bottom: 0px !important;
 }
-.mensagem-seha{
-    text-align:center;
-    top:0;
-    width:100%;
+
+.mensagem-seha {
+    text-align: center;
+    top: 0;
+    width: 100%;
 }
 
 
 /*Table-seha*/
 
-.table-seha table{
-    margin-bottom:20px;
-    background-color:#fff;
+.table-seha table {
+    margin-bottom: 20px;
+    background-color: #fff;
     border-spacing: 0;
     display: flex;
     flex-flow: column;
     width: 100%;
-    height:100%;
+    height: 100%;
     max-height: 300px;
 }
+
 table thead {
     flex: 0 0 auto;
     width: calc(100% - 0.9em);
     background-color: #607d8b;
     color: white;
 }
+
 .table-seha table tbody {
     flex: 1 1 auto;
     display: block;
     overflow-y: scroll;
 }
+
 .table-seha table tbody tr {
     width: 100%;
 }
-.table-seha table tbody tr:hover{
+
+.table-seha table tbody tr:hover {
     cursor: pointer;
-    background-color:#dcdcdc;
- }
+    background-color: #dcdcdc;
+}
+
 .table-seha table thead, .table-seha table tbody tr {
     display: table;
     table-layout: fixed;
 }
 
 /*Table Assignments e Result(step3)*/
-.table-grid table{
-    margin-bottom:20px;
-    background-color:#fff;
+.table-grid table {
+    margin-bottom: 20px;
+    background-color: #fff;
     border-spacing: 0;
     flex-flow: column;
     width: 100%;
-    height:100%;
+    height: 100%;
     max-height: 300px;
 }
-.table-grid table thead {
-    flex: 0 0 auto;
-    width: 100%;
-    color: #fff;
-}
-.table-grid table tbody {
-    flex: 1 1 auto;
-    display: block;
-}
-.table-grid table tbody tr {
-    width: 100%;
-}
-.table-grid table thead, .table-grid table tbody tr {
-    display: table;
-    table-layout: fixed;
-}
+
+    .table-grid table thead {
+        flex: 0 0 auto;
+        width: 100%;
+        color: #fff;
+    }
+
+    .table-grid table tbody {
+        flex: 1 1 auto;
+        display: block;
+    }
+
+        .table-grid table tbody tr {
+            width: 100%;
+        }
+
+        .table-grid table thead, .table-grid table tbody tr {
+            display: table;
+            table-layout: fixed;
+        }
 
 
-
-/* Aqui colocamos nosso próprio css */
+/*HTML, BODY, MAIN*/
 html, body, main {
     background-color: #f7f7f7;
 }
+
 #allPages {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 /*Header*/
-.navbar-background{
+.navbar-background {
     background-color: #607D8B;
 }
 
 .navbar-items {
-	font-size: 15px;
+    font-size: 15px;
 }
 
 .nav.navbar-nav.navbar-right {
-	padding-right: 20px;
-	padding-top: 8px;
+    padding-right: 20px;
+    padding-top: 8px;
 }
 
-.nav.navbar-nav.navbar-right a {
-    margin-right: 7px;
-    margin-left: 7px;
-    color:white;
-    transition: all 0.3s;
-}
+    .nav.navbar-nav.navbar-right a {
+        margin-right: 7px;
+        margin-left: 7px;
+        color: white;
+        transition: all 0.3s;
+    }
 
-.nav.navbar-nav.navbar-right a:hover {
-    background-color: white;
-    color: #607D8B;  
-    border-radius: 100px;
-    padding-bottom:10px;
-    padding-top:10px;
-}
+        .nav.navbar-nav.navbar-right a:hover {
+            background-color: white;
+            color: #607D8B;
+            border-radius: 100px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
 
-.nav.navbar-nav.navbar-right a:focus {
-    color: #B0BEC5; 
-}
+        .nav.navbar-nav.navbar-right a:focus {
+            color: #B0BEC5;
+        }
 
 .logo-nav {
-	float: left;
-	font-size: 25px;
-	padding: 15px;
-	font-weight: 600;
+    float: left;
+    font-size: 25px;
+    padding: 15px;
+    font-weight: 600;
 }
 
-.logo-nav a {
-	color: white;
-	opacity: 0.6;
-}
+    .logo-nav a {
+        color: white;
+        opacity: 0.6;
+    }
 
-.logo-nav a:hover {
-	opacity: 1;
-	text-decoration: none;
-}
+        .logo-nav a:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
 
 /*Lembrete*/
 .overlay-lemb {
-    height: 400px; 
-    margin-top: 200px; 
-    background-color: #607D8B; 
+    height: 400px;
+    margin-top: 200px;
+    background-color: #607D8B;
     color: white;
 }
 
 .dateLemb {
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-left: 5px;
 }
 
 .div-contentLemb {
-    position: absolute; 
-    width: 450px; 
-    height: 320px; 
-    left: 50%; 
-    right: 50%; 
-    margin-left: -225px; 
-    margin-top: 0; 
-    background-color: white; 
-    color: black; 
+    position: absolute;
+    width: 450px;
+    height: 320px;
+    left: 50%;
+    right: 50%;
+    margin-left: -225px;
+    margin-top: 0;
+    background-color: white;
+    color: black;
     padding: 20px;
 }
 
@@ -229,37 +243,39 @@ html, body, main {
 }
 
 .div-fecharLemb {
-    position: absolute; 
-    bottom: 20px; 
-    left: 50%; 
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
     margin-left: -35px;
 }
 
 .td-data {
-    max-width: 175px; 
+    max-width: 175px;
     max-height: 37px;
 }
 
 .td-content {
-    max-width: 255px; 
-    max-height: 37px; 
-    white-space: nowrap; 
-    overflow: hidden; 
+    max-width: 255px;
+    max-height: 37px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .td-excluir {
-    max-width: 70px; 
+    max-width: 70px;
     max-height: 37px;
 }
 
 /* Tabela Lembrete */
-#semesters .table-seha{
-    margin-top:25px;
+#semesters .table-seha {
+    margin-top: 25px;
 }
-#semesters table{
-    max-height:180px !important;
+
+#semesters table {
+    max-height: 180px !important;
 }
+
 .modal-lembrete {
     position: fixed;
     top: 0;
@@ -271,124 +287,129 @@ html, body, main {
     display: none;
 }
 
-  /*Definir o tamanho das colunas de acordo com cada View*/
-.semesters table thead th:nth-child(1), .semesters table tbody td:nth-child(1){
-    width:33% !important;
+/*Definir o tamanho das colunas de acordo com cada View*/
+.semesters table thead th:nth-child(1), .semesters table tbody td:nth-child(1) {
+    width: 33% !important;
 }
-.semesters table thead th:nth-child(2), .semesters table tbody td:nth-child(2){
-    width:52% !important;
+
+.semesters table thead th:nth-child(2), .semesters table tbody td:nth-child(2) {
+    width: 52% !important;
 }
-.semesters table thead th:nth-child(3), .semesters table tbody td:nth-child(3){
-    text-align:center;
+
+.semesters table thead th:nth-child(3), .semesters table tbody td:nth-child(3) {
+    text-align: center;
 }
 
 
 /*View Aviability*/
 
-.disponivel{
-    background-color:#4DB6AC;
-}
-.talvez{
-    background-color:#FFCC80;
+.disponivel {
+    background-color: #4DB6AC;
 }
 
-#availability{
-    padding-left: inherit
+.talvez {
+    background-color: #FFCC80;
 }
 
-#steps-obs{
-
-}
-#steps-obs textarea{
-   width:100%;
-   height: 140px;
-   max-width:100%; 
-   background-color:#fff;
-   border-color:#4db6ac;
+#availability {
+    padding-left: inherit;
 }
 
+#steps-obs {
+}
 
-.progress-bar{
+    #steps-obs textarea {
+        width: 100%;
+        height: 140px;
+        max-width: 100%;
+        background-color: #fff;
+        border-color: #4db6ac;
+    }
+
+
+.progress-bar {
     margin-top: 15px;
     margin-bottom: 15px;
     height: 30px;
-    overflow:visible;
-    width:0%;
-    background-color:#4db6ac;
+    overflow: visible;
+    width: 0%;
+    background-color: #4db6ac;
 }
 
-.progress-bar label{
-    padding-top:5px;
-    font-size:15px;
-}
+    .progress-bar label {
+        padding-top: 5px;
+        font-size: 15px;
+    }
 
-p.font-seha{
-    margin-bottom:50px;
+p.font-seha {
+    margin-bottom: 50px;
 }
 
 .disp-content {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 
 .slots {
-	width: 100%;
-	height: 360px;
+    width: 100%;
+    height: 360px;
 }
 
 .slots-left {
-	float: left;
-	width: 14.28%;
+    float: left;
+    width: 14.28%;
 }
 
 .slots-content {
-	border: 1px solid;
-    border-color:#949494;
-	height: 40px;
-	width: 100%;
-	text-align: center;
+    border: 1px solid;
+    border-color: #949494;
+    height: 40px;
+    width: 100%;
+    text-align: center;
 }
 
-.slots-content p {
-	font-size: 15px;
-	padding-top: 8px;
-}
+    .slots-content p {
+        font-size: 15px;
+        padding-top: 8px;
+    }
 
 .slots-tools {
-	float: left;
-	height: 40px;
-	width: 50%;
-	margin-top: 20px;
+    float: left;
+    height: 40px;
+    width: 50%;
+    margin-top: 20px;
 }
 
 .slots-tbutton {
-	opacity: 0.5;
-	text-align: center;
+    opacity: 0.5;
+    text-align: center;
     padding: 5px 15px;
     font-weight: 700;
     transition: all 0.5s;
 }
 
 .slots-save {
-	text-align: center;
-    padding: 5px 20px;	
+    text-align: center;
+    padding: 5px 20px;
     float: right;
     background-color: #7cbf7f;
     color: white;
     font-weight: 700;
     transition: all 0.5s;
 }
-.slots-save:hover {
-    color: white;
-    background-color: #92de95;
-}
-.slots-save:focus {
-    color: white;
-    background-color: #7cbf7f;
-}
+
+    .slots-save:hover {
+        color: white;
+        background-color: #92de95;
+    }
+
+    .slots-save:focus {
+        color: white;
+        background-color: #7cbf7f;
+    }
 
 .slots-clear {
-	text-align: center;
-    padding: 5px 20px;	
+    text-align: center;
+    padding: 5px 20px;
     float: right;
     background-color: #e66161;
     color: white;
@@ -396,134 +417,129 @@ p.font-seha{
     font-weight: 700;
     transition: all 0.5s;
 }
-.slots-clear:hover {
-    color: white;
-    background-color: #ff9090;
-}
-.slots-clear:focus {
-    color: white;
-    background-color: #e66161;
-}
+
+    .slots-clear:hover {
+        color: white;
+        background-color: #ff9090;
+    }
+
+    .slots-clear:focus {
+        color: white;
+        background-color: #e66161;
+    }
 
 .slots-buttons {
-	float: right;
-	height: 40px;
-	width: 50%;
-	margin-top: 20px;
+    float: right;
+    height: 40px;
+    width: 50%;
+    margin-top: 20px;
 }
 
 .slots-content-desactive {
-    border-color:#949494;
-	height: 40px;
-	width: 100%;
-	text-align: center;
-	background-color: transparent!important;
-    border: 0!important;
+    border-color: #949494;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: transparent !important;
+    border: 0 !important;
 }
 
-.slots-content-desactive p{
-    font-size: 15px;
-	padding-top: 8px;
-}
+    .slots-content-desactive p {
+        font-size: 15px;
+        padding-top: 8px;
+    }
 
 #available {
-	background-color: #00897B;
-    color:white;
-	opacity: 1;
+    background-color: #00897B;
+    color: white;
+    opacity: 1;
 }
-#available:hover {
-	background-color: #26A69A;
-}
+
+    #available:hover {
+        background-color: #26A69A;
+    }
 
 #maybe {
-	background-color: #FF8F00;
-    color:white;
-}
-#maybe:hover {
-	background-color: #FFAB40;   
+    background-color: #FF8F00;
+    color: white;
 }
 
-#eraser {
-	background-color: #FFF;
-    border: 2px solid;
-    border-color:#989898;
-    color:#989898;
-}
-#eraser:hover {
-	background-color: #e8e8e8;
-}
+    #maybe:hover {
+        background-color: #FFAB40;
+    }
 
 .slots-bar {
-	position: relative;
-	float: left;
-	height: 40px;
-	width: 100%;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-	background-color: #f5f2f2;
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #f5f2f2;
 }
 
 .bar-fill {
-	position: absolute;
-	float: left;
-	height: 38px;
-	width: 0px;
-	border: 0;
-	background-color: #4DB6AC;
+    position: absolute;
+    float: left;
+    height: 38px;
+    width: 0px;
+    border: 0;
+    background-color: #4DB6AC;
 }
 
 .bar-info {
-	position: relative;
-	float: right;
-	margin-top: 30px;	
+    position: relative;
+    float: right;
+    margin-top: 30px;
 }
 
-.bar-info p {
-	float: right;
-}
+    .bar-info p {
+        float: right;
+    }
 
 #bar-good {
- 	position:relative; 
- 	right: 200px;
-}
- 
-.observation {
- 	position: relative;
- 	float: left;
- 	padding-top: 30px;
- 	width: 100%;
-}
- 
-.table-observation{
-    margin-top:130px;
-    border-top:1px solid;
-    border-color:#bbb;
-    padding-top:10px;
+    position: relative;
+    right: 200px;
 }
 
-.table-observation .scroll{
-    overflow-y:scroll;
-    height:100px;
-}   
+.observation {
+    position: relative;
+    float: left;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.table-observation {
+    margin-top: 130px;
+    border-top: 1px solid;
+    border-color: #bbb;
+    padding-top: 10px;
+}
+
+    .table-observation .scroll {
+        overflow-y: scroll;
+        height: 100px;
+    }
 
 .observation textarea {
- 	width: 100%;
- 	height: 100px;
- 	max-width: 100%;
-}
-#availability-hours label{
-    font-size:14px;
-    margin-bottom:30px;
-}
-#avaiability-title{
-    margin-bottom:10px !important;
-    
+    width: 100%;
+    height: 100px;
+    max-width: 100%;
 }
 
- /*View Login*/
- #login-view .login-div {
-    background-color: #7b94a0 ;
+#availability-hours label {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+#avaiability-title {
+    margin-bottom: 10px !important;
+}
+
+/*View Login*/
+#login-view .login-div {
+    background-color: #7b94a0;
     color: white;
     width: 33%;
     height: 270px;
@@ -538,181 +554,141 @@ p.font-seha{
     padding-left: 40px;
     padding-right: 40px;
     border-radius: 7px;
- }
+}
 
 #login-view input {
-    border-radius:0px;
+    border-radius: 0px;
 }
 
- #login-view .title {
-     font-weight: bold;
-     margin-top: 0;
-     text-align: center;
- }
+#login-view .title {
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
 
- #login-view button {
-     width: 30%;
- }
+#login-view button {
+    width: 30%;
+}
 
- #login-view .login-button {
-     text-align: center;
-     padding-top: 5px;
- }
+#login-view .login-button {
+    text-align: center;
+    padding-top: 5px;
+}
 
- /*View - Semesters*/
-#semesters .observation{
+/*View - Semesters*/
+#semesters .observation {
     margin-top: 50px;
-    text-align:center;
+    text-align: center;
 }
 
-#semesters .font-seha{
-    text-align:center;
+#semesters .font-seha {
+    text-align: center;
 }
 
-#buttons-semester{
+#buttons-semester {
     margin-top: 50px;
-    text-align:center;
+    text-align: center;
 }
 
-#history-semester{
-    visibility:hidden;
-    margin-top:70px;
+#history-semester {
+    visibility: hidden;
+    margin-top: 70px;
     color: #666;
 }
 
-#btn-new-semester{
-    margin-right:8px;
+#btn-new-semester {
+    margin-right: 8px;
 }
 
- /*View - Steps*/
+/*View - Steps*/
 
- #select-steps-professor{
-     margin-top:20px;
-     width: 72%;
- }
-
-#steps-content{
-    margin-top:50px;
-}
-.step {
-    display: none;
-}
-.step input{
-    display:inline-table;
-    width:81%;
-    height:30px;
-}
-.step select{
-    display:inline-table;
-    width:15%;
-    height:31px;
-}
- #buttons-steps{
-    margin-top:30px;
-    text-align:center;
-    position:relative;
- }
- #buttons-steps #btn-step1{
-    float:left;
- }
- #buttons-steps #btn-step3{
-    float:right;
- }
- .clear-filter{
-    color: #9a9a9a;
-    position:relative;
-    float:right;
- }
- .clear-filter:hover{
-    color: #b7b7b7;
- }
- .disp-step {
-    display:none;
- }
- .disp-step .font-seha-info {
-     padding-top:30px;
-     margin-bottom:30px;
- }
- .finish-step{
-     text-align:center;
- }
-
-  /*Definir o tamanho das colunas de acordo com cada View*/
-.step table thead th:nth-child(1), .step table tbody td:nth-child(1){
-    width:50% !important;
-}
-.step table thead th:nth-child(2), .step table tbody td:nth-child(2){
-    width:10% !important;
+#btn-finish {
+    width: 72%;
 }
 
- /*Step 3*/
+#btn-finish a {
+    float: right;
+}
 
- #step3{
-    display: none;
- }  
- #step3 button{
-    float:right;
-    margin-bottom:20px;
- }
- #step3 div:nth-child(1){
-    margin-bottom:20px;
- }
- #step3 select{
-    display:inline-table;
-    width:14%;
-    margin-right:15px;
- }
+#select-steps-professor {
+    margin-top: 20px;
+    width: 72%;
+}
+
+
+/*Step 3*/
+
+    #step3 button {
+        float: right;
+        margin-bottom: 20px;
+    }
+
+    #step3 div:nth-child(1) {
+        margin-bottom: 20px;
+    }
+
+    #step3 select {
+        display: inline-table;
+        width: 14%;
+        margin-right: 15px;
+    }
+
 #select-step3-course {
     width: 29% !important;
 }
-#step3 table{
-    text-align:center;
+
+#step3 table {
+    text-align: center;
     border: solid 2px;
-    border-color:#607d8b;
+    border-color: #607d8b;
 }
-#step3 table thead th{
-    border-bottom: solid 2px;
-    border-bottom-color:#607d8b;
-}
-#step3 table th{
-    text-align:center;
-}
+
+    #step3 table thead th {
+        border-bottom: solid 2px;
+        border-bottom-color: #607d8b;
+    }
+
+    #step3 table th {
+        text-align: center;
+    }
 
 /*Definir o tamanho das colunas de acordo com cada View*/
 
 
 
 /*Centralização para div's simples (não responsível)*/
-.center-large{
-    left:50%;
-    position:absolute;
-    width:1080px;
-    margin-left:-540px;
+.center-large {
+    left: 50%;
+    position: absolute;
+    width: 1080px;
+    margin-left: -540px;
 }
-.center-medium{
-    left:50%;
-    position:absolute;
-    width:800px;
-    margin-left:-400px;
+
+.center-medium {
+    left: 50%;
+    position: absolute;
+    width: 800px;
+    margin-left: -400px;
 }
-.center-small{
-    left:50%;
-    position:absolute;
-    width:500px;
-    margin-left:-250px;
+
+.center-small {
+    left: 50%;
+    position: absolute;
+    width: 500px;
+    margin-left: -250px;
 }
 
 /*View - About*/
 .font1 {
-    font-size:40px;
+    font-size: 40px;
 }
 
-.font2{
-    font-size:20px;
+.font2 {
+    font-size: 20px;
 }
 
-.font3{
-    font-size:25px;
+.font3 {
+    font-size: 25px;
 }
 
 #about {
@@ -720,65 +696,78 @@ p.font-seha{
 }
 
 /*View Assignment*/
-.assignment{
-    color:#777;
-    padding-top:30px;
-}
-#select-assignment-professor{
-    margin-bottom:20px;
-    width:48.7%;
-    float:none;
-}
-.assignment input{
-    margin-bottom: 15px;
-}
-.assignment label{
-    margin-bottom: 15px;
-}
-.assignment select{
-    width:100%;
-    position:relative;
-    float:left;
-}
-.assignment button{
-    position:relative;
-    float:right;
-    margin-bottom:20px;
-}
-.assignment a{
-    position:relative;
-    float:right;
-    margin-bottom:20px;
-}
-.assignment .col-md-4{
-    padding:0;
-}
-#btn-cancel-assignment{
-    margin-right:15px;
+.assignment {
+    color: #777;
+    padding-top: 30px;
 }
 
-.assignment table{
-   user-select: none;
-   background-color:white;
-   margin-top:65px;
-   cursor:default;
+#select-assignment-professor {
+    margin-bottom: 20px;
+    width: 48.7%;
+    float: none;
 }
-#tb-assignment input, #tb-assignment label{
-    cursor:pointer;
-    margin-top:10px;
-    margin-bottom:10px !important;
+
+.assignment input {
+    margin-bottom: 15px;
 }
-#tb-assignment thead th,#tb-assignment tr td{
-    text-align:center;
+
+.assignment label {
+    margin-bottom: 15px;
 }
-#td-assignment-disabled{
-    color:#ccc;
+
+.assignment select {
+    width: 100%;
+    position: relative;
+    float: left;
 }
-#td-assignment-disabled label, #td-assignment-disabled input{
-    cursor:default;
+
+.assignment button {
+    position: relative;
+    float: right;
+    margin-bottom: 20px;
 }
-#select-assignment-curso{
-    margin-bottom:20px;
+
+.assignment a {
+    position: relative;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.assignment .col-md-4 {
+    padding: 0;
+}
+
+#btn-cancel-assignment {
+    margin-right: 15px;
+}
+
+.assignment table {
+    user-select: none;
+    background-color: white;
+    margin-top: 65px;
+    cursor: default;
+}
+
+#tb-assignment input, #tb-assignment label {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+}
+
+#tb-assignment thead th, #tb-assignment tr td {
+    text-align: center;
+}
+
+#td-assignment-disabled {
+    color: #ccc;
+}
+
+    #td-assignment-disabled label, #td-assignment-disabled input {
+        cursor: default;
+    }
+
+#select-assignment-curso {
+    margin-bottom: 20px;
 }
 
 /*Definir o tamanho das colunas de acordo com cada View*/
@@ -786,15 +775,15 @@ p.font-seha{
 
 /*View Courses*/
 
-.row{
-    margin-left:0px;
-    margin-right:0px;
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #wrapper {
     padding-left: 70px;
     transition: all .4s ease 0s;
-    height: 100%
+    height: 100%;
 }
 
 #sidebar-wrapper {
@@ -816,21 +805,24 @@ p.font-seha{
     margin: 0;
     padding: 0;
 }
+
 #page-content-wrapper {
     padding-left: 0;
     margin-left: 0;
     width: 100%;
     height: auto;
 }
+
 #wrapper.active {
     padding-left: 150px;
 }
-#wrapper.active #sidebar-wrapper {
-    left: 150px;
-}
+
+    #wrapper.active #sidebar-wrapper {
+        left: 150px;
+    }
 
 #page-content-wrapper {
-  width: 100%;
+    width: 100%;
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
@@ -847,6 +839,7 @@ p.font-seha{
     -o-transition: background .5s;
     transition: background .5s;
 }
+
 .sidebar_name {
     padding-top: 25px;
     color: #fff;
@@ -854,120 +847,123 @@ p.font-seha{
 }
 
 .sidebar-nav li {
-  line-height: 40px;
-  text-indent: 20px;
+    line-height: 40px;
+    text-indent: 20px;
 }
 
-.sidebar-nav li a {
-  color: #999999;
-  display: block;
-  text-decoration: none;
-}
+    .sidebar-nav li a {
+        color: #999999;
+        display: block;
+        text-decoration: none;
+    }
 
-.sidebar-nav li a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.2);
-  text-decoration: none;
-}
+        .sidebar-nav li a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.2);
+            text-decoration: none;
+        }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
-}
+        .sidebar-nav li a:active,
+        .sidebar-nav li a:focus {
+            text-decoration: none;
+        }
 
 .sidebar-nav > .sidebar-brand {
-  height: 65px;
-  line-height: 60px;
-  font-size: 18px;
+    height: 65px;
+    line-height: 60px;
+    font-size: 18px;
 }
 
-.sidebar-nav > .sidebar-brand a {
-  color: #999999;
+    .sidebar-nav > .sidebar-brand a {
+        color: #999999;
+    }
+
+        .sidebar-nav > .sidebar-brand a:hover {
+            color: #fff;
+            background: none;
+        }
+
+#main_icon {
+    float: right;
+    padding-right: 65px;
+    padding-top: 20px;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none;
+.sub_icon {
+    float: right;
+    padding-right: 65px;
+    padding-top: 10px;
 }
 
-#main_icon
-{
-    float:right;
-   padding-right: 65px;
-   padding-top:20px;
-}
-.sub_icon
-{
-    float:right;
-   padding-right: 65px;
-   padding-top:10px;
-}
 .content-header {
-  height: 65px;
-  line-height: 65px;
+    height: 65px;
+    line-height: 65px;
 }
 
-.content-header h1 {
-  margin: 0;
-  margin-left: 20px;
-  line-height: 65px;
-  display: inline-block;
-}
+    .content-header h1 {
+        margin: 0;
+        margin-left: 20px;
+        line-height: 65px;
+        display: inline-block;
+    }
 
 @media (max-width:767px) {
     #wrapper {
         padding-left: 70px;
         transition: all .4s ease 0s;
     }
+
     #sidebar-wrapper {
         left: 70px;
     }
+
     #wrapper.active {
         padding-left: 150px;
     }
-    #wrapper.active #sidebar-wrapper {
-        left: 150px;
-        width: 150px;
-        transition: all .4s ease 0s;
-    }
+
+        #wrapper.active #sidebar-wrapper {
+            left: 150px;
+            width: 150px;
+            transition: all .4s ease 0s;
+        }
 }
 
 /*Professors*/
 
-#professor{
-    padding-top:30px;
+#professor {
+    padding-top: 30px;
+}
+#professor form {
+    text-align: left;
+}
+#professor form .form-group input {
+    width: 70%;
+    height: 30px;
 }
 
-#professor form{
-    text-align:left;
+#professor-input-password {
+    width: 40%;
 }
 
-#professor form .form-group input{
-    width:70%;
-    height:30px;
+#professor-buttons {
+    text-align: right;
+    width: 70%;
+    padding-top: 10px;
 }
 
-#professor-input-password{
-    width:40%;
-}
-
-#professor-buttons{
-    text-align:right; 
-    width:70%;
-    padding-top:10px;
-}
-
-#professor-buttons a{
-    margin-right:20px;
-}
+    #professor-buttons a {
+        margin-right: 20px;
+    }
 
 /*Definir o tamanho das colunas de acordo com cada View*/
-.prof table thead th:nth-child(1), .prof table tbody td:nth-child(1){
-    width:10% !important;
+.prof table thead th:nth-child(1), .prof table tbody td:nth-child(1) {
+    width: 10% !important;
 }
-.prof table thead th:nth-child(2), .prof table tbody td:nth-child(2){
-    width:55% !important;
+
+.prof table thead th:nth-child(2), .prof table tbody td:nth-child(2) {
+    width: 55% !important;
 }
-.prof table thead th:nth-child(5), .prof table tbody td:nth-child(5){
-    text-align:center;
+
+.prof table thead th:nth-child(5), .prof table tbody td:nth-child(5) {
+    text-align: center;
 }

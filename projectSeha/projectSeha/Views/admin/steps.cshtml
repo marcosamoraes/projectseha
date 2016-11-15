@@ -8,6 +8,7 @@
 
 <div id="steps">
     <div class="steps">
+
         <select id="select-steps-professor" class="form-control">
             <option disabled selected hidden>Professors..</option>
             @foreach (var item in ViewBag.ListProfessor)//Passar por ViewModel
@@ -17,97 +18,12 @@
         </select>
 
         <!--Partial view para disponibilidade-->
-        <div id="_StepsAvailability"></div>
+        <div class="margin-15" id="_StepsAvailability"></div>
 
-
-        <!--Step 3 ********************************************************************************    -->
-
-        <div id="step3" class="center-large table-grid">
-            <div>
-                <select id="select-step3-course" class="form-control">
-                    <option>Análise e Desenvolvimento de Sistemas</option>
-                    <option>Agronegócio</option>
-                    <option>Informática para Negócios</option>
-                </select>
-                <select id="select-step3-semester" class="form-control">
-                    <option>1st Semester</option>
-                    <option>2st Semester</option>
-                    <option>3st Semester</option>
-                    <option>4st Semester</option>
-                    <option>5st Semester</option>
-                    <option>6st Semester</option>
-                </select>
-                <select id="select-step3-period" class="form-control">
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Evening</option>
-                </select>
-            </div>
-
-            <table id="tb-step3" class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Hours</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><p>13:10 to 14:50</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                    </tr>
-                    <tr>
-                        <td>15:00 to 15:50</td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>15:50 to 16:40</td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>16:50 to 17:40</td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>17:40 to 18:30</td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td><p>LP</p><p>Valeria</p></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <button id="btn-step3-export" class="btn btn-seha1">Export to PDF</button>
-            </div>
+        <div id="btn-finish">
+            <a href="/admin/results" class="margin-15 btn btn-seha2">Finish Editions</a>
         </div>
+
     </div>
 </div>
    

@@ -220,6 +220,7 @@
     <Content Include="Views\courses\_TabDisciplinas.cshtml" />
     <Content Include="Views\admin\_StepsAvailability.cshtml" />
     <Content Include="Views\user\_Availability.cshtml" />
+    <Content Include="Views\admin\results.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
