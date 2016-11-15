@@ -8,7 +8,7 @@ using ProjectSeha.Models;
 
 namespace ProjectSeha.Controllers
 {
-    [AutorizaProfessor]
+   
     public class userController : Controller
     {
         // GET: user

@@ -6,32 +6,38 @@
 
     /*View Availability*/
 
-    var selecao = 1; //define cor verde(1) ou laranja(2)
+    //var selecao = 1; //define cor verde(1) ou laranja(2)
 
-    /*Carregamento inicial ----------------------------------------------------------------------------*/
+    /*Carregamento inicial ----------------------------------------------------------------------------
     var horas = parseInt($('#horas').html());
+    console.log(horas);
     var totalBarra = horas + (horas / 2);
     var maxDisp = horas / 2; //max quadros disponiveis
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
     if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
-        
   
     if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
         contTalvez = maxTalvez;
         atualBarra = totalBarra;
         contDisp = maxDisp;
+        console.log(contTalvez);
+        console.log(contDisp);
+        console.log(atualBarra);
     }
     else {
         var contTalvez = 0;//contTalvez = maxTalvez;
         var atualBarra = 0;//atualBarra = totalBarra;
         var contDisp = 0; //contDisp = maxDisp;
+        console.log(contTalvez);
+        console.log(contDisp);
+        console.log(atualBarra);
     }
 
     var widthBarra = 0;
     var color = '#4DB6AC';
     $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
     $(".slots-save").attr('disabled', 'disabled');
-
+    console.log("total barra é:", totalBarra);
 
     //checa disabled do bt save
     if (atualBarra == totalBarra) {
@@ -45,6 +51,20 @@
     $(".progress-bar label").html(parseInt(widthBarra) + '%'); //atualiza a label
 
     /*-----------------------------------------------------------------------------------------------*/
+
+    var atualBarra;
+    var totalBarra;
+    var contDisp;
+    var contTalvez;
+    var talvez;
+    var disp;
+    var selecao;
+    var horas;
+    var maxDisp;
+    var maxTalvez;
+    var widhtBarra;
+    var color;
+
 
     /*Botões de controle (cores)*/
     $(document).on('click', '#available', function () {
@@ -63,28 +83,37 @@
 
     $(document).on('click', '.slots-content', function () {
 
-        if ($(this).hasClass('disponivel')){ //se já existir preenchimento
-            //$(this).css('background-color', 'transparent'); //apaga preenchimento realizado
+        if ($(this).hasClass('disponivel')) { //se já existir preenchimento
             $(this).removeClass('disponivel');
             atualBarra -= 2;
             contDisp--;
+
+            console.log("id: ", $("input", this).val());
+            console.log("talvez: ", contTalvez);
+            console.log("disp: ", contDisp);
+            console.log("atualBarra ", atualBarra);
+            console.log("total barra eh ", totalBarra);
+            console.log($("#existeDisponibilidade").length > 0);
         }
         else {
             if ($(this).hasClass('talvez')) {
-                //$(this).css('background-color', 'transparent'); //apaga preenchimento realizado
                 $(this).removeClass('talvez');
                 atualBarra -= 2;
                 contTalvez--;
+
+                console.log("id: ", $("input", this).val());
+                console.log("talvez: ", contTalvez);
+                console.log("disp: ", contDisp);
+                console.log("atualBarra ", atualBarra);
+                console.log($("#existeDisponibilidade").length > 0);
             }
             else {
                 if (selecao == 1 && contDisp < maxDisp) { //se for available
-                   // $(this).css('background-color', color); //pega a cor atual e preenche
                     $(this).addClass('disponivel');
                     atualBarra += 2;
                     contDisp++;
                 }
                 else if (selecao == 2 && contTalvez < maxTalvez) {
-                    //$(this).css('background-color', color); //pega a cor atual e preenche
                     $(this).addClass('talvez');
                     atualBarra += 2;
                     contTalvez++;
@@ -130,7 +159,7 @@
     var slotDisponivel = [];
     var slotTalvez = [];
 
-    $(document).on('click', '.slots-save', function () {
+    $('.slots-save').click(function () {
         slotDisponivel = []; //limpo
         slotTalvez = []; //limpo
 
@@ -181,6 +210,13 @@
         }
     });
 
+
+
+
+
+
+
+
     /*View - Semesters*/
     $('#btn-show-semester').click(function () {
         $('#history-semester').css('visibility', 'visible');
@@ -199,6 +235,50 @@
             dataType: 'html',
             success: function (data) {
                 $('#_StepsAvailability').html(data);
+
+                selecao = 1;
+                horas = parseInt($('#horas').html());
+                console.log(horas);
+                totalBarra = horas + (horas / 2);
+                maxDisp = horas / 2; //max quadros disponiveis
+                maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
+                if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
+
+                if ($("#existeDisponibilidade").length > 0) { //verifica se elemento existe e inicia valores ja preenchidos
+                    contTalvez = maxTalvez;
+                    atualBarra = totalBarra;
+                    contDisp = maxDisp;
+                    console.log(contTalvez);
+                    console.log(contDisp);
+                    console.log(atualBarra);
+                }
+                else {
+                    contTalvez = 0;//contTalvez = maxTalvez;
+                    atualBarra = 0;//atualBarra = totalBarra;
+                    contDisp = 0; //contDisp = maxDisp;
+                    console.log(contTalvez);
+                    console.log(contDisp);
+                    console.log(atualBarra);
+                }
+
+                widthBarra = 0;
+                color = '#4DB6AC';
+                $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
+                $(".slots-save").attr('disabled', 'disabled');
+                console.log("total barra é:", totalBarra);
+
+                //checa disabled do bt save
+                if (atualBarra == totalBarra) {
+                    $(".slots-save").removeAttr('disabled', 'disabled');
+                }
+
+                //prache!
+                $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
+                widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
+                $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width
+                $(".progress-bar label").html(parseInt(widthBarra) + '%'); //atualiza a label
+
+
             },
             error: function () {
 
