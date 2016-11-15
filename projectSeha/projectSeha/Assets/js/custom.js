@@ -214,7 +214,7 @@
                 }
 
                 //prache!
-                $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
+                $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-barr
                 widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
                 $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width
                 $(".progress-bar label").html(parseInt(widthBarra) + '%'); //atualiza a label
