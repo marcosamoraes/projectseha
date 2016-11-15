@@ -120,7 +120,7 @@
                 }
             }
         }
-        
+
         //função para desabilitar save
         if (atualBarra == totalBarra) {
             $(".slots-save").removeAttr('disabled');
@@ -137,13 +137,13 @@
         $(".progress-bar label").html(parseInt(widthBarra) + '%')//atualiza a label
     });
 
-    $(document).on('click','.slots-clear', function () {
+    $(document).on('click', '.slots-clear', function () {
         $('.slots-content').removeClass('disponivel');
         $('.slots-content').removeClass('talvez');
         contTalvez = 0;
         contDisp = 0;
         atualBarra = 0;
-        
+
         $(".slots-save").attr('disabled', 'disabled');
 
         //prache!
@@ -159,7 +159,7 @@
     var slotDisponivel = [];
     var slotTalvez = [];
 
-    $('.slots-save').click(function () {
+    $(document).on('click', '.slots-save', function () {
         slotDisponivel = []; //limpo
         slotTalvez = []; //limpo
 
@@ -180,7 +180,7 @@
         var ProfessorId = $("#PessoaId").val();
 
         $.ajax({ //talvez n precisamos usar o ajax aqui
-            url: '/user/Create/?ProfessorId=' + ProfessorId + '&slotDisponivel=' + slotDisponivel + '&slotTalvez=' + slotTalvez,
+            url: '/default/Create/?ProfessorId=' + ProfessorId + '&slotDisponivel=' + slotDisponivel + '&slotTalvez=' + slotTalvez,
             method: 'get',
             success: function (data) {
 
@@ -191,13 +191,14 @@
         });
 
         var obs = $('#txt-obs').val();
+        if (obs != null) {
+            $.ajax({
+                url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes=' + obs,
+                success: function () {
 
-        $.ajax({
-            url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes=' + obs,
-            success: function () {
-
-            }
-        });
+                }
+            });
+        }
 
         if ($('#msg-sucesso').val() == null) {
             $(".slots-tools").before(
@@ -211,7 +212,65 @@
     });
 
 
+    //Carregamento da view Avaiability
+    if ($("#_Availability".length > 0)) {
 
+        var ProfessorId = $("#ProfessorId").val();
+
+        $.ajax({
+            url: '/user/_Availability/?ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_Availability').html(data);
+
+                selecao = 1;
+                horas = parseInt($('#horas').html());
+                console.log(horas);
+                totalBarra = horas + (horas / 2);
+                maxDisp = horas / 2; //max quadros disponiveis
+                maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
+                if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
+
+                if ($("#existeDisponibilidade").length > 0) { //verifica se elemento existe e inicia valores ja preenchidos
+                    contTalvez = maxTalvez;
+                    atualBarra = totalBarra;
+                    contDisp = maxDisp;
+                    console.log(contTalvez);
+                    console.log(contDisp);
+                    console.log(atualBarra);
+                }
+                else {
+                    contTalvez = 0;//contTalvez = maxTalvez;
+                    atualBarra = 0;//atualBarra = totalBarra;
+                    contDisp = 0; //contDisp = maxDisp;
+                    console.log(contTalvez);
+                    console.log(contDisp);
+                    console.log(atualBarra);
+                }
+
+                widthBarra = 0;
+                color = '#4DB6AC';
+                $(".progress-bar").attr('aria-valuemax', totalBarra); //Inicializador do total barra
+                $(".slots-save").attr('disabled', 'disabled');
+                console.log("total barra é:", totalBarra);
+
+                //checa disabled do bt save
+                if (atualBarra == totalBarra) {
+                    $(".slots-save").removeAttr('disabled', 'disabled');
+                }
+
+                //prache!
+                $(".progress-bar").attr('aria-valuenow', atualBarra); //atualiza o valuenow da progress-bar
+                widthBarra = (atualBarra / totalBarra) * 100; //atualiza o width da progress-bar
+                $(".progress-bar").css('width', widthBarra + '%'); //preenche bar com o width
+                $(".progress-bar label").html(parseInt(widthBarra) + '%'); //atualiza a label
+            },
+            error: function () {
+
+            }
+        });
+    };
 
 
 
@@ -223,7 +282,6 @@
     });
 
     /*View - Steps*/
-
 
     $(document).on('change', '#select-steps-professor', function () {
 
@@ -559,7 +617,7 @@
     });
 
     /*Modal Lembrete*/
-    $('#lista-lembretes.table-seha table tr').click(function () {
+    $(document).on('click', '#lista-lembretes.table-seha table tr', function () {
         $('.modal-lembrete').fadeIn();
         $('body').css('overflow', 'hidden');
         var dateLembrete = $(this).find('td').html();
@@ -568,9 +626,9 @@
         $('.contentLemb').html(contentLembrete);
     });
 
-    $('#fecharLemb').click(function () {
+    $(document).on('click', '#fecharLemb', function () {
         $('.modal-lembrete').fadeOut();
         $('body').css('overflow', 'auto');
     });
-    
+
 });

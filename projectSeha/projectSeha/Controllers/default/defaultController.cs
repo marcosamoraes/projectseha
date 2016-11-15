@@ -92,5 +92,50 @@ namespace ProjectSeha.Controllers
            Session.RemoveAll();
            return RedirectToAction("Index");
         }
+
+        //tanto para admin quando para user
+        public ActionResult Create(int ProfessorId, string slotDisponivel, string slotTalvez)
+        {
+            using (AvailabilityModel model = new AvailabilityModel())
+            {
+                model.Delete(ProfessorId);
+            }
+
+            string[] disponiveis = slotDisponivel.Split(',');
+            if (disponiveis[0] != "")
+            {
+                for (int i = 0; i < disponiveis.Length; i++)
+                {
+                    Disponibilidade d = new Disponibilidade();
+                    d.CodProfessor = ProfessorId;
+                    d.CodSlot = Convert.ToInt32(disponiveis[i]);
+                    d.Status_slot = true; //Status_slot True para slots verdes
+
+                    using (AvailabilityModel model = new AvailabilityModel())
+                    {
+                        model.Create(d);
+                    }
+                }
+            }
+
+            string[] talvez = slotTalvez.Split(',');
+            if (talvez[0] != "")
+            {
+                for (int i = 0; i < talvez.Length; i++)
+                {
+                    Disponibilidade d = new Disponibilidade();
+                    d.CodProfessor = ProfessorId;
+                    d.CodSlot = Convert.ToInt32(talvez[i]);
+                    d.Status_slot = false; //Status_slot false para slots lranjas
+
+                    using (AvailabilityModel model = new AvailabilityModel())
+                    {
+                        model.Create(d);
+                    }
+                }
+            }
+
+            return Json("Salvo com sucesso");
+        }
     }
 }

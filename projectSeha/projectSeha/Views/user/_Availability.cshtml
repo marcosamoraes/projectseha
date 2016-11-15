@@ -1,9 +1,10 @@
 ﻿@model ProjectSeha.Entity.Professor
 @{var i = 1;}
 
+<!-- Principal Content -->
 
 
-<div class="avaiability" style="margin-top: 20px;">
+<div class="avaiability">
 
     @if (ViewBag.ListDisponibilidade.Count > 0)
     {
@@ -11,15 +12,17 @@
     }
 
     <input id="PessoaId" disabled hidden value="@Model.PessoaId" />
-    
+
     <div class="row">
 
         <!--Avaiability-->
         <div id="availability" class="col-md-9">
             <div class="disp-content">
 
+                <p id="avaiability-title" class="font-seha font-seha-title">Fill the blocks according to your availability</p>
+
                 <div id="availability-hours">
-                    <label class="font-seha font-seha-info" for="lbl-aulas">@Model.NomeGuerra has</label>
+                    <label class="font-seha font-seha-info" for="lbl-aulas">You have </label>
                     <label class="font-seha font-seha-info" id="lbl-aulas"><span id="horas">@Model.HorasAula</span> assigned hours</label>
                 </div>
                 <!-- Slots -->
@@ -283,13 +286,70 @@
                 </div>
 
                 <!--Observation-->
-                <div class="observation" id="steps-obs">
+                <!--<div class="table-observation font-seha">
+                    <p class="font-seha-info">Observations</p>
+                    <div class="scroll">
+                        <table>
+                            <tbody>
+                                <tr style="margin-bottom:20px;">
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                </tr>
+                                <tr style="margin-bottom:20px;">
+                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>-->
+
+                <div class="observation">
                     <p class="font-seha-info">Observations:</p>
-                    <textarea id="txt-area" disabled>@Model.Observacoes</textarea>
+                    <textarea id="txt-obs" placeholder="Type your observations...">@Model.Observacoes</textarea>
                 </div>
             </div>
         </div>
 
-        
+
+        <!--Lembretes-->
+        <div class="col-md-3">
+            <div id="lista-lembretes" class="table-seha avaiability">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var l in ViewBag.ListLembrete)
+                        {
+                            <tr>
+                                <td id="td-data" class="td-data">@l.Data</td>
+                                <td class="td-content">@l.Conteudo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-lembrete">
+                <div class="col-md-4 col-md-offset-4 overlay-lemb">
+                    <strong><p class="dateLemb"></p></strong>
+                    <div class="div-contentLemb">
+                        <p class="contentLemb"></p>
+                    </div>
+                    <div class="div-fecharLemb">
+                        <button id="fecharLemb" class="btn btn-seha2">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+

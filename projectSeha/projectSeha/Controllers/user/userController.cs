@@ -14,13 +14,18 @@ namespace ProjectSeha.Controllers
         // GET: user
         public ActionResult Availability()
         {
-            Pessoa e = (Pessoa) Session["professor"];
+            Pessoa e = (Pessoa)Session["professor"];
+            return View(e);
+        }
+
+        public ActionResult _Availability(int ProfessorId)
+        {
             Professor p;
             List<Disponibilidade> lista;
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                p = model.Read(e.PessoaId);
+                p = model.Read(ProfessorId);
             }
             using (AvailabilityModel model = new AvailabilityModel())
             {
@@ -41,50 +46,6 @@ namespace ProjectSeha.Controllers
 
             ViewBag.ListDisponibilidade = lista;
             return View(p);
-        }
-
-        public ActionResult Create(int ProfessorId, string slotDisponivel, string slotTalvez)
-        {
-            using (AvailabilityModel model = new AvailabilityModel())
-            {
-                model.Delete(ProfessorId);
-            }
-
-            string[] disponiveis = slotDisponivel.Split(',');
-            if (disponiveis[0] != "")
-            {
-                for (int i = 0; i < disponiveis.Length; i++)
-                {
-                    Disponibilidade d = new Disponibilidade();
-                    d.CodProfessor = ProfessorId;
-                    d.CodSlot = Convert.ToInt32(disponiveis[i]);
-                    d.Status_slot = true; //Status_slot True para slots verdes
-
-                    using (AvailabilityModel model = new AvailabilityModel())
-                    {
-                        model.Create(d);
-                    }
-                }
-            }
-
-            string[] talvez = slotTalvez.Split(',');
-            if (talvez[0] != "")
-            {
-                for (int i = 0; i < talvez.Length; i++)
-                {
-                    Disponibilidade d = new Disponibilidade();
-                    d.CodProfessor = ProfessorId;
-                    d.CodSlot = Convert.ToInt32(talvez[i]);
-                    d.Status_slot = false; //Status_slot false para slots lranjas
-
-                    using (AvailabilityModel model = new AvailabilityModel())
-                    {
-                        model.Create(d);
-                    }
-                }
-            }
-
-            return Json("Salvo com sucesso");
         }
 
         public void UpdateObservation(int ProfessorId, string observacoes)
