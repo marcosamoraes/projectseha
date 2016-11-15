@@ -218,6 +218,7 @@
     <Content Include="Views\courses\update.cshtml" />
     <Content Include="Views\courses\_CreateDisciplina.cshtml" />
     <Content Include="Views\courses\_TabDisciplinas.cshtml" />
+    <Content Include="Views\admin\_StepsAvailability.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

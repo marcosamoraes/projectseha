@@ -9,23 +9,13 @@
     var selecao = 1; //define cor verde(1) ou laranja(2)
 
     /*Carregamento inicial ----------------------------------------------------------------------------*/
-   
     var horas = parseInt($('#horas').html());
     var totalBarra = horas + (horas / 2);
     var maxDisp = horas / 2; //max quadros disponiveis
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
     if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
-
-    /*if ($('#msg-salvo').val() == null) {
-        $("#tb-assignment").after(
-          '<div id="msg-salvo" style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
-              '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
-                   '&times;' +
-              '</button>' +
-              'Availability saved successfully' +
-          '</div>');
-    }*/
-
+        
+  
     if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
         contTalvez = maxTalvez;
         atualBarra = totalBarra;
@@ -57,20 +47,21 @@
     /*-----------------------------------------------------------------------------------------------*/
 
     /*Botões de controle (cores)*/
-    $('#available').click(function () {
+    $(document).on('click', '#available', function () {
         color = '#4DB6AC';
         selecao = 1;
         $(this).css('opacity', '1');
         $('#maybe').css('opacity', '0.5');
     });
-    $('#maybe').click(function () {
+
+    $(document).on('click', '#maybe', function () {
         color = '#FFCC80';
         selecao = 2;
         $(this).css('opacity', '1');
         $('#available').css('opacity', '0.5');
     });
 
-    $('.slots-content').click(function () {
+    $(document).on('click', '.slots-content', function () {
 
         if ($(this).hasClass('disponivel')){ //se já existir preenchimento
             //$(this).css('background-color', 'transparent'); //apaga preenchimento realizado
@@ -117,7 +108,7 @@
         $(".progress-bar label").html(parseInt(widthBarra) + '%')//atualiza a label
     });
 
-    $('.slots-clear').click(function () {
+    $(document).on('click','.slots-clear', function () {
         $('.slots-content').removeClass('disponivel');
         $('.slots-content').removeClass('talvez');
         contTalvez = 0;
@@ -139,7 +130,7 @@
     var slotDisponivel = [];
     var slotTalvez = [];
 
-    $('.slots-save').click(function () {
+    $(document).on('click', '.slots-save', function () {
         slotDisponivel = []; //limpo
         slotTalvez = []; //limpo
 
@@ -156,8 +147,6 @@
                 slotTalvez.push($(this).val());
             });
         }
-        console.log("Disponíveis: "+slotDisponivel);
-        console.log("Talvez: "+slotTalvez);
 
         var ProfessorId = $("#PessoaId").val();
 
@@ -172,11 +161,8 @@
             }
         });
 
-
-
-        //var t = sessionStorage["txt-obs"] = document.form.txt-obs.value;
-        
         var obs = $('#txt-obs').val();
+
         $.ajax({
             url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes=' + obs,
             success: function () {
@@ -184,12 +170,15 @@
             }
         });
 
-
-
-
-
-
-
+        if ($('#msg-sucesso').val() == null) {
+            $(".slots-tools").before(
+              '<div id="msg-sucesso" style="margin-top: 20px; float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
+                  '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
+                       '&times;' +
+                  '</button>' +
+                  'Availability saved successfully' +
+              '</div>');
+        }
     });
 
     /*View - Semesters*/
@@ -198,6 +187,35 @@
     });
 
     /*View - Steps*/
+
+
+    $(document).on('change', '#select-steps-professor', function () {
+
+        var ProfessorId = $("option:selected", this).val();
+
+        $.ajax({
+            url: '/admin/_StepsAvailability/?ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_StepsAvailability').html(data);
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
     $('#step1').show();
     $('#btn-step1').click(function () {
         $("#steps-content .step").hide();

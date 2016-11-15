@@ -50,7 +50,36 @@ namespace ProjectSeha.Controllers
 
         public ActionResult Steps()
         {
-            return View();
+            using(ProfessorModel model = new ProfessorModel())
+            {
+                List<Professor> lista = model.Read();
+                ViewBag.ListProfessor = lista;
+                return View();
+            }
+        }
+
+        public ActionResult _StepsAvailability(int ProfessorId)
+        {
+            Professor p;
+            List<Disponibilidade> lista;
+
+            using (ProfessorModel model = new ProfessorModel())
+            {
+                p = model.Read(ProfessorId);
+            }
+            using (AvailabilityModel model = new AvailabilityModel())
+            {
+                try
+                {
+                    lista = model.Read(p.PessoaId);
+                }
+                catch
+                {
+                    lista = null;
+                }
+            }
+            ViewBag.ListDisponibilidade = lista;
+            return PartialView(p);
         }
     }
 }
