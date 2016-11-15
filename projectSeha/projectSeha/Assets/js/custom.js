@@ -16,7 +16,7 @@
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
     if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
 
-    if ($('#msg-salvo').val() == null) {
+    /*if ($('#msg-salvo').val() == null) {
         $("#tb-assignment").after(
           '<div id="msg-salvo" style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
               '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
@@ -24,6 +24,7 @@
               '</button>' +
               'Availability saved successfully' +
           '</div>');
+    }*/
 
     if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
         contTalvez = maxTalvez;
@@ -171,14 +172,25 @@
             }
         });
 
+
+
+        //var t = sessionStorage["txt-obs"] = document.form.txt-obs.value;
+        
+        var obs = $('#txt-obs').val();
         $.ajax({
-            url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes' + $('.observation textarea').html(),
+            url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes=' + obs,
             success: function () {
 
             }
         });
+
+
+
+
+
+
+
     });
-  
 
     /*View - Semesters*/
     $('#btn-show-semester').click(function () {
