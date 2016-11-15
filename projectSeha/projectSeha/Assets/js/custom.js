@@ -16,6 +16,15 @@
     var maxTalvez = parseInt(maxDisp / 2); //max quadros talvez
     if (totalBarra % 2 != 0) { totalBarra++; maxTalvez++ } //caso seja impar, aumenta 1
 
+    if ($('#msg-salvo').val() == null) {
+        $("#tb-assignment").after(
+          '<div id="msg-salvo" style="float:left; width:100%; text-align:center" class="alert alert-success alert-dismissable">' +
+              '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
+                   '&times;' +
+              '</button>' +
+              'Availability saved successfully' +
+          '</div>');
+
     if ($("#existeDisponibilidade").length>0) { //verifica se elemento existe e inicia valores ja preenchidos
         contTalvez = maxTalvez;
         atualBarra = totalBarra;
