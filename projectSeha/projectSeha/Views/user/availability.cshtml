@@ -16,6 +16,8 @@
 
     <input id="PessoaId" disabled hidden value="@Model.PessoaId" />
     <div class="row">
+        
+        <!--Avaiability-->
         <div id="avaiability" class="col-md-9">
             <div class="disp-content">
 
@@ -285,50 +287,36 @@
                     <label>0%</label>
                 </div>
 
-                <div class="table-observation font-seha">
+                <!--Observation-->
+
+                <!--<div class="table-observation font-seha">
                     <p class="font-seha-info">Observations</p>
                     <div class="scroll">
                         <table>
                             <tbody>
-                                <tr>
+                                <tr style="margin-bottom:20px;">
                                     <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
                                 </tr>
                                 <tr>
+                                    <td> </td>
+                                </tr>
+                                <tr style="margin-bottom:20px;">
                                     <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
                                 </tr>
                                 <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
-                                </tr>
-                                <tr>
-                                    <td>(12/05/16) Viana: As aulas disponibilizadas blabla</td>
+                                    <td> </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="observation">
-                    <textarea placeholder="Type your observations..."></textarea>
+                    <textarea placeholder="Type your observations...">@Model.Observacoes</textarea>
                 </div>
 
             </div>
         </div>
-
 
         <!--Lembretes-->
         <div class="col-md-3">
@@ -344,7 +332,7 @@
                         @foreach (var l in ViewBag.ListLembrete)
                         {
                             <tr>
-                                <td class="td-data">@l.Data</td>
+                                <td id="td-data" class="td-data">@l.Data</td>
                                 <td class="td-content">@l.Conteudo</td>
                             </tr>
                         }
@@ -363,6 +351,6 @@
                 </div>
             </div>
         </div>
-
+            
     </div>
 </div>

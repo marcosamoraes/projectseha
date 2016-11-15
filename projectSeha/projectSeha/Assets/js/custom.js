@@ -161,6 +161,13 @@
 
             }
         });
+
+        $.ajax({
+            url: '/user/UpdateObservation/?ProfessorId=' + ProfessorId + '&observacoes' + $('.observation textarea').html(),
+            success: function () {
+
+            }
+        });
     });
   
 
@@ -446,5 +453,5 @@
         $('.modal-lembrete').fadeOut();
         $('body').css('overflow', 'auto');
     });
-
+    
 });

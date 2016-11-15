@@ -86,5 +86,14 @@ namespace ProjectSeha.Controllers
 
             return Json("Salvo com sucesso");
         }
+
+        public void UpdateObservation(int ProfessorId, string observacoes)
+        {
+            using(ProfessorModel model = new ProfessorModel())
+            {
+                model.UpdateObservation(ProfessorId, observacoes);
+            }
+            //return Json("Observação inserida");
+        }
     }
 }

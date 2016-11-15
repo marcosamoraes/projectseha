@@ -124,5 +124,17 @@ namespace ProjectSeha.Models
 
             cmd.ExecuteNonQuery();
         }
+
+        public void UpdateObservation(int ProfessorId, string observacoes)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = @"UPDATE tblProfessor SET Observacoes = @observacoes WHERE CodPessoa = @id";
+
+            cmd.Parameters.AddWithValue("@id", ProfessorId);
+            cmd.Parameters.AddWithValue("@observacoes", observacoes);
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }
