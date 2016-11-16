@@ -300,6 +300,23 @@ html, body, main {
     text-align: center;
 }
 
+#lista-lembretes{
+    width:400px;
+}
+
+
+
+.avaiability table thead th:nth-child(1), .avaiability table tbody td:nth-child(1) {
+    width: 22% !important;
+}
+
+.avaiability table thead th:nth-child(2), .avaiability table tbody td:nth-child(2) {
+  
+}
+
+
+
+
 
 /*View Aviability*/
 
