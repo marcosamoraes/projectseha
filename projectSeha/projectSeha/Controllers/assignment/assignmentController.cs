@@ -96,6 +96,12 @@ namespace ProjectSeha.Controllers
                     }
                 }
             }
+
+            using(AvailabilityModel model = new AvailabilityModel())
+            {
+                model.Delete(ProfessorId);//apaga a disponibilidade do professor já que a assignments foi alterada
+            }
+
             return Json("Salvo com sucesso");
         }
     }
