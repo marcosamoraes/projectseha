@@ -330,7 +330,7 @@
                         @foreach (var l in ViewBag.ListLembrete)
                         {
                             <tr>
-                                <td id="td-data" class="td-data">@l.Data</td>
+                                <td id="td-data" class="td-data">@l.Data.ToString("dd/MM/yyyy")</td>
                                 <td class="td-content">@l.Conteudo</td>
                             </tr>
                         }
