@@ -1,5 +1,4 @@
-﻿@model IEnumerable<ProjectSeha.Entity.Curso>
-@{
+﻿@{
     ViewBag.Title = "SEHA - Register Courses";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
@@ -24,26 +23,21 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div id="professor-buttons">
-                <a class="btn btn-seha1" href="/courses/index">
-                    Cancel
-                </a>
-                <button class="btn btn-seha2" type="submit">
-                    Save
-                </button>
-            </div>
-        </div>
     </form>
     <div class="row">
-        <div class="row">
-            <button id="btn-create-discipline">
-                Create discipline
+        <div id="_MenuDisciplinas"></div>
+    </div>
+    <div class="row">
+        <div id="professor-buttons">
+            <a class="btn btn-seha1" href="/courses/index">
+                Cancel
+            </a>
+            <button class="btn btn-seha2" type="submit">
+                Save
             </button>
         </div>
-        <div id="_TabDisciplinas"></div>
     </div>
-
+</div>
 
 
 

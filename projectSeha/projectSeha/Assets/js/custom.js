@@ -302,21 +302,8 @@
         location.href = '/courses/update/' + $(this).find('td:nth-child(1)').html();
     });
 
-    $('#_TabDisciplinas').load('/courses/_TabDisciplinas/');
 
-    $(document).on('click', '#btn-create-discipline', function () {
-        $.ajax({
-            url: '/courses/_createdisciplina/',
-            method: 'get',
-            dataType: 'html',
-            success: function (data) {
-                $('#_CreateDisciplina').html(data);
-            },
-            error: function () {
-
-            }
-        });
-    });
+    $("#_MenuDisciplinas").load('/courses/_MenuDisciplinas');
 
     /*View Assignment*/
 
