@@ -303,13 +303,39 @@
         location.href = '/courses/update/' + $(this).find('td:nth-child(1)').html();
     });
 
+    $("#_MenuDisciplinas").load('/courses/_MenuDisciplinas', function () {
+        $("#_CreateDisciplina").load('/courses/_CreateDisciplina', function () {
+            $("#_UpdateDisciplina").hide();
+        });
+    });
 
-    $("#_MenuDisciplinas").load('/courses/_MenuDisciplinas');
+    //Adicionar disciplina
+    $(document).on('click', '#btnAddDisciplina', function () {
+
+        var SemestreId = $("option:selected", "#Periodo").val();
+        var TituloDisciplina = $("#txtTituloDisciplina").val();
+        var txtSigla = $("#txtSigla").val();
+        var txtQtdAulasMinistradas = $("#txtQtdAulasMinistradas").val();
+
+        $.ajax({
+            url: '/assignment/_AssignmentProfessor/?ProfessorId=' + ProfessorId,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_AssignmentProfessor').html(data);
+            },
+            error: function () {
+
+            }
+        });
+        disciplinas = [];
+    });
 
     /*View Assignment*/
 
     var disciplinas = [];
     var QtdAulas = 0;
+
 
     // Método carrega horas aula do professor selecionado e abre select-curso
     $(document).on('change', '#select-assignment-professor', function () {

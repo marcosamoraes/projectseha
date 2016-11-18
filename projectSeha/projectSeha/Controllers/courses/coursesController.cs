@@ -89,23 +89,23 @@ namespace ProjectSeha.Controllers
 
         public List<Disciplina> listaDisciplinas = new List<Disciplina>();
 
-        [HttpPost]
-        public ActionResult AddDisciplinaLista(FormCollection form)
+        public void AddDisciplinaLista(string nome, string sigla, int semestre, int qtdAulas)
         {
             Disciplina newDisciplina = new Disciplina();
-            newDisciplina.Nome = form["TituloDisciplina"];
-            newDisciplina.Sigla = form["SiglaDisciplina"];
-            newDisciplina.Semestre = Convert.ToInt32(form["Periodo"]);
-            newDisciplina.QtdAulas = Convert.ToInt32(form["QtdAulasMinistradas"]);
+            newDisciplina.Nome = nome;
+            newDisciplina.Sigla = sigla;
+            newDisciplina.Semestre = semestre;
+            newDisciplina.QtdAulas = qtdAulas;
 
             listaDisciplinas.Add(newDisciplina);
             ViewBag.listaDisciplinas = listaDisciplinas;
-            return PartialView("_MenuDisciplinas");
         }
 
         public ActionResult _MenuDisciplinas()
         {
+            ViewBag.ListaDisciplinas = listaDisciplinas;
             return View();
         }
+
     }
 }

@@ -1,8 +1,8 @@
-﻿<form>
+﻿<form action="/courses/AddDisciplinaLista" method="post">
     <div class="row" style="margin-left:18px;">
         <label>Period</label>
         <div class="form-group" style="width:150px;">
-            <select name="Periodo" class="form-control">
+            <select id="Periodo" class="form-control">
                 <option value="">Select a period</option>
                 <option value="1">First</option>
                 <option value="2">Second</option>
@@ -24,9 +24,11 @@
             </div>
         </div>
     <div class="row">
-        <div class="col-xs-2 form-group">
+        <div class="form-group">
             <label for="txtQtdAulasMinistradas">Number of classes taught</label>
-            <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
+            <div class="col-xs-2">
+                <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
+            </div>
         </div>
     </div>
     <div class="row">
@@ -34,7 +36,7 @@
             <a class="btn btn-seha1" href="">
                 Clear
             </a>
-            <button class="btn btn-seha2" id="btnAddDisciplina">
+            <button class="btn btn-seha2" id="btnAddDisciplina" type="submit">
                 Add
             </button>
         </div>
