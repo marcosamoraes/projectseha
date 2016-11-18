@@ -90,7 +90,7 @@ namespace ProjectSeha.Controllers
         public List<Disciplina> listaDisciplinas = new List<Disciplina>();
 
         [HttpPost]
-        public int AddDisciplinaLista(FormCollection form)
+        public ActionResult AddDisciplinaLista(FormCollection form)
         {
             Disciplina newDisciplina = new Disciplina();
             newDisciplina.Nome = form["TituloDisciplina"];
@@ -100,7 +100,12 @@ namespace ProjectSeha.Controllers
 
             listaDisciplinas.Add(newDisciplina);
             ViewBag.listaDisciplinas = listaDisciplinas;
-            return 1;
+            return PartialView("_MenuDisciplinas");
+        }
+
+        public ActionResult _MenuDisciplinas()
+        {
+            return View();
         }
     }
 }
