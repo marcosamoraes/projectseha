@@ -480,4 +480,25 @@
         $('body').css('overflow', 'auto');
     });
 
+    /*Método search*/
+
+    $(function () {
+        $(".search").keyup(function () {
+            var texto = $(this).val().toUpperCase();
+            if (texto != "") {
+                $(".table tbody>tr").each(function () {
+                    if ($("td:nth-child(2)", this).html().toUpperCase().indexOf(texto) > -1) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                });          
+            }
+            else {
+                $("table tbody>tr").show()
+            }
+           
+        });
+    });
 });
