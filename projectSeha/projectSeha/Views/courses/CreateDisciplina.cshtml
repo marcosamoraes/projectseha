@@ -1,9 +1,14 @@
-﻿<form action="/courses/AddDisciplinaLista" method="post">
+﻿@{
+    ViewBag.Title = "SEHA - Register Disciplines";
+    Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
+}
+
+<h3 class="font-seha left">Add disciplines</h3>
+<form action="/courses/AddDisciplinaLista" method="post">
     <div class="row" style="margin-left:18px;">
         <label>Period</label>
         <div class="form-group" style="width:150px;">
             <select id="Periodo" class="form-control">
-                <option value="">Select a period</option>
                 <option value="1">First</option>
                 <option value="2">Second</option>
                 <option value="3">Third</option>
@@ -25,16 +30,16 @@
         </div>
     <div class="row">
         <div class="form-group">
-            <label for="txtQtdAulasMinistradas">Number of classes taught</label>
             <div class="col-xs-2">
+                <label for="txtQtdAulasMinistradas">Number of classes taught</label>
                 <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
             </div>
         </div>
     </div>
     <div class="row">
         <div id="professor-buttons">
-            <a class="btn btn-seha1" href="">
-                Clear
+            <a class="btn btn-seha1" href="/courses/MenuDisciplinas">
+                Cancel
             </a>
             <button class="btn btn-seha2" id="btnAddDisciplina" type="submit">
                 Add

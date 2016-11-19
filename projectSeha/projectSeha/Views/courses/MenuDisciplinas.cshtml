@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "SEHA - Register Disciplines";
+    Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
+}
+<div class="row form-group">
+    <div class="col-xs-12">
+        <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+            <li>
+                <a href="/courses/create">
+                    <h4 class="list-group-item-heading">Course</h4>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/courses/MenuDisciplinas">
+                    <h4 class="list-group-item-heading">Disciplines</h4>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<h3 class="font-seha left">Disciplines informations</h3>
+<div>
+    <div class="col-md-8">
+        <table id="disciplinas" class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Initials</th>
+                    <th>Title</th>
+                    <th>  </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var listaDisciplinas = Session["ListaDisciplinas"] as IEnumerable<ProjectSeha.Entity.Disciplina>;
+                    if (listaDisciplinas != null)
+                    {
+                        int indiceLista = 0;
+                        foreach (var disciplina in listaDisciplinas)
+                        {
+                            //var indiceDisplay = indiceLista + 1;
+                            <tr>
+                                <td>@indiceLista</td>
+                                <td> @disciplina.Sigla </td>
+                                <td> @disciplina.Nome </td>
+                                <td><a href="/courses/DeleteDisciplina/0"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            </tr>
+                            indiceLista++;
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+
+        <a class="btn btn-seha2" href="/courses/CreateDisciplina">
+            Add Discipline
+        </a>
+    </div>
+</div>

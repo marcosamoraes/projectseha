@@ -24,6 +24,12 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            if (Session["dadosCurso"] != null)
+            {
+                Curso curso = Session["dadosCurso"] as Curso;
+                ViewBag.TituloCurso = curso.Titulo;
+                ViewBag.TurnoCurso = curso.Turno;
+            }
             return View();
         }
 
@@ -89,23 +95,78 @@ namespace ProjectSeha.Controllers
 
         public List<Disciplina> listaDisciplinas = new List<Disciplina>();
 
-        public void AddDisciplinaLista(string nome, string sigla, int semestre, int qtdAulas)
+        [HttpPost]
+        public ActionResult AddDisciplinaLista(FormCollection formulario)
         {
+            if (Session["ListaDisciplinas"] == null)
+            {
+                List<Disciplina> listaDisciplinas = new List<Disciplina>();
+            } else {
+               listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            }
+
             Disciplina newDisciplina = new Disciplina();
-            newDisciplina.Nome = nome;
-            newDisciplina.Sigla = sigla;
-            newDisciplina.Semestre = semestre;
-            newDisciplina.QtdAulas = qtdAulas;
-
+            newDisciplina.Nome = formulario["TituloDisciplina"];
+            newDisciplina.Sigla = formulario["SiglaDisciplina"];
+            newDisciplina.Semestre = Convert.ToInt32(formulario["Periodo"]);
+            newDisciplina.QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
             listaDisciplinas.Add(newDisciplina);
-            ViewBag.listaDisciplinas = listaDisciplinas;
+            
+            Session["ListaDisciplinas"] = listaDisciplinas;
+            return RedirectToAction("MenuDisciplinas");
         }
-
-        public ActionResult _MenuDisciplinas()
+        
+        public ActionResult MenuDisciplinas()
         {
-            ViewBag.ListaDisciplinas = listaDisciplinas;
             return View();
         }
 
+        [HttpPost]
+        public ActionResult GoToDisciplina(FormCollection formCurso)
+        {
+            Curso objCurso = new Curso();
+            objCurso.Titulo = formCurso["Titulo"];
+            objCurso.Turno = formCurso["Turno"];
+            Session["dadosCurso"] = objCurso;
+
+            return RedirectToAction("MenuDisciplinas");
+        }
+
+        public ActionResult CreateDisciplina()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult DeleteDisciplina(int id)
+        {
+            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            listaDisciplinas.RemoveAt(id);
+            return RedirectToAction("MenuDisciplinas");
+        }
+
+        public ActionResult UpdateDisciplina(int id) {
+            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            var objDisciplina = listaDisciplinas[id];
+            ViewBag.IndiceLista = id;
+            ViewBag.Semestre = objDisciplina.Semestre;
+            ViewBag.Titulo = objDisciplina.Nome;
+            ViewBag.Sigla = objDisciplina.Sigla;
+            ViewBag.QtdAulas = objDisciplina.QtdAulas;
+            return View();
+        }
+
+        public ActionResult UpdateDisciplinaLista(int id, FormCollection formulario)
+        {
+            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            //var objDisciplina = listaDisciplinas[id];
+
+            listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+            listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+            listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+            listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+
+            return RedirectToAction("MenuDisciplinas");
+        }
     }
 }

@@ -216,11 +216,12 @@
     <Content Include="Views\assignment\_AssignmentProfessor.cshtml" />
     <Content Include="Views\courses\create.cshtml" />
     <Content Include="Views\courses\update.cshtml" />
-    <Content Include="Views\courses\_CreateDisciplina.cshtml" />
-    <Content Include="Views\courses\_MenuDisciplinas.cshtml" />
+    <Content Include="Views\courses\CreateDisciplina.cshtml" />
+    <Content Include="Views\courses\MenuDisciplinas.cshtml" />
     <Content Include="Views\admin\_StepsAvailability.cshtml" />
     <Content Include="Views\user\_Availability.cshtml" />
     <Content Include="Views\admin\results.cshtml" />
+    <Content Include="Views\courses\UpdateDisciplina.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
