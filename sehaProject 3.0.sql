@@ -1,7 +1,7 @@
 CREATE DATABASE BDSeha
-
+GO
 USE BDSEHA
-
+GO
 /* CREATE DE TABELAS */
 CREATE TABLE tblLembrete (
 	LembreteId	int				NOT NULL primary key identity,
@@ -80,9 +80,9 @@ CREATE TABLE tblResultado (
 		REFERENCES tblDisponibilidade	(CodProfessor, CodSlot)
 )
 
-
-
-
+GO
+GO
+GO
 /*INSERTS*/
 
 --tblPessoa
@@ -90,17 +90,17 @@ INSERT INTO tblPessoa VALUES ('Carlos Magnus', 'carlos@fatecriopreto.edu.br', 'f
 INSERT INTO tblPessoa VALUES ('Lucimar Sasso', 'lucimar@fatecriopreto.edu.br', 'fatecrp', 0);
 INSERT INTO tblPessoa VALUES ('Edes Costa', 'edes@fatecriopreto.edu.br', 'fatecrp', 0);
 INSERT INTO tblPessoa VALUES ('Henrique Dezani', 'dezani@fatecriopreto.edu.br', 'fatecrp', 0);
-
+GO
 --tblProfessor
 INSERT INTO tblProfessor VALUES (2, 'Lucimar', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (3, 'Edes', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (4, 'Henrique', 0, 1, 1, '')
-
+GO
 --tblCurso
 INSERT INTO tblCurso VALUES ('Análise e Desenvolvimento de Sistemas', 'Tarde');
 INSERT INTO tblCurso VALUES ('Informática para Negócios', 'Noite');
 INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
-
+GO
 --tblDisciplina
 
 --Curso ADS
@@ -112,7 +112,7 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Arq. Org. Comput.', 4, 1, 'AOC');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês', 2, 1, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Lab. Hardware', 2, 1, 'LH');
-	
+GO	
 	--2ºSemestre
 	INSERT INTO tblDisciplina VALUES (1, 'Ling. Prog.', 4, 2, 'LP');
 	INSERT INTO tblDisciplina VALUES (1, 'Cálculo', 4, 2, 'CAL');
@@ -121,7 +121,7 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Eng. Soft. I', 4, 2, 'ES1');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês II', 2, 2, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Contabilidade', 2, 2, 'CON');
-
+GO
 	--3ºSemestre
 	INSERT INTO tblDisciplina VALUES (1, 'Estatística Aplic. ', 4, 3, 'EST');
 	INSERT INTO tblDisciplina VALUES (1, 'Estr. Dados', 4, 3, 'ED');
@@ -131,7 +131,7 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês III', 2, 3, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Econ. e Finanças', 2, 3, 'ECO');
 	INSERT INTO tblDisciplina VALUES (1, 'Soc. e Tecnol', 2, 3, 'SOC');
-
+GO
 	--4ºSemestre
 	INSERT INTO tblDisciplina VALUES (1, 'M.P.C.T.', 2, 4, 'MPC');
 	INSERT INTO tblDisciplina VALUES (1, 'Banco de Dados', 4, 4, 'BD');
@@ -140,7 +140,7 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Eng. Soft. III', 4, 4, 'ES3');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês IV', 2, 4, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Prog Web', 2, 4, 'PW');
-
+GO
 	--5ºSemestre
 	INSERT INTO tblDisciplina VALUES (1, 'Lab BD', 4, 5, 'LBD');
 	INSERT INTO tblDisciplina VALUES (1, 'Segur.Inform.', 2, 5, 'SEG');
@@ -149,7 +149,7 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Lab.Eng.Soft', 4, 5, 'LES');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês V', 2, 5, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Redes Comp.', 4, 5, 'PW');
-
+GO
 	--6ºSemestre
 	INSERT INTO tblDisciplina VALUES (1, 'Ética Resp. Prof.', 2, 6, 'ERP');
 	INSERT INTO tblDisciplina VALUES (1, 'G. Projetos', 4, 6, 'GP');
@@ -159,14 +159,14 @@ INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
 	INSERT INTO tblDisciplina VALUES (1, 'Inglês VI', 2, 6, 'ING');
 	INSERT INTO tblDisciplina VALUES (1, 'Gestão de Equipes', 2, 6, 'GEQ');
 	INSERT INTO tblDisciplina VALUES (1, 'Int. Artificial.', 4, 6, 'IA');
-
+GO
 
 --tblLembrete
 INSERT INTO tblLembrete VALUES ('11/07/2016', 'Preencher todos os horários até o dia 15/07');
 INSERT INTO tblLembrete VALUES ('15/07/2016', 'Verificar disponibilidade de aulas');
 INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuições foram salvas! Verifiquem se a disponoibilidade está habilitada.');
 
-
+GO
 /*VIEWS*/
 
 --tblLembrete
@@ -176,7 +176,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   Data,
 		   Conteudo			
 	FROM tblLembrete
-
+GO
 
 --tblSlot
 	CREATE VIEW ViewSlots
@@ -184,7 +184,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	SELECT SlotId,
 		   HoraInicio		
 	FROM tblSlot
-
+GO
 
 --tblPessoa
 	CREATE VIEW ViewPessoas
@@ -195,7 +195,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   Senha,
 		   Permissao_admin			
 	FROM tblPessoa
-
+GO
 
 --tblProfessor (JOIN)
 	CREATE VIEW ViewProfessores
@@ -212,7 +212,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   prof.Observacoes				
 	FROM tblPessoa p, tblProfessor prof
 	Where p.PessoaId = prof.CodPessoa
-
+GO
 
 --tblCurso
 	CREATE VIEW ViewCursos
@@ -221,7 +221,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   Titulo,
 		   Turno			
 	FROM tblCurso
-
+GO
 
 --tblDisciplina
 	CREATE VIEW ViewDisciplinas
@@ -233,7 +233,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   d.Semestre,
 		   d.Sigla			
 	FROM tblDisciplina d
-
+	GO
 
 --tblAtribuicao
 	CREATE VIEW ViewAtribuicoes
@@ -242,7 +242,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   a.CodDisciplina,
 		   a.CodCurso
 	FROM tblAtribuicao a
-
+	GO
 
 --tblDisponibilidade
 	CREATE VIEW ViewDisponibilidades
@@ -251,7 +251,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   d.CodSlot,
 		   d.status_slot
 	FROM tblDisponibilidade d
-	
+	GO
 
 --tblResultado
 	CREATE VIEW ViewResultados
@@ -259,9 +259,9 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	SELECT r.CodProfessor,
 		   r.CodSlot
 	FROM tblDisponibilidade r
-
+GO
 --(JOINS)
-
+GO
 --Professor - Disciplina - Curso
 	CREATE VIEW ViewProf_Disciplina_Curso
 	AS
@@ -275,7 +275,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   c.Titulo	
 	FROM tblProfessor p, tblDisciplina d, tblCurso c, tblAtribuicao a
 	Where p.CodPessoa = a.CodProfessor and d.DisciplinaId = a.CodDisciplina and c.CursoId = a.CodCurso
-
+	GO
 
 
 --Professor - Disciplina
@@ -289,7 +289,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   d.QtdAulas
 	FROM tblProfessor p, tblDisciplina d, tblAtribuicao a
 	Where p.CodPessoa = a.CodProfessor and d.DisciplinaId = a.CodDisciplina
-
+GO
 
 
 --Professor - Curso
@@ -302,7 +302,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   c.Turno
 	FROM tblProfessor p, tblCurso c, tblAtribuicao a
 	Where p.CodPessoa = a.CodProfessor and c.CursoId = a.CodCurso
-
+GO
 
 --Professor - Disponibilidade - Slot
 	CREATE VIEW ViewProf_Disponibilidade_Slot
@@ -313,7 +313,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   s.HoraInicio		
 	FROM tblProfessor p, tblSlot s, tblDisponibilidade d
 	Where p.CodPessoa = d.CodProfessor and  s.SlotId = d.CodSlot
-
+	GO
 
 
 --Disciplina - Curso
@@ -327,7 +327,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   c.Turno
 	FROM tblDisciplina d, tblCurso c
 	Where d.CodCurso = c.CursoId
-
+GO
 
 
 --Disciplina - Prof - Slot
@@ -341,9 +341,9 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		   s.HoraInicio
 	FROM tblDisciplina d, tblProfessor p, tblSlot s, tblResultado r
 	Where d.DisciplinaId = r.CodDisciplina and p.CodPessoa = r.CodProfessor and s.SlotId = r.CodSlot
+	GO
 
-
-
+	GO
 
 /*PROCEDURES*/
 	
@@ -357,7 +357,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblLembrete VALUES (@data, @conteudo)
 	END
-	
+	GO
 	--Update
 	CREATE PROCEDURE AlteraLembrete(
 		@id int,
@@ -368,7 +368,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 			Conteudo = @conteudo
 		WHERE LembreteId = @id
 	END
-	
+	GO
 	--Delete
 	CREATE PROCEDURE ApagaLembrete(
 		@id int
@@ -377,7 +377,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblLembrete 
 		WHERE LembreteId = @id
 	END
-
+	GO
 
 --Pessoa
 	--Insert
@@ -388,7 +388,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblPessoa VALUES (@nome, @email, 'fatecrp', 0)
 	END
-	
+	GO
 	--Update
 	CREATE PROCEDURE AlteraPessoa 
 	(
@@ -403,7 +403,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 			Email = @email
 		WHERE PessoaId = @id
 	END
-	
+	GO
 
 	--ValidaLogin
 	CREATE PROCEDURE ValidaLogin(
@@ -413,7 +413,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		SELECT * FROM tblPessoa WHERE Email = @email and Senha = @senha
 	END
-	
+	GO
 
 	--UpdateSenha
 	CREATE PROCEDURE AlteraSenha(
@@ -425,7 +425,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 			Senha = @senhaNova
 		WHERE PessoaId = @id	
 	END
-	
+	GO
 
 
 --Professor
@@ -441,7 +441,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		EXEC ArmazenaPessoa @nome, @email
 		INSERT INTO tblProfessor VALUES (@@IDENTITY, @nomeGuerra, 0, @professorExiste, 1, '')
 	END
-	
+	GO
 	
 	--Update
 	CREATE PROCEDURE AlteraProfessor 
@@ -466,7 +466,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 			ProfessorAtivo = @professorAtivo  
 		WHERE CodPessoa = @id
 	END
-	
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaProfessor 
@@ -480,7 +480,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblPessoa 
 		WHERE PessoaId = @id
 	END
-
+	GO
 	
 --Slots
 	--Insert
@@ -492,6 +492,8 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblSlot VALUES (@slotId, @horaInicio)
 	END
+	GO
+
 	CREATE PROCEDURE PopulaTblSlots
 	AS
 	BEGIN
@@ -551,7 +553,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	END
 	select*from tblSlot
 	PopulaTblSlots
-		
+	GO	
 			
 --Curso
 	--Insert
@@ -562,7 +564,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblCurso VALUES (@titulo, @turno)
 	END
-	
+	GO
 	
 	--Update
 	CREATE PROCEDURE AlteraCurso
@@ -578,7 +580,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 			Turno = @turno
 		WHERE CursoId = @id
 	END
-
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaCurso 
@@ -590,7 +592,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblCurso 
 		WHERE CursoId = @id
 	END
-
+	GO
 
 --Disciplina 
 	--Insert
@@ -604,7 +606,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblDisciplina VALUES (@CodCurso, @Nome, @QtdAulas, @Semestre, @Sigla)
 	END
-	
+	GO
 
 	--Update
 	CREATE PROCEDURE AlteraDisciplina(
@@ -624,7 +626,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		Sigla = @sigla
 	WHERE DisciplinaId = @id
 	END
-	
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaDisciplina 
@@ -636,7 +638,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblDisciplina 
 		WHERE DisciplinaId = @id
 	END
-
+	GO
 
 --Disponibilidade
 	--Insert
@@ -648,7 +650,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblDisponibilidade VALUES (@codProfessor, @codSlot, @status_slot)
 	END
-	
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaDisponibilidade
@@ -660,7 +662,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblDisponibilidade
 		WHERE CodProfessor = @ProfessorId
 	END
-
+	GO
 --Atribuicao
 	--Insert
 	CREATE PROCEDURE ArmazenaAtribuicao(
@@ -671,7 +673,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblAtribuicao VALUES (@codProfessor, @codDisciplina, @codCurso)
 	END
-	
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaAtribuicao
@@ -684,7 +686,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblAtribuicao
 		WHERE CodProfessor = @ProfessorId AND CodCurso = @CursoId
 	END
-
+	GO
 
 --Resultado
 	--Insert
@@ -696,7 +698,7 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 	BEGIN
 		INSERT INTO tblResultado VALUES (@codProfessor, @codDisciplina, @codSlot)
 	END
-	
+	GO
 
 	--Delete
 	CREATE PROCEDURE ApagaResultado
@@ -710,3 +712,4 @@ INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuiçõ
 		DELETE FROM tblResultado
 		WHERE CodProfessor = @codProfessor AND CodDisciplina = @codDisciplina and CodSlot= @codSlot
 	END
+	GO

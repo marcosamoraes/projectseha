@@ -81,5 +81,27 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@CursoId", CursoId);
             cmd.ExecuteNonQuery();
         }
+
+        public List<string> ReadTurno (int ProfessorId)
+        {
+            List<string> lista = new List<string>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = @"ViewTurnos";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@ProfessorId", ProfessorId);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (!lista.Contains((string)reader["Turno"]))
+                {
+                    lista.Add((string)reader["Turno"]);
+                }
+            }
+            return lista;
+        }
     }
 }

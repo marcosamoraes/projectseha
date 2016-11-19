@@ -23,6 +23,12 @@ namespace ProjectSeha.Controllers
             Professor p;
             List<Disponibilidade> lista;
 
+            List<int> listaBloqueados = new List<int>();
+            int[] manha = { 1, 9, 17, 25, 33, 2, 10, 18, 26, 34, 3, 11, 19, 27, 35 };
+            int[] tarde = { 4, 12, 20, 28, 36, 5, 13, 21, 29, 37, 6, 14, 22, 30, 38 };
+            int[] noite = { 7, 15, 23, 31, 39, 8, 16, 24, 32, 40 };
+            int[] sabado = { 41, 42, 43, 44, 45, 46, 47, 48 };
+
             using (ProfessorModel model = new ProfessorModel())
             {
                 p = model.Read(ProfessorId);
@@ -44,6 +50,44 @@ namespace ProjectSeha.Controllers
                 ViewBag.ListLembrete = listaLemb;
             }
 
+            using (AssignmentModel model = new AssignmentModel())
+            {
+                List<string> listaTurno = model.ReadTurno(ProfessorId);
+
+                //Adiciona os id's dos slots da manhã para a lista de bloqueio
+                if (!listaTurno.Contains("Manhã"))
+                {
+                    foreach(var item in manha)
+                    {
+                        listaBloqueados.Add(item);
+                    }
+                }
+
+                //Adiciona os id's dos slots da tarde para a lista de bloqueio
+                if (!listaTurno.Contains("Tarde"))
+                {
+                    foreach (var item in tarde)
+                    {
+                        listaBloqueados.Add(item);
+                    }
+                }
+
+                //Adiciona os id's dos slots da noite para a lista de bloqueio
+                if (!listaTurno.Contains("Noite"))
+                {
+                    foreach (var item in noite)
+                    {
+                        listaBloqueados.Add(item);
+                    }
+                    foreach (var item in sabado)
+                    {
+                        listaBloqueados.Add(item);
+                    }
+                }
+
+            }
+            
+            ViewBag.ListBloqueados = listaBloqueados;
             ViewBag.ListDisponibilidade = lista;
             return View(p);
         }

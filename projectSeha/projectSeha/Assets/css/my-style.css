@@ -320,6 +320,10 @@ html, body, main {
 
 /*View Aviability*/
 
+.bloqueado {
+    background-color: #ccc;
+}
+
 .disponivel {
     background-color: #4DB6AC;
 }
