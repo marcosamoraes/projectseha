@@ -11,12 +11,18 @@ namespace ProjectSeha.Controllers
     [AutorizaAdmin]
     public class professorsController : Controller
     {
+        static bool ctrlDelete;
         // GET: professors
         public ActionResult Index()
         {
             using (ProfessorModel model = new ProfessorModel())
             {
                 List<Professor> lista = model.Read();
+                if (ctrlDelete)
+                {
+                    ctrlDelete = false;
+                    ViewBag.Erro = "Não foi possível remover este professor pois ele possui vínculo com as Disciplinas";
+                }
                 return View(lista);
             }
         }
@@ -56,8 +62,17 @@ namespace ProjectSeha.Controllers
         {
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Delete(id);
-                return RedirectToAction("Index");
+                if (model.Delete(id))
+                {
+                    ctrlDelete = false;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ctrlDelete = true;
+                    return RedirectToAction("Index");
+                }
+                
             }
         }
 
