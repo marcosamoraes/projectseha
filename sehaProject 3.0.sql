@@ -1,7 +1,9 @@
-CREATE DATABASE BDSeha
-GO
-USE BDSEHA
-GO
+--DROP DATABASE BDSeha
+--CREATE DATABASE BDSeha
+--GO
+--USE BDSEHA
+--GO
+
 /* CREATE DE TABELAS */
 CREATE TABLE tblLembrete (
 	LembreteId	int				NOT NULL primary key identity,
@@ -11,12 +13,11 @@ CREATE TABLE tblLembrete (
 
 CREATE TABLE tblPessoa (
 	PessoaId			int				NOT NULL primary key identity, 
-	Nome				varchar(50)		NOT NULL,
+	Nome				varchar(50)		NOT NULL unique,
 	Email				varchar(100)	NOT NULL unique,
 	Senha				varchar(25)		NOT NULL,
 	Permissao_admin		bit				NOT NULL
 )
-
 
 CREATE TABLE tblProfessor (
 	CodPessoa			int				NOT NULL primary key references tblPessoa,
@@ -92,6 +93,7 @@ INSERT INTO tblPessoa VALUES ('Edes Costa', 'edes@fatecriopreto.edu.br', 'fatecr
 INSERT INTO tblPessoa VALUES ('Henrique Dezani', 'dezani@fatecriopreto.edu.br', 'fatecrp', 0);
 GO
 --tblProfessor
+INSERT INTO tblProfessor VALUES (1, 'Carlos', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (2, 'Lucimar', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (3, 'Edes', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (4, 'Henrique', 0, 1, 1, '')
@@ -551,8 +553,6 @@ GO
 		EXEC ArmazenaSlot 47, '19:00:00'
 		EXEC ArmazenaSlot 48, '20:50:00'
 	END
-	select*from tblSlot
-	PopulaTblSlots
 	GO	
 			
 --Curso
@@ -713,3 +713,5 @@ GO
 		WHERE CodProfessor = @codProfessor AND CodDisciplina = @codDisciplina and CodSlot= @codSlot
 	END
 	GO
+
+	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	EXEC PopulaTblSlots
