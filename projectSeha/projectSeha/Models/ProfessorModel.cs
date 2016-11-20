@@ -18,26 +18,27 @@ namespace ProjectSeha.Models
             cmd.Connection = connection;
             cmd.CommandText = "SELECT * FROM ViewProfessores";
 
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                Professor e = new Professor();
-               
-                e.PessoaId = (int)reader["PessoaId"];
-                e.Nome = (string)reader["Nome"];
-                e.Email = (string)reader["Email"];
-                e.Senha = (string)reader["Senha"];
-                e.Permissao_admin = (bool)reader["Permissao_admin"];
-                e.NomeGuerra = (string)reader["NomeGuerra"];
-                e.HorasAula = (int)reader["HorasAula"];
-                e.ProfessorExiste = (bool)reader["ProfessorExiste"];
-                e.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
-                e.Observacoes = (string)reader["Observacoes"];
+                while (reader.Read())
+                {
+                    Professor e = new Professor();
 
-                lista.Add(e);
+                    e.PessoaId = (int)reader["PessoaId"];
+                    e.Nome = (string)reader["Nome"];
+                    e.Email = (string)reader["Email"];
+                    e.Senha = (string)reader["Senha"];
+                    e.Permissao_admin = (bool)reader["Permissao_admin"];
+                    e.NomeGuerra = (string)reader["NomeGuerra"];
+                    e.HorasAula = (int)reader["HorasAula"];
+                    e.ProfessorExiste = (bool)reader["ProfessorExiste"];
+                    e.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
+                    e.Observacoes = (string)reader["Observacoes"];
+
+                    lista.Add(e);
+                }
+                return lista;
             }
-            return lista;
         }
 
         public Professor Read(int id)
@@ -47,26 +48,27 @@ namespace ProjectSeha.Models
             cmd.CommandText = "SELECT * FROM ViewProfessores WHERE PessoaId = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                Professor p = new Professor();
+                while (reader.Read())
+                {
+                    Professor p = new Professor();
 
-                p.PessoaId = (int)reader["PessoaId"];
-                p.Nome = (string)reader["Nome"];
-                p.Email = (string)reader["Email"];
-                p.Senha = (string)reader["Senha"];
-                p.Permissao_admin = (bool)reader["Permissao_admin"];
-                p.NomeGuerra = (string)reader["NomeGuerra"];
-                p.HorasAula = (int)reader["HorasAula"];
-                p.ProfessorExiste = (bool)reader["ProfessorExiste"];
-                p.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
-                p.Observacoes = (string)reader["Observacoes"];
+                    p.PessoaId = (int)reader["PessoaId"];
+                    p.Nome = (string)reader["Nome"];
+                    p.Email = (string)reader["Email"];
+                    p.Senha = (string)reader["Senha"];
+                    p.Permissao_admin = (bool)reader["Permissao_admin"];
+                    p.NomeGuerra = (string)reader["NomeGuerra"];
+                    p.HorasAula = (int)reader["HorasAula"];
+                    p.ProfessorExiste = (bool)reader["ProfessorExiste"];
+                    p.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
+                    p.Observacoes = (string)reader["Observacoes"];
 
-                return p;
+                    return p;
+                }
+                return null;
             }
-            return null;
         }
 
 

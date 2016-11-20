@@ -19,18 +19,19 @@ namespace ProjectSeha.Models
             cmd.CommandText = "SELECT * FROM ViewDisponibilidades Where CodProfessor = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                Disponibilidade e = new Disponibilidade();
-                e.CodProfessor = (int)reader["CodProfessor"];
-                e.CodSlot = (int)reader["CodSlot"];
-                e.Status_slot = (bool)reader["status_slot"];
+                while (reader.Read())
+                {
+                    Disponibilidade e = new Disponibilidade();
+                    e.CodProfessor = (int)reader["CodProfessor"];
+                    e.CodSlot = (int)reader["CodSlot"];
+                    e.Status_slot = (bool)reader["status_slot"];
 
-                lista.Add(e);
+                    lista.Add(e);
+                }
+                return lista;
             }
-            return lista;
         }
 
         public void Create(Disponibilidade e)

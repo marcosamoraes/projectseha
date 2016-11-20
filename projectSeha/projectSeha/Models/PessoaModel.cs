@@ -20,14 +20,16 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@PessoaId", PessoaId);
 
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                e = new Pessoa();
-                e.PessoaId = (int)reader["PessoaId"];
-                e.Senha = (string)reader["Senha"];
+                if (reader.Read())
+                {
+                    e = new Pessoa();
+                    e.PessoaId = (int)reader["PessoaId"];
+                    e.Senha = (string)reader["Senha"];
+                }
+                return e;
             }
-            return e;
         }
 
         public Pessoa Login(string email, string senha)

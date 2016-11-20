@@ -18,19 +18,20 @@ namespace ProjectSeha.Models
             cmd.Connection = connection;
             cmd.CommandText = "SELECT * FROM ViewCursos";
 
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                Curso e = new Curso();
+                while (reader.Read())
+                {
+                    Curso e = new Curso();
 
-                e.CursoId = (int) reader["CursoId"];
-                e.Titulo = (string) reader["Titulo"];
-                e.Turno = (string) reader["Turno"];
+                    e.CursoId = (int)reader["CursoId"];
+                    e.Titulo = (string)reader["Titulo"];
+                    e.Turno = (string)reader["Turno"];
 
-                lista.Add(e);
+                    lista.Add(e);
+                }
+                return lista;
             }
-            return lista;
         }
 
         public Curso Read(int id)

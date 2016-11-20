@@ -18,19 +18,20 @@ namespace ProjectSeha.Models
             cmd.Connection = connection;
             cmd.CommandText = "SELECT * FROM ViewLembretes";
 
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                Lembrete e = new Lembrete();
+                while (reader.Read())
+                {
+                    Lembrete e = new Lembrete();
 
-                e.LembreteId = (int)reader["LembreteId"];
-                e.Data = (DateTime)reader["Data"];
-                e.Conteudo = (string)reader["Conteudo"];
+                    e.LembreteId = (int)reader["LembreteId"];
+                    e.Data = (DateTime)reader["Data"];
+                    e.Conteudo = (string)reader["Conteudo"];
 
-                lista.Add(e);
+                    lista.Add(e);
+                }
+                return lista;
             }
-            return lista;
         }
 
         public void Create(Lembrete e)
