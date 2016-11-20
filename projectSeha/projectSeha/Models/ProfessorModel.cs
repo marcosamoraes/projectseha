@@ -18,27 +18,35 @@ namespace ProjectSeha.Models
             cmd.Connection = connection;
             cmd.CommandText = "SELECT * FROM ViewProfessores";
 
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                while (reader.Read())
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Professor e = new Professor();
+                    while (reader.Read())
+                    {
+                        Professor e = new Professor();
 
-                    e.PessoaId = (int)reader["PessoaId"];
-                    e.Nome = (string)reader["Nome"];
-                    e.Email = (string)reader["Email"];
-                    e.Senha = (string)reader["Senha"];
-                    e.Permissao_admin = (bool)reader["Permissao_admin"];
-                    e.NomeGuerra = (string)reader["NomeGuerra"];
-                    e.HorasAula = (int)reader["HorasAula"];
-                    e.ProfessorExiste = (bool)reader["ProfessorExiste"];
-                    e.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
-                    e.Observacoes = (string)reader["Observacoes"];
+                        e.PessoaId = (int)reader["PessoaId"];
+                        e.Nome = (string)reader["Nome"];
+                        e.Email = (string)reader["Email"];
+                        e.Senha = (string)reader["Senha"];
+                        e.Permissao_admin = (bool)reader["Permissao_admin"];
+                        e.NomeGuerra = (string)reader["NomeGuerra"];
+                        e.HorasAula = (int)reader["HorasAula"];
+                        e.ProfessorExiste = (bool)reader["ProfessorExiste"];
+                        e.ProfessorAtivo = (bool)reader["ProfessorAtivo"];
+                        e.Observacoes = (string)reader["Observacoes"];
 
-                    lista.Add(e);
+                        lista.Add(e);
+                    }
+                    return lista;
                 }
-                return lista;
             }
+            catch
+            {
+                return lista = null;
+            }
+            
         }
 
         public Professor Read(int id)
@@ -48,6 +56,7 @@ namespace ProjectSeha.Models
             cmd.CommandText = "SELECT * FROM ViewProfessores WHERE PessoaId = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
+
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
@@ -71,8 +80,7 @@ namespace ProjectSeha.Models
             }
         }
 
-
-        public void Create(Professor e)
+        public bool Create(Professor e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -84,10 +92,18 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@nomeGuerra", e.NomeGuerra);
             cmd.Parameters.AddWithValue("@professorExiste", e.ProfessorExiste);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void Update(Professor e)
+        public bool Update(Professor e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -101,10 +117,18 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@professorExiste", e.ProfessorExiste);
             cmd.Parameters.AddWithValue("@professorAtivo", e.ProfessorAtivo);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -112,7 +136,16 @@ namespace ProjectSeha.Models
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void UpdateHorasAula(int ProfessorId, int QtdAulas)

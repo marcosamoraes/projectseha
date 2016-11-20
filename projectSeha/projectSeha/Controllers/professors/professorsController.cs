@@ -11,12 +11,18 @@ namespace ProjectSeha.Controllers
     [AutorizaAdmin]
     public class professorsController : Controller
     {
+        static bool ctrlDelete;
         // GET: professors
         public ActionResult Index()
         {
             using (ProfessorModel model = new ProfessorModel())
             {
                 List<Professor> lista = model.Read();
+                if (ctrlDelete)
+                {
+                    ctrlDelete = false;
+                    ViewBag.Erro = "Não foi possível remover este professor pois ele possui vínculo com as Disciplinas";
+                }
                 return View(lista);
             }
         }
@@ -39,8 +45,15 @@ namespace ProjectSeha.Controllers
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Create(p);
-                return RedirectToAction("Index");
+                if (model.Create(p))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    return View();
+                }
             }
         }
 
@@ -49,8 +62,17 @@ namespace ProjectSeha.Controllers
         {
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Delete(id);
-                return RedirectToAction("Index");
+                if (model.Delete(id))
+                {
+                    ctrlDelete = false;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ctrlDelete = true;
+                    return RedirectToAction("Index");
+                }
+                
             }
         }
 
@@ -77,8 +99,15 @@ namespace ProjectSeha.Controllers
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Update(p);
-                return RedirectToAction("Index");
+                if (model.Update(p))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    return View(p);
+                }
             }
         }
 

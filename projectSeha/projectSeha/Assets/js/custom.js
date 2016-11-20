@@ -321,11 +321,11 @@
         disciplinas = [];
     });
     */
+
     /*View Assignment*/
 
     var disciplinas = [];
     var QtdAulas = 0;
-
 
     // Método carrega horas aula do professor selecionado e abre select-curso
     $(document).on('change', '#select-assignment-professor', function () {
@@ -383,6 +383,7 @@
 
         //checa se ultrapassou limite
         if (parseInt($("#lbl-aulas").html()) > 28) {
+            $('#msg-limite').show();
             //cria alert mensagem de sucesso
             if ($('#msg-limite').val() == null) {
                 $("#assignment-hours").after(
@@ -398,6 +399,8 @@
         }
         else {
             $("#btn-save-assignment").removeAttr('disabled');
+            $('#msg-limite').hide();
+            $('#msg-limite').val(null);
         }
     });
 
