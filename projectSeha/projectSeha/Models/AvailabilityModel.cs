@@ -19,22 +19,30 @@ namespace ProjectSeha.Models
             cmd.CommandText = "SELECT * FROM ViewDisponibilidades Where CodProfessor = @id";
 
             cmd.Parameters.AddWithValue("@id", id);
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    Disponibilidade e = new Disponibilidade();
-                    e.CodProfessor = (int)reader["CodProfessor"];
-                    e.CodSlot = (int)reader["CodSlot"];
-                    e.Status_slot = (bool)reader["status_slot"];
 
-                    lista.Add(e);
+            try
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Disponibilidade e = new Disponibilidade();
+                        e.CodProfessor = (int)reader["CodProfessor"];
+                        e.CodSlot = (int)reader["CodSlot"];
+                        e.Status_slot = (bool)reader["status_slot"];
+
+                        lista.Add(e);
+                    }
+                    return lista;
                 }
-                return lista;
+            }
+            catch
+            {
+                return lista = null;
             }
         }
 
-        public void Create(Disponibilidade e)
+        public bool Create(Disponibilidade e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -45,10 +53,18 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@codSlot", e.CodSlot);
             cmd.Parameters.AddWithValue("@status_slot", e.Status_slot);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void Delete(int ProfessorId)
+        public bool Delete(int ProfessorId)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -56,7 +72,15 @@ namespace ProjectSeha.Models
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@ProfessorId", ProfessorId);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

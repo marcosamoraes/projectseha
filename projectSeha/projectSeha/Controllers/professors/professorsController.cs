@@ -39,8 +39,15 @@ namespace ProjectSeha.Controllers
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Create(p);
-                return RedirectToAction("Index");
+                if (model.Create(p))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    return View();
+                }
             }
         }
 
@@ -77,8 +84,15 @@ namespace ProjectSeha.Controllers
 
             using (ProfessorModel model = new ProfessorModel())
             {
-                model.Update(p);
-                return RedirectToAction("Index");
+                if (model.Update(p))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    return View(p);
+                }
             }
         }
 

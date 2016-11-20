@@ -7,6 +7,14 @@
 
 <h3 class="font-seha left">Update Professor</h3>
 
+@if (ViewBag.Erro != null)
+{
+    <div style="margin-top:15px;" class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @ViewBag.Erro
+    </div>
+}
+
 <div id="professor" class="container">
     <form class="font-seha" action="/professors/update/@Model.PessoaId" method="post">
             <div class="form-group">

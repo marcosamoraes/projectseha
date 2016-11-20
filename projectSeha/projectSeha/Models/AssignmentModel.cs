@@ -20,20 +20,26 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@id", id);
 
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                while (reader.Read())
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Atribuicao e = new Atribuicao();
-                    e.CodProfessor = (int)reader["CodProfessor"];
-                    e.CodDisciplina = (int)reader["CodDisciplina"];
-                    e.CodCurso = (int)reader["CodCurso"];
+                    while (reader.Read())
+                    {
+                        Atribuicao e = new Atribuicao();
+                        e.CodProfessor = (int)reader["CodProfessor"];
+                        e.CodDisciplina = (int)reader["CodDisciplina"];
+                        e.CodCurso = (int)reader["CodCurso"];
 
-                    lista.Add(e);
+                        lista.Add(e);
+                    }
+                    return lista;
                 }
-                return lista;
             }
-               
+            catch
+            {
+                return lista = null;
+            }
         }
 
         public List<Atribuicao> ReadDisabled(int id)
@@ -46,23 +52,29 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@id", id);
 
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                while (reader.Read())
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Atribuicao e = new Atribuicao();
-                    e.CodProfessor = (int)reader["CodProfessor"];
-                    e.CodDisciplina = (int)reader["CodDisciplina"];
-                    e.CodCurso = (int)reader["CodCurso"];
+                    while (reader.Read())
+                    {
+                        Atribuicao e = new Atribuicao();
+                        e.CodProfessor = (int)reader["CodProfessor"];
+                        e.CodDisciplina = (int)reader["CodDisciplina"];
+                        e.CodCurso = (int)reader["CodCurso"];
 
-                    lista.Add(e);
+                        lista.Add(e);
+                    }
+                    return lista;
                 }
-                return lista;
             }
-                
+            catch
+            {
+                return lista = null;
+            }
         }
 
-        public void Create(Atribuicao e)
+        public bool Create(Atribuicao e)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -73,10 +85,19 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@codDisciplina", e.CodDisciplina);
             cmd.Parameters.AddWithValue("@codCurso", e.CodCurso);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
-        public void Delete(int ProfessorId, int CursoId)
+        public bool Delete(int ProfessorId, int CursoId)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -85,10 +106,19 @@ namespace ProjectSeha.Models
 
             cmd.Parameters.AddWithValue("@ProfessorId", ProfessorId);
             cmd.Parameters.AddWithValue("@CursoId", CursoId);
-            cmd.ExecuteNonQuery();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public List<string> ReadTurno (int ProfessorId)
+        public List<string> ReadTurno(int ProfessorId)
         {
             List<string> lista = new List<string>();
 
