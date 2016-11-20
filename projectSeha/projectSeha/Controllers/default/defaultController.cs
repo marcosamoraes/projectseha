@@ -8,6 +8,7 @@ using ProjectSeha.Entity;
 
 namespace ProjectSeha.Controllers
 {
+
     public class defaultController : Controller
     {
         public ActionResult Index()//Login
@@ -136,6 +137,11 @@ namespace ProjectSeha.Controllers
             }
 
             return Json("Salvo com sucesso");
+        }
+
+        public ActionResult error()
+        {
+            return View();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ProjectSeha.Controllers
             }
             else
             {
-                ctx.Result = new RedirectResult("/user/availability");
+                ctx.Result = new RedirectResult("/default/error");
             }
         }
     }

@@ -16,7 +16,7 @@ namespace ProjectSeha.Controllers
             }
             else
             {
-                ctx.Result = new RedirectResult("/admin/semesters");
+                ctx.Result = new RedirectResult("/default/error");
             }
         }
     }

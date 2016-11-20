@@ -154,7 +154,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\admin\adminController.cs" />
     <Compile Include="Controllers\assignment\assignmentController.cs" />
-    <Compile Include="Controllers\assignment\dynamicTable.cs" />
     <Compile Include="Controllers\AutorizaAdmin.cs" />
     <Compile Include="Controllers\AutorizaProfessor.cs" />
     <Compile Include="Controllers\courses\coursesController.cs" />
@@ -222,6 +221,7 @@
     <Content Include="Views\user\_Availability.cshtml" />
     <Content Include="Views\admin\results.cshtml" />
     <Content Include="Views\courses\UpdateDisciplina.cshtml" />
+    <Content Include="Views\default\error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

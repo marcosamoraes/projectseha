@@ -57,6 +57,12 @@
     font-size: 36px;
 }
 
+.font-seha-logo{
+    font-size: 36px;
+    color: #607D8B;
+    font-weight: 700;
+}
+
 .margin-15 {
     margin-bottom: 15px;
 }
@@ -987,4 +993,13 @@ p.font-seha {
 
 .prof table thead th:nth-child(5), .prof table tbody td:nth-child(5) {
     text-align: center;
+}
+
+/*View - Error*/
+.error{
+    margin-top:70px;
+}
+
+.error .font-seha-big{
+    margin-bottom:30px;
 }
