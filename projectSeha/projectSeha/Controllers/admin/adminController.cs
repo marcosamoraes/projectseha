@@ -129,6 +129,10 @@ namespace ProjectSeha.Controllers
 
         public ActionResult results()
         {
+            using(CursoModel model = new CursoModel())
+            {
+                ViewBag.ListCurso = model.Read();
+            }
             return View();
         }
 

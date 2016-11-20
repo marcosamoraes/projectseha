@@ -4,17 +4,17 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h2>results</h2>
-
- <!--Step 3 ********************************************************************************    -->
+<h3 class="font-seha left">Results</h3>
 
 <div id="step3" class="center-large table-grid">
     <div>
         <select id="select-step3-course" class="form-control">
-            <option>Análise e Desenvolvimento de Sistemas</option>
-            <option>Agronegócio</option>
-            <option>Informática para Negócios</option>
+            @foreach (var item in ViewBag.ListCurso)
+            {
+                <option value="@item.CursoId">@item.Titulo</option>
+            }
         </select>
+
         <select id="select-step3-semester" class="form-control">
             <option>1st Semester</option>
             <option>2st Semester</option>
@@ -23,6 +23,7 @@
             <option>5st Semester</option>
             <option>6st Semester</option>
         </select>
+
         <select id="select-step3-period" class="form-control">
             <option>Morning</option>
             <option>Afternoon</option>
@@ -45,48 +46,38 @@
         <tbody>
             <tr>
                 <td><p>13:10 to 14:50</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
-                <td><p>LP</p><p>Valeria</p></td>
+                @for(var i = 1; i <= 6; i++)
+                {
+                    <td><p>No value</p></td>
+                }
             </tr>
             <tr>
                 <td>15:00 to 15:50</td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    <td><p>No value</p></td>
+                }
             </tr>
             <tr>
                 <td>15:50 to 16:40</td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    <td><p>No value</p></td>
+                }
             </tr>
             <tr>
                 <td>16:50 to 17:40</td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    <td><p>No value</p></td>
+                }
             </tr>
             <tr>
                 <td>17:40 to 18:30</td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td><p>LP</p><p>Valeria</p></td>
-                <td></td>
+                @for (var i = 1; i <= 6; i++)
+                {
+                    <td><p>No value</p></td>
+                }
             </tr>
         </tbody>
     </table>

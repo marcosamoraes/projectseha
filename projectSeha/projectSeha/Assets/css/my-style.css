@@ -644,7 +644,9 @@ p.font-seha {
 
 
 /*Step 3*/
-
+#step3{
+    padding-top:30px;
+}
     #step3 button {
         float: right;
         margin-bottom: 20px;
@@ -671,8 +673,11 @@ p.font-seha {
 }
 
     #step3 table thead th {
-        border-bottom: solid 2px;
-        border-bottom-color: #607d8b;
+       border: 0px;
+    }
+    #step3 table thead th:nth-child(1) {
+       background-color:#fff;
+       color:#607d8b;
     }
 
     #step3 table th {
