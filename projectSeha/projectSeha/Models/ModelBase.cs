@@ -14,7 +14,7 @@ namespace ProjectSeha.Models
         {
             string connectionString = @"Data Source=localhost;
                                         Initial Catalog=BDSeha; 
-                                        Integrated Security=true";
+                                        Integrated Security=true"; //.\sqlexpress
 
             connection = new SqlConnection(connectionString);
             connection.Open();
