@@ -64,10 +64,10 @@ namespace ProjectSeha.Controllers
             List<Disponibilidade> lista;
 
             List<int> listaBloqueados = new List<int>();
-            int[] manha = { 1, 9, 17, 25, 33, 2, 10, 18, 26, 34, 3, 11, 19, 27, 35 };
-            int[] tarde = { 4, 12, 20, 28, 36, 5, 13, 21, 29, 37, 6, 14, 22, 30, 38 };
-            int[] noite = { 7, 15, 23, 31, 39, 8, 16, 24, 32, 40 };
-            int[] sabado = { 41, 42, 43, 44, 45, 46, 47, 48 };
+            int[] manha = { 1, 9, 17, 25, 33, 2, 10, 18, 26, 34, 3, 11, 19, 27, 35, 41, 42, 43, 46, 47, 48 };
+            int[] tarde = { 4, 12, 20, 28, 36, 5, 13, 21, 29, 37, 6, 14, 22, 30, 38, 41, 42, 43, 46, 47, 48 };
+            int[] noite = { 7, 15, 23, 31, 39, 8, 16, 24, 32, 40, 41, 42, 43, 46, 47, 48 };
+            int[] sabado = { 44, 45 };
 
             using (ProfessorModel model = new ProfessorModel())
             {
