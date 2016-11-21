@@ -222,6 +222,8 @@
     <Content Include="Views\admin\results.cshtml" />
     <Content Include="Views\courses\UpdateDisciplina.cshtml" />
     <Content Include="Views\default\error.cshtml" />
+    <Content Include="Views\courses\UpdateCurso.cshtml" />
+    <Content Include="Views\courses\UpdateDisciplinas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

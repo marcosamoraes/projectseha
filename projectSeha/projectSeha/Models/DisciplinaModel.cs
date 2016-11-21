@@ -100,5 +100,34 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
         }
+
+        public List<Disciplina> ReadDisciplinas(int CursoId)
+        {
+            List<Disciplina> lista = new List<Disciplina>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM ViewDisciplinas WHERE CodCurso = @CursoId";
+
+            cmd.Parameters.AddWithValue("@CursoId", CursoId);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Disciplina e = new Disciplina();
+
+                    e.DisciplinaId = (int)reader["DisciplinaId"];
+                    e.CodCurso = (int)reader["CodCurso"];
+                    e.Nome = (string)reader["Nome"];
+                    e.QtdAulas = (int)reader["QtdAulas"];
+                    e.Semestre = (int)reader["Semestre"];
+                    e.Sigla = (string)reader["Sigla"];
+
+                    lista.Add(e);
+                }
+                
+                return lista;
+            }
+        }
     }
 }

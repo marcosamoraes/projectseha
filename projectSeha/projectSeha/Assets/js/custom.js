@@ -287,7 +287,7 @@
 
     /*View Courses*/
     $(document).on('click', '#course tr', function () {
-        location.href = '/courses/update/' + $(this).find('td:nth-child(1)').html();
+        location.href = '/courses/Update/' + $(this).find('td:nth-child(1)').html();
     });
     $(document).on('click', '#disciplinas tr', function () {
         location.href = '/courses/UpdateDisciplina/' + $(this).find('td:nth-child(1)').html();

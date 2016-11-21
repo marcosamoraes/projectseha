@@ -61,16 +61,27 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            Curso Curso = GetCursoBanco(id);
+            Curso CursoDados = GetCursoBanco(id);
             List<Disciplina> listaDisciplinas = GetListaDisciplinasBanco(id);
+
+            Session["dadosCurso"] = CursoDados;
+            Session["ListaDisciplinas"] = listaDisciplinas;
+
             return RedirectToAction("UpdateCurso");
+        }
+
+        public ActionResult UpdateCurso() {
+            Curso objCurso = (Curso)Session["dadosCurso"];
+            ViewBag.CursoTitulo = objCurso.Titulo ;
+            ViewBag.CursoTurno = objCurso.Turno;
+            return View();
         }
 
         public List<Disciplina> GetListaDisciplinasBanco(int CursoId)
         {
             using (DisciplinaModel disciplinaModel = new DisciplinaModel())
             {
-                return disciplinaModel.Read(CursoId);
+                return disciplinaModel.ReadDisciplinas(CursoId);
             }
         }
 
@@ -137,6 +148,22 @@ namespace ProjectSeha.Controllers
             Session["dadosCurso"] = objCurso;
 
             return RedirectToAction("MenuDisciplinas");
+        }
+
+        [HttpPost]
+        public ActionResult GoToUpdateDisciplina(FormCollection formCurso)
+        {
+            Curso objCurso = new Curso();
+            objCurso.Titulo = formCurso["Titulo"];
+            objCurso.Turno = formCurso["Turno"];
+            Session["dadosCurso"] = objCurso;
+
+            return RedirectToAction("UpdateDisciplinas");
+        }
+
+        public ActionResult UpdateDisciplinas()
+        {
+            return View();
         }
 
         public ActionResult CreateDisciplina()
