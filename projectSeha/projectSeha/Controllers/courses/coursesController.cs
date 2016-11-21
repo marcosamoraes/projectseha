@@ -14,7 +14,7 @@ namespace ProjectSeha.Controllers
         // GET: courses
         public ActionResult Index()
         {
-            using(CursoModel model = new CursoModel())
+            using (CursoModel model = new CursoModel())
             {
                 List<Curso> lista = model.Read();
                 return View(lista);
@@ -61,10 +61,25 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
+            Curso Curso = GetCursoBanco(id);
+            List<Disciplina> listaDisciplinas = GetListaDisciplinasBanco(id);
+            return RedirectToAction("UpdateCurso");
+        }
+
+        public List<Disciplina> GetListaDisciplinasBanco(int CursoId)
+        {
+            using (DisciplinaModel disciplinaModel = new DisciplinaModel())
+            {
+                return disciplinaModel.Read(CursoId);
+            }
+        }
+
+        public Curso GetCursoBanco(int CursoId)
+        {
             using (CursoModel model = new CursoModel())
             {
-                Curso curso = model.Read(id);
-                return View(curso);
+                Curso curso = model.Read(CursoId);
+                return curso;
             }
         }
 
@@ -88,21 +103,13 @@ namespace ProjectSeha.Controllers
             return PartialView();
         }
 
-        public ActionResult _TabDisciplinas()
-        {
-            return PartialView();
-        }
-
-        public List<Disciplina> listaDisciplinas = new List<Disciplina>();
-
         [HttpPost]
         public ActionResult AddDisciplinaLista(FormCollection formulario)
         {
-            if (Session["ListaDisciplinas"] == null)
+            List<Disciplina> listaDisciplinas = new List<Disciplina>();
+            if (Session["ListaDisciplinas"] != null)
             {
-                List<Disciplina> listaDisciplinas = new List<Disciplina>();
-            } else {
-               listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+                listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             }
 
             Disciplina newDisciplina = new Disciplina();
@@ -111,11 +118,11 @@ namespace ProjectSeha.Controllers
             newDisciplina.Semestre = Convert.ToInt32(formulario["Periodo"]);
             newDisciplina.QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
             listaDisciplinas.Add(newDisciplina);
-            
+
             Session["ListaDisciplinas"] = listaDisciplinas;
             return RedirectToAction("MenuDisciplinas");
         }
-        
+
         public ActionResult MenuDisciplinas()
         {
             return View();
@@ -140,13 +147,14 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult DeleteDisciplina(int id)
         {
-            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             listaDisciplinas.RemoveAt(id);
             return RedirectToAction("MenuDisciplinas");
         }
 
-        public ActionResult UpdateDisciplina(int id) {
-            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+        public ActionResult UpdateDisciplina(int id)
+        {
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             var objDisciplina = listaDisciplinas[id];
             ViewBag.IndiceLista = id;
             ViewBag.Semestre = objDisciplina.Semestre;
@@ -158,7 +166,7 @@ namespace ProjectSeha.Controllers
 
         public ActionResult UpdateDisciplinaLista(int id, FormCollection formulario)
         {
-            listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             //var objDisciplina = listaDisciplinas[id];
 
             listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
@@ -167,6 +175,51 @@ namespace ProjectSeha.Controllers
             listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
 
             return RedirectToAction("MenuDisciplinas");
+        }
+
+        public ActionResult Salvar()
+        {
+            var curso = (Curso)Session["dadosCurso"];
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+
+            CreateCursoBanco(curso);
+            int idUltimoCursoSalvo = GetUltimoCursoArmazenado();
+
+            var tamanhoLista = listaDisciplinas.Count();
+            for (int i = 0; i < tamanhoLista; i++)
+            {
+                var disciplina = listaDisciplinas[i];
+                disciplina.CodCurso = idUltimoCursoSalvo;
+                CreateDisciplinaBanco(disciplina);
+            }
+            Session["dadosCurso"] = null;
+            Session["ListaDisciplinas"] = null;
+            return RedirectToAction("Index");
+        }
+
+        public void CreateCursoBanco(Curso curso)
+        {
+            using (CursoModel cursoModel = new CursoModel())
+            {
+                cursoModel.Create(curso);
+            }
+        }
+
+        public void CreateDisciplinaBanco(Disciplina disciplina)
+        {
+            using (DisciplinaModel disciplinaModel = new DisciplinaModel())
+            {
+                disciplinaModel.Create(disciplina);
+            }
+        }
+
+        public int GetUltimoCursoArmazenado()
+        {
+            using (CursoModel cursoModel = new CursoModel())
+            {
+                int idUltimoCurso = cursoModel.GetUltimoCursoArmazenado();
+                return idUltimoCurso;
+            } 
         }
     }
 }

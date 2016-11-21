@@ -64,6 +64,7 @@ namespace ProjectSeha.Models
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = @"ArmazenaDisciplina";
 
+            cmd.Parameters.AddWithValue("@codCurso", e.CodCurso);
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@qtdAulas", e.QtdAulas);
             cmd.Parameters.AddWithValue("@semestre", e.Semestre);
