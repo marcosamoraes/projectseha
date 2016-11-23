@@ -98,7 +98,6 @@ namespace ProjectSeha.Controllers
             {
                 model.UpdateObservation(ProfessorId, observacoes);
             }
-            //return Json("Observação inserida");
         }
     }
 }
