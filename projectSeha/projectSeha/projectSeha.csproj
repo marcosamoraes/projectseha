@@ -224,6 +224,8 @@
     <Content Include="Views\default\error.cshtml" />
     <Content Include="Views\courses\UpdateCurso.cshtml" />
     <Content Include="Views\courses\UpdateDisciplinas.cshtml" />
+    <Content Include="Views\courses\AtualizarDisciplina.cshtml" />
+    <Content Include="Views\courses\CriarDisciplina.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -233,7 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\courses\disciplines\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

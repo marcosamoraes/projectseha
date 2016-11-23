@@ -292,35 +292,6 @@
     $(document).on('click', '#disciplinas tr', function () {
         location.href = '/courses/UpdateDisciplina/' + $(this).find('td:nth-child(1)').html();
     });
-    /*
-    $("#_MenuDisciplinas").load('/courses/_MenuDisciplinas', function () {
-        $("#_CreateDisciplina").load('/courses/_CreateDisciplina', function () {
-            $("#_UpdateDisciplina").hide();
-        });
-    });
-
-    //Adicionar disciplina
-    $(document).on('click', '#btnAddDisciplina', function () {
-
-        var semestre = $("option:selected", "#Periodo").val();
-        var tituloDisciplina = $("#txtTituloDisciplina").val();
-        var txtSigla = $("#txtSigla").val();
-        var txtQtdAulasMinistradas = $("#txtQtdAulasMinistradas").val();
-
-        $.ajax({
-            url: '/courses/AddDisciplinaLista/?nome=' + tituloDisciplina + '&sigla=' + txtSigla + '&semestre=' + semestre + '&qtdAulas=' + txtQtdAulasMinistradas,
-            method: 'get',
-            dataType: 'html',
-            success: function (data) {
-                $('#_AssignmentProfessor').html(data);
-            },
-            error: function () {
-
-            }
-        });
-        disciplinas = [];
-    });
-    */
 
     /*View Assignment*/
 
