@@ -162,6 +162,26 @@ namespace ProjectSeha.Controllers
         /* -----------------------------Update-----------------------------------------*/
 
 
+        [HttpPost]
+        public ActionResult AddDisciplinaListaUpdate(FormCollection formulario)
+        {
+            List<Disciplina> listaDisciplinas = new List<Disciplina>();
+            if (Session["ListaDisciplinas"] != null)
+            {
+                listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            }
+
+            Disciplina newDisciplina = new Disciplina();
+            newDisciplina.Nome = formulario["TituloDisciplina"];
+            newDisciplina.Sigla = formulario["SiglaDisciplina"];
+            newDisciplina.Semestre = Convert.ToInt32(formulario["Periodo"]);
+            newDisciplina.QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+            listaDisciplinas.Add(newDisciplina);
+
+            Session["ListaDisciplinas"] = listaDisciplinas;
+            return RedirectToAction("UpdateDisciplinas");
+        }
+
         [HttpGet]
         public ActionResult Update(int id)
         {
@@ -202,7 +222,9 @@ namespace ProjectSeha.Controllers
         [HttpPost]
         public ActionResult GoToUpdateDisciplina(FormCollection formCurso)
         {
+            Curso sessaoCurso = (Curso)Session["dadosCurso"];
             Curso objCurso = new Curso();
+            objCurso.CursoId = sessaoCurso.CursoId;
             objCurso.Titulo = formCurso["Titulo"];
             objCurso.Turno = formCurso["Turno"];
             Session["dadosCurso"] = objCurso;
@@ -251,7 +273,9 @@ namespace ProjectSeha.Controllers
 
             List<Disciplina> listaDisciplinasNovas = GetListaDisciplinaNovas(listaDisciplinasInterface);
             AdicionarDisciplinas(objCursoInterface.CursoId, listaDisciplinasNovas);
-            
+
+            Session["dadosCurso"] = null;
+            Session["ListaDisciplinas"] = null;
             return RedirectToAction("Index");
         }
 
