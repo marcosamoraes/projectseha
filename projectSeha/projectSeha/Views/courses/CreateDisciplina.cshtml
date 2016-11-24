@@ -4,20 +4,21 @@
 }
 
 <h3 class="font-seha left">Add disciplines</h3>
-<form action="/courses/AddDisciplinaLista" method="post">
-    <div class="row" style="margin-left:18px;">
-        <label>Period</label>
-        <div class="form-group" style="width:150px;">
-            <select id="Periodo" class="form-control">
-                <option value="1">First</option>
-                <option value="2">Second</option>
-                <option value="3">Third</option>
-                <option value="4">Fourth</option>
-                <option value="5">Fifth</option>
-                <option value="6">Sixth</option>
-            </select>
+<div id="courses" class="font-seha">
+    <form action="/courses/AddDisciplinaLista" method="post">
+        <div class="row">
+            <label>Period</label>
+            <div class="form-group" style="width:150px;">
+                <select id="Periodo" class="form-control">
+                    <option value="1">First</option>
+                    <option value="2">Second</option>
+                    <option value="3">Third</option>
+                    <option value="4">Fourth</option>
+                    <option value="5">Fifth</option>
+                    <option value="6">Sixth</option>
+                </select>
+            </div>
         </div>
-    </div>
         <div class="row">
             <div class="col-xs-6 form-group">
                 <label for="txtTituloDisciplina">Discipline title</label>
@@ -28,16 +29,16 @@
                 <input id="txtSigla" type="text" name="SiglaDisciplina" class="form-control" size="5" />
             </div>
         </div>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-2">
-                <label for="txtQtdAulasMinistradas">Number of classes taught</label>
-                <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-2">
+                    <label for="txtQtdAulasMinistradas">Number of classes taught</label>
+                    <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div id="professor-buttons">
+
+        <div id="professor-buttons" style="width:65%">
             <a class="btn btn-seha1" href="/courses/MenuDisciplinas">
                 Cancel
             </a>
@@ -45,5 +46,5 @@
                 Add
             </button>
         </div>
-    </div>  
-</form>
+    </form>
+</div>
