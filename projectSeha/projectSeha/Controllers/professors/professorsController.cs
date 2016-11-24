@@ -21,7 +21,7 @@ namespace ProjectSeha.Controllers
                 if (ctrlDelete)
                 {
                     ctrlDelete = false;
-                    ViewBag.Erro = "Não foi possível remover este professor pois ele possui vínculo com as Disciplinas";
+                    ViewBag.Erro = "Could not remove this teacher because he has ties to the Disciplines";
                 }
                 return View(lista);
             }
@@ -51,7 +51,7 @@ namespace ProjectSeha.Controllers
                 }
                 else
                 {
-                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    ViewBag.Erro = "Make sure the teacher's name or email already exists";
                     return View();
                 }
             }
@@ -105,7 +105,7 @@ namespace ProjectSeha.Controllers
                 }
                 else
                 {
-                    ViewBag.Erro = "Verifique se o nome ou o email do professor já existem";
+                    ViewBag.Erro = "Make sure the teacher's name or email already exists";
                     return View(p);
                 }
             }

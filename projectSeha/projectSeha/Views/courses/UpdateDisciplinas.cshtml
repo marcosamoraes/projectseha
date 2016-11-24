@@ -39,12 +39,11 @@
                         int indiceLista = 0;
                         foreach (var disciplina in listaDisciplinas)
                         {
-                            //var indiceDisplay = indiceLista + 1;
                 <tr>
                     <td>@indiceLista</td>
                     <td> @disciplina.Sigla </td>
                     <td> @disciplina.Nome </td>
-                    <td><a href="/courses/DeleteDisciplina/0"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a href="/courses/DeleteDisciplinaUpdate/0"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                             indiceLista++;
                         }
@@ -52,15 +51,14 @@
                 }
             </tbody>
         </table>
-        <a class="btn btn-seha1" href="/courses/CreateDisciplina">
+        <a class="btn btn-seha1" href="/courses/CriarDisciplina">
             Add Discipline
         </a>
-        <a style="float:right; margin-left:10px;" class="btn btn-seha2" href="/courses/Salvar">
+        <a style="float:right; margin-left:10px;" class="btn btn-seha2" href="/courses/Atualizar">
             Save
         </a>
-        <a style="float:right" class="btn btn-seha1" href="/courses/create">
+        <a style="float:right" class="btn btn-seha1" href="/courses/UpdateCurso">
             Back
         </a>
-        
     </div>
 </div>

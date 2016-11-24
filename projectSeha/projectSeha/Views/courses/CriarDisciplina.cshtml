@@ -5,7 +5,7 @@
 
 <h3 class="font-seha left">Add disciplines</h3>
 <div id="courses" class="font-seha">
-    <form action="/courses/AddDisciplinaLista" method="post">
+    <form action="/courses/AddDisciplinaListaUpdate" method="post">
         <div class="row">
             <label>Period</label>
             <div class="form-group" style="width:150px;">
@@ -37,14 +37,15 @@
                 </div>
             </div>
         </div>
-
-        <div id="professor-buttons" style="width:65%">
-            <a class="btn btn-seha1" href="/courses/MenuDisciplinas">
-                Cancel
-            </a>
-            <button class="btn btn-seha2" id="btnAddDisciplina" type="submit">
-                Add
-            </button>
+        <div class="row">
+            <div id="professor-buttons" style="width:65%">
+                <a class="btn btn-seha1" href="/courses/UpdateDisciplinas">
+                    Cancel
+                </a>
+                <button class="btn btn-seha2" id="btnAddDisciplina" type="submit">
+                    Add
+                </button>
+            </div>
         </div>
     </form>
 </div>

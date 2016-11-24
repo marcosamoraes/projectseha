@@ -12,7 +12,7 @@ namespace ProjectSeha.Models
 
         public ModelBase()
         {
-            string connectionString = @"Data Source=.\sqlexpress;
+            string connectionString = @"Data Source=localhost;
                                         Initial Catalog=BDSeha; 
                                         Integrated Security=true"; //.\sqlexpress
 

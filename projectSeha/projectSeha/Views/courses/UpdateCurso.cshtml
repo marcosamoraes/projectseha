@@ -21,11 +21,11 @@
 <h3 class="font-seha left">Course informations</h3>
 
 <div id="courses" class="container font-seha">
-    <form action="/courses/GoToDisciplina" method="post">
+    <form action="/courses/GoToUpdateDisciplina" method="post">
         <div class="row">
             <div class="col-xs-6 form-group">
                 <label for="txtTituloCurso">Title</label>
-                <input id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " value="@ViewBag.TituloCurso" />
+                <input id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " value="@ViewBag.CursoTitulo" />
             </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@
             <div class="form-group" style="width:200px;">
                 <select name="Turno" class="form-control">
                     <option value="">Select a turn</option>
-                    @{  if (ViewBag.TurnoCurso == "Morning")
+                    @{  if (ViewBag.CursoTurno == "Morning")
                         {
                             <option value="Morning" selected>Morning</option>
                         }
@@ -42,7 +42,7 @@
                             <option value="Morning">Morning</option>
                         }
 
-                        if (ViewBag.TurnoCurso == "Afternoon")
+                        if (ViewBag.CursoTurno == "Afternoon")
                         {
                             <option value="Afternoon" selected>Afternoon</option>
                         }
@@ -51,7 +51,7 @@
                             <option value="Afternoon">Afternoon</option>
                         }
 
-                        if (ViewBag.TurnoCurso == "Evening")
+                        if (ViewBag.CursoTurno == "Evening")
                         {
                             <option value="Evening" selected>Evening</option>
                         }

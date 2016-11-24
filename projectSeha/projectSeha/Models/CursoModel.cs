@@ -94,5 +94,22 @@ namespace ProjectSeha.Models
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
         }
+
+        public int GetUltimoCursoArmazenado()
+        {
+            int idCurso = 0;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT TOP 1 (CursoId) AS ultimoId FROM tblCurso ORDER BY CursoId DESC";
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    idCurso = (int)reader["ultimoId"];
+                }
+                return idCurso;
+            }
+        }
     }
 }
