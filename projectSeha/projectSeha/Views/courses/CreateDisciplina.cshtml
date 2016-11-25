@@ -9,7 +9,7 @@
         <div class="row">
             <label>Period</label>
             <div class="form-group" style="width:150px;">
-                <select id="Periodo" class="form-control">
+                <select required id="Periodo" name="Periodo" class="form-control">
                     <option value="1">First</option>
                     <option value="2">Second</option>
                     <option value="3">Third</option>
@@ -22,18 +22,18 @@
         <div class="row">
             <div class="col-xs-6 form-group">
                 <label for="txtTituloDisciplina">Discipline title</label>
-                <input id="txtTituloDisciplina" type="text" name="TituloDisciplina" class="form-control" size="25" />
+                <input required id="txtTituloDisciplina" type="text" name="TituloDisciplina" class="form-control" size="25" />
             </div>
             <div class="col-xs-2 form-group">
                 <label for="txtSigla">Initials</label>
-                <input id="txtSigla" type="text" name="SiglaDisciplina" class="form-control" size="5" />
+                <input required maxlength="3" id="txtSigla" type="text" name="SiglaDisciplina" class="form-control" size="5" />
             </div>
         </div>
         <div class="row">
             <div class="form-group">
                 <div class="col-xs-2">
                     <label for="txtQtdAulasMinistradas">Number of classes taught</label>
-                    <input id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
+                    <input required min="2" max="4" id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
                 </div>
             </div>
         </div>

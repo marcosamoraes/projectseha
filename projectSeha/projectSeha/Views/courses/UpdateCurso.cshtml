@@ -25,13 +25,13 @@
         <div class="row">
             <div class="col-xs-6 form-group">
                 <label for="txtTituloCurso">Title</label>
-                <input id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " value="@ViewBag.CursoTitulo" />
+                <input required id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " value="@ViewBag.CursoTitulo" />
             </div>
         </div>
         <div class="row">
             <label>Turn</label>
             <div class="form-group" style="width:200px;">
-                <select name="Turno" class="form-control">
+                <select required name="Turno" class="form-control">
                     <option disabled selected hidden>Select a turn..</option>
                     @{  if (ViewBag.CursoTurno == "Morning")
                         {
