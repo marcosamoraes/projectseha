@@ -118,7 +118,7 @@ namespace ProjectSeha.Controllers
         {
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             listaDisciplinas.RemoveAt(id);
-            return RedirectToAction("MenuDisciplinas");
+            return RedirectToAction("UpdateDisciplinas");
         }
 
         [HttpGet]
