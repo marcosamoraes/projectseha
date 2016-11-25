@@ -110,7 +110,7 @@ namespace ProjectSeha.Controllers
             listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
             listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
 
-            return RedirectToAction("MenuDisciplinas");
+            return RedirectToAction("UpdateDisciplinas");
         }
 
         [HttpGet]
