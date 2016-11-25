@@ -1005,6 +1005,21 @@ p.font-seha {
         }
 }
 
+.disciplinas table thead th:nth-child(1), .disciplinas table tbody td:nth-child(1) {
+    width: 10% !important;
+}
+
+.disciplinas table thead th:nth-child(2), .disciplinas table tbody td:nth-child(2) {
+   
+}
+
+.disciplinas table thead th:nth-child(3), .disciplinas table tbody td:nth-child(3) {
+    width: 68% !important;
+}
+
+
+
+
 /*Professors*/
 
 #professor {
