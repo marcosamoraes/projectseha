@@ -115,12 +115,25 @@ namespace ProjectSeha.Controllers
             return RedirectToAction("UpdateDisciplinas");
         }
 
+        [HttpPost]
+        public ActionResult AtualizarDisciplinaLista(int id, FormCollection formulario)
+        {
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+
+            listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+            listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+            listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+            listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+
+            return RedirectToAction("MenuDisciplinas");
+        }
+
         [HttpGet]
         public ActionResult DeleteDisciplina(int id)
         {
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             listaDisciplinas.RemoveAt(id);
-            return RedirectToAction("UpdateDisciplinas");
+            return RedirectToAction("MenuDisciplinas");
         }
 
         [HttpGet]
@@ -255,8 +268,15 @@ namespace ProjectSeha.Controllers
         }
 
         [HttpGet]
-        public ActionResult AtualizarDisciplina()
+        public ActionResult AtualizarDisciplina(int id)
         {
+            var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
+            var objDisciplina = listaDisciplinas[id];
+            ViewBag.IndiceLista = id;
+            ViewBag.Semestre = objDisciplina.Semestre;
+            ViewBag.Titulo = objDisciplina.Nome;
+            ViewBag.Sigla = objDisciplina.Sigla;
+            ViewBag.QtdAulas = objDisciplina.QtdAulas;
             return View();
         }
 

@@ -32,7 +32,7 @@
             <label>Turn</label>
             <div class="form-group" style="width:200px;">
                 <select name="Turno" class="form-control">
-                    <option value="">Select a turn</option>
+                    <option disabled selected hidden>Select a turn..</option>
                     @{  if (ViewBag.CursoTurno == "Morning")
                         {
                             <option value="Morning" selected>Morning</option>

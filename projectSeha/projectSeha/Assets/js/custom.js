@@ -292,6 +292,9 @@
     $(document).on('click', '#disciplinas tr', function () {
         location.href = '/courses/UpdateDisciplina/' + $(this).find('td:nth-child(1)').html();
     });
+    $(document).on('click', '#disciplinasCreate tr', function () {
+        location.href = '/courses/AtualizarDisciplina/' + $(this).find('td:nth-child(1)').html();
+    });
 
     /*View Assignment*/
 

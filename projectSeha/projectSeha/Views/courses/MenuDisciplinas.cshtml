@@ -22,7 +22,7 @@
 
 <div id="tbl-disciplinas">
     <div class="col-md-8 table-seha disciplinas">
-        <table id="disciplinas" class="table">
+        <table id="disciplinasCreate" class="table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -44,7 +44,7 @@
                     <td>@indiceLista</td>
                     <td> @disciplina.Sigla </td>
                     <td> @disciplina.Nome </td>
-                    <td><a href="/courses/DeleteDisciplina/0"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a href="/courses/DeleteDisciplina/@indiceLista"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                             indiceLista++;
                         }
