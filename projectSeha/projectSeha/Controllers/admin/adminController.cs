@@ -143,6 +143,9 @@ namespace ProjectSeha.Controllers
                 ViewBag.QtdProfessor = model.CountProf();
                 ViewBag.QtdCourse = model.CountCurso();
                 ViewBag.QtdDiscp = model.CountDiscp();
+                //adicionadas para availability
+                ViewBag.CountProf_Available = model.CountProf_Available(); //Lista os professores que ja preencheram a disponibilidade
+                ViewBag.CountProf_Slot = model.CountProf_Slot(); //Lista os slots de cada professor
             }
             return View();
         }

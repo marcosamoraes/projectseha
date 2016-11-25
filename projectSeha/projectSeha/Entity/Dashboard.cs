@@ -25,5 +25,19 @@ namespace ProjectSeha.Entity
             public string Turno { get; set; }
             public int QtdDisciplinas { get; set; }
         }
+
+        //Classes do availability
+        public class CountProf_Available
+        {
+            public int CodProfessor;
+            public string NomeGuerra;
+        }
+
+        public class CountProf_Slot
+        {
+            public int CodProfessor;
+            public string HoraInicio;
+            public bool status_slot;
+        }
     }
 }
