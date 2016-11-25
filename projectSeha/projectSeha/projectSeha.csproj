@@ -216,7 +216,6 @@
     <Content Include="Views\assignment\_AssignmentCurso.cshtml" />
     <Content Include="Views\assignment\_AssignmentProfessor.cshtml" />
     <Content Include="Views\courses\create.cshtml" />
-    <Content Include="Views\courses\update.cshtml" />
     <Content Include="Views\courses\CreateDisciplina.cshtml" />
     <Content Include="Views\courses\MenuDisciplinas.cshtml" />
     <Content Include="Views\admin\_StepsAvailability.cshtml" />
