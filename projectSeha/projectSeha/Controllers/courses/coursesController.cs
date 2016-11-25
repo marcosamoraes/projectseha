@@ -25,6 +25,8 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            Session["dadosCurso"] = null;
+            Session["ListaDisciplinas"] = null;
             using (CursoModel model = new CursoModel())
             {
                 List<Curso> lista = model.Read();
