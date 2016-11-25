@@ -3,8 +3,8 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 <div class="row form-group">
-    <div class="col-xs-12">
-        <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+    <div class="">
+        <ul id="nav-seha" class="nav nav-pills nav-justified thumbnail setup-panel">
             <li>
                 <a href="/courses/create">
                     <h4 class="list-group-item-heading">Course</h4>
@@ -19,10 +19,8 @@
     </div>
 </div>
 <h3 class="font-seha left">Disciplines informations</h3>
-<a class="btn btn-seha2" href="/courses/CreateDisciplina">
-    Add Discipline
-</a>
-<div>
+
+<div id="tbl-disciplinas">
     <div class="col-md-8">
         <table id="disciplinas" class="table">
             <thead>
@@ -42,29 +40,27 @@
                         foreach (var disciplina in listaDisciplinas)
                         {
                             //var indiceDisplay = indiceLista + 1;
-                            <tr>
-                                <td>@indiceLista</td>
-                                <td> @disciplina.Sigla </td>
-                                <td> @disciplina.Nome </td>
-                                <td><a href="/courses/DeleteDisciplina/0"><span class="glyphicon glyphicon-trash"></span></a></td>
-                            </tr>
+                <tr>
+                    <td>@indiceLista</td>
+                    <td> @disciplina.Sigla </td>
+                    <td> @disciplina.Nome </td>
+                    <td><a href="/courses/DeleteDisciplina/0"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
                             indiceLista++;
                         }
                     }
                 }
             </tbody>
         </table>
-
-
-        <div class="row">
-            <div id="professor-buttons">
-                <a class="btn btn-seha1" href="/courses/create">
-                    Back
-                </a>
-                <a class="btn btn-seha1" href="/courses/Salvar">
-                    Save
-                </a>
-            </div>
-        </div>
+        <a class="btn btn-seha1" href="/courses/CreateDisciplina">
+            Add Discipline
+        </a>
+        <a style="float:right; margin-left:10px;" class="btn btn-seha2" href="/courses/Salvar">
+            Save
+        </a>
+        <a style="float:right" class="btn btn-seha1" href="/courses/create">
+            Back
+        </a>
+        
     </div>
 </div>

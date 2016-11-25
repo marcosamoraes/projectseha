@@ -30,6 +30,21 @@
     background-color: #FF8A65;
 }
 
+.btn-seha3 {
+    color: white;
+    background-color: #7cbf7f;
+    transition: all 0.5s;
+}
+
+.btn-seha3:hover {
+    color: white;
+    background-color: #FFAB91;
+}
+.btn-seha3:focus {
+    color: white;
+    background-color: #7cbf7f;
+}
+
 .box-seha {
     padding-bottom: 50px;
     padding-left: 50px;
@@ -806,6 +821,36 @@ p.font-seha {
 
 
 /*View Courses*/
+
+#courses{
+    margin-top:30px;
+    padding:0;
+}
+#courses .col-xs-6, #courses .col-xs-2{
+    padding-left:0px;
+}
+#courses-buttons{
+    margin-top:30px;
+}
+    #courses-buttons a {
+        margin-right: 20px;
+    }
+
+#tbl-disciplinas .col-md-8{
+    padding-left:0px;
+    margin-top:20px;
+}
+#create-disciplina{
+
+}
+#nav-seha li a{
+    color:#607D8B;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color:#fff !important;
+    background-color: #607D8B;
+}
 
 .row {
     margin-left: 0px;

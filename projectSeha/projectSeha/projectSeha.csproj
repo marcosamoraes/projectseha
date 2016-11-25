@@ -162,6 +162,7 @@
     <Compile Include="Controllers\user\userController.cs" />
     <Compile Include="Entity\Atribuicao.cs" />
     <Compile Include="Entity\Curso.cs" />
+    <Compile Include="Entity\Dashboard.cs" />
     <Compile Include="Entity\Disciplina.cs" />
     <Compile Include="Entity\Disponibilidade.cs" />
     <Compile Include="Entity\Lembrete.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Models\AssignmentModel.cs" />
     <Compile Include="Models\AvailabilityModel.cs" />
     <Compile Include="Models\CursoModel.cs" />
+    <Compile Include="Models\DashboardModel.cs" />
     <Compile Include="Models\DisciplinaModel.cs" />
     <Compile Include="Models\LembreteModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
@@ -226,6 +228,7 @@
     <Content Include="Views\courses\UpdateDisciplinas.cshtml" />
     <Content Include="Views\courses\AtualizarDisciplina.cshtml" />
     <Content Include="Views\courses\CriarDisciplina.cshtml" />
+    <Content Include="Views\admin\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -3,8 +3,8 @@
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 <div class="row form-group">
-    <div class="col-xs-12">
-        <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+    <div class="">
+        <ul id="nav-seha" class="nav nav-pills nav-justified thumbnail setup-panel">
             <li class="active">
                 <a href="">
                     <h4 class="list-group-item-heading">Course</h4>
@@ -20,7 +20,7 @@
 </div>
 <h3 class="font-seha left">Course informations</h3>
 
-<div id="courses" class="container">
+<div id="courses" class="container font-seha">
     <form action="/courses/GoToDisciplina" method="post">
         <div class="row">
             <div class="col-xs-6 form-group">
@@ -28,7 +28,7 @@
                 <input id="txtTituloCurso" type="text" name="Titulo" class="form-control" size="25 " value="@ViewBag.TituloCurso" />
             </div>
         </div>
-        <div class="row" style="margin-left:18px;">
+        <div class="row">
             <label>Turn</label>
             <div class="form-group" style="width:200px;">
                 <select name="Turno" class="form-control">
@@ -68,7 +68,7 @@
             <div id="_MenuDisciplinas"></div>
         </div>
         <div class="row">
-            <div id="professor-buttons">
+            <div id="courses-buttons">
                 <a class="btn btn-seha1" href="/courses/index">
                     Cancel
                 </a>
