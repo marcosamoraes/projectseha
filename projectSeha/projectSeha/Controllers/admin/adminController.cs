@@ -138,6 +138,12 @@ namespace ProjectSeha.Controllers
 
         public ActionResult Dashboard()
         {
+            using(DashboardModel model = new DashboardModel())
+            {
+                ViewBag.QtdProfessor = model.CountProf();
+                ViewBag.QtdCourse = model.CountProf_Curso();
+                ViewBag.QtdDiscp = model.CountDiscp();
+            }
             return View();
         }
 

@@ -1,8 +1,9 @@
 --DROP DATABASE BDSeha
---CREATE DATABASE BDSeha
---GO
---USE BDSEHA
---GO
+CREATE DATABASE BDSeha
+GO
+USE BDSEHA
+GO
+GO
 
 /* CREATE DE TABELAS */
 CREATE TABLE tblLembrete (
@@ -99,10 +100,12 @@ INSERT INTO tblProfessor VALUES (3, 'Edes', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (4, 'Henrique', 0, 1, 1, '')
 GO
 --tblCurso
-INSERT INTO tblCurso VALUES ('Análise e Desenvolvimento de Sistemas', 'Tarde');
-INSERT INTO tblCurso VALUES ('Informática para Negócios', 'Noite');
-INSERT INTO tblCurso VALUES ('Agronegócio', 'Manhã');
+INSERT INTO tblCurso VALUES ('Análise e Desenvolvimento de Sistemas', 'Afternoon');
+INSERT INTO tblCurso VALUES ('Informática para Negócios', 'Evening');
+INSERT INTO tblCurso VALUES ('Agronegócio', 'Morning');
 GO
+
+
 --tblDisciplina
 
 --Curso ADS
@@ -714,4 +717,6 @@ GO
 	END
 	GO
 
-	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	EXEC PopulaTblSlots
+	------------------------------------------------------------------(ERRO DE GO)
+	--ViewTurnos
+	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	GO/* Views do Dashboard */--Lista a quantidade de disciplinas atribuidas por professor	CREATE VIEW CountProf_Discp	AS	SELECT p.NomeGuerra,		   COUNT(a.CodDisciplina) AS "QtdDisciplinas"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO--Lista a quantidade de cursos atribuidos por professor	CREATE VIEW CountProf_Curso	AS	SELECT  p.NomeGuerra,		    COUNT(DISTINCT a.CodCurso) AS "QtdCursos"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO	--Lista a quantidade de disciplinas por curso	CREATE VIEW CountCurso_Discp	AS	SELECT  c.Titulo, c.Turno,		    COUNT(d.DisciplinaId) QtdDisciplinas	FROM tblDisciplina d, tblCurso c	WHERE c.CursoId = d.CodCurso	GROUP BY c.Titulo, c.Turno	GO	GO	--Popula a tbl de slots	EXEC PopulaTblSlots	GO	GO--Lista TOTAL de Professores	SELECT COUNT(*) Professores from tblProfessor--Lista TOTAL de Disciplinas	SELECT COUNT(*) Disciplinas from tblDisciplina--Lista TOTAL de Cursos	SELECT COUNT(*) Cursos from tblCurso
