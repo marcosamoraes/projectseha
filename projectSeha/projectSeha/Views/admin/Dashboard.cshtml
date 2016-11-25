@@ -8,45 +8,60 @@
     .dashboard {
         margin-top: 50px;
     }
+    .dashboard .col-md-4 {
+        text-align: center;
+    }
+    .dashboard p {
+        color: #607d8b;
+        font-size: 30px;
+        font-weight: 700;
+    }
 </style>
 
 <div class="col-md-12 dashboard">
-    <div class="col-md-5">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="width: 80%">Description</th>
-                    <th>QTY</th>
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                        <td class="td-data">Registered professors</td>
-                        <td class="td-content">QTY</td>
-                    </tr>
-                    <tr>
-                        <td class="td-data">Registered courses</td>
-                        <td class="td-content">QTY</td>
-                    </tr>
-                    <tr>
-                        <td class="td-data">Registered disciplines</td>
-                        <td class="td-content">QTY</td>
-                    </tr>
-            </tbody>
-        </table>
+    <div class="col-md-4">
+        <p>40</p>
+        <h3 class="label-dashboard">Registered Professors</h3>
     </div>
-    <div class="col-md-5 col-md-offset-2">
+    <div class="col-md-4">
+        <p>3</p>
+        <h3 class="label-dashboard">Registered Courses</h3>
+    </div>
+    <div class="col-md-4">
+        <p>32</p>
+        <h3 class="label-dashboard">Registered Disciplines</h3>
+    </div>
+</div>
+<div class="col-md-12 dashboard">
+    <div class="col-md-8 col-md-offset-2">
         <table class="table">
             <thead>
                 <tr>
-                    <th style="width: 50%">Professors</th>
-                    <th>Assigned disciplines</th>
+                    <th>Professors</th>
+                    <th>Hours</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                     <tr>
-                        <td class="td-data"></td>
-                        <td class="td-content"></td>
+                        <td>Junior</td>
+                        <td>8:00</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Junior</td>
+                        <td>11:00</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Junior</td>
+                        <td>18:00</td>
+                        <td>Maybe</td>
+                    </tr>
+                    <tr>
+                        <td>Viana</td>
+                        <td>13:00</td>
+                        <td>Maybe</td>
                     </tr>
             </tbody>
         </table>
