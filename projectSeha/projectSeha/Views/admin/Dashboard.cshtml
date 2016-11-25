@@ -46,13 +46,13 @@
                 @foreach (var p in ViewBag.ListProfessor)
                 {
                     <p>@p.professorName</p>
-                    @foreach (var d in ViewBag.ListDisp)
+                    foreach (var d in ViewBag.ListDisp)
                     {
-                        @if (d.idProfessor = p.idProfessor)
+                        if (d.idProfessor = p.idProfessor)
                         {
                             <tr>
                                 <td>@d.hours</td>
-                                @if (d.day == 1)
+                                if (d.day == 1)
                                 {
                                     <td>Segunda</td>
                                 } else if(d.day == 2)
