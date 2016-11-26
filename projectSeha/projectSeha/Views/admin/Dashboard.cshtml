@@ -43,23 +43,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var p in ViewBag.ListProfessor)
+                @foreach (var a in ViewBag.CountProf_Available)
                 {
-                    <p>@p.professorName</p>
-                    foreach (var d in ViewBag.ListDisp)
+                    <tr>
+                        <td>@a.NomeGuerra</td>
+                    </tr>
+                    foreach (var s in ViewBag.CountProf_Slot)
                     {
-                        if (d.idProfessor = p.idProfessor)
+                        if (s.CodProfessor = a.CodProfessor)
                         {
                             <tr>
-                                <td>@d.hours</td>
-                                if (d.day == 1)
-                                {
-                                    <td>Segunda</td>
-                                } else if(d.day == 2)
-                                {
-                                    <td>Terça</td>
-                                }
-                                <td>@d.status</td>
+                                <td>@s.HoraInicio</td>
+                                <td>@s.status_slot</td>
                             </tr>
                         }
                     }
