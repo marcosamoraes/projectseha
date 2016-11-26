@@ -16,6 +16,14 @@
         font-size: 30px;
         font-weight: 700;
     }
+    .tb-profcolor {
+        background-color: #bababb;
+        color: white;
+        cursor: pointer;
+    }
+    .dash-slots {
+        display: none;
+    }
 </style>
 
 <div class="col-md-12 dashboard">
@@ -38,6 +46,7 @@
             <thead>
                 <tr>
                     <th>Professors</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -45,24 +54,26 @@
                 {
                     foreach (var a in ViewBag.CountProf_Available)
                     {
-                        <tr>
+                        <tr class="tb-profcolor">
                             <td>@a.NomeGuerra</td>
+                            <td></td>
                         </tr>
                         foreach (var s in ViewBag.CountProf_Slot)
                         {
                             if (s.CodProfessor == a.CodProfessor)
                             {
-                                <tr>
+                                <tr class="dash-slots">
                                     <td>@s.HoraInicio</td>
                                     <td>@s.status_slot</td>
                                 </tr>
                             }
                         }
                     }
-                } else
+                }
+                else
                 {
                     <tr>
-                        <td>Nothing</td>
+                        <td>Nothing here</td>
                     </tr>
                 }
             </tbody>

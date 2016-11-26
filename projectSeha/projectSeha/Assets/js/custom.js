@@ -501,6 +501,12 @@
     });
 
     /*Dashboards*/
-    
+    $('.tb-profcolor').click(function () {
+        var next = $(this).next();
+        while (next.hasClass('dash-slots')) {
+            $(next).fadeToggle();
+            next = next.next();
+        }
+    });
 
 });

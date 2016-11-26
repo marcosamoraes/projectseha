@@ -30,8 +30,8 @@ CREATE TABLE tblProfessor (
 )
 
 CREATE TABLE tblSlot (
-	SlotId		int		NOT NULL primary key,
-	HoraInicio	time	NOT NULL
+	SlotId		int				NOT NULL primary key,
+	HoraInicio	varchar(16)		NOT NULL
 )
 
 CREATE TABLE tblCurso (
@@ -491,7 +491,7 @@ GO
 	--Insert
 	CREATE PROCEDURE ArmazenaSlot(
 		@slotId		int,
-		@horaInicio time
+		@horaInicio varchar(16)
 	
 	)AS
 	BEGIN
@@ -502,59 +502,59 @@ GO
 	CREATE PROCEDURE PopulaTblSlots
 	AS
 	BEGIN
-		EXEC ArmazenaSlot 1, '07:40:00'
-		EXEC ArmazenaSlot 2, '09:30:00'
-		EXEC ArmazenaSlot 3, '11:20:00'
-		EXEC ArmazenaSlot 4, '13:10:00'
-		EXEC ArmazenaSlot 5, '15:00:00'
-		EXEC ArmazenaSlot 6, '16:50:00'
-		EXEC ArmazenaSlot 7, '19:00:00'
-		EXEC ArmazenaSlot 8, '20:50:00'
+		EXEC ArmazenaSlot 1, 'Monday 07:40'
+		EXEC ArmazenaSlot 2, 'Monday 09:30'
+		EXEC ArmazenaSlot 3, 'Monday 11:20'
+		EXEC ArmazenaSlot 4, 'Monday 13:10'
+		EXEC ArmazenaSlot 5, 'Monday 15:00'
+		EXEC ArmazenaSlot 6, 'Monday 16:50'
+		EXEC ArmazenaSlot 7, 'Monday 19:00'
+		EXEC ArmazenaSlot 8, 'Monday 20:50'
 
-		EXEC ArmazenaSlot 9, '07:40:00'
-		EXEC ArmazenaSlot 10, '09:30:00'
-		EXEC ArmazenaSlot 11, '11:20:00'
-		EXEC ArmazenaSlot 12, '13:10:00'
-		EXEC ArmazenaSlot 13, '15:00:00'
-		EXEC ArmazenaSlot 14, '16:50:00'
-		EXEC ArmazenaSlot 15, '19:00:00'
-		EXEC ArmazenaSlot 16, '20:50:00'
+		EXEC ArmazenaSlot 9, 'Tuesday 07:40'
+		EXEC ArmazenaSlot 10, 'Tuesday 09:30'
+		EXEC ArmazenaSlot 11, 'Tuesday 11:20'
+		EXEC ArmazenaSlot 12, 'Tuesday 13:10'
+		EXEC ArmazenaSlot 13, 'Tuesday 15:00'
+		EXEC ArmazenaSlot 14, 'Tuesday 16:50'
+		EXEC ArmazenaSlot 15, 'Tuesday 19:00'
+		EXEC ArmazenaSlot 16, 'Tuesday 20:50'
 
-		EXEC ArmazenaSlot 17, '07:40:00'
-		EXEC ArmazenaSlot 18, '09:30:00'
-		EXEC ArmazenaSlot 19, '11:20:00'
-		EXEC ArmazenaSlot 20, '13:10:00'
-		EXEC ArmazenaSlot 21, '15:00:00'
-		EXEC ArmazenaSlot 22, '16:50:00'
-		EXEC ArmazenaSlot 23, '19:00:00'
-		EXEC ArmazenaSlot 24, '20:50:00'
+		EXEC ArmazenaSlot 17, 'Wednesday 07:40'
+		EXEC ArmazenaSlot 18, 'Wednesday 09:30'
+		EXEC ArmazenaSlot 19, 'Wednesday 11:20'
+		EXEC ArmazenaSlot 20, 'Wednesday 13:10'
+		EXEC ArmazenaSlot 21, 'Wednesday 15:00'
+		EXEC ArmazenaSlot 22, 'Wednesday 16:50'
+		EXEC ArmazenaSlot 23, 'Wednesday 19:00'
+		EXEC ArmazenaSlot 24, 'Wednesday 20:50'
 
-		EXEC ArmazenaSlot 25, '07:40:00'
-		EXEC ArmazenaSlot 26, '09:30:00'
-		EXEC ArmazenaSlot 27, '11:20:00'
-		EXEC ArmazenaSlot 28, '13:10:00'
-		EXEC ArmazenaSlot 29, '15:00:00'
-		EXEC ArmazenaSlot 30, '16:50:00'
-		EXEC ArmazenaSlot 31, '19:00:00'
-		EXEC ArmazenaSlot 32, '20:50:00'
+		EXEC ArmazenaSlot 25, 'Thursday 07:40'
+		EXEC ArmazenaSlot 26, 'Thursday 09:30'
+		EXEC ArmazenaSlot 27, 'Thursday 11:20'
+		EXEC ArmazenaSlot 28, 'Thursday 13:10'
+		EXEC ArmazenaSlot 29, 'Thursday 15:00'
+		EXEC ArmazenaSlot 30, 'Thursday 16:50'
+		EXEC ArmazenaSlot 31, 'Thursday 19:00'
+		EXEC ArmazenaSlot 32, 'Thursday 20:50'
 
-		EXEC ArmazenaSlot 33, '07:40:00'
-		EXEC ArmazenaSlot 34, '09:30:00'
-		EXEC ArmazenaSlot 35, '11:20:00'
-		EXEC ArmazenaSlot 36, '13:10:00'
-		EXEC ArmazenaSlot 37, '15:00:00'
-		EXEC ArmazenaSlot 38, '16:50:00'
-		EXEC ArmazenaSlot 39, '19:00:00'
-		EXEC ArmazenaSlot 40, '20:50:00'
+		EXEC ArmazenaSlot 33, 'Friday 07:40'
+		EXEC ArmazenaSlot 34, 'Friday 09:30'
+		EXEC ArmazenaSlot 35, 'Friday 11:20'
+		EXEC ArmazenaSlot 36, 'Friday 13:10'
+		EXEC ArmazenaSlot 37, 'Friday 15:00'
+		EXEC ArmazenaSlot 38, 'Friday 16:50'
+		EXEC ArmazenaSlot 39, 'Friday 19:00'
+		EXEC ArmazenaSlot 40, 'Friday 20:50'
 
-		EXEC ArmazenaSlot 41, '07:40:00'
-		EXEC ArmazenaSlot 42, '09:30:00'
-		EXEC ArmazenaSlot 43, '11:20:00'
-		EXEC ArmazenaSlot 44, '13:10:00'
-		EXEC ArmazenaSlot 45, '15:00:00'
-		EXEC ArmazenaSlot 46, '16:50:00'
-		EXEC ArmazenaSlot 47, '19:00:00'
-		EXEC ArmazenaSlot 48, '20:50:00'
+		EXEC ArmazenaSlot 41, 'Saturday 07:40'
+		EXEC ArmazenaSlot 42, 'Saturday 09:30'
+		EXEC ArmazenaSlot 43, 'Saturday 11:20'
+		EXEC ArmazenaSlot 44, 'Saturday 13:10'
+		EXEC ArmazenaSlot 45, 'Saturday 15:00'
+		EXEC ArmazenaSlot 46, 'Saturday 16:50'
+		EXEC ArmazenaSlot 47, 'Saturday 19:00'
+		EXEC ArmazenaSlot 48, 'Saturday 20:50'
 	END
 	GO	
 			
@@ -719,4 +719,4 @@ GO
 
 	------------------------------------------------------------------(ERRO DE GO)
 	--ViewTurnos
-	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	GO/* Views do Dashboard */--Lista a quantidade de disciplinas atribuidas por professor	CREATE VIEW CountProf_Discp	AS	SELECT p.NomeGuerra,		   COUNT(a.CodDisciplina) AS "QtdDisciplinas"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO--Lista a quantidade de cursos atribuidos por professor	CREATE VIEW CountProf_Curso	AS	SELECT  p.NomeGuerra,		    COUNT(DISTINCT a.CodCurso) AS "QtdCursos"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO	--Lista a quantidade de disciplinas por curso	CREATE VIEW CountCurso_Discp	AS	SELECT  c.Titulo, c.Turno,		    COUNT(d.DisciplinaId) QtdDisciplinas	FROM tblDisciplina d, tblCurso c	WHERE c.CursoId = d.CodCurso	GROUP BY c.Titulo, c.Turno	GO	GO	--Popula a tbl de slots	EXEC PopulaTblSlots	GO	GO--Lista TOTAL de Professores	SELECT COUNT(*) Professores from tblProfessor--Lista TOTAL de Disciplinas	SELECT COUNT(*) Disciplinas from tblDisciplina--Lista TOTAL de Cursos	SELECT COUNT(*) Cursos from tblCurso
+	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	GO/* Views do Dashboard */--Lista a quantidade de disciplinas atribuidas por professor	CREATE VIEW CountProf_Discp	AS	SELECT p.NomeGuerra,		   COUNT(a.CodDisciplina) AS "QtdDisciplinas"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO--Lista a quantidade de cursos atribuidos por professor	CREATE VIEW CountProf_Curso	AS	SELECT  p.NomeGuerra,		    COUNT(DISTINCT a.CodCurso) AS "QtdCursos"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO	--Lista a quantidade de disciplinas por curso	CREATE VIEW CountCurso_Discp	AS	SELECT  c.Titulo, c.Turno,		    COUNT(d.DisciplinaId) QtdDisciplinas	FROM tblDisciplina d, tblCurso c	WHERE c.CursoId = d.CodCurso	GROUP BY c.Titulo, c.Turno	GO--Lista os professores que ja preencheram a disponibilidade	CREATE VIEW CountProf_Available	AS	SELECT  d.CodProfessor, p.NomeGuerra	FROM tblDisponibilidade d, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor	GROUP BY d.CodProfessor, p.NomeGuerra	GO--Lista os slots de cada professor	CREATE VIEW CountProf_Slot	AS	SELECT  d.CodProfessor, s.HoraInicio, d.status_slot	FROM tblDisponibilidade d, tblSlot s, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor and s.SlotId = d.CodSlot	GO		GO	--Popula a tbl de slots	EXEC PopulaTblSlots	GO	GO--Lista TOTAL de Professores	SELECT COUNT(*) Professores from tblProfessor--Lista TOTAL de Disciplinas	SELECT COUNT(*) Disciplinas from tblDisciplina--Lista TOTAL de Cursos	SELECT COUNT(*) Cursos from tblCurso	select*from tblcurso	select*from tbldisciplina	delete from tblcurso where cursoid = 5	DELETE FROM tblDisciplina Where CodCurso = 2

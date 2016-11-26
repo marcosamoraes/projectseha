@@ -308,6 +308,8 @@ html, body, main {
     display: none;
 }
 
+
+
 /*Definir o tamanho das colunas de acordo com cada View*/
 .semesters table thead th:nth-child(1), .semesters table tbody td:nth-child(1) {
     width: 33% !important;
@@ -336,8 +338,27 @@ html, body, main {
 }
 
 
+/*Dashboard*/
 
-
+.dashboard {
+    margin-top: 50px;
+}
+.dashboard .col-md-4 {
+    text-align: center;
+}
+.dashboard p {
+    color: #607d8b;
+    font-size: 30px;
+    font-weight: 700;
+}
+.tb-profcolor {
+    background-color: #bababb;
+    color: white;
+    cursor: pointer;
+}
+.dash-slots {
+    display: none;
+}
 
 /*View Aviability*/
 
