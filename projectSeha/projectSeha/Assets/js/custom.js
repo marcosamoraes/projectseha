@@ -297,11 +297,13 @@
         location.href = '/courses/AtualizarDisciplina/' + $(this).find('td:nth-child(1)').html();
     });
 
-    $("#disciplinas tbody>tr").each(function () {
+    $(".table tbody>tr").each(function () {
         contadorDisciplinas++;
     });
-
-    if
+    
+    if (contadorDisciplinas > 0) {
+        $("#btnSaveCourse").removeClass('disabled')
+    }
 
     /*View Assignment*/
 
