@@ -286,6 +286,7 @@
     });
 
     /*View Courses*/
+    var contadorDisciplinas = 0;
     $(document).on('click', '#course tr', function () {
         location.href = '/courses/Update/' + $(this).find('td:nth-child(1)').html();
     });
@@ -295,6 +296,12 @@
     $(document).on('click', '#disciplinasCreate tr', function () {
         location.href = '/courses/AtualizarDisciplina/' + $(this).find('td:nth-child(1)').html();
     });
+
+    $("#disciplinas tbody>tr").each(function () {
+        contadorDisciplinas++;
+    });
+
+    if
 
     /*View Assignment*/
 
