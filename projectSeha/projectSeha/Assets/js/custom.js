@@ -343,6 +343,9 @@
     });
 
     //Método pega hora aula ao clicar no input checkbox de cada disciplina
+
+   
+
     $(document).on('click', '#tb-assignment tr td input', function () {
         if ($(this).is(':checked')) {
             //add hrs aula
