@@ -11,10 +11,21 @@ namespace ProjectSeha.Controllers
     [AutorizaAdmin]
     public class coursesController : Controller
     {
+        static string msg;
+        static bool ctrlMsg = false;
 
         [HttpGet]
         public ActionResult Delete(int id)
         {
+            using (DisciplinaModel disciplinaModel = new DisciplinaModel())
+            {
+                if (!disciplinaModel.DeleteAll(id))
+                {
+                    ctrlMsg = true;
+                    msg = "Could not remove this course because it has some assigned disciplines";
+                    return RedirectToAction("Index");
+                }
+            }
             using (CursoModel cursoModel = new CursoModel())
             {
                 cursoModel.Delete(id);
@@ -25,6 +36,16 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
+
             Session["dadosCurso"] = null;
             Session["ListaDisciplinas"] = null;
             using (CursoModel model = new CursoModel())
@@ -250,6 +271,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult UpdateDisciplinas()
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             return View();
         }
 
@@ -263,7 +293,31 @@ namespace ProjectSeha.Controllers
         public ActionResult DeleteDisciplinaUpdate(int id)
         {
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
-            listaDisciplinas.RemoveAt(id);
+            var tamanhoLista = listaDisciplinas.Count();
+            int posicaoLista = id;
+            int idDisciplina = 0;
+
+            for (int i = 0; i < tamanhoLista; i++)
+            {
+                var objDisciplina = listaDisciplinas[i];
+                if(i == posicaoLista)
+                {
+                    idDisciplina = objDisciplina.DisciplinaId;
+                    break;
+                }
+                
+            }
+
+            using (DisciplinaModel disciplinaModel = new DisciplinaModel())
+            {
+                if (disciplinaModel.VerificaAtribuicao(idDisciplina))
+                {
+                    ctrlMsg = true;
+                    msg = "You can not remove this discipline because it is assigned";
+                    return RedirectToAction("UpdateDisciplinas");
+                }
+            }
+            listaDisciplinas.RemoveAt(posicaoLista);
             return RedirectToAction("UpdateDisciplinas");
         }
 

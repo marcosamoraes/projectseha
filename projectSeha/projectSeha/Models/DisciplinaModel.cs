@@ -90,7 +90,7 @@ namespace ProjectSeha.Models
             cmd.ExecuteNonQuery();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
@@ -98,7 +98,34 @@ namespace ProjectSeha.Models
             cmd.CommandText = @"ApagaDisciplina";
 
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        public bool DeleteAll(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "DELETE FROM tblDisciplina Where CodCurso = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public List<Disciplina> ReadDisciplinas(int CursoId)
@@ -127,6 +154,19 @@ namespace ProjectSeha.Models
                 }
                 
                 return lista;
+            }
+        }
+
+        public bool VerificaAtribuicao(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM tblAtribuicao WHERE CodDisciplina = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                return (reader.Read()) ? true:false; //operador ternário em c#
             }
         }
     }
