@@ -478,6 +478,28 @@
         });
     });
 
+    //results
+    $(document).on('change', '#select-step3-period', function () {
+        var turno = $("option:selected",this).html();
+        $.ajax({
+            url: '/admin/_ResultsTurno/?turno=' + turno,
+            method: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#_ResultsTurno').html(data);
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+    //pdf
+    $(document).on("click","#btn-step3-export", function (e) {
+        window.open('data:application/vnd.ms-excel,' + $('#tb-step3').html());
+        e.preventDefault();
+    });
+
     /*Dashboards*/
     
 

@@ -150,5 +150,10 @@ namespace ProjectSeha.Controllers
             return View();
         }
 
+        public ActionResult _ResultsTurno(string turno)
+        {
+            ViewBag.turno = turno;
+            return View();
+        }
     }
 }

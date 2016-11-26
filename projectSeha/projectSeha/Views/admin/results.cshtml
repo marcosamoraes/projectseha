@@ -25,63 +25,10 @@
         </select>
 
         <select id="select-step3-period" class="form-control">
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Evening</option>
+            <option id="morning">Morning</option>
+            <option id="afternoon">Afternoon</option>
+            <option id="evening">Evening</option>
         </select>
     </div>
-
-    <table id="tb-step3" class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Hours</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><p>13:10 to 14:50</p></td>
-                @for(var i = 1; i <= 6; i++)
-                {
-                    <td><p>No value</p></td>
-                }
-            </tr>
-            <tr>
-                <td>15:00 to 15:50</td>
-                @for (var i = 1; i <= 6; i++)
-                {
-                    <td><p>No value</p></td>
-                }
-            </tr>
-            <tr>
-                <td>15:50 to 16:40</td>
-                @for (var i = 1; i <= 6; i++)
-                {
-                    <td><p>No value</p></td>
-                }
-            </tr>
-            <tr>
-                <td>16:50 to 17:40</td>
-                @for (var i = 1; i <= 6; i++)
-                {
-                    <td><p>No value</p></td>
-                }
-            </tr>
-            <tr>
-                <td>17:40 to 18:30</td>
-                @for (var i = 1; i <= 6; i++)
-                {
-                    <td><p>No value</p></td>
-                }
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <button id="btn-step3-export" class="btn btn-seha1">Export to PDF</button>
-    </div>
+    <div id="_ResultsTurno"></div>
 </div>

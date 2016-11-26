@@ -1,0 +1,158 @@
+﻿
+    <table id="tb-step3" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Hours</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                @if (ViewBag.turno == "Evening")
+            {
+                    <th>Saturday</th>
+                }
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @if (ViewBag.turno == "Morning")
+                    {
+                        <p>7:40 to 9:20</p>
+                    }
+                    else
+                    {
+                        <p>13:10 to 14:50</p>
+                    }
+
+                </td>
+                @if (ViewBag.turno == "Evening")
+            {
+                for (var i = 1; i <= 6; i++)
+                {
+                        <td>
+                            @if (i < 6)
+                    {
+
+                    }
+                    else
+                    {
+                                <p>No value</p>
+                            }
+                        </td>
+                    }
+                }
+                else
+                {
+                    for (var i = 1; i <= 5; i++)
+                    {
+                        <td><p>No value</p></td>
+                    }
+                }
+
+            </tr>
+
+            <tr>
+                <td>
+                    @if (ViewBag.turno == "Morning")
+                    {
+                        <p>9:30 to 11:10</p>
+                    }
+                    else
+                    {
+                        <p>15:00 to 16:40</p>
+                    }
+
+                </td>
+                @if (ViewBag.turno == "Evening")
+            {
+                for (var i = 1; i <= 6; i++)
+                {
+                        <td>
+                            @if (i < 6)
+                    {
+
+                    }
+                    else
+                    {
+                                <p>No value</p>
+                            }
+                        </td>
+                    }
+                }
+                else
+                {
+                    for (var i = 1; i <= 5; i++)
+                    {
+                        <td><p>No value</p></td>
+                    }
+                }
+            </tr>
+
+
+            <tr>
+                <td>
+                    @if (ViewBag.turno == "Morning")
+                    {
+                        <p>11:20 to 13:00</p>
+                    }
+                    else if (ViewBag.turno == "Afternoon")
+                    {
+                        <p>16:50 to 18:30</p>
+                    }
+                    else
+                    {
+                        <p>19:00 to 20:40</p>
+                    }
+                </td>
+                @if (ViewBag.turno == "Evening")
+            {
+                for (var i = 1; i <= 6; i++)
+                {
+                    if (i == 6)
+                    {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td><p>No value</p></td>
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (var i = 1; i <= 5; i++)
+                    {
+                        <td><p>No value</p></td>
+                    }
+                }
+            </tr>
+            @if (ViewBag.turno == "Evening")
+            {
+                <tr>
+                    <td>
+                        <p>20:50 to 22:30</p>
+                    </td>
+                    @for (var i = 1; i <= 6; i++)
+                {
+                    if (i == 6)
+                    {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td><p>No value</p></td>
+                        }
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+<div>
+    <button id="btn-step3-export" class="btn btn-seha1">Export to PDF</button>
+</div>
+
