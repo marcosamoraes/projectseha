@@ -111,5 +111,19 @@ namespace ProjectSeha.Models
                 return idCurso;
             }
         }
+
+        public bool VerificaCurso(string Titulo, string Turno)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT UPPER(Titulo)Titulo, UPPER(Turno) Turno FROM tblCurso WHERE Titulo = @Titulo and Turno = @Turno";
+
+            cmd.Parameters.AddWithValue("@Titulo", Titulo);
+            cmd.Parameters.AddWithValue("@Turno", Turno);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                return (reader.Read()) ? true : false; //operador ternário em c#
+            }
+        }
     }
 }

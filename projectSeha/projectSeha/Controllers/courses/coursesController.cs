@@ -58,6 +58,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             if (Session["dadosCurso"] != null)
             {
                 Curso curso = Session["dadosCurso"] as Curso;
@@ -70,13 +79,26 @@ namespace ProjectSeha.Controllers
         [HttpPost]
         public ActionResult GoToDisciplina(FormCollection formCurso)
         {
-            Curso objCurso = new Curso();
-            objCurso.Titulo = formCurso["Titulo"];
-            objCurso.Turno = formCurso["Turno"];
-            Session["dadosCurso"] = objCurso;
+            using (CursoModel model = new CursoModel())
+            {
+                if (model.VerificaCurso(formCurso["Titulo"].ToUpper(), formCurso["Turno"].ToUpper()))
+                {
+                    ctrlMsg = true;
+                    msg = "This course already exists";
+                    return RedirectToAction("create");
+                }
+                else
+                {
+                    Curso objCurso = new Curso();
+                    objCurso.Titulo = formCurso["Titulo"];
+                    objCurso.Turno = formCurso["Turno"];
+                    Session["dadosCurso"] = objCurso;
 
-            return RedirectToAction("MenuDisciplinas");
+                    return RedirectToAction("MenuDisciplinas");
+                }
+            }
         }
+
 
         [HttpGet]
         public ActionResult MenuDisciplinas()
@@ -87,6 +109,7 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult CreateDisciplina()
         {
+
             return View();
         }
 
@@ -248,9 +271,10 @@ namespace ProjectSeha.Controllers
         }
 
         [HttpGet]
-        public ActionResult UpdateCurso() {
+        public ActionResult UpdateCurso()
+        {
             Curso objCurso = (Curso)Session["dadosCurso"];
-            ViewBag.CursoTitulo = objCurso.Titulo ;
+            ViewBag.CursoTitulo = objCurso.Titulo;
             ViewBag.CursoTurno = objCurso.Turno;
             return View();
         }
@@ -300,12 +324,12 @@ namespace ProjectSeha.Controllers
             for (int i = 0; i < tamanhoLista; i++)
             {
                 var objDisciplina = listaDisciplinas[i];
-                if(i == posicaoLista)
+                if (i == posicaoLista)
                 {
                     idDisciplina = objDisciplina.DisciplinaId;
                     break;
                 }
-                
+
             }
 
             using (DisciplinaModel disciplinaModel = new DisciplinaModel())
@@ -371,7 +395,8 @@ namespace ProjectSeha.Controllers
             return listaDisciplinasJaExistentesId;
         }
 
-        public void DeletarDisciplinas(List<Disciplina> listaDisciplinasInterface, List<Disciplina> listaDisciplinasBanco) {
+        public void DeletarDisciplinas(List<Disciplina> listaDisciplinasInterface, List<Disciplina> listaDisciplinasBanco)
+        {
             List<int> listaDisciplinasJaExistentesInterfaceId = GetListaDisciplinaJaExistentes(listaDisciplinasInterface);
             List<int> listaDisciplinasBancoId = GetListaDisciplinaId(listaDisciplinasBanco);
             var disciplinasDel = listaDisciplinasBancoId.Except(listaDisciplinasJaExistentesInterfaceId).ToList();
@@ -395,7 +420,7 @@ namespace ProjectSeha.Controllers
                 disciplinaModel.Delete(id);
             }
         }
-        
+
         public List<Disciplina> GetListaDisciplinaNovas(List<Disciplina> lista)
         {
             List<Disciplina> listaDisciplinasNovas = new List<Disciplina>();
@@ -434,7 +459,7 @@ namespace ProjectSeha.Controllers
                 Disciplinanova.CodCurso = CursoId;
                 CreateDisciplinaBanco(Disciplinanova);
             }
-            
+
         }
 
         public void CreateDisciplinaBanco(Disciplina disciplina)
@@ -455,7 +480,8 @@ namespace ProjectSeha.Controllers
                 for (int j = 0; j < tamanholistaDisciplinasInterface; j++)
                 {
                     Disciplina objDisciplina = listaDisciplinasInterface[j];
-                    if (objDisciplina.DisciplinaId == interfaceDisciplinaId){
+                    if (objDisciplina.DisciplinaId == interfaceDisciplinaId)
+                    {
                         UpdateDisciplinaBanco(objDisciplina);
                     }
                 }

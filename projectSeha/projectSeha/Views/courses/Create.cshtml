@@ -20,6 +20,14 @@
 </div>
 <h3 class="font-seha left">Course informations</h3>
 
+@if (ViewBag.Erro != null)
+{
+    <div style="margin-top:15px;" class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @ViewBag.Erro
+    </div>
+}
+
 <div id="courses" class="container font-seha">
     <form action="/courses/GoToDisciplina" method="post">
         <div class="row">

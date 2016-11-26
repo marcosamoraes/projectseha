@@ -55,7 +55,7 @@ namespace ProjectSeha.Controllers
                 List<string> listaTurno = model.ReadTurno(ProfessorId);
 
                 //Adiciona os id's dos slots da manhã para a lista de bloqueio
-                if (!listaTurno.Contains("Manhã"))
+                if (!listaTurno.Contains("Morning"))
                 {
                     foreach(var item in manha)
                     {
@@ -64,7 +64,7 @@ namespace ProjectSeha.Controllers
                 }
 
                 //Adiciona os id's dos slots da tarde para a lista de bloqueio
-                if (!listaTurno.Contains("Tarde"))
+                if (!listaTurno.Contains("Afternoon"))
                 {
                     foreach (var item in tarde)
                     {
@@ -73,7 +73,7 @@ namespace ProjectSeha.Controllers
                 }
 
                 //Adiciona os id's dos slots da noite para a lista de bloqueio
-                if (!listaTurno.Contains("Noite"))
+                if (!listaTurno.Contains("Evening"))
                 {
                     foreach (var item in noite)
                     {
