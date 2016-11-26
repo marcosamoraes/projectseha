@@ -172,5 +172,66 @@ namespace ProjectSeha.Models
                 return lista = null;
             }
         }
+
+        //Lista os professores que ja preencheram a disponibilidade
+        public List<Dashboard.CountProf_Available> CountProf_Available()
+        {
+            List<Dashboard.CountProf_Available> lista = new List<Dashboard.CountProf_Available>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM CountProf_Available";
+
+            try
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Dashboard.CountProf_Available dc = new Dashboard.CountProf_Available();
+                        dc.CodProfessor = (int)reader["CodProfessor"];
+                        dc.NomeGuerra = (string)reader["NomeGuerra"];
+
+                        lista.Add(dc);
+                    }
+                    return lista;
+                }
+            }
+            catch
+            {
+                return lista = null;
+            }
+        }
+
+        //Lista os slots de cada professor
+        public List<Dashboard.CountProf_Slot> CountProf_Slot()
+        {
+            List<Dashboard.CountProf_Slot> lista = new List<Dashboard.CountProf_Slot>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "SELECT * FROM CountProf_Slot";
+
+            try
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Dashboard.CountProf_Slot dc = new Dashboard.CountProf_Slot();
+                        dc.CodProfessor = (int)reader["CodProfessor"];
+                        dc.HoraInicio = (string)reader["HoraInicio"];
+                        dc.status_slot = (bool)reader["status_slot"];
+
+                        lista.Add(dc);
+                    }
+                    return lista;
+                }
+            }
+            catch
+            {
+                return lista = null;
+            }
+        }
     }
 }

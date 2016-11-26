@@ -43,26 +43,27 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr>
-                        <td>Junior</td>
-                        <td>8:00</td>
-                        <td>Available</td>
-                    </tr>
-                    <tr>
-                        <td>Junior</td>
-                        <td>11:00</td>
-                        <td>Available</td>
-                    </tr>
-                    <tr>
-                        <td>Junior</td>
-                        <td>18:00</td>
-                        <td>Maybe</td>
-                    </tr>
-                    <tr>
-                        <td>Viana</td>
-                        <td>13:00</td>
-                        <td>Maybe</td>
-                    </tr>
+                @foreach (var p in ViewBag.ListProfessor)
+                {
+                    <p>@p.professorName</p>
+                    foreach (var d in ViewBag.ListDisp)
+                    {
+                        if (d.idProfessor = p.idProfessor)
+                        {
+                            <tr>
+                                <td>@d.hours</td>
+                                if (d.day == 1)
+                                {
+                                    <td>Segunda</td>
+                                } else if(d.day == 2)
+                                {
+                                    <td>Terça</td>
+                                }
+                                <td>@d.status</td>
+                            </tr>
+                        }
+                    }
+                }
             </tbody>
         </table>
     </div>
