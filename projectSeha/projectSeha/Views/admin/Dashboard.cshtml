@@ -38,26 +38,32 @@
             <thead>
                 <tr>
                     <th>Professors</th>
-                    <th>Hours</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var a in ViewBag.CountProf_Available)
+                @if (ViewBag.CountProf_Available != null)
                 {
-                    <tr>
-                        <td>@a.NomeGuerra</td>
-                    </tr>
-                    foreach (var s in ViewBag.CountProf_Slot)
+                    foreach (var a in ViewBag.CountProf_Available)
                     {
-                        if (s.CodProfessor = a.CodProfessor)
+                        <tr>
+                            <td>@a.NomeGuerra</td>
+                        </tr>
+                        foreach (var s in ViewBag.CountProf_Slot)
                         {
-                            <tr>
-                                <td>@s.HoraInicio</td>
-                                <td>@s.status_slot</td>
-                            </tr>
+                            if (s.CodProfessor = a.CodProfessor)
+                            {
+                                <tr>
+                                    <td>@s.HoraInicio</td>
+                                    <td>@s.status_slot</td>
+                                </tr>
+                            }
                         }
                     }
+                } else
+                {
+                    <tr>
+                        <td>Nothing</td>
+                    </tr>
                 }
             </tbody>
         </table>
