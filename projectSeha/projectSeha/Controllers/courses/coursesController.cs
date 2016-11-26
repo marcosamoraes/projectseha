@@ -250,6 +250,7 @@ namespace ProjectSeha.Controllers
             Session["dadosCurso"] = CursoDados;
             Session["ListaDisciplinas"] = listaDisciplinas;
 
+           
             return RedirectToAction("UpdateCurso");
         }
 
@@ -273,6 +274,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult UpdateCurso()
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             Curso objCurso = (Curso)Session["dadosCurso"];
             ViewBag.CursoTitulo = objCurso.Titulo;
             ViewBag.CursoTurno = objCurso.Turno;
@@ -289,21 +299,30 @@ namespace ProjectSeha.Controllers
             objCurso.Turno = formCurso["Turno"];
             Session["dadosCurso"] = objCurso;
 
-            return RedirectToAction("UpdateDisciplinas");
+
+            //-- alterações ----------
+
+            using (CursoModel model = new CursoModel())
+            {
+                if (model.VerificaCurso(formCurso["Titulo"].ToUpper(), formCurso["Turno"].ToUpper(), sessaoCurso.CursoId))
+                {
+                    ctrlMsg = true;
+                    msg = "This course already exists";
+                    return RedirectToAction("UpdateCurso");
+                }
+                else
+                {
+                    return RedirectToAction("UpdateDisciplinas");
+                }
+            }
+            //---------------------------------
+            //return RedirectToAction("UpdateDisciplinas");
         }
 
         [HttpGet]
         public ActionResult UpdateDisciplinas()
         {
-            if (ctrlMsg)
-            {
-                ctrlMsg = false;
-                ViewBag.Erro = msg;
-            }
-            else
-            {
-                ViewBag.Erro = null;
-            }
+           
             return View();
         }
 
