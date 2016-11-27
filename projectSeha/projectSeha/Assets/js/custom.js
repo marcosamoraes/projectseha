@@ -495,8 +495,28 @@
     });
 
     //pdf
-    $(document).on("click","#btn-step3-export", function (e) {
-        window.open('data:application/vnd.ms-excel,' + $('#tb-step3').html());
+    $(document).on("click", "#btn-step3-export", function (e) {
+        var results = '';
+        var count = 0;
+        var days = 5;
+
+        $('#tb-step3 th').each(function () {
+            if ($('#tb-step3 th').hasClass('sevendays')) {
+                days = 6;
+            }
+        });
+
+        $('#tb-step3 th, #tb-step3 p').each(function () {
+            if (count == days) {
+                results = results + $(this).html() + '\n';
+                count = -1;
+            } else {
+                results = results + $(this).html() + ',';
+            }
+            count = count + 1;
+        });
+        alert(results);
+        //window.open('data:application/vnd.ms-excel,' + results);
         e.preventDefault();
     });
 

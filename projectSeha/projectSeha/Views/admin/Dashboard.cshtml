@@ -45,7 +45,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Professors</th>
+                    <th>Availability of Professors</th>
                     <th></th>
                 </tr>
             </thead>
@@ -64,7 +64,14 @@
                             {
                                 <tr class="dash-slots">
                                     <td>@s.HoraInicio</td>
-                                    <td>@s.status_slot</td>
+                                    @if(@s.status_slot)
+                                    {
+                                        <td>Available</td>
+                                    }
+                                    else
+                                    {
+                                        <td>Maybe</td>
+                                    }
                                 </tr>
                             }
                         }
