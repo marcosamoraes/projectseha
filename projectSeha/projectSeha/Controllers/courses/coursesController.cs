@@ -109,7 +109,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult CreateDisciplina()
         {
-
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             return View();
         }
 
@@ -127,15 +135,43 @@ namespace ProjectSeha.Controllers
             newDisciplina.Sigla = formulario["SiglaDisciplina"];
             newDisciplina.Semestre = Convert.ToInt32(formulario["Periodo"]);
             newDisciplina.QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
-            listaDisciplinas.Add(newDisciplina);
+      
+            //--       
+            if (listaDisciplinas.Find(d => d.Nome == newDisciplina.Nome) !=null ||
+               (listaDisciplinas.Find(d => d.Sigla == newDisciplina.Sigla)) != null)
+            {
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                ctrlMsg = true;
+                msg = "This discipline already exists in the course";
+                return RedirectToAction("CreateDisciplina");
+            }
+            else
+            {
+                listaDisciplinas.Add(newDisciplina);
 
-            Session["ListaDisciplinas"] = listaDisciplinas;
-            return RedirectToAction("MenuDisciplinas");
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                return RedirectToAction("MenuDisciplinas");
+            }
+
+            //---
+            //listaDisciplinas.Add(newDisciplina);
+
+            //Session["ListaDisciplinas"] = listaDisciplinas;
+            //return RedirectToAction("MenuDisciplinas");
         }
 
         [HttpGet]
         public ActionResult UpdateDisciplina(int id)
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             var objDisciplina = listaDisciplinas[id];
             ViewBag.IndiceLista = id;
@@ -151,12 +187,34 @@ namespace ProjectSeha.Controllers
         {
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
 
-            listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
-            listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
-            listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
-            listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+            //--
 
-            return RedirectToAction("UpdateDisciplinas");
+            List<Disciplina> listaDisciplinasTemp = listaDisciplinas.ToList();
+            listaDisciplinasTemp.Remove(listaDisciplinasTemp[id]);
+
+            //listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+            //listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+            //listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+            //listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+                       
+            if (listaDisciplinasTemp.Find(d => d.Nome.ToUpper() == formulario["TituloDisciplina"].ToUpper()) != null ||
+               (listaDisciplinasTemp.Find(d => d.Sigla.ToUpper() == formulario["SiglaDisciplina"].ToUpper()) != null))
+            {
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                ctrlMsg = true;
+                msg = "This discipline already exists in the course";
+                return RedirectToAction("UpdateDisciplina", new { id = id });
+            }
+            else
+            {
+                listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+                listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+                listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+                listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+                return RedirectToAction("UpdateDisciplinas");
+            }
+            //--
+            //return RedirectToAction("UpdateDisciplinas");
         }
 
         [HttpPost]
@@ -164,12 +222,34 @@ namespace ProjectSeha.Controllers
         {
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
 
-            listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
-            listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
-            listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
-            listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+            //--
 
-            return RedirectToAction("MenuDisciplinas");
+            List<Disciplina> listaDisciplinasTemp = listaDisciplinas.ToList();
+            listaDisciplinasTemp.Remove(listaDisciplinasTemp[id]);
+
+            //listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+            //listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+            //listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+            //listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+
+            if (listaDisciplinasTemp.Find(d => d.Nome.ToUpper() == formulario["TituloDisciplina"].ToUpper()) != null ||
+               (listaDisciplinasTemp.Find(d => d.Sigla.ToUpper() == formulario["SiglaDisciplina"].ToUpper()) != null))
+            {
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                ctrlMsg = true;
+                msg = "This discipline already exists in the course";
+                return RedirectToAction("AtualizarDisciplina", new { id = id });
+            }
+            else
+            {
+                listaDisciplinas[id].Nome = formulario["TituloDisciplina"];
+                listaDisciplinas[id].Sigla = formulario["SiglaDisciplina"];
+                listaDisciplinas[id].Semestre = Convert.ToInt32(formulario["Periodo"]);
+                listaDisciplinas[id].QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
+                return RedirectToAction("MenuDisciplinas");
+            }
+            //--
+            //return RedirectToAction("MenuDisciplinas");
         }
 
         [HttpGet]
@@ -367,6 +447,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult AtualizarDisciplina(int id)
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             var listaDisciplinas = (List<Disciplina>)Session["ListaDisciplinas"];
             var objDisciplina = listaDisciplinas[id];
             ViewBag.IndiceLista = id;
