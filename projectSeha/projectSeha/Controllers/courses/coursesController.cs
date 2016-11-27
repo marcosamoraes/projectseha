@@ -315,10 +315,25 @@ namespace ProjectSeha.Controllers
             newDisciplina.Sigla = formulario["SiglaDisciplina"];
             newDisciplina.Semestre = Convert.ToInt32(formulario["Periodo"]);
             newDisciplina.QtdAulas = Convert.ToInt32(formulario["QtdAulasMinistradas"]);
-            listaDisciplinas.Add(newDisciplina);
 
-            Session["ListaDisciplinas"] = listaDisciplinas;
-            return RedirectToAction("UpdateDisciplinas");
+            if (listaDisciplinas.Find(d => d.Nome == newDisciplina.Nome) != null ||
+              (listaDisciplinas.Find(d => d.Sigla == newDisciplina.Sigla)) != null)
+            {
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                ctrlMsg = true;
+                msg = "This discipline already exists in the course";
+                return RedirectToAction("CriarDisciplina");
+            }
+            else
+            {
+                listaDisciplinas.Add(newDisciplina);
+
+                Session["ListaDisciplinas"] = listaDisciplinas;
+                return RedirectToAction("UpdateDisciplinas");
+            }
+
+            //Session["ListaDisciplinas"] = listaDisciplinas;
+            //return RedirectToAction("UpdateDisciplinas");
         }
 
         [HttpGet]
@@ -409,6 +424,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult CriarDisciplina()
         {
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             return View();
         }
 
