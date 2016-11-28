@@ -372,7 +372,7 @@
 
         <!--Lembretes-->
         <div class="col-xs-3">
-            <div id="lista-lembretes" class="table-seha avaiability">
+            <div id="lista-lembretes" class="table-seha avaiability"  style="width:160%!important">
                 <table class="table">
                     <thead>
                         <tr>
@@ -384,7 +384,7 @@
                         @foreach (var l in ViewBag.ListLembrete)
                         {
                             <tr>
-                                <td id="td-data" class="td-data">@l.Data.ToString("dd/MM/yyyy")</td>
+                                <td id="td-data" class="td-data" >@l.Data.ToString("dd/MM/yyyy")</td>
                                 <td class="td-content">@l.Conteudo</td>
                             </tr>
                         }
