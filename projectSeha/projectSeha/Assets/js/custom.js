@@ -499,7 +499,7 @@
         $("#tb-step3").btechco_excelexport({
             containerid: "tb-step3"
             , datatype: $datatype.Table
-            , filename: 'sample'
+            , filename: 'results'
         });
     });
 
