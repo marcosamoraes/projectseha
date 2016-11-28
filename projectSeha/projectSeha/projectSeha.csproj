@@ -143,6 +143,8 @@
     <Content Include="Assets\images\whale.svg" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\jquery.base64.js" />
+    <Content Include="Assets\js\jquery.btechco.excelexport.js" />
     <Content Include="Assets\js\jquery.js" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
