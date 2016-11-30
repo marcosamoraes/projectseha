@@ -89,20 +89,21 @@ GO
 
 --tblPessoa
 INSERT INTO tblPessoa VALUES ('Carlos Magnus', 'carlos@fatecriopreto.edu.br', 'fatecrp', 1);
-INSERT INTO tblPessoa VALUES ('Lucimar Sasso', 'lucimar@fatecriopreto.edu.br', 'fatecrp', 0);
+INSERT INTO tblPessoa VALUES ('Lcimar Sassso', 'lucimar@fatecriopreto.edu.br', 'fatecrp', 0);
 INSERT INTO tblPessoa VALUES ('Edes Costa', 'edes@fatecriopreto.edu.br', 'fatecrp', 0);
 INSERT INTO tblPessoa VALUES ('Henrique Dezani', 'dezani@fatecriopreto.edu.br', 'fatecrp', 0);
+INSERT INTO tblPessoa VALUES ('Alberto Angelo', 'alberto@fatecriopreto.edu.br', 'fatecrp', 0);
 GO
 --tblProfessor
 INSERT INTO tblProfessor VALUES (1, 'Carlos', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (2, 'Lucimar', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (3, 'Edes', 0, 1, 1, '')
 INSERT INTO tblProfessor VALUES (4, 'Henrique', 0, 1, 1, '')
+INSERT INTO tblProfessor VALUES (5, 'Alberto', 0, 1, 1, '')
 GO
 --tblCurso
 INSERT INTO tblCurso VALUES ('Análise e Desenvolvimento de Sistemas', 'Afternoon');
 INSERT INTO tblCurso VALUES ('Informática para Negócios', 'Evening');
-INSERT INTO tblCurso VALUES ('Agronegócio', 'Morning');
 GO
 
 
@@ -166,10 +167,70 @@ GO
 	INSERT INTO tblDisciplina VALUES (1, 'Int. Artificial.', 4, 6, 'IA');
 GO
 
+
+--Curso Info
+
+	--1ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Com. Expressão', 4, 1, 'COM');
+	INSERT INTO tblDisciplina VALUES (2, 'Adm. Geral', 4, 1, 'ADM');
+	INSERT INTO tblDisciplina VALUES (2, 'Inform. Negócios', 4, 1, 'INF');
+	INSERT INTO tblDisciplina VALUES (2, 'Mat. Discreta', 4, 1, 'MAT');
+	INSERT INTO tblDisciplina VALUES (2, 'Espanhol I', 2, 1, 'ESP');
+	INSERT INTO tblDisciplina VALUES (2, 'Ética e Lógica', 2, 1, 'ELG');
+	INSERT INTO tblDisciplina VALUES (2, 'M.P.C.T.', 2, 1, 'MPC');
+GO	
+	--2ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Economia', 4, 2, 'ECO');
+	INSERT INTO tblDisciplina VALUES (2, 'Algs. Progr. Comps.', 4, 2, 'ALG');
+	INSERT INTO tblDisciplina VALUES (2, 'Sists. Operacionais', 4, 2, 'SO');
+	INSERT INTO tblDisciplina VALUES (2, 'Funds. Cálculo', 4, 2, 'CAL');
+	INSERT INTO tblDisciplina VALUES (2, 'Contabilidade ', 4, 2, 'CON');
+	INSERT INTO tblDisciplina VALUES (2, 'Inglês II', 2, 2, 'ING');
+	INSERT INTO tblDisciplina VALUES (2, 'Espanhol II', 2, 2, 'ESP');
+	INSERT INTO tblDisciplina VALUES (2, 'Sist. Informação', 2, 2, 'SIF');
+GO
+	--3ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Direito Empr. Geral', 4, 3, 'DIR');
+	INSERT INTO tblDisciplina VALUES (2, 'Estr. Dados', 4, 3, 'ED');
+	INSERT INTO tblDisciplina VALUES (2, 'L. P. I ', 4, 3, 'LP1');
+	INSERT INTO tblDisciplina VALUES (2, 'Mat. Financeira', 2, 3, 'MAT');
+	INSERT INTO tblDisciplina VALUES (2, 'Eng. Soft.', 4, 3, 'ESW');
+	INSERT INTO tblDisciplina VALUES (2, 'Inglês III', 2, 3, 'ING');
+	INSERT INTO tblDisciplina VALUES (2, 'Banco de dados', 2, 3, 'BDA');
+GO
+	--4ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Adm. de BD', 2, 4, 'ABD');
+	INSERT INTO tblDisciplina VALUES (2, 'Redes Comp.', 4, 4, 'RDC');
+	INSERT INTO tblDisciplina VALUES (2, 'Gestão Qualidade', 4, 4, 'GEQ');
+	INSERT INTO tblDisciplina VALUES (2, 'Estatística', 4, 4, 'EST');
+	INSERT INTO tblDisciplina VALUES (2, 'Empreended', 4, 4, 'ES3');
+	INSERT INTO tblDisciplina VALUES (2, 'Inglês IV', 2, 4, 'ING');
+	INSERT INTO tblDisciplina VALUES (2, 'I.H.C.', 2, 4, 'IHC');
+GO
+	--5ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Fund. G. Projetos ', 4, 5, 'FGP');
+	INSERT INTO tblDisciplina VALUES (2, 'P.O.', 2, 5, 'PO');
+	INSERT INTO tblDisciplina VALUES (2, 'Marketing', 4, 5, 'MKT');
+	INSERT INTO tblDisciplina VALUES (2, 'G. Financeira', 4, 5, 'GEF');
+	INSERT INTO tblDisciplina VALUES (2, 'Segurança S.I', 4, 5, 'SSI');
+	INSERT INTO tblDisciplina VALUES (2, 'Inglês V', 2, 5, 'ING');
+	INSERT INTO tblDisciplina VALUES (2, 'L.ing. Prog. III.', 4, 5, 'LP3');
+GO
+	--6ºSemestre
+	INSERT INTO tblDisciplina VALUES (2, 'Mult. Hipermídia', 2, 6, 'MHP');
+	INSERT INTO tblDisciplina VALUES (2, 'Gestão e Operação', 4, 6, 'GOP');
+	INSERT INTO tblDisciplina VALUES (2, 'Gestão e Planej.', 4, 6, 'GPL');
+	INSERT INTO tblDisciplina VALUES (2, 'Governança T.I.', 4, 6, 'GOV');
+	INSERT INTO tblDisciplina VALUES (2, 'Sist. G. Prod. Log', 2, 6, 'SGL');
+	INSERT INTO tblDisciplina VALUES (2, 'Inglês VI', 2, 6, 'ING');
+	INSERT INTO tblDisciplina VALUES (2, 'Auditoria Sists.', 2, 6, 'ATS');
+	INSERT INTO tblDisciplina VALUES (2, 'Proj. T.G.', 4, 6, 'PTG');
+GO
+
+
 --tblLembrete
-INSERT INTO tblLembrete VALUES ('11/07/2016', 'Preencher todos os horários até o dia 15/07');
-INSERT INTO tblLembrete VALUES ('15/07/2016', 'Verificar disponibilidade de aulas');
-INSERT INTO tblLembrete VALUES ('02/12/2016', 'Caros Professores, suas atribuições foram salvas! Verifiquem se a disponoibilidade está habilitada.');
+INSERT INTO tblLembrete VALUES ('11/07/2016', 'Preencher todos os horários até o dia 15/12');
+INSERT INTO tblLembrete VALUES ('15/07/2016', 'Caros, suas atribuições serão realizadas no dia 02/12. Após isso, poderão preencher a tabela de disponibilidade de horários');
 
 GO
 /*VIEWS*/
@@ -719,4 +780,4 @@ GO
 
 	------------------------------------------------------------------(ERRO DE GO)
 	--ViewTurnos
-	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	GO/* Views do Dashboard */--Lista a quantidade de disciplinas atribuidas por professor	CREATE VIEW CountProf_Discp	AS	SELECT p.NomeGuerra,		   COUNT(a.CodDisciplina) AS "QtdDisciplinas"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO--Lista a quantidade de cursos atribuidos por professor	CREATE VIEW CountProf_Curso	AS	SELECT  p.NomeGuerra,		    COUNT(DISTINCT a.CodCurso) AS "QtdCursos"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO	--Lista a quantidade de disciplinas por curso	CREATE VIEW CountCurso_Discp	AS	SELECT  c.Titulo, c.Turno,		    COUNT(d.DisciplinaId) QtdDisciplinas	FROM tblDisciplina d, tblCurso c	WHERE c.CursoId = d.CodCurso	GROUP BY c.Titulo, c.Turno	GO--Lista os professores que ja preencheram a disponibilidade	CREATE VIEW CountProf_Available	AS	SELECT  d.CodProfessor, p.NomeGuerra	FROM tblDisponibilidade d, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor	GROUP BY d.CodProfessor, p.NomeGuerra	GO--Lista os slots de cada professor	CREATE VIEW CountProf_Slot	AS	SELECT  d.CodProfessor, s.HoraInicio, d.status_slot	FROM tblDisponibilidade d, tblSlot s, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor and s.SlotId = d.CodSlot	GO		GO	--Popula a tbl de slots	EXEC PopulaTblSlots	GO	GO--Lista TOTAL de Professores	SELECT COUNT(*) Professores from tblProfessor--Lista TOTAL de Disciplinas	SELECT COUNT(*) Disciplinas from tblDisciplina--Lista TOTAL de Cursos	SELECT COUNT(*) Cursos from tblCurso	select*from tblcurso	select*from tbldisciplina	delete from tblcurso where cursoid = 5	DELETE FROM tblDisciplina Where CodCurso = 2
+	CREATE PROCEDURE ViewTurnos	(		@ProfessorId int	)	AS	BEGIN		SELECT c.Turno		FROM tblCurso c, tblProfessor p, tblAtribuicao a		WHERE a.CodCurso = c.CursoId and a.CodProfessor = p.CodPessoa and p.CodPessoa = @ProfessorId	END	GO/* Views do Dashboard */--Lista a quantidade de disciplinas atribuidas por professor	CREATE VIEW CountProf_Discp	AS	SELECT p.NomeGuerra,		   COUNT(a.CodDisciplina) AS "QtdDisciplinas"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO--Lista a quantidade de cursos atribuidos por professor	CREATE VIEW CountProf_Curso	AS	SELECT  p.NomeGuerra,		    COUNT(DISTINCT a.CodCurso) AS "QtdCursos"	FROM tblAtribuicao a, tblProfessor p	WHERE p.CodPessoa = a.CodProfessor	GROUP BY p.NomeGuerra	GO	--Lista a quantidade de disciplinas por curso	CREATE VIEW CountCurso_Discp	AS	SELECT  c.Titulo, c.Turno,		    COUNT(d.DisciplinaId) QtdDisciplinas	FROM tblDisciplina d, tblCurso c	WHERE c.CursoId = d.CodCurso	GROUP BY c.Titulo, c.Turno	GO--Lista os professores que ja preencheram a disponibilidade	CREATE VIEW CountProf_Available	AS	SELECT  d.CodProfessor, p.NomeGuerra	FROM tblDisponibilidade d, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor	GROUP BY d.CodProfessor, p.NomeGuerra	GO--Lista os slots de cada professor	CREATE VIEW CountProf_Slot	AS	SELECT  d.CodProfessor, s.HoraInicio, d.status_slot	FROM tblDisponibilidade d, tblSlot s, tblProfessor p	WHERE p.CodPessoa = d.CodProfessor and s.SlotId = d.CodSlot	GO		GO	--Popula a tbl de slots	EXEC PopulaTblSlots	GO	GO--Lista TOTAL de Professores	SELECT COUNT(*) Professores from tblProfessor--Lista TOTAL de Disciplinas	SELECT COUNT(*) Disciplinas from tblDisciplina--Lista TOTAL de Cursos	SELECT COUNT(*) Cursos from tblCurso
