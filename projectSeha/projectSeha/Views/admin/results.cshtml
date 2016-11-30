@@ -9,7 +9,6 @@
 <div id="step3" class="center-large table-grid">
     <div>
         <select id="select-step3-course" class="form-control">
-            <option disabled selected hidden>Courses..</option>
             @foreach (var item in ViewBag.ListCurso)
             {
                 <option value="@item.CursoId">@item.Titulo</option>
@@ -17,7 +16,6 @@
         </select>
 
         <select id="select-step3-semester" class="form-control">
-            <option disabled selected hidden>Semesters..</option>
             <option>1st Semester</option>
             <option>2st Semester</option>
             <option>3st Semester</option>
