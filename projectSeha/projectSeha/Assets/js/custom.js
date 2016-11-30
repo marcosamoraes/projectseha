@@ -282,19 +282,30 @@
     /*View Professors*/
     $("#professor tr").click(function () {
         //pega o id pela tabela para redirecionar ao update do professor
-        location.href = '/professors/update/' + $(this).find('td:nth-child(1)').html();
+        if (!$(this).hasClass('tr-disable')) {
+            location.href = '/professors/update/' + $(this).find('td:nth-child(1)').html();
+        }
     });
 
     /*View Courses*/
     var contadorDisciplinas = 0;
+
+    
+
     $(document).on('click', '#course tr', function () {
-        location.href = '/courses/Update/' + $(this).find('td:nth-child(1)').html();
+        if(!$(this).hasClass('tr-disable')){
+            location.href = '/courses/Update/' + $(this).find('td:nth-child(1)').html();
+        }
     });
     $(document).on('click', '#disciplinas tr', function () {
-        location.href = '/courses/UpdateDisciplina/' + $(this).find('td:nth-child(1)').html();
+        if (!$(this).hasClass('tr-disable')) {
+            location.href = '/courses/UpdateDisciplina/' + $(this).find('td:nth-child(1)').html();
+        }
     });
     $(document).on('click', '#disciplinasCreate tr', function () {
-        location.href = '/courses/AtualizarDisciplina/' + $(this).find('td:nth-child(1)').html();
+        if (!$(this).hasClass('tr-disable')) {
+            location.href = '/courses/AtualizarDisciplina/' + $(this).find('td:nth-child(1)').html();
+        }
     });
 
     $(".table tbody>tr").each(function () {
