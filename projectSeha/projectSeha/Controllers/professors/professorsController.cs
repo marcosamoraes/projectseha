@@ -21,7 +21,7 @@ namespace ProjectSeha.Controllers
                 if (ctrlDelete)
                 {
                     ctrlDelete = false;
-                    ViewBag.Erro = "Could not remove this teacher because he has ties to the Disciplines";
+                    ViewBag.Erro = "Could not remove this teacher because he has ties to the subjects";
                 }
                 return View(lista);
             }

@@ -8,7 +8,7 @@
 
 <div id="teste" class="col-md-4"> <!--retirar id teste-->
     <select id="select-assignment-curso" class="form-control">
-        <option disabled selected hidden>Courses..</option>
+        <option disabled selected hidden>Programs..</option>
         @foreach (var item in ViewBag.ListCurso)//Passar por ViewModel
         {
             <option value="@item.CursoId">@item.Titulo</option>

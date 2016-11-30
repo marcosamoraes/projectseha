@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "SEHA - Register Disciplines";
+    ViewBag.Title = "SEHA - Register Subjects";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 <div class="row form-group">
@@ -7,18 +7,26 @@
         <ul id="nav-seha" class="nav nav-pills nav-justified thumbnail setup-panel">
             <li>
                 <a>
-                    <h4 class="list-group-item-heading">Course</h4>
+                    <h4 class="list-group-item-heading">Program</h4>
                 </a>
             </li>
             <li class="active">
                 <a>
-                    <h4 class="list-group-item-heading">Disciplines</h4>
+                    <h4 class="list-group-item-heading">Subjects</h4>
                 </a>
             </li>
         </ul>
     </div>
 </div>
-<h3 class="font-seha left">Disciplines informations</h3>
+<h3 class="font-seha left">Subjects information</h3>
+
+@if (ViewBag.Erro != null)
+{
+    <div style="margin-top:15px;" class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @ViewBag.Erro
+    </div>
+}
 
 <div id="tbl-disciplinas">
     <div class="col-md-8 table-seha disciplinas">
@@ -52,7 +60,7 @@
             </tbody>
         </table>
         <a class="btn btn-seha1" href="/courses/CriarDisciplina">
-            Add Discipline
+            Add Subject
         </a>
         <a id="btnSaveCourse" style="float:right; margin-left:10px;" class="btn btn-seha2 disabled" href="/courses/Atualizar">
             Save

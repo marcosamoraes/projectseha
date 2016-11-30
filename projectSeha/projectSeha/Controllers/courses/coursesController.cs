@@ -22,7 +22,7 @@ namespace ProjectSeha.Controllers
                 if (!disciplinaModel.DeleteAll(id))
                 {
                     ctrlMsg = true;
-                    msg = "Could not remove this course because it has some assigned disciplines";
+                    msg = "Could not remove this program because it has some assigned subjects";
                     return RedirectToAction("Index");
                 }
             }
@@ -84,7 +84,7 @@ namespace ProjectSeha.Controllers
                 if (model.VerificaCurso(formCurso["Titulo"].ToUpper(), formCurso["Turno"].ToUpper()))
                 {
                     ctrlMsg = true;
-                    msg = "This course already exists";
+                    msg = "This program already exists";
                     return RedirectToAction("create");
                 }
                 else
@@ -142,7 +142,7 @@ namespace ProjectSeha.Controllers
             {
                 Session["ListaDisciplinas"] = listaDisciplinas;
                 ctrlMsg = true;
-                msg = "This discipline already exists in the course";
+                msg = "This subject already exists in the program";
                 return RedirectToAction("CreateDisciplina");
             }
             else
@@ -202,7 +202,7 @@ namespace ProjectSeha.Controllers
             {
                 Session["ListaDisciplinas"] = listaDisciplinas;
                 ctrlMsg = true;
-                msg = "This discipline already exists in the course";
+                msg = "This subject already exists in the program";
                 return RedirectToAction("UpdateDisciplina", new { id = id });
             }
             else
@@ -237,7 +237,7 @@ namespace ProjectSeha.Controllers
             {
                 Session["ListaDisciplinas"] = listaDisciplinas;
                 ctrlMsg = true;
-                msg = "This discipline already exists in the course";
+                msg = "This subject already exists in the program";
                 return RedirectToAction("AtualizarDisciplina", new { id = id });
             }
             else
@@ -321,7 +321,7 @@ namespace ProjectSeha.Controllers
             {
                 Session["ListaDisciplinas"] = listaDisciplinas;
                 ctrlMsg = true;
-                msg = "This discipline already exists in the course";
+                msg = "This subject already exists in the program";
                 return RedirectToAction("CriarDisciplina");
             }
             else
@@ -402,7 +402,7 @@ namespace ProjectSeha.Controllers
                 if (model.VerificaCurso(formCurso["Titulo"].ToUpper(), formCurso["Turno"].ToUpper(), sessaoCurso.CursoId))
                 {
                     ctrlMsg = true;
-                    msg = "This course already exists";
+                    msg = "This program already exists";
                     return RedirectToAction("UpdateCurso");
                 }
                 else
@@ -417,7 +417,15 @@ namespace ProjectSeha.Controllers
         [HttpGet]
         public ActionResult UpdateDisciplinas()
         {
-           
+            if (ctrlMsg)
+            {
+                ctrlMsg = false;
+                ViewBag.Erro = msg;
+            }
+            else
+            {
+                ViewBag.Erro = null;
+            }
             return View();
         }
 
@@ -460,7 +468,7 @@ namespace ProjectSeha.Controllers
                 if (disciplinaModel.VerificaAtribuicao(idDisciplina))
                 {
                     ctrlMsg = true;
-                    msg = "You can not remove this discipline because it is assigned";
+                    msg = "You can not remove this subject because it is assigned";
                     return RedirectToAction("UpdateDisciplinas");
                 }
             }

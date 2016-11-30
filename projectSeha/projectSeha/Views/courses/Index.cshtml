@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<ProjectSeha.Entity.Curso>
 @{
-    ViewBag.Title = "Courses";
+    ViewBag.Title = "Programs";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
-<h3 class="font-seha left">Courses</h3>
+<h3 class="font-seha left">Programs</h3>
 
 @if (ViewBag.Erro != null)
 {
@@ -16,7 +16,7 @@
 
 <div id="course" class="container">
     <div class="table-seha prof">
-        <input class="form-group form-control search" placeholder="Search Course" />
+        <input class="form-group form-control search" placeholder="Search program" />
 
         <table class="table">
             <thead>
@@ -46,7 +46,7 @@
         </table>
 
         <a class="btn btn-seha2" href="/courses/create">
-            New Course
+            New Program
         </a>
     </div>
 </div>

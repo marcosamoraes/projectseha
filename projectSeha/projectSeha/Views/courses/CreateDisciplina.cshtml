@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "SEHA - Register Disciplines";
+    ViewBag.Title = "SEHA - Register Subjects";
     Layout = "~/Views/templates/templateAdmin/_headerAdmin.cshtml";
 }
 
-<h3 class="font-seha left">Add disciplines</h3>
+<h3 class="font-seha left">Add subjects</h3>
 
 @if (ViewBag.Erro != null)
 {
@@ -16,7 +16,7 @@
 <div id="courses" class="font-seha">
     <form action="/courses/AddDisciplinaLista" method="post">
         <div class="row">
-            <label>Period</label>
+            <label>Semester</label>
             <div class="form-group" style="width:150px;">
                 <select required id="Periodo" name="Periodo" class="form-control">
                     <option value="1">First</option>
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-xs-6 form-group">
-                <label for="txtTituloDisciplina">Discipline title</label>
+                <label for="txtTituloDisciplina">Subject title</label>
                 <input required id="txtTituloDisciplina" type="text" name="TituloDisciplina" class="form-control" size="25" />
             </div>
             <div class="col-xs-2 form-group">
@@ -41,7 +41,7 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-xs-2">
-                    <label for="txtQtdAulasMinistradas">Number of classes taught</label>
+                    <label for="txtQtdAulasMinistradas">Number of classes</label>
                     <input required min="2" max="4" id="txtQtdAulasMinistradas" type="number" name="QtdAulasMinistradas" class="form-control" size="3" />
                 </div>
             </div>

@@ -374,7 +374,7 @@
                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">' +
                            '&times;' +
                       '</button>' +
-                      'Assignment hours limit exceeded' +
+                      'Assignment hours exceeded limit' +
                   '</div>');
             }
             //desabilitar btnsave
