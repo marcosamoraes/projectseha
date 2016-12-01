@@ -454,12 +454,14 @@
 
     /*Modal Lembrete*/
     $(document).on('click', '#lista-lembretes.table-seha table tr', function () {
-        $('.modal-lembrete').fadeIn();
-        $('body').css('overflow', 'hidden');
-        var dateLembrete = $(this).find('td').html();
-        var contentLembrete = $(this).find('td:nth-child(2)').html();
-        $('.dateLemb').html(dateLembrete);
-        $('.contentLemb').html(contentLembrete);
+        if (!$(this).hasClass('tr-disable')) {
+            $('.modal-lembrete').fadeIn();
+            $('body').css('overflow', 'hidden');
+            var dateLembrete = $(this).find('td').html();
+            var contentLembrete = $(this).find('td:nth-child(2)').html();
+            $('.dateLemb').html(dateLembrete);
+            $('.contentLemb').html(contentLembrete);
+        }
     });
 
     $(document).on('click', '#fecharLemb', function () {
