@@ -189,9 +189,15 @@
             excelFile += "<![endif]-->";
             excelFile += "</head>";
             excelFile += "<body>";
+
+            //tirando botão Export to Excel
+            var fim_da_table = htmltable.indexOf('<div>');
+            htmltable = htmltable.substring(0, fim_da_table);
+
             excelFile += htmltable.replace(/"/g, '\'');
             excelFile += "</body>";
             excelFile += "</html>";
+
             var base64data = "base64," + $.base64.encode(excelFile);
 
             var filename = ($settings.filename == null) ? 'test' :  $settings.filename;
